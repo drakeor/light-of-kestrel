@@ -23,34 +23,33 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-
-#ifndef GAME_H
-#define GAME_H
-
 #include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+#include "../log.h"
 
-class Game
-{  
-  UniverseManager* universeManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  sf::RenderWindow* window;
+UniverseManager::UniverseManager(Game* target_game) {
+  game = target_game;
+}
 
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  sf::RenderWindow* GetWindow();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
+UniverseManager::UniverseManager(const UniverseManager& other) {
 
-#endif // GAME_H
+}
+
+UniverseManager::~UniverseManager() {
+
+}
+
+void UniverseManager::Initialise() {
+  galaxy.push_back(new Galaxy(game));
+}
+
+void UniverseManager::Update(float dt) {
+  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
+    (*it)->Update(dt);
+  }
+}
+
+void UniverseManager::Render() {
+  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
+    (*it)->Render();
+  }
+}

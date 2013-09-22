@@ -24,33 +24,29 @@
 */
 
 
-#ifndef GAME_H
-#define GAME_H
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+#ifndef GAMELOGGER_H
+#define GAMELOGGER_H
+#include <string>
+#include <ofstream>
 
-class Game
-{  
-  UniverseManager* universeManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  sf::RenderWindow* window;
-
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  sf::RenderWindow* GetWindow();
-  Game(const Game& other) { }
-virtual ~Game() { }
+enum LogType {
+  ERROR,
+  WARNING,
+  INFO,
+  DEBUG,
+  VERBOSE
 };
 
-#endif // GAME_H
+class GameLogger {
+  static GameLogger* Instance();
+  std::ofstream logFile;
+  
+public:
+  GameLogger();
+  ~GameLogger();
+  template<typename T>
+  GameLogger& operator << (const T& object);
+};
+
+#endif // GAMELOGGER_H

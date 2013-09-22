@@ -23,34 +23,45 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#include "galaxy.h"
+#include "../log.h"
 
-#ifndef GAME_H
-#define GAME_H
+Galaxy::Galaxy(Game* game)
+{
+  this->game = game;
+  AddEntity(new Entity(game));
+}
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+Galaxy::Galaxy(const Galaxy& other)
+{
 
-class Game
-{  
-  UniverseManager* universeManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  sf::RenderWindow* window;
+}
 
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  sf::RenderWindow* GetWindow();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
+Galaxy::~Galaxy()
+{
 
-#endif // GAME_H
+}
+
+void Galaxy::Render() {
+  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    (*it)->Render();
+  }
+}
+
+void Galaxy::Update(float dt) {
+ for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    (*it)->Update(dt);
+  } 
+}
+
+void Galaxy::CommitTurn() {
+
+}
+
+void Galaxy::AddEntity(Entity* m_entity)
+{
+  m_entity->Initialise();
+  entity.push_back(m_entity);
+}
+
+

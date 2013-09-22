@@ -23,34 +23,46 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#include <SFML/Graphics.hpp>
+#include "log.h"
+#include "game.h"
 
-#ifndef GAME_H
-#define GAME_H
+int main()
+{
+    // Few initial variables
+    Game* game = new(std::nothrow) Game();
+    FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
+    FILE* pFile = fopen("game.log", "a");
+    Output2FILE::Stream() = pFile;
+    if(game == nullptr) {
+      FILE_LOG(logERROR) << "Could not create game object!";
+      return 0;
+    }
+    
+    // Create our SFML window and object.
+    sf::RenderWindow window(sf::VideoMode(1024, 786), "Light Of Kestrel");
+    window.setFramerateLimit(60);
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+    // Initialise the game
+    game->Initialise(&window);
+    
+    // Update Loop
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+	game->Update(0.016f);
+        window.clear();
+	game->Render();
+        window.display();
+    }
 
-class Game
-{  
-  UniverseManager* universeManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  sf::RenderWindow* window;
-
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  sf::RenderWindow* GetWindow();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
-
-#endif // GAME_H
+    // Destroy the game
+    game->Destroy();
+    
+    return 0;
+}

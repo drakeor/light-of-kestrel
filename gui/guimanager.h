@@ -23,34 +23,17 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef GUIMANAGER_H
+#define GUIMANAGER_H
 
-#ifndef GAME_H
-#define GAME_H
+class Game;
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-
-class Game
-{  
-  UniverseManager* universeManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  sf::RenderWindow* window;
-
+class GuiManager
+{
+Game* game;
 public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  sf::RenderWindow* GetWindow();
-  Game(const Game& other) { }
-virtual ~Game() { }
+GuiManager(Game* game);
+virtual ~GuiManager();
 };
 
-#endif // GAME_H
+#endif // GUIMANAGER_H

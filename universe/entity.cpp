@@ -23,34 +23,33 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#include "entity.h"
+#include "../game.h"
+#include "../log.h"
 
-#ifndef GAME_H
-#define GAME_H
+Entity::Entity(Game* game)
+{
+  this->game = game;
+}
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+Entity::~Entity()
+{
 
-class Game
-{  
-  UniverseManager* universeManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  sf::RenderWindow* window;
+}
 
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  sf::RenderWindow* GetWindow();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
+void Entity::Initialise() {
+  // Initial assigning
+  sf::Texture* tempTex = game->GetAssetManager()->GetTexture("dragon.png");
+  texture = sf::Sprite(*tempTex);
+  texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+  texture.setPosition(500, 300);
+}
 
-#endif // GAME_H
+void Entity::Update(float dt) {
+  
+}
+
+void Entity::Render() {
+  this->game->GetWindow()->draw(texture);
+}
+
