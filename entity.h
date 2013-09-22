@@ -23,33 +23,24 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "universemanager.h"
-#include "log.h"
+#ifndef ENTITY_H
+#define ENTITY_H
+#include <SFML/Graphics/Sprite.hpp>
+#include <tr1/memory>
 
-UniverseManager::UniverseManager(Game* target_game) {
-  game = target_game;
-}
+class Game;
 
-UniverseManager::UniverseManager(const UniverseManager& other) {
+class Entity
+{
+  sf::Sprite texture;
+  Game* game;
+public:
+  Entity(Game* game);
+  void Initialise();
+  void Update(float dt);
+  void Render();
+  virtual ~Entity();
 
-}
+};
 
-UniverseManager::~UniverseManager() {
-
-}
-
-void UniverseManager::Initialise() {
-  galaxy.push_back(new Galaxy(game));
-}
-
-void UniverseManager::Update(float dt) {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Update(dt);
-  }
-}
-
-void UniverseManager::Render() {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Render();
-  }
-}
+#endif // ENTITY_H

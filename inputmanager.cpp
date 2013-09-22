@@ -23,33 +23,14 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "universemanager.h"
-#include "log.h"
+#include "inputmanager.h"
 
-UniverseManager::UniverseManager(Game* target_game) {
-  game = target_game;
-}
-
-UniverseManager::UniverseManager(const UniverseManager& other) {
+InputManager::InputManager()
+{
 
 }
 
-UniverseManager::~UniverseManager() {
+InputManager::~InputManager()
+{
 
-}
-
-void UniverseManager::Initialise() {
-  galaxy.push_back(new Galaxy(game));
-}
-
-void UniverseManager::Update(float dt) {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Update(dt);
-  }
-}
-
-void UniverseManager::Render() {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Render();
-  }
 }

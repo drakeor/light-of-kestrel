@@ -15,10 +15,11 @@ if (CMAKE_COMPILER_IS_GNUCXX)
 endif ()
 
 # Make an executable
-add_executable(lightofkestrel universemanager.cpp game.cpp main.cpp)
+add_executable(lightofkestrel assetmanager.cpp inputmanager.cpp entity.cpp galaxy.cpp universemanager.cpp game.cpp main.cpp)
 
 # Link SFML Libraries.
 target_link_libraries (lightofkestrel sfml-graphics sfml-system sfml-window tgui)
 
 # Install the program if needed
 install(TARGETS lightofkestrel RUNTIME DESTINATION bin)
+

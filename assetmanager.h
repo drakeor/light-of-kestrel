@@ -23,33 +23,18 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "universemanager.h"
-#include "log.h"
+#ifndef ASSETMANAGER_H
+#define ASSETMANAGER_H
+#include <SFML/Graphics/Texture.hpp>
+#include <map>
 
-UniverseManager::UniverseManager(Game* target_game) {
-  game = target_game;
-}
+class AssetManager
+{
+  std::map<std::string, sf::Texture> texture;
+public:
+  AssetManager();
+  sf::Texture* GetTexture(std::string textureName);
+  virtual ~AssetManager();
+};
 
-UniverseManager::UniverseManager(const UniverseManager& other) {
-
-}
-
-UniverseManager::~UniverseManager() {
-
-}
-
-void UniverseManager::Initialise() {
-  galaxy.push_back(new Galaxy(game));
-}
-
-void UniverseManager::Update(float dt) {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Update(dt);
-  }
-}
-
-void UniverseManager::Render() {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Render();
-  }
-}
+#endif // ASSETMANAGER_H

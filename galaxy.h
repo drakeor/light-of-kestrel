@@ -23,33 +23,25 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "universemanager.h"
-#include "log.h"
+#ifndef GALAXY_H
+#define GALAXY_H
+#include <vector>
+#include "entity.h"
 
-UniverseManager::UniverseManager(Game* target_game) {
-  game = target_game;
-}
+class Game;
 
-UniverseManager::UniverseManager(const UniverseManager& other) {
+class Galaxy
+{
+std::vector<Entity*> entity;
+Game* game;
+public:
+Galaxy(Game* game);
+void AddEntity(Entity* entity);
+void Render();
+void Update(float dt);
+void CommitTurn();
+Galaxy(const Galaxy& other);
+virtual ~Galaxy();
+};
 
-}
-
-UniverseManager::~UniverseManager() {
-
-}
-
-void UniverseManager::Initialise() {
-  galaxy.push_back(new Galaxy(game));
-}
-
-void UniverseManager::Update(float dt) {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Update(dt);
-  }
-}
-
-void UniverseManager::Render() {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Render();
-  }
-}
+#endif // GALAXY_H

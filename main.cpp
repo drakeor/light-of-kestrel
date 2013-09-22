@@ -30,16 +30,21 @@
 int main()
 {
     // Few initial variables
-    Game game;
+    Game* game = new(std::nothrow) Game();
     FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
     FILE* pFile = fopen("game.log", "a");
     Output2FILE::Stream() = pFile;
+    if(game == nullptr) {
+      FILE_LOG(logERROR) << "Could not create game object!";
+      return 0;
+    }
+    
+    // Create our SFML window and object.
     sf::RenderWindow window(sf::VideoMode(1024, 786), "Light Of Kestrel");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    window.setFramerateLimit(60);
 
     // Initialise the game
-    game.Initialise();
+    game->Initialise(&window);
     
     // Update Loop
     while (window.isOpen())
@@ -50,12 +55,15 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-	game.Update(0.016f);
+	game->Update(0.016f);
         window.clear();
-	game.Render();
-        window.draw(shape);
+	game->Render();
         window.display();
     }
 
+    // Destroy the game
+    game->Destroy();
+    delete game;
+    
     return 0;
 }

@@ -25,13 +25,22 @@
 
 #ifndef UNIVERSEMANAGER_H
 #define UNIVERSEMANAGER_H
+#include <vector>
+#include "galaxy.h"
+
+class Game;
 
 class UniverseManager
 {
-
+  std::vector<Galaxy*> galaxy;
+  Game* game;
+  
 public:
-UniverseManager();
-UniverseManager(const UniverseManager& other);
+  UniverseManager(Game* target_game);
+  void Initialise();
+  void Update(float dt);
+  void Render();
+  UniverseManager(const UniverseManager& other);
 virtual ~UniverseManager();
 };
 

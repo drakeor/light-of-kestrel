@@ -28,23 +28,38 @@
 #include "game.h"
 #include "log.h"
 
-void Game::Initialise()
+void Game::Initialise(sf::RenderWindow* window)
 {
+  this->window = window;
+  universeManager = new(std::nothrow) UniverseManager(this);
+  universeManager->Initialise();
   FILE_LOG(logDEBUG) <<  "Initialised Game Engine.";
 }
 
 void Game::Render()
 {
-  
+  universeManager->Render();
 }
 
 void Game::Update(float dt)
 {
-  
+  universeManager->Update(dt);
 }
 
-void Destroy()
+void Game::Destroy()
 {
-  
+  delete universeManager;
+  FILE_LOG(logDEBUG) <<  "Destroyed Game Engine.";
 }
+
+AssetManager* Game::GetAssetManager()
+{
+  return &assetManager;
+}
+
+sf::RenderWindow* Game::GetWindow()
+{
+  return window;
+}
+
 

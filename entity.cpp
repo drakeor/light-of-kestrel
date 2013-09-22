@@ -23,33 +23,34 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "universemanager.h"
+#include "entity.h"
+#include "game.h"
 #include "log.h"
 
-UniverseManager::UniverseManager(Game* target_game) {
-  game = target_game;
+Entity::Entity(Game* game)
+{
+  this->game = game;
 }
 
-UniverseManager::UniverseManager(const UniverseManager& other) {
+Entity::~Entity()
+{
 
 }
 
-UniverseManager::~UniverseManager() {
-
+void Entity::Initialise() {
+  // Initial assigning
+  texture = sf::Sprite((*game->GetAssetManager()->GetTexture("dragon.png")));
+  
 }
 
-void UniverseManager::Initialise() {
-  galaxy.push_back(new Galaxy(game));
+void Entity::Update(float dt) {
+  
 }
 
-void UniverseManager::Update(float dt) {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Update(dt);
-  }
+void Entity::Render() {
+  // Due to SFML's retardation, I need to set the texture everyframe so it doesn't drop out of memory.
+  // Note that sending the sprite to the heap will segfault the program.
+  texture.setTexture(*game->GetAssetManager()->GetTexture("dragon.png"));
+  this->game->GetWindow()->draw(texture);
 }
 
-void UniverseManager::Render() {
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Render();
-  }
-}

@@ -27,15 +27,26 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "universemanager.h"
+#include "inputmanager.h"
+#include "assetmanager.h"
+#include <SFML/Graphics/RenderWindow.hpp>
+
 class Game
 {  
-  
+  UniverseManager* universeManager;
+  InputManager inputManager;
+  AssetManager assetManager;
+  sf::RenderWindow* window;
+
 public:
   Game() { }
-  void Initialise();
+  void Initialise(sf::RenderWindow* window);
   void Render();
   void Update(float dt);
   void Destroy();
+  AssetManager* GetAssetManager();
+  sf::RenderWindow* GetWindow();
   Game(const Game& other) { }
 virtual ~Game() { }
 };
