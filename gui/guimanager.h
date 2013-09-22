@@ -25,15 +25,22 @@
 
 #ifndef GUIMANAGER_H
 #define GUIMANAGER_H
+#include <vector>
+#include <string>
+#include <memory>
+#include "basecontrol.h"
 
 class Game;
-
 class GuiManager
 {
-Game* game;
+  Game* game;
+  std::unique_ptr<BaseControl> rootNode;
 public:
-GuiManager(Game* game);
-virtual ~GuiManager();
+  GuiManager(Game* game);
+  BaseControl* GetRootNode();
+  void Render();
+  void Update(float dt);
+  virtual ~GuiManager();
 };
 
 #endif // GUIMANAGER_H

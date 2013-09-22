@@ -248,6 +248,30 @@ gui/guimanager.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.s
 .PHONY : gui/guimanager.cpp.s
 
+gui/textlabel.o: gui/textlabel.cpp.o
+.PHONY : gui/textlabel.o
+
+# target to build an object file
+gui/textlabel.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o
+.PHONY : gui/textlabel.cpp.o
+
+gui/textlabel.i: gui/textlabel.cpp.i
+.PHONY : gui/textlabel.i
+
+# target to preprocess a source file
+gui/textlabel.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.i
+.PHONY : gui/textlabel.cpp.i
+
+gui/textlabel.s: gui/textlabel.cpp.s
+.PHONY : gui/textlabel.s
+
+# target to generate assembly for a file
+gui/textlabel.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.s
+.PHONY : gui/textlabel.cpp.s
+
 inputmanager.o: inputmanager.cpp.o
 .PHONY : inputmanager.o
 
@@ -393,6 +417,9 @@ help:
 	@echo "... gui/guimanager.o"
 	@echo "... gui/guimanager.i"
 	@echo "... gui/guimanager.s"
+	@echo "... gui/textlabel.o"
+	@echo "... gui/textlabel.i"
+	@echo "... gui/textlabel.s"
 	@echo "... inputmanager.o"
 	@echo "... inputmanager.i"
 	@echo "... inputmanager.s"

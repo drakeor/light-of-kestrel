@@ -26,12 +26,25 @@
 #ifndef BASECONTROL_H
 #define BASECONTROL_H
 
+#include <SFML/System/Vector2.hpp>
+#include <map>
+#include <string>
+
+class Game;
+
 class BaseControl
 {
-
+  sf::Vector2f position;
+  sf::Vector2i size;
+  std::map<std::string, BaseControl*> controls;
+  Game* game;
 public:
-BaseControl();
-virtual ~BaseControl();
+  BaseControl(Game* game);
+  virtual ~BaseControl();
+  void AddControl(std::string controlName, BaseControl* control);
+  void RemoveControl(std::string controlName);
+  virtual void Update(float dt);
+  virtual void Render();
 };
 
 #endif // BASECONTROL_H

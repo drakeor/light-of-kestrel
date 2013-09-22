@@ -1,4 +1,5 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o"
   "CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o"
   "CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o"
   "CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o"

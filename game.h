@@ -32,13 +32,14 @@
 #include "assetmanager.h"
 #include "guimanager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <memory>
 
 class Game
 {  
-  UniverseManager* universeManager;
+  std::unique_ptr<UniverseManager> universeManager;
+  std::tr1::shared_ptr<GuiManager> guiManager;
   InputManager inputManager;
   AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
   sf::RenderWindow* window;
 
 public:

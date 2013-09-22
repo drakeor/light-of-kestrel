@@ -24,15 +24,32 @@
 */
 
 #include "guimanager.h"
+#include <memory>
 
 GuiManager::GuiManager(Game* game)
 {
   this->game = game;
+  rootNode = std::unique_ptr<BaseControl>( new BaseControl(game) );
 }
 
 
 GuiManager::~GuiManager()
 {
 
+}
+
+BaseControl* GuiManager::GetRootNode()
+{
+  return rootNode.get();
+}
+
+void GuiManager::Render()
+{
+  rootNode.get()->Render();
+}
+
+void GuiManager::Update(float dt)
+{
+  rootNode.get()->Update(dt);
 }
 

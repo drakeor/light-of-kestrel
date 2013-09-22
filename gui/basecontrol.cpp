@@ -24,14 +24,43 @@
 */
 
 #include "basecontrol.h"
+#include <map>
 
-BaseControl::BaseControl()
+BaseControl::BaseControl(Game* game)
 {
-
+  this->game = game;
 }
 
 BaseControl::~BaseControl()
 {
-
+  for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
+  {
+    delete (*it).second;
+  }
+  controls.clear();
 }
+
+void BaseControl::AddControl(std::string controlName, BaseControl* control)
+{
+  controls[controlName] = control;
+}
+
+void BaseControl::RemoveControl(std::string controlName)
+{
+  if(controls.find(controlName) != controls.end()) {
+    delete controls[controlName];
+    controls.erase(controlName);
+  }
+}
+
+void BaseControl::Render()
+{
+  
+}
+
+void BaseControl::Update(float dt)
+{
+  
+}
+
 

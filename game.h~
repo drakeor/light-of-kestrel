@@ -27,15 +27,16 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "universe/universemanager.h"
+#include "universemanager.h"
 #include "inputmanager.h"
 #include "assetmanager.h"
 #include "guimanager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <memory>
 
 class Game
 {  
-  UniverseManager* universeManager;
+  std::unique_ptr<UniverseManager> universeManager;
   InputManager inputManager;
   AssetManager assetManager;
   std::tr1::shared_ptr<GuiManager> guiManager;

@@ -28,6 +28,7 @@
 
 UniverseManager::UniverseManager(Game* target_game) {
   game = target_game;
+  galaxy.push_back(new Galaxy(game));
 }
 
 UniverseManager::UniverseManager(const UniverseManager& other) {
@@ -36,10 +37,6 @@ UniverseManager::UniverseManager(const UniverseManager& other) {
 
 UniverseManager::~UniverseManager() {
 
-}
-
-void UniverseManager::Initialise() {
-  galaxy.push_back(new Galaxy(game));
 }
 
 void UniverseManager::Update(float dt) {

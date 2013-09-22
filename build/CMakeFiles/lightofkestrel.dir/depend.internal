@@ -6,6 +6,7 @@ CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o
  /home/drakeor/LightOfKestrel/assetmanager.h
  /home/drakeor/LightOfKestrel/log.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o
+ ../gui/basecontrol.h
  ../gui/guimanager.h
  ../universe/entity.h
  ../universe/galaxy.h
@@ -19,12 +20,18 @@ CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o
  /home/drakeor/LightOfKestrel/gui/basecontrol.cpp
  /home/drakeor/LightOfKestrel/gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o
+ /home/drakeor/LightOfKestrel/gui/basecontrol.h
  /home/drakeor/LightOfKestrel/gui/guimanager.cpp
  /home/drakeor/LightOfKestrel/gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o
+ /home/drakeor/LightOfKestrel/gui/basecontrol.h
+ /home/drakeor/LightOfKestrel/gui/textlabel.cpp
+ /home/drakeor/LightOfKestrel/gui/textlabel.h
 CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o
  /home/drakeor/LightOfKestrel/inputmanager.cpp
  /home/drakeor/LightOfKestrel/inputmanager.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o
+ ../gui/basecontrol.h
  ../gui/guimanager.h
  ../universe/entity.h
  ../universe/galaxy.h
@@ -35,6 +42,7 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o
  /home/drakeor/LightOfKestrel/log.h
  /home/drakeor/LightOfKestrel/main.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
+ ../gui/basecontrol.h
  ../gui/guimanager.h
  ../universe/galaxy.h
  ../universe/universemanager.h
@@ -50,6 +58,7 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  /home/drakeor/LightOfKestrel/universe/galaxy.cpp
  /home/drakeor/LightOfKestrel/universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o
+ /home/drakeor/LightOfKestrel/universe/../log.h
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/galaxy.h
  /home/drakeor/LightOfKestrel/universe/universemanager.cpp

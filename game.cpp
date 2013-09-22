@@ -31,25 +31,25 @@
 void Game::Initialise(sf::RenderWindow* window)
 {
   this->window = window;
-  universeManager = new(std::nothrow) UniverseManager(this);
+  universeManager = std::unique_ptr<UniverseManager>( new UniverseManager(this) );
   guiManager = std::tr1::shared_ptr<GuiManager>( new GuiManager(this) );
-  universeManager->Initialise();
   FILE_LOG(logDEBUG) <<  "Initialised Game Engine.";
 }
 
 void Game::Render()
 {
   universeManager->Render();
+  guiManager.get()->Render();
 }
 
 void Game::Update(float dt)
 {
   universeManager->Update(dt);
+  guiManager.get()->Update(dt);
 }
 
 void Game::Destroy()
 {
-  delete universeManager;
   FILE_LOG(logDEBUG) <<  "Destroyed Game Engine.";
 }
 
