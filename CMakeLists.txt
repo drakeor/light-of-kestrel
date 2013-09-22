@@ -1,3 +1,4 @@
+# Look Eric! CMake! xD
 # Set the minimum version of CMake to 2.8
 cmake_minimum_required(VERSION 2.8)
 

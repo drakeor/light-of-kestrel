@@ -23,39 +23,16 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include <SFML/Graphics.hpp>
-#include "log.h"
-#include "game.h"
+#ifndef UNIVERSEMANAGER_H
+#define UNIVERSEMANAGER_H
 
-int main()
+class UniverseManager
 {
-    // Few initial variables
-    Game game;
-    FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
-    FILE* pFile = fopen("game.log", "a");
-    Output2FILE::Stream() = pFile;
-    sf::RenderWindow window(sf::VideoMode(1024, 786), "Light Of Kestrel");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
-    // Initialise the game
-    game.Initialise();
-    
-    // Update Loop
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-	game.Update(0.016f);
-        window.clear();
-	game.Render();
-        window.draw(shape);
-        window.display();
-    }
+public:
+UniverseManager();
+UniverseManager(const UniverseManager& other);
+virtual ~UniverseManager();
+};
 
-    return 0;
-}
+#endif // UNIVERSEMANAGER_H

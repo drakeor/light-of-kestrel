@@ -23,39 +23,21 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include <SFML/Graphics.hpp>
-#include "log.h"
-#include "game.h"
 
-int main()
-{
-    // Few initial variables
-    Game game;
-    FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
-    FILE* pFile = fopen("game.log", "a");
-    Output2FILE::Stream() = pFile;
-    sf::RenderWindow window(sf::VideoMode(1024, 786), "Light Of Kestrel");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+#ifndef GAME_H
+#define GAME_H
 
-    // Initialise the game
-    game.Initialise();
-    
-    // Update Loop
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-	game.Update(0.016f);
-        window.clear();
-	game.Render();
-        window.draw(shape);
-        window.display();
-    }
+class Game
+{  
+  
+public:
+  Game() { }
+  void Initialise();
+  void Render();
+  void Update(float dt);
+  void Destroy();
+  Game(const Game& other) { }
+virtual ~Game() { }
+};
 
-    return 0;
-}
+#endif // GAME_H
