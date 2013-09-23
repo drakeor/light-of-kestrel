@@ -24,11 +24,14 @@
 */
 
 #include "basecontrol.h"
+#include "../game.h"
+#include "../log.h"
 #include <map>
 
 BaseControl::BaseControl(Game* game)
 {
   this->game = game;
+  absolutePosition = false;
 }
 
 BaseControl::~BaseControl()
@@ -55,12 +58,36 @@ void BaseControl::RemoveControl(std::string controlName)
 
 void BaseControl::Render()
 {
-  
+  for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
+  {
+    (*it).second->Render();
+  }
 }
 
 void BaseControl::Update(float dt)
 {
-  
+  for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
+  {
+    (*it).second->Update(dt);
+  }
+}
+
+BaseControl* BaseControl::GetControl(std::string controlName)
+{
+  if(controls.find(controlName) != controls.end()) {
+    return controls[controlName];
+  }
+  return nullptr;
+}
+
+void BaseControl::SetPosition(float x, float y, bool absolute)
+{
+  if(absolute == true) {
+    position = sf::Vector2f(x, y);
+  } else {
+    position = sf::Vector2f(game->GetWindow()->getSize().x*x, game->GetWindow()->getSize().y*y);
+  }
+  absolutePosition = absolute;
 }
 
 

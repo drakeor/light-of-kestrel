@@ -17,13 +17,30 @@ CMakeFiles/lightofkestrel.dir/game.cpp.o
  /home/drakeor/LightOfKestrel/inputmanager.h
  /home/drakeor/LightOfKestrel/log.h
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o
+ ../gui/guimanager.h
+ ../universe/entity.h
+ ../universe/galaxy.h
+ ../universe/universemanager.h
+ /home/drakeor/LightOfKestrel/gui/../assetmanager.h
+ /home/drakeor/LightOfKestrel/gui/../game.h
+ /home/drakeor/LightOfKestrel/gui/../inputmanager.h
+ /home/drakeor/LightOfKestrel/gui/../log.h
  /home/drakeor/LightOfKestrel/gui/basecontrol.cpp
  /home/drakeor/LightOfKestrel/gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o
  /home/drakeor/LightOfKestrel/gui/basecontrol.h
  /home/drakeor/LightOfKestrel/gui/guimanager.cpp
  /home/drakeor/LightOfKestrel/gui/guimanager.h
+ /home/drakeor/LightOfKestrel/gui/textlabel.h
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o
+ ../gui/guimanager.h
+ ../universe/entity.h
+ ../universe/galaxy.h
+ ../universe/universemanager.h
+ /home/drakeor/LightOfKestrel/gui/../assetmanager.h
+ /home/drakeor/LightOfKestrel/gui/../game.h
+ /home/drakeor/LightOfKestrel/gui/../inputmanager.h
+ /home/drakeor/LightOfKestrel/gui/../log.h
  /home/drakeor/LightOfKestrel/gui/basecontrol.h
  /home/drakeor/LightOfKestrel/gui/textlabel.cpp
  /home/drakeor/LightOfKestrel/gui/textlabel.h

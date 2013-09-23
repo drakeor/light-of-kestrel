@@ -47,3 +47,15 @@ sf::Texture* AssetManager::GetTexture(std::string textureName)
   return &texture[textureName];
 }
 
+sf::Font* AssetManager::GetFont(std::string fontName)
+{
+  if(font.find(fontName) == font.end()) {
+    font[fontName] = sf::Font();
+    font[fontName].loadFromFile(fontName);
+    FILE_LOG(logINFO) << "Loaded font: " << fontName;
+  }
+  
+  return &font[fontName];
+}
+
+

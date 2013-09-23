@@ -26,14 +26,17 @@
 #ifndef ASSETMANAGER_H
 #define ASSETMANAGER_H
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Font.hpp>
 #include <map>
 
 class AssetManager
 {
   std::map<std::string, sf::Texture> texture;
+  std::map<std::string, sf::Font> font;
 public:
   AssetManager();
   sf::Texture* GetTexture(std::string textureName);
+  sf::Font* GetFont(std::string fontName);
   virtual ~AssetManager();
 };
 

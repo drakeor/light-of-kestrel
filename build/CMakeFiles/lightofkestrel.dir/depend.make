@@ -16,13 +16,30 @@ CMakeFiles/lightofkestrel.dir/game.cpp.o: ../game.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../inputmanager.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../log.h
 
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/../game.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/../log.h
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/basecontrol.cpp
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/basecontrol.h
 
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/guimanager.cpp
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/textlabel.h
 
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/../game.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/../log.h
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/textlabel.cpp
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/textlabel.h

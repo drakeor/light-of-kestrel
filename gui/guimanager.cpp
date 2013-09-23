@@ -24,12 +24,16 @@
 */
 
 #include "guimanager.h"
+#include "textlabel.h"
 #include <memory>
 
 GuiManager::GuiManager(Game* game)
 {
   this->game = game;
   rootNode = std::unique_ptr<BaseControl>( new BaseControl(game) );
+  TextLabel* textLabel = new TextLabel(game);
+  textLabel->SetPosition(0.50, 0.50, false);
+  rootNode.get()->AddControl("TestLabel", textLabel);
 }
 
 

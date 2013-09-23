@@ -34,15 +34,19 @@ class Game;
 
 class BaseControl
 {
+protected:
+  Game* game;
   sf::Vector2f position;
   sf::Vector2i size;
+  bool absolutePosition;
   std::map<std::string, BaseControl*> controls;
-  Game* game;
 public:
   BaseControl(Game* game);
   virtual ~BaseControl();
   void AddControl(std::string controlName, BaseControl* control);
+  BaseControl* GetControl(std::string controlName);
   void RemoveControl(std::string controlName);
+  virtual void SetPosition(float x, float y, bool absolute = true);
   virtual void Update(float dt);
   virtual void Render();
 };
