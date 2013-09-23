@@ -69,6 +69,12 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../log.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.h
 
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/basecontrol.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../game.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../inputmanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../log.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/galaxy.cpp

@@ -31,6 +31,7 @@
 BaseControl::BaseControl(Game* game)
 {
   this->game = game;
+  this->parent = nullptr;
   absolutePosition = false;
 }
 
@@ -45,6 +46,7 @@ BaseControl::~BaseControl()
 
 void BaseControl::AddControl(std::string controlName, BaseControl* control)
 {
+  control->SetParent(this);
   controls[controlName] = control;
 }
 
@@ -80,14 +82,62 @@ BaseControl* BaseControl::GetControl(std::string controlName)
   return nullptr;
 }
 
-void BaseControl::SetPosition(float x, float y, bool absolute)
+sf::Vector2f BaseControl::GetPosition()
 {
-  if(absolute == true) {
-    position = sf::Vector2f(x, y);
-  } else {
-    position = sf::Vector2f(game->GetWindow()->getSize().x*x, game->GetWindow()->getSize().y*y);
-  }
-  absolutePosition = absolute;
+  return position;
 }
 
+sf::Vector2i BaseControl::GetSize()
+{
+  return size;
+}
+
+void BaseControl::SetSize(float x, float y, bool absolute)
+{
+  internalSize = sf::Vector2f(x, y);
+  absoluteSize = absolute;
+  
+  UpdatePosition();
+}
+
+void BaseControl::UpdatePosition()
+{
+   // If we don't have a parent, the rest of this is relavitely straight-forward, else we need to add their position.
+  sf::Vector2f vecToAdd = sf::Vector2f(0, 0);
+  if(parent != nullptr) {
+    vecToAdd = parent->GetPosition();
+  }
+  
+  // Now our new stuff
+  if(absolutePosition == true) {
+    position = internalPosition + vecToAdd;
+  } else {
+    if(parent != nullptr) {
+      position = sf::Vector2f(parent->GetSize().x*internalPosition.x, parent->GetSize().y*internalPosition.y) + vecToAdd;
+    } else {
+      position = sf::Vector2f(game->GetWindow()->getSize().x*internalPosition.x, game->GetWindow()->getSize().y*internalPosition.y) + vecToAdd;
+    }
+  }
+  
+  // Notify our children
+  for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
+  {
+    (*it).second->UpdatePosition();
+  }
+}
+
+
+void BaseControl::SetPosition(float x, float y, bool absolute)
+{
+  // Set internel position stuff
+  internalPosition = sf::Vector2f(x, y);
+  absolutePosition = absolute;
+  
+  UpdatePosition();
+}
+
+void BaseControl::SetParent(BaseControl* parent)
+{
+  this->parent = parent;
+}
 

@@ -37,10 +37,11 @@
 class Game
 {  
   std::unique_ptr<UniverseManager> universeManager;
+  std::tr1::shared_ptr<GuiManager> guiManager;
   InputManager inputManager;
   AssetManager assetManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
   sf::RenderWindow* window;
+  sf::View* view;
 
 public:
   Game() { }

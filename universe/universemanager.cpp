@@ -28,6 +28,8 @@
 
 UniverseManager::UniverseManager(Game* target_game) {
   game = target_game;
+  Galaxy* myGalaxy = new Galaxy(game);
+  currentGalaxy = myGalaxy;
   galaxy.push_back(new Galaxy(game));
 }
 
@@ -46,7 +48,9 @@ void UniverseManager::Update(float dt) {
 }
 
 void UniverseManager::Render() {
+  /*
   for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
     (*it)->Render();
-  }
+  } */
+  currentGalaxy->Render();
 }

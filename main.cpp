@@ -42,9 +42,12 @@ int main()
     // Create our SFML window and object.
     sf::RenderWindow window(sf::VideoMode(1024, 786), "Light Of Kestrel");
     window.setFramerateLimit(60);
-
+    sf::View view;
+    view.reset(sf::FloatRect(0, 0, 1024, 786));
+    window.setView(view);
+    
     // Initialise the game
-    game->Initialise(&window);
+    game->Initialise(&window, &view);
     
     // Update Loop
     while (window.isOpen())

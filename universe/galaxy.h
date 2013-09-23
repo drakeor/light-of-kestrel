@@ -32,16 +32,18 @@ class Game;
 
 class Galaxy
 {
-std::vector<Entity*> entity;
-Game* game;
+  sf::Sprite backgroundImage;
+  std::vector<Entity*> entity;
+  Game* game;
+  
 public:
-Galaxy(Game* game);
-void AddEntity(Entity* entity);
-void Render();
-void Update(float dt);
-void CommitTurn();
-Galaxy(const Galaxy& other);
-virtual ~Galaxy();
+  Galaxy(Game* game);
+  void AddEntity(Entity* entity);
+  void Render();
+  void Update(float dt);
+  void CommitTurn();
+  Galaxy(const Galaxy& other);
+  virtual ~Galaxy();
 };
 
 #endif // GALAXY_H

@@ -25,11 +25,16 @@
 
 #include "galaxy.h"
 #include "../log.h"
+#include "../game.h"
 
 Galaxy::Galaxy(Game* game)
 {
   this->game = game;
   AddEntity(new Entity(game));
+  sf::Texture* rawrTexture = game->GetAssetManager()->GetTexture("starfield.png");
+  rawrTexture->setRepeated(true);
+  backgroundImage.setTexture(*rawrTexture);
+  
 }
 
 Galaxy::Galaxy(const Galaxy& other)
@@ -43,6 +48,7 @@ Galaxy::~Galaxy()
 }
 
 void Galaxy::Render() {
+  game->GetWindow()->draw(backgroundImage);
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Render();
   }

@@ -37,16 +37,25 @@ class BaseControl
 protected:
   Game* game;
   sf::Vector2f position;
+  sf::Vector2f internalPosition;
+  sf::Vector2f internalSize;
   sf::Vector2i size;
   bool absolutePosition;
+  bool absoluteSize;
   std::map<std::string, BaseControl*> controls;
+  BaseControl* parent;
 public:
   BaseControl(Game* game);
   virtual ~BaseControl();
   void AddControl(std::string controlName, BaseControl* control);
   BaseControl* GetControl(std::string controlName);
   void RemoveControl(std::string controlName);
-  virtual void SetPosition(float x, float y, bool absolute = true);
+  void SetParent(BaseControl* parent);
+  void SetPosition(float x, float y, bool absolute = true);
+  sf::Vector2f GetPosition();
+  virtual void UpdatePosition();
+  virtual void SetSize(float x, float y, bool absolute = true);
+  virtual sf::Vector2i GetSize();
   virtual void Update(float dt);
   virtual void Render();
 };

@@ -34,6 +34,11 @@ GuiManager::GuiManager(Game* game)
   TextLabel* textLabel = new TextLabel(game);
   textLabel->SetPosition(0.50, 0.50, false);
   rootNode.get()->AddControl("TestLabel", textLabel);
+  TextLabel* newTextLabel = new TextLabel(game);
+  textLabel->AddControl("NestedLabel", newTextLabel);
+  newTextLabel->SetPosition(0, 30);
+  
+  textLabel->SetPosition(200, 200);
 }
 
 

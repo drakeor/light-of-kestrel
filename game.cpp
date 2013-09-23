@@ -28,9 +28,10 @@
 #include "game.h"
 #include "log.h"
 
-void Game::Initialise(sf::RenderWindow* window)
+void Game::Initialise(sf::RenderWindow* window, sf::View* view)
 {
   this->window = window;
+  this->view = view;
   universeManager = std::unique_ptr<UniverseManager>( new UniverseManager(this) );
   guiManager = std::tr1::shared_ptr<GuiManager>( new GuiManager(this) );
   FILE_LOG(logDEBUG) <<  "Initialised Game Engine.";

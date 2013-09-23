@@ -28,7 +28,7 @@
 #include "game.h"
 #include "log.h"
 
-void Game::Initialise(sf::RenderWindow* window)
+void Game::Initialise(sf::RenderWindow* window, sf::View* view)
 {
   this->window = window;
   universeManager = std::unique_ptr<UniverseManager>( new UniverseManager(this) );
@@ -45,6 +45,7 @@ void Game::Render()
 void Game::Update(float dt)
 {
   universeManager->Update(dt);
+  guiManager.get()->Update(dt);
 }
 
 void Game::Destroy()

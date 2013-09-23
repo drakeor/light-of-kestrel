@@ -41,10 +41,11 @@ class Game
   InputManager inputManager;
   AssetManager assetManager;
   sf::RenderWindow* window;
+  sf::View* view;
 
 public:
   Game() { }
-  void Initialise(sf::RenderWindow* window);
+  void Initialise(sf::RenderWindow* window, sf::View* view);
   void Render();
   void Update(float dt);
   void Destroy();

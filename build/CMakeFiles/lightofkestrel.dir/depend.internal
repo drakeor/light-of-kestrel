@@ -70,6 +70,12 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
  /home/drakeor/LightOfKestrel/universe/entity.cpp
  /home/drakeor/LightOfKestrel/universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
+ ../gui/basecontrol.h
+ ../gui/guimanager.h
+ ../universe/universemanager.h
+ /home/drakeor/LightOfKestrel/universe/../assetmanager.h
+ /home/drakeor/LightOfKestrel/universe/../game.h
+ /home/drakeor/LightOfKestrel/universe/../inputmanager.h
  /home/drakeor/LightOfKestrel/universe/../log.h
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/galaxy.cpp

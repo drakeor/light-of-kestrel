@@ -33,6 +33,7 @@ class Game;
 class UniverseManager
 {
   std::vector<Galaxy*> galaxy;
+  Galaxy* currentGalaxy;
   Game* game;
   
 public:
