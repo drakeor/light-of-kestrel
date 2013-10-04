@@ -29,6 +29,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <map>
 #include <string>
+#include "../events/eventhandler.h"
 
 class Game;
 
@@ -39,11 +40,12 @@ protected:
   sf::Vector2f position;
   sf::Vector2f internalPosition;
   sf::Vector2f internalSize;
-  sf::Vector2i size;
+  sf::Vector2f size;
   bool absolutePosition;
   bool absoluteSize;
   std::map<std::string, BaseControl*> controls;
   BaseControl* parent;
+  
 public:
   BaseControl(Game* game);
   virtual ~BaseControl();
@@ -55,9 +57,14 @@ public:
   sf::Vector2f GetPosition();
   virtual void UpdatePosition();
   virtual void SetSize(float x, float y, bool absolute = true);
-  virtual sf::Vector2i GetSize();
+  virtual sf::Vector2f GetSize();
   virtual void Update(float dt);
   virtual void Render();
+  virtual void CheckOnMouseClick(float x, float y);
+  
+  EventHandler OnClick;
+  EventHandler OnFocus;
+  EventHandler OnDefocus;
 };
 
 #endif // BASECONTROL_H

@@ -1,4 +1,8 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/gui/button.cpp.o"
+  "CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o"
+  "CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o"
+  "CMakeFiles/lightofkestrel.dir/camera.cpp.o"
   "CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o"
   "CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o"
   "CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o"

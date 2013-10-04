@@ -32,6 +32,7 @@ void Game::Initialise(sf::RenderWindow* window, sf::View* view)
 {
   this->window = window;
   this->view = view;
+  camera = Camera(this, view->getViewport());
   universeManager = std::unique_ptr<UniverseManager>( new UniverseManager(this) );
   guiManager = std::tr1::shared_ptr<GuiManager>( new GuiManager(this) );
   FILE_LOG(logDEBUG) <<  "Initialised Game Engine.";
@@ -39,7 +40,9 @@ void Game::Initialise(sf::RenderWindow* window, sf::View* view)
 
 void Game::Render()
 {
+  camera.PreRender();
   universeManager->Render();
+  camera.PostRender();
   guiManager.get()->Render();
 }
 
@@ -63,5 +66,21 @@ sf::RenderWindow* Game::GetWindow()
 {
   return window;
 }
+
+sf::View* Game::GetView()
+{
+  return view;
+}
+
+Camera* Game::GetCamera()
+{
+  return &camera;
+}
+
+GuiManager* Game::GetGuiManager()
+{
+  return guiManager.get();
+}
+
 
 

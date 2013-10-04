@@ -5,8 +5,12 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/drakeor/LightOfKestrel/assetmanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o"
+  "/home/drakeor/LightOfKestrel/camera.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/camera.cpp.o"
+  "/home/drakeor/LightOfKestrel/events/eventhandler.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o"
+  "/home/drakeor/LightOfKestrel/events/eventlistener.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o"
   "/home/drakeor/LightOfKestrel/game.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/game.cpp.o"
   "/home/drakeor/LightOfKestrel/gui/basecontrol.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o"
+  "/home/drakeor/LightOfKestrel/gui/button.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/gui/button.cpp.o"
   "/home/drakeor/LightOfKestrel/gui/guimanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o"
   "/home/drakeor/LightOfKestrel/gui/textlabel.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o"
   "/home/drakeor/LightOfKestrel/inputmanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o"

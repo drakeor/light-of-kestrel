@@ -48,6 +48,7 @@ Galaxy::~Galaxy()
 }
 
 void Galaxy::Render() {
+  game->GetWindow()->draw(backgroundImage);
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Render();
   }

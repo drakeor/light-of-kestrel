@@ -52,6 +52,8 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/drakeor/LightOfKestrel/build/gui/cmake_install.cmake")
   INCLUDE("/home/drakeor/LightOfKestrel/build/universe/cmake_install.cmake")
+  INCLUDE("/home/drakeor/LightOfKestrel/build/controllers/cmake_install.cmake")
+  INCLUDE("/home/drakeor/LightOfKestrel/build/events/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

@@ -1,394 +1,359 @@
-- 00:27:52.576 DEBUG: Initialised Game Engine.
-- 00:27:52.582 INFO: The size is 1
-- 00:27:52.582 INFO: Drawing texture!
-- 00:27:52.582 INFO: RAWR Galaxy!
-- 00:27:52.598 INFO: The size is 1
-- 00:27:52.598 INFO: Drawing texture!
-- 00:27:52.598 INFO: RAWR Galaxy!
-- 00:27:52.615 INFO: The size is 1
-- 00:27:52.615 INFO: Drawing texture!
-- 00:27:52.615 INFO: RAWR Galaxy!
-- 00:27:52.632 INFO: The size is 1
-- 00:27:52.632 INFO: Drawing texture!
-- 00:27:52.632 INFO: RAWR Galaxy!
-- 00:27:52.650 INFO: The size is 1
-- 00:27:52.650 INFO: Drawing texture!
-- 00:27:52.650 INFO: RAWR Galaxy!
-- 00:27:52.665 INFO: The size is 1
-- 00:27:52.665 INFO: Drawing texture!
-- 00:27:52.665 INFO: RAWR Galaxy!
-- 00:27:52.682 INFO: The size is 1
-- 00:27:52.682 INFO: Drawing texture!
-- 00:27:52.682 INFO: RAWR Galaxy!
-- 00:27:52.699 INFO: The size is 1
-- 00:27:52.699 INFO: Drawing texture!
-- 00:27:52.699 INFO: RAWR Galaxy!
-- 00:27:52.715 INFO: The size is 1
-- 00:27:52.715 INFO: Drawing texture!
-- 00:27:52.715 INFO: RAWR Galaxy!
-- 00:27:52.732 INFO: The size is 1
-- 00:27:52.732 INFO: Drawing texture!
-- 00:27:52.732 INFO: RAWR Galaxy!
-- 00:27:52.749 INFO: The size is 1
-- 00:27:52.749 INFO: Drawing texture!
-- 00:27:52.749 INFO: RAWR Galaxy!
-- 00:27:52.765 INFO: The size is 1
-- 00:27:52.765 INFO: Drawing texture!
-- 00:27:52.765 INFO: RAWR Galaxy!
-- 00:27:52.782 INFO: The size is 1
-- 00:27:52.782 INFO: Drawing texture!
-- 00:27:52.782 INFO: RAWR Galaxy!
-- 00:27:52.799 INFO: The size is 1
-- 00:27:52.799 INFO: Drawing texture!
-- 00:27:52.799 INFO: RAWR Galaxy!
-- 00:27:52.816 INFO: The size is 1
-- 00:27:52.816 INFO: Drawing texture!
-- 00:27:52.816 INFO: RAWR Galaxy!
-- 00:27:52.832 INFO: The size is 1
-- 00:27:52.832 INFO: Drawing texture!
-- 00:27:52.832 INFO: RAWR Galaxy!
-- 00:27:52.849 INFO: The size is 1
-- 00:27:52.849 INFO: Drawing texture!
-- 00:27:52.849 INFO: RAWR Galaxy!
-- 00:27:52.866 INFO: The size is 1
-- 00:27:52.866 INFO: Drawing texture!
-- 00:27:52.866 INFO: RAWR Galaxy!
-- 00:27:52.883 INFO: The size is 1
-- 00:27:52.883 INFO: Drawing texture!
-- 00:27:52.883 INFO: RAWR Galaxy!
-- 00:27:52.900 INFO: The size is 1
-- 00:27:52.900 INFO: Drawing texture!
-- 00:27:52.900 INFO: RAWR Galaxy!
-- 00:27:52.916 INFO: The size is 1
-- 00:27:52.916 INFO: Drawing texture!
-- 00:27:52.916 INFO: RAWR Galaxy!
-- 00:27:52.933 INFO: The size is 1
-- 00:27:52.933 INFO: Drawing texture!
-- 00:27:52.933 INFO: RAWR Galaxy!
-- 00:27:52.950 INFO: The size is 1
-- 00:27:52.950 INFO: Drawing texture!
-- 00:27:52.950 INFO: RAWR Galaxy!
-- 00:27:52.967 INFO: The size is 1
-- 00:27:52.967 INFO: Drawing texture!
-- 00:27:52.967 INFO: RAWR Galaxy!
-- 00:27:52.983 INFO: The size is 1
-- 00:27:52.983 INFO: Drawing texture!
-- 00:27:52.983 INFO: RAWR Galaxy!
-- 00:27:52.000 INFO: The size is 1
-- 00:27:52.000 INFO: Drawing texture!
-- 00:27:52.000 INFO: RAWR Galaxy!
-- 00:27:53.017 INFO: The size is 1
-- 00:27:53.017 INFO: Drawing texture!
-- 00:27:53.017 INFO: RAWR Galaxy!
-- 00:27:53.033 INFO: The size is 1
-- 00:27:53.033 INFO: Drawing texture!
-- 00:27:53.033 INFO: RAWR Galaxy!
-- 00:27:53.050 INFO: The size is 1
-- 00:27:53.050 INFO: Drawing texture!
-- 00:27:53.050 INFO: RAWR Galaxy!
-- 00:27:53.066 INFO: The size is 1
-- 00:27:53.067 INFO: Drawing texture!
-- 00:27:53.067 INFO: RAWR Galaxy!
-- 00:27:53.083 INFO: The size is 1
-- 00:27:53.083 INFO: Drawing texture!
-- 00:27:53.083 INFO: RAWR Galaxy!
-- 00:27:53.100 INFO: The size is 1
-- 00:27:53.100 INFO: Drawing texture!
-- 00:27:53.100 INFO: RAWR Galaxy!
-- 00:27:53.117 INFO: The size is 1
-- 00:27:53.117 INFO: Drawing texture!
-- 00:27:53.117 INFO: RAWR Galaxy!
-- 00:27:53.133 INFO: The size is 1
-- 00:27:53.133 INFO: Drawing texture!
-- 00:27:53.133 INFO: RAWR Galaxy!
-- 00:27:53.150 INFO: The size is 1
-- 00:27:53.150 INFO: Drawing texture!
-- 00:27:53.150 INFO: RAWR Galaxy!
-- 00:27:53.167 INFO: The size is 1
-- 00:27:53.167 INFO: Drawing texture!
-- 00:27:53.167 INFO: RAWR Galaxy!
-- 00:27:53.184 INFO: The size is 1
-- 00:27:53.184 INFO: Drawing texture!
-- 00:27:53.184 INFO: RAWR Galaxy!
-- 00:27:53.201 INFO: The size is 1
-- 00:27:53.201 INFO: Drawing texture!
-- 00:27:53.201 INFO: RAWR Galaxy!
-- 00:27:53.218 INFO: The size is 1
-- 00:27:53.218 INFO: Drawing texture!
-- 00:27:53.218 INFO: RAWR Galaxy!
-- 00:27:53.234 INFO: The size is 1
-- 00:27:53.234 INFO: Drawing texture!
-- 00:27:53.234 INFO: RAWR Galaxy!
-- 00:27:53.251 INFO: The size is 1
-- 00:27:53.251 INFO: Drawing texture!
-- 00:27:53.251 INFO: RAWR Galaxy!
-- 00:27:53.268 INFO: The size is 1
-- 00:27:53.268 INFO: Drawing texture!
-- 00:27:53.268 INFO: RAWR Galaxy!
-- 00:27:53.284 INFO: The size is 1
-- 00:27:53.284 INFO: Drawing texture!
-- 00:27:53.284 INFO: RAWR Galaxy!
-- 00:27:53.303 INFO: The size is 1
-- 00:27:53.303 INFO: Drawing texture!
-- 00:27:53.303 INFO: RAWR Galaxy!
-- 00:27:53.318 INFO: The size is 1
-- 00:27:53.318 INFO: Drawing texture!
-- 00:27:53.318 INFO: RAWR Galaxy!
-- 00:27:53.335 INFO: The size is 1
-- 00:27:53.335 INFO: Drawing texture!
-- 00:27:53.335 INFO: RAWR Galaxy!
-- 00:27:53.351 INFO: The size is 1
-- 00:27:53.351 INFO: Drawing texture!
-- 00:27:53.351 INFO: RAWR Galaxy!
-- 00:27:53.368 INFO: The size is 1
-- 00:27:53.368 INFO: Drawing texture!
-- 00:27:53.368 INFO: RAWR Galaxy!
-- 00:27:53.384 INFO: The size is 1
-- 00:27:53.384 INFO: Drawing texture!
-- 00:27:53.384 INFO: RAWR Galaxy!
-- 00:27:53.401 INFO: The size is 1
-- 00:27:53.401 INFO: Drawing texture!
-- 00:27:53.401 INFO: RAWR Galaxy!
-- 00:27:53.418 INFO: The size is 1
-- 00:27:53.418 INFO: Drawing texture!
-- 00:27:53.418 INFO: RAWR Galaxy!
-- 00:27:53.435 INFO: The size is 1
-- 00:27:53.435 INFO: Drawing texture!
-- 00:27:53.435 INFO: RAWR Galaxy!
-- 00:27:53.451 INFO: The size is 1
-- 00:27:53.451 INFO: Drawing texture!
-- 00:27:53.451 INFO: RAWR Galaxy!
-- 00:27:53.468 INFO: The size is 1
-- 00:27:53.468 INFO: Drawing texture!
-- 00:27:53.468 INFO: RAWR Galaxy!
-- 00:27:53.485 INFO: The size is 1
-- 00:27:53.485 INFO: Drawing texture!
-- 00:27:53.485 INFO: RAWR Galaxy!
-- 00:27:53.501 INFO: The size is 1
-- 00:27:53.501 INFO: Drawing texture!
-- 00:27:53.501 INFO: RAWR Galaxy!
-- 00:27:53.519 INFO: The size is 1
-- 00:27:53.519 INFO: Drawing texture!
-- 00:27:53.519 INFO: RAWR Galaxy!
-- 00:27:53.535 INFO: The size is 1
-- 00:27:53.535 INFO: Drawing texture!
-- 00:27:53.535 INFO: RAWR Galaxy!
-- 00:27:53.552 INFO: The size is 1
-- 00:27:53.552 INFO: Drawing texture!
-- 00:27:53.552 INFO: RAWR Galaxy!
-- 00:27:53.569 INFO: The size is 1
-- 00:27:53.569 INFO: Drawing texture!
-- 00:27:53.569 INFO: RAWR Galaxy!
-- 00:27:53.586 INFO: The size is 1
-- 00:27:53.586 INFO: Drawing texture!
-- 00:27:53.586 INFO: RAWR Galaxy!
-- 00:27:53.602 INFO: The size is 1
-- 00:27:53.602 INFO: Drawing texture!
-- 00:27:53.602 INFO: RAWR Galaxy!
-- 00:27:53.619 INFO: The size is 1
-- 00:27:53.619 INFO: Drawing texture!
-- 00:27:53.619 INFO: RAWR Galaxy!
-- 00:27:53.636 INFO: The size is 1
-- 00:27:53.636 INFO: Drawing texture!
-- 00:27:53.636 INFO: RAWR Galaxy!
-- 00:27:53.653 INFO: The size is 1
-- 00:27:53.653 INFO: Drawing texture!
-- 00:27:53.653 INFO: RAWR Galaxy!
-- 00:27:53.669 INFO: The size is 1
-- 00:27:53.669 INFO: Drawing texture!
-- 00:27:53.669 INFO: RAWR Galaxy!
-- 00:27:53.687 INFO: The size is 1
-- 00:27:53.687 INFO: Drawing texture!
-- 00:27:53.687 INFO: RAWR Galaxy!
-- 00:27:53.703 INFO: The size is 1
-- 00:27:53.703 INFO: Drawing texture!
-- 00:27:53.703 INFO: RAWR Galaxy!
-- 00:27:53.717 DEBUG: Destroyed Game Engine.
-- 00:30:34.432 DEBUG: Initialised Game Engine.
-- 00:30:36.637 DEBUG: Destroyed Game Engine.
-- 00:31:00.610 DEBUG: Initialised Game Engine.
-- 00:31:00.624 INFO: Loaded texture: dragon.png
-- 00:31:02.037 DEBUG: Destroyed Game Engine.
-- 00:31:13.924 DEBUG: Initialised Game Engine.
-- 00:31:13.935 INFO: Loaded texture: dragon.png
-- 00:31:15.452 DEBUG: Destroyed Game Engine.
-- 00:34:34.945 DEBUG: Initialised Game Engine.
-- 00:35:14.704 DEBUG: Initialised Game Engine.
-- 00:39:34.132 DEBUG: Initialised Game Engine.
-- 00:40:06.698 DEBUG: Initialised Game Engine.
-- 00:40:20.425 DEBUG: Initialised Game Engine.
-- 00:40:33.279 DEBUG: Initialised Game Engine.
-- 00:42:19.121 DEBUG: Initialised Game Engine.
-- 00:42:21.790 DEBUG: Destroyed Game Engine.
-- 00:42:33.869 DEBUG: Initialised Game Engine.
-- 00:42:35.735 DEBUG: Destroyed Game Engine.
-- 00:43:05.200 DEBUG: Initialised Game Engine.
-- 00:43:06.914 DEBUG: Destroyed Game Engine.
-- 00:43:37.480 DEBUG: Initialised Game Engine.
-- 00:43:50.484 DEBUG: Initialised Game Engine.
-- 00:43:51.733 DEBUG: Destroyed Game Engine.
-- 00:46:04.446 DEBUG: Initialised Game Engine.
-- 00:46:34.144 DEBUG: Initialised Game Engine.
-- 00:46:35.659 DEBUG: Destroyed Game Engine.
-- 00:46:43.499 DEBUG: Initialised Game Engine.
-- 00:46:43.513 INFO: Loaded texture: dragon.png
-- 00:46:45.970 DEBUG: Destroyed Game Engine.
-- 00:48:18.877 DEBUG: Initialised Game Engine.
-- 00:48:18.891 INFO: Loaded texture: dragon.png
-- 00:48:20.656 DEBUG: Destroyed Game Engine.
-- 00:52:14.582 INFO: Loaded texture: dragon.png
-- 00:52:14.582 DEBUG: Initialised Game Engine.
-- 00:52:16.269 DEBUG: Destroyed Game Engine.
-- 00:52:25.293 INFO: Loaded texture: dragon.png
-- 00:52:25.293 DEBUG: Initialised Game Engine.
-- 00:52:26.733 DEBUG: Destroyed Game Engine.
-- 00:52:34.185 INFO: Loaded texture: dragon.png
-- 00:52:34.185 DEBUG: Initialised Game Engine.
-- 00:52:35.663 DEBUG: Destroyed Game Engine.
-- 00:52:50.051 INFO: Loaded texture: dragon.png
-- 00:52:50.051 DEBUG: Initialised Game Engine.
-- 00:52:52.247 DEBUG: Destroyed Game Engine.
-- 00:53:07.863 INFO: Loaded texture: dragon.png
-- 00:53:07.863 DEBUG: Initialised Game Engine.
-- 00:53:09.976 DEBUG: Destroyed Game Engine.
-- 00:54:20.267 INFO: Loaded texture: dragon.png
-- 00:54:20.270 DEBUG: Initialised Game Engine.
-- 00:54:24.813 DEBUG: Destroyed Game Engine.
-- 00:54:49.151 INFO: Loaded texture: dragon.png
-- 00:54:49.151 DEBUG: Initialised Game Engine.
-- 00:54:51.964 DEBUG: Destroyed Game Engine.
-- 00:55:03.303 INFO: Loaded texture: dragon.png
-- 00:55:03.303 DEBUG: Initialised Game Engine.
-- 00:55:05.678 DEBUG: Destroyed Game Engine.
-- 00:55:17.301 INFO: Loaded texture: dragon.png
-- 00:55:17.301 DEBUG: Initialised Game Engine.
-- 00:55:19.690 DEBUG: Destroyed Game Engine.
-- 11:06:47.603 INFO: Loaded texture: dragon.png
-- 11:06:47.603 DEBUG: Initialised Game Engine.
-- 11:06:50.529 DEBUG: Destroyed Game Engine.
-- 11:59:37.757 INFO: Loaded texture: dragon.png
-- 11:59:37.757 DEBUG: Initialised Game Engine.
-- 11:59:39.454 DEBUG: Destroyed Game Engine.
-- 03:04:35.144 INFO: Loaded texture: dragon.png
-- 03:04:35.163 DEBUG: Initialised Game Engine.
-- 03:04:36.804 DEBUG: Destroyed Game Engine.
-- 03:07:39.414 INFO: Loaded texture: dragon.png
-- 03:07:39.414 INFO: Loaded font: sansation.ttf
-- 03:07:39.421 DEBUG: Initialised Game Engine.
-- 03:07:42.068 DEBUG: Destroyed Game Engine.
-- 03:08:50.857 INFO: Loaded texture: dragon.png
-- 03:08:50.858 INFO: Loaded font: sansation.ttf
-- 03:08:50.864 DEBUG: Initialised Game Engine.
-- 03:08:53.544 DEBUG: Destroyed Game Engine.
-- 03:11:12.891 INFO: Loaded texture: dragon.png
-- 03:11:12.892 INFO: Loaded font: sansation.ttf
-- 03:11:12.898 DEBUG: Initialised Game Engine.
-- 03:11:15.106 DEBUG: Destroyed Game Engine.
-- 03:21:32.651 INFO: Loaded texture: dragon.png
-- 03:21:32.651 INFO: Loaded font: sansation.ttf
-- 03:21:32.658 DEBUG: Initialised Game Engine.
-- 03:21:35.226 DEBUG: Destroyed Game Engine.
-- 03:21:44.764 INFO: Loaded texture: dragon.png
-- 03:21:44.764 INFO: Loaded font: sansation.ttf
-- 03:21:44.771 DEBUG: Initialised Game Engine.
-- 03:21:46.680 DEBUG: Destroyed Game Engine.
-- 03:23:46.142 INFO: Loaded texture: dragon.png
-- 03:23:46.142 INFO: Loaded font: sansation.ttf
-- 03:23:46.149 INFO: SetPosition
-- 03:23:46.149 DEBUG: Initialised Game Engine.
-- 03:23:48.668 DEBUG: Destroyed Game Engine.
-- 03:24:27.959 INFO: Loaded texture: dragon.png
-- 03:24:27.959 INFO: Loaded font: sansation.ttf
-- 03:24:27.967 INFO: SetPosition2048 : 1572
-- 03:24:27.967 DEBUG: Initialised Game Engine.
-- 03:24:29.998 DEBUG: Destroyed Game Engine.
-- 03:25:29.147 INFO: Loaded texture: dragon.png
-- 03:25:29.147 INFO: Loaded font: sansation.ttf
-- 03:25:29.153 INFO: SetPosition512 : 393
-- 03:25:29.153 INFO: SetPosition512 : 393
-- 03:25:29.153 DEBUG: Initialised Game Engine.
-- 03:25:30.879 DEBUG: Destroyed Game Engine.
-- 03:26:06.872 INFO: Loaded texture: dragon.png
-- 03:26:06.872 INFO: Loaded font: sansation.ttf
-- 03:26:06.879 INFO: SetPosition512 : 393
-- 03:26:06.879 INFO: SetPosition512 : 393
-- 03:26:06.879 DEBUG: Initialised Game Engine.
-- 03:26:10.432 DEBUG: Destroyed Game Engine.
-- 12:13:24.956 INFO: Loaded texture: dragon.png
-- 12:13:24.956 INFO: Loaded font: sansation.ttf
-- 12:13:24.965 DEBUG: Initialised Game Engine.
-- 12:13:26.643 DEBUG: Destroyed Game Engine.
-- 12:15:24.557 INFO: Loaded texture: dragon.png
-- 12:15:24.557 INFO: Loaded font: sansation.ttf
-- 12:15:24.564 DEBUG: Initialised Game Engine.
-- 12:15:26.922 DEBUG: Destroyed Game Engine.
-- 12:15:45.116 INFO: Loaded texture: dragon.png
-- 12:15:45.116 INFO: Loaded font: sansation.ttf
-- 12:15:45.123 DEBUG: Initialised Game Engine.
-- 12:15:48.034 DEBUG: Destroyed Game Engine.
-- 12:16:14.888 INFO: Loaded texture: dragon.png
-- 12:16:14.888 INFO: Loaded font: sansation.ttf
-- 12:16:14.895 DEBUG: Initialised Game Engine.
-- 12:16:21.289 DEBUG: Destroyed Game Engine.
-- 12:16:33.710 INFO: Loaded texture: dragon.png
-- 12:16:33.711 INFO: Loaded font: sansation.ttf
-- 12:16:33.717 DEBUG: Initialised Game Engine.
-- 12:16:36.364 DEBUG: Destroyed Game Engine.
-- 12:18:48.214 INFO: Loaded texture: dragon.png
-- 12:18:48.214 INFO: Loaded font: sansation.ttf
-- 12:18:48.222 INFO: Position: 512|358.5
-- 12:18:48.222 INFO: Position: 0|0
-- 12:18:48.222 INFO: Position: 200|200
-- 12:18:48.222 DEBUG: Initialised Game Engine.
-- 12:18:49.889 DEBUG: Destroyed Game Engine.
-- 12:19:54.330 INFO: Loaded texture: dragon.png
-- 12:19:54.330 INFO: Loaded font: sansation.ttf
-- 12:19:54.337 INFO: Position: 512|393
-- 12:19:54.337 INFO: Position: 0|0
-- 12:19:54.337 INFO: Position: 200|200
-- 12:19:54.337 DEBUG: Initialised Game Engine.
-- 12:19:56.318 DEBUG: Destroyed Game Engine.
-- 12:20:04.698 INFO: Loaded texture: dragon.png
-- 12:20:04.698 INFO: Loaded font: sansation.ttf
-- 12:20:04.704 INFO: Parent Position: 512|393
-- 12:20:04.704 INFO: Parent Position: 0|0
-- 12:20:04.704 INFO: Parent Position: 200|200
-- 12:20:04.704 DEBUG: Initialised Game Engine.
-- 12:20:06.143 DEBUG: Destroyed Game Engine.
-- 12:22:06.227 INFO: Loaded texture: dragon.png
-- 12:22:06.227 INFO: Loaded font: sansation.ttf
-- 12:22:06.235 INFO: Parent Position: 512|393
-- 12:22:06.235 INFO: Parent Position: 0|0
-- 12:22:06.235 INFO: Parent Position: 200|200
-- 12:22:06.235 DEBUG: Initialised Game Engine.
-- 12:22:07.978 DEBUG: Destroyed Game Engine.
-- 12:46:58.661 INFO: Loaded texture: dragon.png
-- 12:46:58.677 INFO: Loaded texture: starfield.png
-- 12:46:58.678 INFO: Loaded font: sansation.ttf
-- 12:46:58.688 DEBUG: Initialised Game Engine.
-- 12:47:07.100 DEBUG: Destroyed Game Engine.
-- 12:49:26.814 INFO: Loaded texture: dragon.png
-- 12:49:26.829 INFO: Loaded texture: starfield.png
-- 12:49:26.829 INFO: Loaded font: sansation.ttf
-- 12:49:26.836 DEBUG: Initialised Game Engine.
-- 12:49:28.368 DEBUG: Destroyed Game Engine.
-- 12:49:48.583 INFO: Loaded texture: dragon.png
-- 12:49:48.599 INFO: Loaded texture: starfield.png
-- 12:49:48.599 INFO: Loaded font: sansation.ttf
-- 12:49:48.606 DEBUG: Initialised Game Engine.
-- 12:49:51.562 DEBUG: Destroyed Game Engine.
-- 12:50:12.663 INFO: Loaded texture: dragon.png
-- 12:50:12.677 INFO: Loaded texture: starfield.png
-- 12:50:12.677 INFO: Loaded font: sansation.ttf
-- 12:50:12.685 DEBUG: Initialised Game Engine.
-- 12:50:15.074 DEBUG: Destroyed Game Engine.
-- 12:50:26.008 INFO: Loaded texture: dragon.png
-- 12:50:26.023 INFO: Loaded texture: starfield.png
-- 12:50:26.023 INFO: Loaded font: sansation.ttf
-- 12:50:26.029 DEBUG: Initialised Game Engine.
-- 12:50:30.391 DEBUG: Destroyed Game Engine.
-- 12:53:32.300 INFO: Loaded texture: dragon.png
-- 12:53:32.314 INFO: Loaded texture: starfield.png
-- 12:53:32.314 INFO: Loaded font: sansation.ttf
-- 12:53:32.322 DEBUG: Initialised Game Engine.
-- 12:53:36.199 DEBUG: Destroyed Game Engine.
+- 11:47:47.200 INFO: Loaded texture: starfield.png
+- 11:47:47.200 INFO: Loaded font: sansation.ttf
+- 11:47:47.209 DEBUG: Initialised Game Engine.
+- 11:47:48.373 WARNING: Position: 61,58 :: 282,242
+- 11:47:48.374 WARNING: 200,200 | 2,2
+- 11:47:48.374 WARNING: 200,260 | 100,25
+- 11:47:48.374 WARNING: 200,230 | 2,2
+- 11:47:48.691 WARNING: Position: 61,58 :: 276,251
+- 11:47:48.692 WARNING: 200,200 | 2,2
+- 11:47:48.692 WARNING: 200,260 | 100,25
+- 11:47:48.692 WARNING: 200,230 | 2,2
+- 11:47:48.876 WARNING: Position: 61,58 :: 230,259
+- 11:47:48.876 WARNING: 200,200 | 2,2
+- 11:47:48.876 WARNING: 200,260 | 100,25
+- 11:47:48.876 WARNING: 200,230 | 2,2
+- 11:47:49.093 WARNING: Position: 61,58 :: 128,227
+- 11:47:49.093 WARNING: 200,200 | 2,2
+- 11:47:49.093 WARNING: 200,260 | 100,25
+- 11:47:49.093 WARNING: 200,230 | 2,2
+- 11:47:49.261 WARNING: Position: 61,58 :: 135,230
+- 11:47:49.261 WARNING: 200,200 | 2,2
+- 11:47:49.261 WARNING: 200,260 | 100,25
+- 11:47:49.261 WARNING: 200,230 | 2,2
+- 11:47:49.528 WARNING: Position: 61,58 :: 254,257
+- 11:47:49.528 WARNING: 200,200 | 2,2
+- 11:47:49.528 WARNING: 200,260 | 100,25
+- 11:47:49.528 WARNING: 200,230 | 2,2
+- 11:47:49.696 WARNING: Position: 61,58 :: 255,257
+- 11:47:49.696 WARNING: 200,200 | 2,2
+- 11:47:49.696 WARNING: 200,260 | 100,25
+- 11:47:49.696 WARNING: 200,230 | 2,2
+- 11:47:49.846 WARNING: Position: 61,58 :: 256,257
+- 11:47:49.846 WARNING: 200,200 | 2,2
+- 11:47:49.846 WARNING: 200,260 | 100,25
+- 11:47:49.846 WARNING: 200,230 | 2,2
+- 11:47:49.980 WARNING: Position: 61,58 :: 275,251
+- 11:47:49.980 WARNING: 200,200 | 2,2
+- 11:47:49.980 WARNING: 200,260 | 100,25
+- 11:47:49.980 WARNING: 200,230 | 2,2
+- 11:47:51.184 DEBUG: Destroyed Game Engine.
+- 11:48:21.400 INFO: Loaded texture: starfield.png
+- 11:48:21.400 INFO: Loaded font: sansation.ttf
+- 11:48:21.410 DEBUG: Initialised Game Engine.
+- 11:48:22.109 WARNING: Position: 61,58 :: 183,202
+- 11:48:22.109 WARNING: 200,200 | 2,2
+- 11:48:22.110 WARNING: 200,260 | 100,25
+- 11:48:22.110 WARNING: 200,230 | 2,2
+- 11:48:22.444 WARNING: Position: 61,58 :: 219,222
+- 11:48:22.445 WARNING: 200,200 | 2,2
+- 11:48:22.445 WARNING: 200,260 | 100,25
+- 11:48:22.445 WARNING: 200,230 | 2,2
+- 11:48:22.646 WARNING: Position: 61,58 :: 236,227
+- 11:48:22.646 WARNING: 200,200 | 2,2
+- 11:48:22.646 WARNING: 200,260 | 100,25
+- 11:48:22.646 WARNING: 200,230 | 2,2
+- 11:48:22.814 WARNING: Position: 61,58 :: 238,229
+- 11:48:22.814 WARNING: 200,200 | 2,2
+- 11:48:22.814 WARNING: 200,260 | 100,25
+- 11:48:22.815 WARNING: 200,230 | 2,2
+- 11:48:22.999 WARNING: Position: 61,58 :: 235,234
+- 11:48:22.999 WARNING: 200,200 | 2,2
+- 11:48:22.999 WARNING: 200,260 | 100,25
+- 11:48:22.999 WARNING: 200,230 | 2,2
+- 11:48:23.184 WARNING: Position: 61,58 :: 226,240
+- 11:48:23.184 WARNING: 200,200 | 2,2
+- 11:48:23.184 WARNING: 200,260 | 100,25
+- 11:48:23.184 WARNING: 200,230 | 2,2
+- 11:48:23.419 WARNING: Position: 61,58 :: 238,264
+- 11:48:23.419 WARNING: 200,200 | 2,2
+- 11:48:23.419 WARNING: 200,260 | 100,25
+- 11:48:23.419 WARNING: BUTTON PRESSED!
+- 11:48:25.380 INFO: Loaded texture: starfield.png
+- 11:48:25.380 INFO: Loaded font: sansation.ttf
+- 11:48:25.390 DEBUG: Initialised Game Engine.
+- 11:48:26.013 WARNING: Position: 61,58 :: 248,247
+- 11:48:26.013 WARNING: 200,200 | 2,2
+- 11:48:26.014 WARNING: 200,260 | 100,25
+- 11:48:26.014 WARNING: 200,230 | 2,2
+- 11:48:26.197 WARNING: Position: 61,58 :: 248,247
+- 11:48:26.197 WARNING: 200,200 | 2,2
+- 11:48:26.197 WARNING: 200,260 | 100,25
+- 11:48:26.198 WARNING: 200,230 | 2,2
+- 11:48:26.532 WARNING: Position: 61,58 :: 248,247
+- 11:48:26.532 WARNING: 200,200 | 2,2
+- 11:48:26.532 WARNING: 200,260 | 100,25
+- 11:48:26.532 WARNING: 200,230 | 2,2
+- 11:48:26.700 WARNING: Position: 61,58 :: 248,247
+- 11:48:26.700 WARNING: 200,200 | 2,2
+- 11:48:26.700 WARNING: 200,260 | 100,25
+- 11:48:26.700 WARNING: 200,230 | 2,2
+- 11:48:26.967 WARNING: Position: 61,58 :: 247,248
+- 11:48:26.967 WARNING: 200,200 | 2,2
+- 11:48:26.967 WARNING: 200,260 | 100,25
+- 11:48:26.967 WARNING: 200,230 | 2,2
+- 11:48:27.135 WARNING: Position: 61,58 :: 247,248
+- 11:48:27.135 WARNING: 200,200 | 2,2
+- 11:48:27.135 WARNING: 200,260 | 100,25
+- 11:48:27.135 WARNING: 200,230 | 2,2
+- 11:48:28.055 DEBUG: Destroyed Game Engine.
+- 11:54:43.245 INFO: Loaded texture: starfield.png
+- 11:54:43.245 INFO: Loaded font: sansation.ttf
+- 11:54:43.253 DEBUG: Initialised Game Engine.
+- 11:54:44.238 WARNING: Position: 61,58 :: 219,262
+- 11:54:44.238 WARNING: 200,200 | 2,2
+- 11:54:44.238 WARNING: 200,260 | 100,25
+- 11:54:44.238 WARNING: BUTTON PRESSED!
+- 11:56:48.568 INFO: Loaded texture: starfield.png
+- 11:56:48.568 INFO: Loaded font: sansation.ttf
+- 11:56:48.580 DEBUG: Initialised Game Engine.
+- 11:56:49.396 WARNING: Position: 61,58 :: 258,218
+- 11:56:49.396 WARNING: 200,200 | 2,2
+- 11:56:49.396 WARNING: 200,260 | 100,25
+- 11:56:49.396 WARNING: 200,230 | 2,2
+- 11:56:49.581 WARNING: Position: 61,58 :: 250,216
+- 11:56:49.582 WARNING: 200,200 | 2,2
+- 11:56:49.582 WARNING: 200,260 | 100,25
+- 11:56:49.582 WARNING: 200,230 | 2,2
+- 11:56:49.749 WARNING: Position: 61,58 :: 226,225
+- 11:56:49.749 WARNING: 200,200 | 2,2
+- 11:56:49.749 WARNING: 200,260 | 100,25
+- 11:56:49.749 WARNING: 200,230 | 2,2
+- 11:56:49.900 WARNING: Position: 61,58 :: 217,229
+- 11:56:49.900 WARNING: 200,200 | 2,2
+- 11:56:49.900 WARNING: 200,260 | 100,25
+- 11:56:49.900 WARNING: 200,230 | 2,2
+- 11:56:50.051 WARNING: Position: 61,58 :: 217,229
+- 11:56:50.051 WARNING: 200,200 | 2,2
+- 11:56:50.052 WARNING: 200,260 | 100,25
+- 11:56:50.052 WARNING: 200,230 | 2,2
+- 11:56:50.219 WARNING: Position: 61,58 :: 219,228
+- 11:56:50.220 WARNING: 200,200 | 2,2
+- 11:56:50.220 WARNING: 200,260 | 100,25
+- 11:56:50.220 WARNING: 200,230 | 2,2
+- 11:56:50.387 WARNING: Position: 61,58 :: 292,252
+- 11:56:50.387 WARNING: 200,200 | 2,2
+- 11:56:50.387 WARNING: 200,260 | 100,25
+- 11:56:50.387 WARNING: 200,230 | 2,2
+- 11:56:50.521 WARNING: Position: 61,58 :: 310,252
+- 11:56:50.521 WARNING: 200,200 | 2,2
+- 11:56:50.521 WARNING: 200,260 | 100,25
+- 11:56:50.521 WARNING: 200,230 | 2,2
+- 11:56:50.706 WARNING: Position: 61,58 :: 206,213
+- 11:56:50.706 WARNING: 200,200 | 2,2
+- 11:56:50.706 WARNING: 200,260 | 100,25
+- 11:56:50.706 WARNING: 200,230 | 2,2
+- 11:56:50.890 WARNING: Position: 61,58 :: 195,190
+- 11:56:50.890 WARNING: 200,200 | 2,2
+- 11:56:50.891 WARNING: 200,260 | 100,25
+- 11:56:50.891 WARNING: 200,230 | 2,2
+- 11:56:51.058 WARNING: Position: 61,58 :: 261,186
+- 11:56:51.058 WARNING: 200,200 | 2,2
+- 11:56:51.058 WARNING: 200,260 | 100,25
+- 11:56:51.058 WARNING: 200,230 | 2,2
+- 11:56:51.226 WARNING: Position: 61,58 :: 300,204
+- 11:56:51.226 WARNING: 200,200 | 2,2
+- 11:56:51.226 WARNING: 200,260 | 100,25
+- 11:56:51.226 WARNING: 200,230 | 2,2
+- 11:56:51.411 WARNING: Position: 61,58 :: 283,217
+- 11:56:51.411 WARNING: 200,200 | 2,2
+- 11:56:51.411 WARNING: 200,260 | 100,25
+- 11:56:51.411 WARNING: 200,230 | 2,2
+- 11:56:51.578 WARNING: Position: 61,58 :: 223,219
+- 11:56:51.578 WARNING: 200,200 | 2,2
+- 11:56:51.578 WARNING: 200,260 | 100,25
+- 11:56:51.578 WARNING: 200,230 | 2,2
+- 11:56:51.763 WARNING: Position: 61,58 :: 179,221
+- 11:56:51.763 WARNING: 200,200 | 2,2
+- 11:56:51.763 WARNING: 200,260 | 100,25
+- 11:56:51.763 WARNING: 200,230 | 2,2
+- 11:56:51.930 WARNING: Position: 61,58 :: 177,219
+- 11:56:51.931 WARNING: 200,200 | 2,2
+- 11:56:51.931 WARNING: 200,260 | 100,25
+- 11:56:51.931 WARNING: 200,230 | 2,2
+- 11:56:52.132 WARNING: Position: 61,58 :: 242,193
+- 11:56:52.132 WARNING: 200,200 | 2,2
+- 11:56:52.132 WARNING: 200,260 | 100,25
+- 11:56:52.132 WARNING: 200,230 | 2,2
+- 11:56:52.333 WARNING: Position: 61,58 :: 296,206
+- 11:56:52.333 WARNING: 200,200 | 2,2
+- 11:56:52.333 WARNING: 200,260 | 100,25
+- 11:56:52.333 WARNING: 200,230 | 2,2
+- 11:56:52.500 WARNING: Position: 61,58 :: 266,246
+- 11:56:52.500 WARNING: 200,200 | 2,2
+- 11:56:52.500 WARNING: 200,260 | 100,25
+- 11:56:52.500 WARNING: 200,230 | 2,2
+- 11:56:52.667 WARNING: Position: 61,58 :: 182,220
+- 11:56:52.667 WARNING: 200,200 | 2,2
+- 11:56:52.667 WARNING: 200,260 | 100,25
+- 11:56:52.667 WARNING: 200,230 | 2,2
+- 11:56:52.835 WARNING: Position: 61,58 :: 202,190
+- 11:56:52.835 WARNING: 200,200 | 2,2
+- 11:56:52.835 WARNING: 200,260 | 100,25
+- 11:56:52.835 WARNING: 200,230 | 2,2
+- 11:56:52.002 WARNING: Position: 61,58 :: 272,216
+- 11:56:52.003 WARNING: 200,200 | 2,2
+- 11:56:52.003 WARNING: 200,260 | 100,25
+- 11:56:52.003 WARNING: 200,230 | 2,2
+- 11:56:53.136 WARNING: Position: 61,58 :: 272,216
+- 11:56:53.136 WARNING: 200,200 | 2,2
+- 11:56:53.136 WARNING: 200,260 | 100,25
+- 11:56:53.136 WARNING: 200,230 | 2,2
+- 11:56:53.972 DEBUG: Destroyed Game Engine.
+- 11:58:37.289 INFO: Loaded texture: starfield.png
+- 11:58:37.289 INFO: Loaded font: sansation.ttf
+- 11:58:37.297 DEBUG: Initialised Game Engine.
+- 11:58:39.211 WARNING: Position: 61,58 :: 201,240
+- 11:58:39.211 WARNING: 200,200 | 2,2
+- 11:58:39.211 WARNING: 200,260 | 100,25
+- 11:58:39.212 WARNING: 200,230 | 2,2
+- 11:58:39.396 WARNING: Position: 61,58 :: 201,240
+- 11:58:39.396 WARNING: 200,200 | 2,2
+- 11:58:39.396 WARNING: 200,260 | 100,25
+- 11:58:39.396 WARNING: 200,230 | 2,2
+- 11:58:39.530 WARNING: Position: 61,58 :: 201,240
+- 11:58:39.530 WARNING: 200,200 | 2,2
+- 11:58:39.531 WARNING: 200,260 | 100,25
+- 11:58:39.531 WARNING: 200,230 | 2,2
+- 11:58:39.682 WARNING: Position: 61,58 :: 201,240
+- 11:58:39.682 WARNING: 200,200 | 2,2
+- 11:58:39.682 WARNING: 200,260 | 100,25
+- 11:58:39.682 WARNING: 200,230 | 2,2
+- 11:58:39.832 WARNING: Position: 61,58 :: 201,240
+- 11:58:39.833 WARNING: 200,200 | 2,2
+- 11:58:39.833 WARNING: 200,260 | 100,25
+- 11:58:39.833 WARNING: 200,230 | 2,2
+- 11:58:39.966 WARNING: Position: 61,58 :: 201,240
+- 11:58:39.967 WARNING: 200,200 | 2,2
+- 11:58:39.967 WARNING: 200,260 | 100,25
+- 11:58:39.967 WARNING: 200,230 | 2,2
+- 11:58:40.836 DEBUG: Destroyed Game Engine.
+- 11:59:38.528 INFO: Loaded texture: starfield.png
+- 11:59:38.528 INFO: Loaded font: sansation.ttf
+- 11:59:38.543 DEBUG: Initialised Game Engine.
+- 11:59:40.365 WARNING: Position: 61,58 :: 200,238
+- 11:59:40.365 WARNING: 200,200 | 2,2
+- 11:59:40.365 WARNING: 200,260 | 100,25
+- 11:59:40.365 WARNING: 200,230 | 2,2
+- 11:59:40.539 WARNING: Position: 61,58 :: 201,238
+- 11:59:40.539 WARNING: 200,200 | 2,2
+- 11:59:40.539 WARNING: 200,260 | 100,25
+- 11:59:40.539 WARNING: 200,230 | 2,2
+- 11:59:40.690 WARNING: Position: 61,58 :: 201,238
+- 11:59:40.690 WARNING: 200,200 | 2,2
+- 11:59:40.690 WARNING: 200,260 | 100,25
+- 11:59:40.690 WARNING: 200,230 | 2,2
+- 11:59:40.841 WARNING: Position: 61,58 :: 201,239
+- 11:59:40.841 WARNING: 200,200 | 2,2
+- 11:59:40.841 WARNING: 200,260 | 100,25
+- 11:59:40.842 WARNING: 200,230 | 2,2
+- 11:59:42.065 WARNING: Position: 61,58 :: 300,260
+- 11:59:42.065 WARNING: 200,200 | 2,2
+- 11:59:42.065 WARNING: 200,260 | 100,25
+- 11:59:42.065 WARNING: 200,230 | 2,2
+- 11:59:42.232 WARNING: Position: 61,58 :: 300,260
+- 11:59:42.232 WARNING: 200,200 | 2,2
+- 11:59:42.232 WARNING: 200,260 | 100,25
+- 11:59:42.232 WARNING: 200,230 | 2,2
+- 11:59:42.366 WARNING: Position: 61,58 :: 300,260
+- 11:59:42.366 WARNING: 200,200 | 2,2
+- 11:59:42.366 WARNING: 200,260 | 100,25
+- 11:59:42.366 WARNING: 200,230 | 2,2
+- 11:59:42.500 WARNING: Position: 61,58 :: 300,260
+- 11:59:42.500 WARNING: 200,200 | 2,2
+- 11:59:42.500 WARNING: 200,260 | 100,25
+- 11:59:42.500 WARNING: 200,230 | 2,2
+- 11:59:43.956 DEBUG: Destroyed Game Engine.
+- 12:02:18.370 INFO: Loaded texture: starfield.png
+- 12:02:18.370 INFO: Loaded font: sansation.ttf
+- 12:02:18.386 DEBUG: Initialised Game Engine.
+- 12:02:19.251 WARNING: Position: 61,58 :: 239,248
+- 12:02:19.252 WARNING: 200,200 | 2,2
+- 12:02:19.252 WARNING: 200,260 | 100,25
+- 12:02:19.252 WARNING: 200,230 | 2,2
+- 12:02:19.729 WARNING: Position: 61,58 :: 207,253
+- 12:02:19.729 WARNING: 200,200 | 2,2
+- 12:02:19.729 WARNING: 200,260 | 100,25
+- 12:02:19.729 WARNING: 200,230 | 2,2
+- 12:02:19.914 WARNING: Position: 61,58 :: 207,253
+- 12:02:19.914 WARNING: 200,200 | 2,2
+- 12:02:19.914 WARNING: 200,260 | 100,25
+- 12:02:19.914 WARNING: 200,230 | 2,2
+- 12:02:20.165 WARNING: Position: 61,58 :: 254,287
+- 12:02:20.165 WARNING: 200,200 | 2,2
+- 12:02:20.165 WARNING: 200,260 | 100,25
+- 12:02:20.165 WARNING: 200,230 | 2,2
+- 12:02:20.367 WARNING: Position: 61,58 :: 253,290
+- 12:02:20.367 WARNING: 200,200 | 2,2
+- 12:02:20.367 WARNING: 200,260 | 100,25
+- 12:02:20.367 WARNING: 200,230 | 2,2
+- 12:02:20.551 WARNING: Position: 61,58 :: 216,249
+- 12:02:20.551 WARNING: 200,200 | 2,2
+- 12:02:20.551 WARNING: 200,260 | 100,25
+- 12:02:20.551 WARNING: 200,230 | 2,2
+- 12:02:20.736 WARNING: Position: 61,58 :: 207,239
+- 12:02:20.736 WARNING: 200,200 | 2,2
+- 12:02:20.736 WARNING: 200,260 | 100,25
+- 12:02:20.736 WARNING: 200,230 | 2,2
+- 12:02:20.904 WARNING: Position: 61,58 :: 218,221
+- 12:02:20.904 WARNING: 200,200 | 2,2
+- 12:02:20.904 WARNING: 200,260 | 100,25
+- 12:02:20.904 WARNING: 200,230 | 2,2
+- 12:02:21.089 WARNING: Position: 61,58 :: 236,194
+- 12:02:21.089 WARNING: 200,200 | 2,2
+- 12:02:21.089 WARNING: 200,260 | 100,25
+- 12:02:21.089 WARNING: 200,230 | 2,2
+- 12:02:21.256 WARNING: Position: 61,58 :: 221,179
+- 12:02:21.256 WARNING: 200,200 | 2,2
+- 12:02:21.257 WARNING: 200,260 | 100,25
+- 12:02:21.257 WARNING: 200,230 | 2,2
+- 12:02:21.441 WARNING: Position: 61,58 :: 185,136
+- 12:02:21.441 WARNING: 200,200 | 2,2
+- 12:02:21.441 WARNING: 200,260 | 100,25
+- 12:02:21.441 WARNING: 200,230 | 2,2
+- 12:02:21.642 WARNING: Position: 61,58 :: 162,215
+- 12:02:21.642 WARNING: 200,200 | 2,2
+- 12:02:21.642 WARNING: 200,260 | 100,25
+- 12:02:21.642 WARNING: 200,230 | 2,2
+- 12:02:21.826 WARNING: Position: 61,58 :: 155,259
+- 12:02:21.826 WARNING: 200,200 | 2,2
+- 12:02:21.826 WARNING: 200,260 | 100,25
+- 12:02:21.826 WARNING: 200,230 | 2,2
+- 12:02:21.993 WARNING: Position: 61,58 :: 202,292
+- 12:02:21.993 WARNING: 200,200 | 2,2
+- 12:02:21.993 WARNING: 200,260 | 100,25
+- 12:02:21.993 WARNING: 200,230 | 2,2
+- 12:02:22.161 WARNING: Position: 61,58 :: 271,298
+- 12:02:22.161 WARNING: 200,200 | 2,2
+- 12:02:22.161 WARNING: 200,260 | 100,25
+- 12:02:22.161 WARNING: 200,230 | 2,2
+- 12:02:22.345 WARNING: Position: 61,58 :: 284,260
+- 12:02:22.345 WARNING: 200,200 | 2,2
+- 12:02:22.345 WARNING: 200,260 | 100,25
+- 12:02:22.345 WARNING: BUTTON PRESSED!
+- 12:02:58.562 INFO: Loaded texture: starfield.png
+- 12:02:58.563 INFO: Loaded font: sansation.ttf
+- 12:02:58.575 DEBUG: Initialised Game Engine.
+- 12:03:00.403 WARNING: Position: 61,58 :: 201,239
+- 12:03:00.403 WARNING: 200,200 | 2,2
+- 12:03:00.403 WARNING: 200,260 | 100,25
+- 12:03:00.403 WARNING: 200,230 | 2,2
+- 12:03:01.943 WARNING: Position: 61,58 :: 298,239
+- 12:03:01.943 WARNING: 200,200 | 2,2
+- 12:03:01.943 WARNING: 200,260 | 100,25
+- 12:03:01.943 WARNING: 200,230 | 2,2
+- 12:03:03.048 WARNING: Position: 61,58 :: 299,258
+- 12:03:03.048 WARNING: 200,200 | 2,2
+- 12:03:03.049 WARNING: 200,260 | 100,25
+- 12:03:03.049 WARNING: 200,230 | 2,2
+- 12:03:04.237 WARNING: Position: 61,58 :: 204,261
+- 12:03:04.237 WARNING: 200,200 | 2,2
+- 12:03:04.237 WARNING: 200,260 | 100,25
+- 12:03:04.237 WARNING: BUTTON PRESSED!
+- 12:04:20.576 INFO: Loaded texture: starfield.png
+- 12:04:20.576 INFO: Loaded font: sansation.ttf
+- 12:04:20.586 DEBUG: Initialised Game Engine.
+- 12:04:21.471 WARNING: Position: 61,58 :: 260,251
+- 12:04:21.471 WARNING: 200,200 | 2,2
+- 12:04:21.471 WARNING: 200,260 | 100,25
+- 12:04:21.471 WARNING: BUTTON PRESSED!

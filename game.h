@@ -31,6 +31,7 @@
 #include "inputmanager.h"
 #include "assetmanager.h"
 #include "guimanager.h"
+#include "camera.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
@@ -40,9 +41,11 @@ class Game
   std::tr1::shared_ptr<GuiManager> guiManager;
   InputManager inputManager;
   AssetManager assetManager;
+  Camera camera;
   sf::RenderWindow* window;
   sf::View* view;
-
+  sf::FloatRect originRect;
+   
 public:
   Game() { }
   void Initialise(sf::RenderWindow* window, sf::View* view);
@@ -50,7 +53,10 @@ public:
   void Update(float dt);
   void Destroy();
   AssetManager* GetAssetManager();
+  GuiManager* GetGuiManager();
   sf::RenderWindow* GetWindow();
+  sf::View* GetView();
+  Camera* GetCamera();
   Game(const Game& other) { }
 virtual ~Game() { }
 };

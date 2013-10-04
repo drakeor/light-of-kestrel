@@ -176,6 +176,78 @@ assetmanager.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/assetmanager.cpp.s
 .PHONY : assetmanager.cpp.s
 
+camera.o: camera.cpp.o
+.PHONY : camera.o
+
+# target to build an object file
+camera.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/camera.cpp.o
+.PHONY : camera.cpp.o
+
+camera.i: camera.cpp.i
+.PHONY : camera.i
+
+# target to preprocess a source file
+camera.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/camera.cpp.i
+.PHONY : camera.cpp.i
+
+camera.s: camera.cpp.s
+.PHONY : camera.s
+
+# target to generate assembly for a file
+camera.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/camera.cpp.s
+.PHONY : camera.cpp.s
+
+events/eventhandler.o: events/eventhandler.cpp.o
+.PHONY : events/eventhandler.o
+
+# target to build an object file
+events/eventhandler.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o
+.PHONY : events/eventhandler.cpp.o
+
+events/eventhandler.i: events/eventhandler.cpp.i
+.PHONY : events/eventhandler.i
+
+# target to preprocess a source file
+events/eventhandler.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.i
+.PHONY : events/eventhandler.cpp.i
+
+events/eventhandler.s: events/eventhandler.cpp.s
+.PHONY : events/eventhandler.s
+
+# target to generate assembly for a file
+events/eventhandler.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.s
+.PHONY : events/eventhandler.cpp.s
+
+events/eventlistener.o: events/eventlistener.cpp.o
+.PHONY : events/eventlistener.o
+
+# target to build an object file
+events/eventlistener.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o
+.PHONY : events/eventlistener.cpp.o
+
+events/eventlistener.i: events/eventlistener.cpp.i
+.PHONY : events/eventlistener.i
+
+# target to preprocess a source file
+events/eventlistener.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.i
+.PHONY : events/eventlistener.cpp.i
+
+events/eventlistener.s: events/eventlistener.cpp.s
+.PHONY : events/eventlistener.s
+
+# target to generate assembly for a file
+events/eventlistener.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.s
+.PHONY : events/eventlistener.cpp.s
+
 game.o: game.cpp.o
 .PHONY : game.o
 
@@ -223,6 +295,30 @@ gui/basecontrol.s: gui/basecontrol.cpp.s
 gui/basecontrol.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.s
 .PHONY : gui/basecontrol.cpp.s
+
+gui/button.o: gui/button.cpp.o
+.PHONY : gui/button.o
+
+# target to build an object file
+gui/button.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/button.cpp.o
+.PHONY : gui/button.cpp.o
+
+gui/button.i: gui/button.cpp.i
+.PHONY : gui/button.i
+
+# target to preprocess a source file
+gui/button.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/button.cpp.i
+.PHONY : gui/button.cpp.i
+
+gui/button.s: gui/button.cpp.s
+.PHONY : gui/button.s
+
+# target to generate assembly for a file
+gui/button.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/button.cpp.s
+.PHONY : gui/button.cpp.s
 
 gui/guimanager.o: gui/guimanager.cpp.o
 .PHONY : gui/guimanager.o
@@ -408,12 +504,24 @@ help:
 	@echo "... assetmanager.o"
 	@echo "... assetmanager.i"
 	@echo "... assetmanager.s"
+	@echo "... camera.o"
+	@echo "... camera.i"
+	@echo "... camera.s"
+	@echo "... events/eventhandler.o"
+	@echo "... events/eventhandler.i"
+	@echo "... events/eventhandler.s"
+	@echo "... events/eventlistener.o"
+	@echo "... events/eventlistener.i"
+	@echo "... events/eventlistener.s"
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
 	@echo "... gui/basecontrol.o"
 	@echo "... gui/basecontrol.i"
 	@echo "... gui/basecontrol.s"
+	@echo "... gui/button.o"
+	@echo "... gui/button.i"
+	@echo "... gui/button.s"
 	@echo "... gui/guimanager.o"
 	@echo "... gui/guimanager.i"
 	@echo "... gui/guimanager.s"

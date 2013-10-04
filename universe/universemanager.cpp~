@@ -28,7 +28,7 @@
 
 UniverseManager::UniverseManager(Game* target_game) {
   game = target_game;
-  Galaxy myGalaxy = new Galaxy(game);
+  Galaxy* myGalaxy = new Galaxy(game);
   currentGalaxy = myGalaxy;
   galaxy.push_back(new Galaxy(game));
 }

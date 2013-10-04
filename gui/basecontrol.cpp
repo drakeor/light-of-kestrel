@@ -32,11 +32,17 @@ BaseControl::BaseControl(Game* game)
 {
   this->game = game;
   this->parent = nullptr;
+  absoluteSize = false;
   absolutePosition = false;
+  this->size.x = 2;
+  this->size.y = 2;
+  this->internalSize = size;
+  //game->GetGuiManager()->AddControlToPool(this);
 }
 
 BaseControl::~BaseControl()
 {
+  //game->GetGuiManager()->RemoveControlFromPool(this);
   for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
   {
     delete (*it).second;
@@ -87,7 +93,7 @@ sf::Vector2f BaseControl::GetPosition()
   return position;
 }
 
-sf::Vector2i BaseControl::GetSize()
+sf::Vector2f BaseControl::GetSize()
 {
   return size;
 }
@@ -96,7 +102,7 @@ void BaseControl::SetSize(float x, float y, bool absolute)
 {
   internalSize = sf::Vector2f(x, y);
   absoluteSize = absolute;
-  
+
   UpdatePosition();
 }
 
@@ -119,6 +125,9 @@ void BaseControl::UpdatePosition()
     }
   }
   
+  // TODO: Set size based on absolute and relative
+  size = internalSize;
+  
   // Notify our children
   for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
   {
@@ -140,4 +149,20 @@ void BaseControl::SetParent(BaseControl* parent)
 {
   this->parent = parent;
 }
+
+void BaseControl::CheckOnMouseClick(float x, float y)
+{
+  for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
+  {
+    sf::Rect<float> controlContainer = sf::Rect<float>((*it).second->GetPosition().x, (*it).second->GetPosition().y, 
+						       (*it).second->GetSize().x, (*it).second->GetSize().y);
+    FILE_LOG(logWARNING) << controlContainer.left << "," << controlContainer.top << " | " << controlContainer.width << "," << controlContainer.height;
+    if(controlContainer.contains(x, y)) {
+      (*it).second->OnClick.Trigger();
+      FILE_LOG(logWARNING) << "CONTROL BUTTON PRESSED!";
+    }
+    (*it).second->CheckOnMouseClick(x, y);
+  }
+}
+
 

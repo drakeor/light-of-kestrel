@@ -25,20 +25,44 @@
 
 #include "guimanager.h"
 #include "textlabel.h"
+#include "button.h"
+#include "../log.h"
+#include "../game.h"
 #include <memory>
+#include <SFML/Window/Mouse.hpp>
+
+class exListener : public EventListener
+{
+public:
+  exListener() {}
+  virtual ~exListener() {}
+  void OnEvent(EventHandler* handler) {
+    FILE_LOG(logWARNING) << "BUTTON PRESSED!";
+    exit(1);
+  }
+};
 
 GuiManager::GuiManager(Game* game)
 {
   this->game = game;
   rootNode = std::unique_ptr<BaseControl>( new BaseControl(game) );
+  
   TextLabel* textLabel = new TextLabel(game);
   textLabel->SetPosition(0.50, 0.50, false);
   rootNode.get()->AddControl("TestLabel", textLabel);
+  
   TextLabel* newTextLabel = new TextLabel(game);
   textLabel->AddControl("NestedLabel", newTextLabel);
   newTextLabel->SetPosition(0, 30);
   
+  Button* newButton = new Button(game);
+  textLabel->AddControl("Commit Button", newButton);
+  newButton->SetPosition(0, 60);
+  
   textLabel->SetPosition(200, 200);
+  
+  tempListener = std::unique_ptr<EventListener>( new exListener() );
+  newButton->OnClick.AddListener(tempListener.get());
 }
 
 
@@ -59,6 +83,29 @@ void GuiManager::Render()
 
 void GuiManager::Update(float dt)
 {
+  // Get mouse clicks and toggle events for them
+  
   rootNode.get()->Update(dt);
 }
+
+void GuiManager::HandleMouseClick()
+{
+  //float mouseX = sf::Mouse::getPosition(*(sf::Window*)(game->GetWindow())).x;
+  //float mouseY = sf::Mouse::getPosition(*(sf::Window*)(game->GetWindow())).y;
+  //rootNode.get()->CheckOnMouseClick(mouseX, mouseY);
+  //sf::Vector2i viewVec = sf::Vector2i(game->GetWindow()->getViewport().top, game->GetWindow()->getViewport().left);
+  //sf::Vector2i mouseVec = sf::Mouse::getPosition() - viewVec;
+  
+  sf::Vector2i calibrationVec = sf::Vector2i(0, 20);
+  sf::Vector2i mouseVec = sf::Mouse::getPosition((*game->GetWindow()));
+  FILE_LOG(logWARNING) << "Position: " << game->GetWindow()->getPosition().x << "," << game->GetWindow()->getPosition().y
+    << " :: " << mouseVec.x << "," << mouseVec.y;
+  
+  // TODO: The calibrationVec is a temporary fix to the accurate gui clicking problem. It probably won't work on other platforms...
+    // The offset seems to be a constant 20 on the y-axis.
+    mouseVec = mouseVec + calibrationVec;
+    
+  rootNode.get()->CheckOnMouseClick(mouseVec.x, mouseVec.y);
+}
+
 

@@ -57,6 +57,8 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+	    if (event.type == sf::Event::MouseButtonReleased)
+	      game->GetGuiManager()->HandleMouseClick();
         }
 	game->Update(0.016f);
         window.clear();

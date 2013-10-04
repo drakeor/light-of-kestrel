@@ -48,9 +48,5 @@ void UniverseManager::Update(float dt) {
 }
 
 void UniverseManager::Render() {
-  /*
-  for(std::vector<Galaxy*>::iterator it = galaxy.begin(); it != galaxy.end(); ++it) {
-    (*it)->Render();
-  } */
   currentGalaxy->Render();
 }
