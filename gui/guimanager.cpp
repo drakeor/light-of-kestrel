@@ -26,6 +26,7 @@
 #include "guimanager.h"
 #include "textlabel.h"
 #include "button.h"
+#include "slider.h"
 #include "../log.h"
 #include "../game.h"
 #include <memory>
@@ -58,6 +59,10 @@ GuiManager::GuiManager(Game* game)
   Button* newButton = new Button(game);
   textLabel->AddControl("Commit Button", newButton);
   newButton->SetPosition(0, 60);
+  
+  Slider* newSlider = new Slider(game);
+  textLabel->AddControl("TestSlider", newSlider);
+  newSlider->SetPosition(0, 90);
   
   textLabel->SetPosition(200, 200);
   

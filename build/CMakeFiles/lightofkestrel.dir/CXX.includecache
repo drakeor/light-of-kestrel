@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../gui/guimanager.h
+string
+-
+memory
+-
+list
+-
+basecontrol.h
+../gui/basecontrol.h
+
 ../universe/entity.h
 SFML/Graphics/Sprite.hpp
 -
@@ -86,43 +96,19 @@ string
 ../events/eventhandler.h
 /home/drakeor/LightOfKestrel/gui/../events/eventhandler.h
 
-/home/drakeor/LightOfKestrel/gui/button.h
-../../home/drakeor/LightOfKestrel/gui/basecontrol.h
--
-SFML/Graphics/RectangleShape.hpp
--
-SFML/Graphics/Text.hpp
--
-
-/home/drakeor/LightOfKestrel/gui/guimanager.cpp
-guimanager.h
-/home/drakeor/LightOfKestrel/gui/guimanager.h
-textlabel.h
-/home/drakeor/LightOfKestrel/gui/textlabel.h
-button.h
-/home/drakeor/LightOfKestrel/gui/button.h
-../log.h
-/home/drakeor/LightOfKestrel/gui/../log.h
+/home/drakeor/LightOfKestrel/gui/slider.cpp
+slider.h
+/home/drakeor/LightOfKestrel/gui/slider.h
 ../game.h
 /home/drakeor/LightOfKestrel/gui/../game.h
-memory
--
+../log.h
+/home/drakeor/LightOfKestrel/gui/../log.h
 SFML/Window/Mouse.hpp
 -
 
-/home/drakeor/LightOfKestrel/gui/guimanager.h
-string
--
-memory
--
-list
--
+/home/drakeor/LightOfKestrel/gui/slider.h
 basecontrol.h
 /home/drakeor/LightOfKestrel/gui/basecontrol.h
-
-/home/drakeor/LightOfKestrel/gui/textlabel.h
-basecontrol.h
-/home/drakeor/LightOfKestrel/gui/basecontrol.h
-SFML/Graphics/Text.hpp
+SFML/Graphics/RectangleShape.hpp
 -
 

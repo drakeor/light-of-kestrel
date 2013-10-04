@@ -344,6 +344,30 @@ gui/guimanager.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.s
 .PHONY : gui/guimanager.cpp.s
 
+gui/slider.o: gui/slider.cpp.o
+.PHONY : gui/slider.o
+
+# target to build an object file
+gui/slider.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o
+.PHONY : gui/slider.cpp.o
+
+gui/slider.i: gui/slider.cpp.i
+.PHONY : gui/slider.i
+
+# target to preprocess a source file
+gui/slider.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/slider.cpp.i
+.PHONY : gui/slider.cpp.i
+
+gui/slider.s: gui/slider.cpp.s
+.PHONY : gui/slider.s
+
+# target to generate assembly for a file
+gui/slider.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/slider.cpp.s
+.PHONY : gui/slider.cpp.s
+
 gui/textlabel.o: gui/textlabel.cpp.o
 .PHONY : gui/textlabel.o
 
@@ -525,6 +549,9 @@ help:
 	@echo "... gui/guimanager.o"
 	@echo "... gui/guimanager.i"
 	@echo "... gui/guimanager.s"
+	@echo "... gui/slider.o"
+	@echo "... gui/slider.i"
+	@echo "... gui/slider.s"
 	@echo "... gui/textlabel.o"
 	@echo "... gui/textlabel.i"
 	@echo "... gui/textlabel.s"

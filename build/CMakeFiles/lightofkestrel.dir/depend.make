@@ -81,7 +81,23 @@ CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/button.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/guimanager.cpp
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/slider.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/textlabel.h
+
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../camera.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../game.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/../log.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/basecontrol.h
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/slider.cpp
+CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/slider.h
 
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../universe/entity.h

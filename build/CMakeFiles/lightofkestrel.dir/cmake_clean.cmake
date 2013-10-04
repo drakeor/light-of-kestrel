@@ -1,4 +1,5 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o"
   "CMakeFiles/lightofkestrel.dir/gui/button.cpp.o"
   "CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o"
   "CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o"

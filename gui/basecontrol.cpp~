@@ -156,7 +156,7 @@ void BaseControl::CheckOnMouseClick(float x, float y)
   {
     sf::Rect<float> controlContainer = sf::Rect<float>((*it).second->GetPosition().x, (*it).second->GetPosition().y, 
 						       (*it).second->GetSize().x, (*it).second->GetSize().y);
-    FILE_LOG(logWARNING) << controlContainer.left << controlContainer.top << " | " << controlContainer.width << "," << controlContainer.height;
+    FILE_LOG(logWARNING) << controlContainer.left << "," << controlContainer.top << " | " << controlContainer.width << "," << controlContainer.height;
     if(controlContainer.contains(x, y)) {
       (*it).second->OnClick.Trigger();
       FILE_LOG(logWARNING) << "CONTROL BUTTON PRESSED!";
