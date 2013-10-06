@@ -6,4 +6,4 @@ cd ..
 rm -rf *.h~
 rm -rf *.cpp~
 git add *
-git commit -m '$git_msg'
+git commit -m "$git_msg"
