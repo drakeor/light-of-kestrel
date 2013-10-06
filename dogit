@@ -1,0 +1,9 @@
+echo "Type in the git commit message: "
+read git_msg
+cd build;
+make -j4 clean;
+cd ..
+rm -rf *.h~
+rm -rf *.cpp~
+git add *
+git commit -m '$git_msg'
