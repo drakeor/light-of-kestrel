@@ -23,45 +23,29 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#include "myplayercontroller.h"
+#include "../game.h"
 
-#ifndef GAME_H
-#define GAME_H
+MyPlayerController::MyPlayerController(Game* game) :
+  BaseController(game)
+{
+  this->hasPlayer = false;
+}
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include "camera.h"
-#include "controllers/controllermanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
+void MyPlayerController::Render()
+{
+  
+  BaseController::Render();
+}
 
-class Game
-{  
-  std::unique_ptr<UniverseManager> universeManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  std::unique_ptr<ControllerManager> controllerManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  Camera camera;
-  sf::RenderWindow* window;
-  sf::View* view;
-  sf::FloatRect originRect;
-   
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window, sf::View* view);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  GuiManager* GetGuiManager();
-  ControllerManager* GetControllerManager();
-  sf::RenderWindow* GetWindow();
-  sf::View* GetView();
-  Camera* GetCamera();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
+void MyPlayerController::Update(float dt)
+{
+  
+  BaseController::Update(dt);
+}
 
-#endif // GAME_H
+void MyPlayerController::ResetPlayer()
+{
+
+}
+

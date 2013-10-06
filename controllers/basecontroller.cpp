@@ -23,45 +23,27 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#include "basecontroller.h"
+#include "../game.h"
 
-#ifndef GAME_H
-#define GAME_H
+BaseController::BaseController(Game* game)
+{
+  this->game = game;
+}
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include "camera.h"
-#include "controllers/controllermanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
+BaseController::~BaseController()
+{
 
-class Game
-{  
-  std::unique_ptr<UniverseManager> universeManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  std::unique_ptr<ControllerManager> controllerManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  Camera camera;
-  sf::RenderWindow* window;
-  sf::View* view;
-  sf::FloatRect originRect;
-   
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window, sf::View* view);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  GuiManager* GetGuiManager();
-  ControllerManager* GetControllerManager();
-  sf::RenderWindow* GetWindow();
-  sf::View* GetView();
-  Camera* GetCamera();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
+}
 
-#endif // GAME_H
+void BaseController::Render()
+{
+
+}
+
+void BaseController::Update(float dt)
+{
+
+}
+
+

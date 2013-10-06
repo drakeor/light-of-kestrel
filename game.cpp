@@ -27,14 +27,24 @@
 
 #include "game.h"
 #include "log.h"
+#include "controllers/myplayercontroller.h"
+#include "controllers/worldcontroller.h"
 
 void Game::Initialise(sf::RenderWindow* window, sf::View* view)
 {
+  // Start up everything
   this->window = window;
   this->view = view;
   camera = Camera(this, view->getViewport());
   universeManager = std::unique_ptr<UniverseManager>( new UniverseManager(this) );
   guiManager = std::tr1::shared_ptr<GuiManager>( new GuiManager(this) );
+  controllerManager = std::unique_ptr<ControllerManager>( new ControllerManager(this) );
+  
+  // Add our controllers
+  controllerManager.get()->AddController("WorldController", new WorldController(this));
+  controllerManager.get()->AddController("PlayerController", new MyPlayerController(this));
+  
+  // State the game is now started up.
   FILE_LOG(logDEBUG) <<  "Initialised Game Engine.";
 }
 
@@ -43,12 +53,14 @@ void Game::Render()
   camera.PreRender();
   universeManager->Render();
   camera.PostRender();
+  controllerManager.get()->Render();
   guiManager.get()->Render();
 }
 
 void Game::Update(float dt)
 {
   universeManager->Update(dt);
+  controllerManager.get()->Update(dt);
   guiManager.get()->Update(dt);
 }
 
@@ -82,5 +94,14 @@ GuiManager* Game::GetGuiManager()
   return guiManager.get();
 }
 
+ControllerManager* Game::GetControllerManager()
+{
+  return controllerManager.get();
+}
+
+UniverseManager* Game::GetUniverseManager()
+{
+  return universeManager.get();
+}
 
 

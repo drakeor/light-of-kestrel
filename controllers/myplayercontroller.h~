@@ -23,45 +23,23 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef MYPLAYERCONTROLLER_H
+#define MYPLAYERCONTROLLER_H
 
-#ifndef GAME_H
-#define GAME_H
+#include "basecontroller.h"
+#include <entity.h>
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include "camera.h"
-#include "controllers/controllermanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
+class Game;
 
-class Game
-{  
-  std::unique_ptr<UniverseManager> universeManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  std::unique_ptr<ControllerManager> controllerManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  Camera camera;
-  sf::RenderWindow* window;
-  sf::View* view;
-  sf::FloatRect originRect;
-   
+class MyPlayerController : public BaseController
+{
+  bool hasPlayer;
+  Entity* myPlayer;
 public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window, sf::View* view);
-  void Render();
+  MyPlayerController(Game* game);
   void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  GuiManager* GetGuiManager();
-  ControllerManager* GetControllerManager();
-  sf::RenderWindow* GetWindow();
-  sf::View* GetView();
-  Camera* GetCamera();
-  Game(const Game& other) { }
-virtual ~Game() { }
+  void Render();
+  void ResetPlayer();
 };
 
-#endif // GAME_H
+#endif // MYPLAYERCONTROLLER_H

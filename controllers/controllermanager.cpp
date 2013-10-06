@@ -23,45 +23,49 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#include "controllermanager.h"
+#include "basecontroller.h"
+#include "../game.h"
 
-#ifndef GAME_H
-#define GAME_H
+ControllerManager::ControllerManager(Game* game)
+{
+  this->game = game;
+}
 
-#include "universemanager.h"
-#include "inputmanager.h"
-#include "assetmanager.h"
-#include "guimanager.h"
-#include "camera.h"
-#include "controllers/controllermanager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
+ControllerManager::~ControllerManager()
+{
+  for(std::map<std::string, BaseController*>::iterator it = controllers.begin(); it != controllers.end(); ++it)
+  {
+    delete (*it).second;
+  }
+  controllers.clear();
+}
 
-class Game
-{  
-  std::unique_ptr<UniverseManager> universeManager;
-  std::tr1::shared_ptr<GuiManager> guiManager;
-  std::unique_ptr<ControllerManager> controllerManager;
-  InputManager inputManager;
-  AssetManager assetManager;
-  Camera camera;
-  sf::RenderWindow* window;
-  sf::View* view;
-  sf::FloatRect originRect;
-   
-public:
-  Game() { }
-  void Initialise(sf::RenderWindow* window, sf::View* view);
-  void Render();
-  void Update(float dt);
-  void Destroy();
-  AssetManager* GetAssetManager();
-  GuiManager* GetGuiManager();
-  ControllerManager* GetControllerManager();
-  sf::RenderWindow* GetWindow();
-  sf::View* GetView();
-  Camera* GetCamera();
-  Game(const Game& other) { }
-virtual ~Game() { }
-};
+void ControllerManager::AddController(std::string name, BaseController* controller)
+{
+  controllers[name] = controller;
+}
 
-#endif // GAME_H
+BaseController* ControllerManager::GetController(std::string name)
+{
+  if(controllers.find(name) != controllers.end())
+    return controllers[name];
+  return nullptr;
+}
+
+void ControllerManager::Render()
+{
+  for(std::map<std::string, BaseController*>::iterator it = controllers.begin(); it != controllers.end(); ++it)
+  {
+    (*it).second->Render();
+  }
+}
+
+void ControllerManager::Update(float dt)
+{
+  for(std::map<std::string, BaseController*>::iterator it = controllers.begin(); it != controllers.end(); ++it)
+  {
+    (*it).second->Update(dt);
+  }
+}
+

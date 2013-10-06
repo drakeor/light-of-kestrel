@@ -28,6 +28,7 @@
 
 UniverseManager::UniverseManager(Game* target_game) {
   game = target_game;
+  // The universemanager should not ever have less then one galaxy. We need to create the first galaxy and assign it to our current one.s
   Galaxy* myGalaxy = new Galaxy(game);
   currentGalaxy = myGalaxy;
   galaxy.push_back(new Galaxy(game));
@@ -50,3 +51,9 @@ void UniverseManager::Update(float dt) {
 void UniverseManager::Render() {
   currentGalaxy->Render();
 }
+
+Galaxy* UniverseManager::GetCurrentGalaxy()
+{
+  return currentGalaxy;
+}
+

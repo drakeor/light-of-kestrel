@@ -41,8 +41,9 @@ public:
   void Initialise();
   void Update(float dt);
   void Render();
+  Galaxy* GetCurrentGalaxy();
   UniverseManager(const UniverseManager& other);
-virtual ~UniverseManager();
+  virtual ~UniverseManager();
 };
 
 #endif // UNIVERSEMANAGER_H

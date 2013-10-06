@@ -32,6 +32,7 @@
 #include "assetmanager.h"
 #include "guimanager.h"
 #include "camera.h"
+#include "controllers/controllermanager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
@@ -39,6 +40,7 @@ class Game
 {  
   std::unique_ptr<UniverseManager> universeManager;
   std::tr1::shared_ptr<GuiManager> guiManager;
+  std::unique_ptr<ControllerManager> controllerManager;
   InputManager inputManager;
   AssetManager assetManager;
   Camera camera;
@@ -54,6 +56,8 @@ public:
   void Destroy();
   AssetManager* GetAssetManager();
   GuiManager* GetGuiManager();
+  ControllerManager* GetControllerManager();
+  UniverseManager* GetUniverseManager();
   sf::RenderWindow* GetWindow();
   sf::View* GetView();
   Camera* GetCamera();

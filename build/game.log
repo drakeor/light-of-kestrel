@@ -709,3 +709,9 @@
 - 15:50:57.809 WARNING: Position: 61,58 :: 242,282
 - 15:50:58.329 WARNING: Position: 61,58 :: 264,247
 - 15:50:58.329 WARNING: BUTTON PRESSED!
+- 14:19:25.409 INFO: Loaded texture: starfield.png
+- 14:19:25.409 INFO: Loaded font: sansation.ttf
+- 14:19:25.425 DEBUG: Initialised Game Engine.
+- 14:19:26.777 WARNING: Position: 61,58 :: 202,285
+- 14:19:27.414 WARNING: Position: 61,58 :: 360,285
+- 14:19:28.400 DEBUG: Destroyed Game Engine.

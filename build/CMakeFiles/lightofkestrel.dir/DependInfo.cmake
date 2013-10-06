@@ -6,6 +6,10 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/drakeor/LightOfKestrel/assetmanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o"
   "/home/drakeor/LightOfKestrel/camera.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/camera.cpp.o"
+  "/home/drakeor/LightOfKestrel/controllers/basecontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o"
+  "/home/drakeor/LightOfKestrel/controllers/controllermanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o"
+  "/home/drakeor/LightOfKestrel/controllers/myplayercontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o"
+  "/home/drakeor/LightOfKestrel/controllers/worldcontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o"
   "/home/drakeor/LightOfKestrel/events/eventhandler.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o"
   "/home/drakeor/LightOfKestrel/events/eventlistener.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o"
   "/home/drakeor/LightOfKestrel/game.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/game.cpp.o"

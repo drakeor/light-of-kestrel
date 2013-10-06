@@ -200,6 +200,102 @@ camera.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
+controllers/basecontroller.o: controllers/basecontroller.cpp.o
+.PHONY : controllers/basecontroller.o
+
+# target to build an object file
+controllers/basecontroller.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
+.PHONY : controllers/basecontroller.cpp.o
+
+controllers/basecontroller.i: controllers/basecontroller.cpp.i
+.PHONY : controllers/basecontroller.i
+
+# target to preprocess a source file
+controllers/basecontroller.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.i
+.PHONY : controllers/basecontroller.cpp.i
+
+controllers/basecontroller.s: controllers/basecontroller.cpp.s
+.PHONY : controllers/basecontroller.s
+
+# target to generate assembly for a file
+controllers/basecontroller.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.s
+.PHONY : controllers/basecontroller.cpp.s
+
+controllers/controllermanager.o: controllers/controllermanager.cpp.o
+.PHONY : controllers/controllermanager.o
+
+# target to build an object file
+controllers/controllermanager.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o
+.PHONY : controllers/controllermanager.cpp.o
+
+controllers/controllermanager.i: controllers/controllermanager.cpp.i
+.PHONY : controllers/controllermanager.i
+
+# target to preprocess a source file
+controllers/controllermanager.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.i
+.PHONY : controllers/controllermanager.cpp.i
+
+controllers/controllermanager.s: controllers/controllermanager.cpp.s
+.PHONY : controllers/controllermanager.s
+
+# target to generate assembly for a file
+controllers/controllermanager.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.s
+.PHONY : controllers/controllermanager.cpp.s
+
+controllers/myplayercontroller.o: controllers/myplayercontroller.cpp.o
+.PHONY : controllers/myplayercontroller.o
+
+# target to build an object file
+controllers/myplayercontroller.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
+.PHONY : controllers/myplayercontroller.cpp.o
+
+controllers/myplayercontroller.i: controllers/myplayercontroller.cpp.i
+.PHONY : controllers/myplayercontroller.i
+
+# target to preprocess a source file
+controllers/myplayercontroller.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.i
+.PHONY : controllers/myplayercontroller.cpp.i
+
+controllers/myplayercontroller.s: controllers/myplayercontroller.cpp.s
+.PHONY : controllers/myplayercontroller.s
+
+# target to generate assembly for a file
+controllers/myplayercontroller.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.s
+.PHONY : controllers/myplayercontroller.cpp.s
+
+controllers/worldcontroller.o: controllers/worldcontroller.cpp.o
+.PHONY : controllers/worldcontroller.o
+
+# target to build an object file
+controllers/worldcontroller.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o
+.PHONY : controllers/worldcontroller.cpp.o
+
+controllers/worldcontroller.i: controllers/worldcontroller.cpp.i
+.PHONY : controllers/worldcontroller.i
+
+# target to preprocess a source file
+controllers/worldcontroller.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.i
+.PHONY : controllers/worldcontroller.cpp.i
+
+controllers/worldcontroller.s: controllers/worldcontroller.cpp.s
+.PHONY : controllers/worldcontroller.s
+
+# target to generate assembly for a file
+controllers/worldcontroller.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.s
+.PHONY : controllers/worldcontroller.cpp.s
+
 events/eventhandler.o: events/eventhandler.cpp.o
 .PHONY : events/eventhandler.o
 
@@ -531,6 +627,18 @@ help:
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
+	@echo "... controllers/basecontroller.o"
+	@echo "... controllers/basecontroller.i"
+	@echo "... controllers/basecontroller.s"
+	@echo "... controllers/controllermanager.o"
+	@echo "... controllers/controllermanager.i"
+	@echo "... controllers/controllermanager.s"
+	@echo "... controllers/myplayercontroller.o"
+	@echo "... controllers/myplayercontroller.i"
+	@echo "... controllers/myplayercontroller.s"
+	@echo "... controllers/worldcontroller.o"
+	@echo "... controllers/worldcontroller.i"
+	@echo "... controllers/worldcontroller.s"
 	@echo "... events/eventhandler.o"
 	@echo "... events/eventhandler.i"
 	@echo "... events/eventhandler.s"
