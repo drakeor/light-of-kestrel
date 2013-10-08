@@ -23,31 +23,50 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef GALAXY_H
-#define GALAXY_H
-#include <vector>
-#include "entity.h"
+#ifndef ENTITY_H
+#define ENTITY_H
+#include <SFML/Graphics/Sprite.hpp>
+#include <tr1/memory>
 
 class Game;
 
-class Galaxy
+class Entity
 {
-  sf::Sprite backgroundImage;
-  std::vector<Entity*> entity;
+  //Beginnen Variables
+  sf::Sprite texture;
   Game* game;
-  float currentTime;
-  int currentFrame;
-  const float maxTime = 2.0f;
-  const float frameTime = (1/60);
-  void Iterate(float dt);
+  
+  // Physiks Variables.
+  // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
+  sf::Vector2f position;
+  float velocityMagnitude;
+  float currentRotation;
+  
+  // Simulation Variables
+  float startThrust;
+  float startRotation;
+  float targetThrust;
+  float targetRotation;
+  float deltaThrust;
+  float deltaRotation;
+  float frameTime;
+  float maxTime;
+  
 public:
-  Galaxy(Game* game);
-  void AddEntity(Entity* entity);
-  void Render();
+  Entity(Game* game);
+  void Initialise();
   void Update(float dt);
-  void CommitTurn();
-  Galaxy(const Galaxy& other);
-  virtual ~Galaxy();
+  void Render();
+  void Iterate(float frameTime, float maxTime);
+  void CommitTurn(f);
+  void SetPosition(float x, float y);
+  void SetTargetVelocity(float target);
+  void SetTargetRotation(float target);
+  sf::Vector2f GetCurrentPosition();
+  float GetCurrentVelocity();
+  float GetCurrentRotation();
+  virtual ~Entity();
+
 };
 
-#endif // GALAXY_H
+#endif // ENTITY_H

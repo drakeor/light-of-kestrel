@@ -30,11 +30,10 @@
 Galaxy::Galaxy(Game* game)
 {
   this->game = game;
-  AddEntity(new Entity(game));
+ // AddEntity(new Entity(game));
   sf::Texture* rawrTexture = game->GetAssetManager()->GetTexture("starfield.png");
   rawrTexture->setRepeated(true);
   backgroundImage.setTexture(*rawrTexture);
-  
 }
 
 Galaxy::Galaxy(const Galaxy& other)
@@ -55,13 +54,21 @@ void Galaxy::Render() {
 }
 
 void Galaxy::Update(float dt) {
+ // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Update(dt);
-  } 
+    if(currentTime < maxTime)
+      (*it)->Iterate(dt);
+  }
+  if(currentTime < maxTime)
+    currentTime += dt;
 }
 
 void Galaxy::CommitTurn() {
-
+  currentTime = 0;
+  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    (*it)->CommitTurn(frameTime, maxTime);
+  }
 }
 
 void Galaxy::AddEntity(Entity* m_entity)

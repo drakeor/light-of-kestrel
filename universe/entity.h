@@ -32,13 +32,39 @@ class Game;
 
 class Entity
 {
+  //Beginnen Variables
   sf::Sprite texture;
   Game* game;
+  
+  // Physiks Variables.
+  // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
+  sf::Vector2f position;
+  float velocityMagnitude;
+  float currentRotation;
+  
+  // Simulation Variables
+  float startThrust;
+  float startRotation;
+  float targetThrust;
+  float targetRotation;
+  float deltaThrust;
+  float deltaRotation;
+  float frameTime;
+  float maxTime;
+  
 public:
   Entity(Game* game);
   void Initialise();
   void Update(float dt);
   void Render();
+  void Iterate(float dt);
+  void CommitTurn(float frameTime, float maxTime);
+  void SetPosition(float x, float y);
+  void SetTargetVelocity(float target);
+  void SetTargetRotation(float target);
+  sf::Vector2f GetCurrentPosition();
+  float GetCurrentVelocity();
+  float GetCurrentRotation();
   virtual ~Entity();
 
 };

@@ -35,7 +35,10 @@ class Galaxy
   sf::Sprite backgroundImage;
   std::vector<Entity*> entity;
   Game* game;
-  
+  float currentTime;
+  const float maxTime = 2.0f;
+  const float frameTime = (1/60);
+  void Iterate(float dt);
 public:
   Galaxy(Game* game);
   void AddEntity(Entity* entity);

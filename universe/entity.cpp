@@ -50,6 +50,51 @@ void Entity::Update(float dt) {
 }
 
 void Entity::Render() {
+  texture.setPosition(position);
+  texture.setRotation(currentRotation);
   this->game->GetWindow()->draw(texture);
 }
+
+void Entity::CommitTurn(float frameTime, float maxTime)
+{
+  this->frameTime = frameTime;
+  this->maxTime = maxTime;
+  startRotation = currentRotation;
+  startThrust = velocityMagnitude;
+  deltaThrust = (targetThrust - startThrust) / maxTime;
+  deltaRotation = (targetRotation - startRotation) / maxTime;
+}
+
+void Entity::Iterate(float dt) {
+  // Update positions and rotations.
+  velocityMagnitude += deltaThrust * dt;
+  currentRotation += deltaRotation * dt;
+  position = sf::Vector2f(position.x + (cos(currentRotation)*velocityMagnitude),
+			  position.y + (sin(currentRotation)*velocityMagnitude));
+}
+
+sf::Vector2f Entity::GetCurrentPosition() {
+  return position;
+}
+
+float Entity::GetCurrentRotation() {
+  return currentRotation;
+}
+
+float Entity::GetCurrentVelocity() {
+  return velocityMagnitude;
+}
+
+void Entity::SetPosition(float x, float y) {
+  position = sf::Vector2f(x, y);
+}
+
+void Entity::SetTargetRotation(float target) {
+  currentRotation = target;
+}
+
+void Entity::SetTargetVelocity(float target) {
+  velocityMagnitude = target;
+}
+
 

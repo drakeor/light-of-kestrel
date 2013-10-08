@@ -60,6 +60,9 @@ int main()
 	    if (event.type == sf::Event::MouseButtonReleased)
 	      game->GetGuiManager()->HandleMouseClick();
         }
+        // We're locking the game to 60fps.
+        // If it goes too slowly, then the simulation will move slowly.
+        // This would be stupid to do in a realtime game.
 	game->Update(0.016f);
         window.clear();
 	game->Render();
