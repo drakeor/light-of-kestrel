@@ -1,6 +1,7 @@
 echo "Type in the git commit message: "
 read git_msg
 cd build;
+rm game.log
 make -j4 clean;
 cd ..
 rm -rf *.h~

@@ -31,7 +31,7 @@ UniverseManager::UniverseManager(Game* target_game) {
   // The universemanager should not ever have less then one galaxy. We need to create the first galaxy and assign it to our current one.s
   Galaxy* myGalaxy = new Galaxy(game);
   currentGalaxy = myGalaxy;
-  galaxy.push_back(new Galaxy(game));
+  galaxy.push_back(myGalaxy);
 }
 
 UniverseManager::UniverseManager(const UniverseManager& other) {
@@ -55,5 +55,11 @@ void UniverseManager::Render() {
 Galaxy* UniverseManager::GetCurrentGalaxy()
 {
   return currentGalaxy;
+}
+
+void UniverseManager::ChangeGalaxy(Galaxy* galaxy)
+{
+  currentGalaxy = galaxy;
+  OnGalaxyChange.Trigger();
 }
 

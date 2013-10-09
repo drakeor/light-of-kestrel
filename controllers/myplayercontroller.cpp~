@@ -25,11 +25,98 @@
 
 #include "myplayercontroller.h"
 #include "../game.h"
+#include "../log.h"
+#include <slider.h>
+#include <button.h>
+
+/*
+ * This event listener is toggled whenever the player presses the commit button.
+ * This listener will actually do all the work regarding committing the player's decisions
+ * to the system
+ */
+class CommitListener : public EventListener
+{
+  UniverseManager* universe;
+  MyPlayerController* playerController;
+public:
+  CommitListener(MyPlayerController* playerController, UniverseManager* universe) { 
+    this->universe = universe;
+    this->playerController = playerController;
+  }
+  virtual ~CommitListener() {}
+  void OnEvent(EventHandler* handler) {
+    FILE_LOG(logWARNING) << "Turn button commited!!";
+    float finalAngle = ((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->GetFillPercentage();
+    finalAngle = finalAngle * 6.28;
+    float finalVelocity = ((Slider*)playerController->GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
+    finalVelocity = finalVelocity * 100;
+    playerController->GetPlayer()->SetTargetRotation(finalAngle);
+    playerController->GetPlayer()->SetTargetVelocity(finalVelocity);
+    universe->GetCurrentGalaxy()->CommitTurn();
+  }
+};
+
+/*
+ * This listener will handler the destruction and recreation of the player whenever the current galaxy changes.
+ * Other ships will have their AI protocols or whatever do this for them
+ */
+class GalaxyChangeListener : public EventListener
+{
+  UniverseManager* universe;
+  MyPlayerController* playerController;
+public:
+  GalaxyChangeListener(MyPlayerController* playerController, UniverseManager* universe) { 
+    this->universe = universe;
+    this->playerController = playerController;
+  }
+  virtual ~GalaxyChangeListener() {}
+  void OnEvent(EventHandler* handler) {
+      // TODO: Recreate player.
+  }
+};
 
 MyPlayerController::MyPlayerController(Game* game) :
   BaseController(game)
 {
-  this->hasPlayer = false;
+  this->hasPlayer = true;
+  this->myPlayer = new Entity(game);
+  myPlayer->SetPosition(100, 100);
+  game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
+  
+  commitListener = std::unique_ptr<EventListener>( new CommitListener(this, game->GetUniverseManager()) );
+  galaxyChangeListener = std::unique_ptr<EventListener>( new GalaxyChangeListener(this, game->GetUniverseManager()) );
+  game->GetUniverseManager()->OnGalaxyChange.AddListener(galaxyChangeListener.get());
+  
+  // Add the player control and corresponding gui elements
+  playerControls = new BaseControl(game);
+  playerControls->SetPosition(300, 500);
+  
+  Slider* thrustSlider = new Slider(game);
+  thrustSlider->SetSize(100, 25);
+  playerControls->AddControl("ThrustControl", thrustSlider);
+  
+  Slider* directionSlider = new Slider(game);
+  directionSlider->SetSize(100, 25);
+  directionSlider->SetPosition(0, 30);
+  playerControls->AddControl("DirectionControl", directionSlider);
+  
+  Button* commitButton = new Button(game);
+  commitButton->SetPosition(0, 60);
+  commitButton->OnClick.AddListener(commitListener.get());
+  playerControls->AddControl("CommitButton", commitButton);
+  
+  ResetGui();
+}
+
+void MyPlayerController::ResetGui()
+{
+  UnsetGui();
+  game->GetGuiManager()->GetRootNode()->AddControl("PlayerControl", playerControls);
+}
+
+void MyPlayerController::UnsetGui()
+{
+  game->GetGuiManager()->GetRootNode()->RemoveControl("PlayerControl");
 }
 
 void MyPlayerController::Render()
@@ -46,9 +133,17 @@ void MyPlayerController::Update(float dt)
 
 void MyPlayerController::ResetPlayer()
 {
-  if(this->hasPlayer) {
-    
-  }
-  this->myPlayer = game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(new Entity(game));
+
 }
+
+Entity* MyPlayerController::GetPlayer()
+{
+  return myPlayer;
+}
+
+BaseControl* MyPlayerController::GetControl()
+{
+  return playerControls;
+}
+
 

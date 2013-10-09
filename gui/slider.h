@@ -42,6 +42,7 @@ public:
   virtual void Update(float dt);
   virtual void Render();
   virtual void CheckOnMouseClick(float x, float y);
+  float GetFillPercentage();
 };
 
 #endif // SLIDER_H

@@ -33,6 +33,7 @@ class Slider : public BaseControl
 {
   int minValue;
   int maxValue;
+  bool isHorizontal;
   float fillPercentage;
   sf::RectangleShape rect;
 public:

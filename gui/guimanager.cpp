@@ -47,27 +47,6 @@ GuiManager::GuiManager(Game* game)
 {
   this->game = game;
   rootNode = std::unique_ptr<BaseControl>( new BaseControl(game) );
-  
-  TextLabel* textLabel = new TextLabel(game);
-  textLabel->SetPosition(0.50, 0.50, false);
-  rootNode.get()->AddControl("TestLabel", textLabel);
-  
-  TextLabel* newTextLabel = new TextLabel(game);
-  textLabel->AddControl("NestedLabel", newTextLabel);
-  newTextLabel->SetPosition(0, 30);
-  
-  Button* newButton = new Button(game);
-  textLabel->AddControl("Commit Button", newButton);
-  newButton->SetPosition(0, 60);
-  
-  Slider* newSlider = new Slider(game);
-  textLabel->AddControl("TestSlider", newSlider);
-  newSlider->SetPosition(0, 90);
-  
-  textLabel->SetPosition(200, 200);
-  
-  tempListener = std::unique_ptr<EventListener>( new exListener() );
-  newButton->OnClick.AddListener(tempListener.get());
 }
 
 

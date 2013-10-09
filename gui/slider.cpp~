@@ -44,8 +44,8 @@ void Slider::Update(float dt)
   sf::Vector2i calibrationVec = sf::Vector2i(0, 20);
   // If it corresponds to our control, we want to capture it.
   if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-    float x = sf::Mouse::getPosition((*game->GetWindow())).x;
-    float y = sf::Mouse::getPosition((*game->GetWindow())).y;
+    float x = sf::Mouse::getPosition((*game->GetWindow())).x + calibrationVec.x;
+    float y = sf::Mouse::getPosition((*game->GetWindow())).y + calibrationVec.y;
     sf::Rect<float> controlContainer = sf::Rect<float>(GetPosition().x, GetPosition().y, GetSize().x, GetSize().y);
     if(controlContainer.contains(x, y)) {
       sf::Vector2f relativeClick = sf::Vector2f((x - GetPosition().x)/GetSize().x, (y - GetPosition().y)/GetSize().y);

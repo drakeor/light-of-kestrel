@@ -40,7 +40,10 @@ sf::Texture* AssetManager::GetTexture(std::string textureName)
 {
   if(texture.find(textureName) == texture.end()) {
     texture[textureName] = sf::Texture();
-    texture[textureName].loadFromFile(textureName);
+    if(!(texture[textureName].loadFromFile(textureName)))
+    {
+      FILE_LOG(logERROR) << "Failed to load texture: " << textureName;
+    }
     FILE_LOG(logINFO) << "Loaded texture: " << textureName;
   }
   

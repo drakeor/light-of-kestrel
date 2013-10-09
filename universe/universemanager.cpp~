@@ -51,3 +51,15 @@ void UniverseManager::Update(float dt) {
 void UniverseManager::Render() {
   currentGalaxy->Render();
 }
+
+Galaxy* UniverseManager::GetCurrentGalaxy()
+{
+  return currentGalaxy;
+}
+
+void UniverseManager::ChangeGalaxy(Galaxy* galaxy)
+{
+  currentGalaxy = galaxy;
+  OnGalaxyChange.Trigger();
+}
+

@@ -5,10 +5,10 @@ CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o: ../assetmanager.cpp
 CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o: ../assetmanager.h
 CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o: ../log.h
 
-CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../universe/universemanager.h
@@ -20,6 +20,18 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../controllers/controllermanager.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../game.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../inputmanager.h
 
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../gui/basecontrol.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../universe/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/../camera.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/../controllers/controllermanager.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/../game.h
+CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/../inputmanager.h
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/basecontroller.cpp
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/basecontroller.h
 
@@ -29,7 +41,9 @@ CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controller
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/../events/eventhandler.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/basecontrol.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/button.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/slider.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/universemanager.h
@@ -38,14 +52,15 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controlle
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/../controllers/controllermanager.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/../game.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/../log.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/myplayercontroller.cpp
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/myplayercontroller.h
 
-CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../universe/universemanager.h
@@ -65,10 +80,10 @@ CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o: ../events/eventlistener
 CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o: ../events/eventlistener.cpp
 CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o: ../events/eventlistener.h
 
-CMakeFiles/lightofkestrel.dir/game.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/game.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/game.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/game.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../universe/universemanager.h
@@ -99,10 +114,10 @@ CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/../log.h
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/basecontrol.cpp
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/basecontrol.h
 
-CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../universe/universemanager.h
@@ -171,10 +186,10 @@ CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/textlabel.h
 CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o: ../inputmanager.cpp
 CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o: ../inputmanager.h
 
-CMakeFiles/lightofkestrel.dir/main.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/main.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/main.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/main.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../universe/universemanager.h
@@ -187,10 +202,10 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o: ../inputmanager.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../log.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../main.cpp
 
-CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/universemanager.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../assetmanager.h
@@ -203,10 +218,10 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../log.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.h
 
-CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/universemanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../assetmanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../camera.h
@@ -219,6 +234,8 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/galaxy.cpp
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/galaxy.h
 
+CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: ../universe/../log.h
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: ../universe/galaxy.h

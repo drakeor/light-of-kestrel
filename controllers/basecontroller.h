@@ -30,6 +30,7 @@ class Game;
 
 class BaseController
 {
+protected:
   Game* game;
 public:
   BaseController(Game* game);

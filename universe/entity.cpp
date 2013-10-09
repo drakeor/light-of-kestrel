@@ -42,7 +42,7 @@ void Entity::Initialise() {
   sf::Texture* tempTex = game->GetAssetManager()->GetTexture("dragon.png");
   texture = sf::Sprite(*tempTex);
   texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-  texture.setPosition(500, 300);
+  texture.setPosition(200, 100);
 }
 
 void Entity::Update(float dt) {
@@ -51,7 +51,7 @@ void Entity::Update(float dt) {
 
 void Entity::Render() {
   texture.setPosition(position);
-  texture.setRotation(currentRotation);
+  texture.setRotation(currentRotation*57.3);
   this->game->GetWindow()->draw(texture);
 }
 
@@ -63,6 +63,7 @@ void Entity::CommitTurn(float frameTime, float maxTime)
   startThrust = velocityMagnitude;
   deltaThrust = (targetThrust - startThrust) / maxTime;
   deltaRotation = (targetRotation - startRotation) / maxTime;
+  
 }
 
 void Entity::Iterate(float dt) {
@@ -71,6 +72,7 @@ void Entity::Iterate(float dt) {
   currentRotation += deltaRotation * dt;
   position = sf::Vector2f(position.x + (cos(currentRotation)*velocityMagnitude),
 			  position.y + (sin(currentRotation)*velocityMagnitude));
+  FILE_LOG(logWARNING) << "ITERATION Position " << velocityMagnitude << "||" << deltaThrust << "||" << targetThrust << "||" << dt;
 }
 
 sf::Vector2f Entity::GetCurrentPosition() {
@@ -90,11 +92,11 @@ void Entity::SetPosition(float x, float y) {
 }
 
 void Entity::SetTargetRotation(float target) {
-  currentRotation = target;
+  targetRotation = target;
 }
 
 void Entity::SetTargetVelocity(float target) {
-  velocityMagnitude = target;
+  targetThrust = target;
 }
 
 

@@ -28,6 +28,7 @@
 
 #include "basecontroller.h"
 #include <entity.h>
+#include <basecontrol.h>
 
 class Game;
 
@@ -35,11 +36,17 @@ class MyPlayerController : public BaseController
 {
   bool hasPlayer;
   Entity* myPlayer;
+  BaseControl* playerControls;
+  std::unique_ptr<EventListener> commitListener;
+  std::unique_ptr<EventListener> galaxyChangeListener;
 public:
   MyPlayerController(Game* game);
   void Update(float dt);
   void Render();
   void ResetPlayer();
+  void ResetGui();
+  void UnsetGui();
+  Entity* GetPlayer();
 };
 
 #endif // MYPLAYERCONTROLLER_H

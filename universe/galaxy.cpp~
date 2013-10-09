@@ -57,6 +57,7 @@ void Galaxy::Update(float dt) {
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Update(dt);
+    FILE_LOG(logWARNING) << "HAHAHAHAH";
     if(currentTime < maxTime)
       (*it)->Iterate(dt);
   }

@@ -27,6 +27,7 @@
 #define UNIVERSEMANAGER_H
 #include <vector>
 #include "galaxy.h"
+#include "../events/eventhandler.h"
 
 class Game;
 
@@ -41,9 +42,11 @@ public:
   void Initialise();
   void Update(float dt);
   void Render();
+  void ChangeGalaxy(Galaxy* galaxy);
   Galaxy* GetCurrentGalaxy();
   UniverseManager(const UniverseManager& other);
   virtual ~UniverseManager();
+  EventHandler OnGalaxyChange;
 };
 
 #endif // UNIVERSEMANAGER_H

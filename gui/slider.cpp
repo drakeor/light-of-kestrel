@@ -83,3 +83,8 @@ void Slider::SetValue(int min, int max)
   this->maxValue = max;
 }
 
+float Slider::GetFillPercentage()
+{
+  return fillPercentage;
+}
+

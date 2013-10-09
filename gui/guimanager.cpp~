@@ -61,7 +61,7 @@ GuiManager::GuiManager(Game* game)
   newButton->SetPosition(0, 60);
   
   Slider* newSlider = new Slider(game);
-  textLabel.AddControl("TestSlider", newSlider);
+  textLabel->AddControl("TestSlider", newSlider);
   newSlider->SetPosition(0, 90);
   
   textLabel->SetPosition(200, 200);
