@@ -41,6 +41,7 @@ class MyPlayerController : public BaseController
   std::unique_ptr<EventListener> galaxyChangeListener;
 public:
   MyPlayerController(Game* game);
+  void SpawnPlayer();
   void Update(float dt);
   void Render();
   void ResetPlayer();

@@ -52,11 +52,17 @@ void Entity::Update(float dt) {
     position = sf::Vector2f(0, 0);
     FILE_LOG(logERROR) << "Entity has NaN position!!";
   }
+  if(isnan(currentRotation)) {
+    currentRotation = 0.1f;
+    FILE_LOG(logERROR) << "Entity has NaN rotation!!";
+  }
 }
 
 void Entity::Render() {
+  float realRotation = currentRotation*57.3;
+  realRotation = abs(fmod(realRotation, 360.0f));
   texture.setPosition(position);
-  texture.setRotation(currentRotation*57.3);
+  texture.setRotation(realRotation);
   this->game->GetWindow()->draw(texture);
 }
 
@@ -106,6 +112,7 @@ void Entity::SetPosition(float x, float y) {
 }
 
 void Entity::SetTargetRotation(float target) {
+  // Hacky way.
   targetRotation = target;
 }
 

@@ -47,6 +47,7 @@ public:
   void ResetGui();
   void UnsetGui();
   Entity* GetPlayer();
+  BaseControl* GetControl();
 };
 
 #endif // MYPLAYERCONTROLLER_H
