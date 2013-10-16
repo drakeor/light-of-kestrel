@@ -45,6 +45,7 @@ protected:
   bool absoluteSize;
   std::map<std::string, BaseControl*> controls;
   BaseControl* parent;
+  bool isEnabled;
   
 public:
   BaseControl(Game* game);
@@ -54,6 +55,7 @@ public:
   void RemoveControl(std::string controlName);
   void SetParent(BaseControl* parent);
   void SetPosition(float x, float y, bool absolute = true);
+  void SetEnabled(bool enabled);
   sf::Vector2f GetPosition();
   virtual void UpdatePosition();
   virtual void SetSize(float x, float y, bool absolute = true);

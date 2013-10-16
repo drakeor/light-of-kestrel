@@ -79,11 +79,6 @@ sf::RenderWindow* Game::GetWindow()
   return window;
 }
 
-sf::View* Game::GetView()
-{
-  return view;
-}
-
 Camera* Game::GetCamera()
 {
   return &camera;

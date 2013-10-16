@@ -102,6 +102,7 @@ MyPlayerController::MyPlayerController(Game* game) :
   
   Button* commitButton = new Button(game);
   commitButton->SetPosition(0, 60);
+  commitButton->SetEnabled(false);
   commitButton->OnClick.AddListener(commitListener.get());
   playerControls->AddControl("CommitButton", commitButton);
   
@@ -112,6 +113,7 @@ void MyPlayerController::ResetGui()
 {
   UnsetGui();
   game->GetGuiManager()->GetRootNode()->AddControl("PlayerControl", playerControls);
+  playerControls->SetPosition(game->GetWindow()->getDefaultView().getCenter().x, game->GetWindow()->getDefaultView().getCenter().y);
 }
 
 void MyPlayerController::UnsetGui()
@@ -121,7 +123,13 @@ void MyPlayerController::UnsetGui()
 
 void MyPlayerController::Render()
 {
-  
+  // Bind the camera to the player
+  if(this->hasPlayer) {
+    sf::Vector2f camPosition = myPlayer->GetCurrentPosition();
+    camPosition.x -= game->GetWindow()->getDefaultView().getCenter().x;
+    camPosition.y -= game->GetWindow()->getDefaultView().getCenter().y;
+    game->GetCamera()->SetPosition(camPosition);
+  }
   BaseController::Render();
 }
 

@@ -31,7 +31,7 @@ Galaxy::Galaxy(Game* game)
 {
   this->game = game;
  // AddEntity(new Entity(game));
-  sf::Texture* rawrTexture = game->GetAssetManager()->GetTexture("starfield.png");
+  rawrTexture = game->GetAssetManager()->GetTexture("starfield.png");
   rawrTexture->setRepeated(true);
   backgroundImage.setTexture(*rawrTexture);
 }
@@ -47,6 +47,10 @@ Galaxy::~Galaxy()
 }
 
 void Galaxy::Render() {
+  backgroundImage.setPosition(game->GetCamera()->GetPosition());
+  backgroundImage.setTextureRect(sf::Rect<int>((int)game->GetCamera()->GetPosition().x, (int)game->GetCamera()->GetPosition().y, 
+    game->GetWindow()->getDefaultView().getSize().x, game->GetWindow()->getDefaultView().getSize().y
+  ));
   game->GetWindow()->draw(backgroundImage);
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Render();

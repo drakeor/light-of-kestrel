@@ -37,6 +37,7 @@ BaseControl::BaseControl(Game* game)
   this->size.x = 2;
   this->size.y = 2;
   this->internalSize = size;
+  this->isEnabled = true;
   //game->GetGuiManager()->AddControlToPool(this);
 }
 
@@ -152,16 +153,22 @@ void BaseControl::SetParent(BaseControl* parent)
 
 void BaseControl::CheckOnMouseClick(float x, float y)
 {
-  for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it)
-  {
-    sf::Rect<float> controlContainer = sf::Rect<float>((*it).second->GetPosition().x, (*it).second->GetPosition().y, 
-						       (*it).second->GetSize().x, (*it).second->GetSize().y);
-    //FILE_LOG(logWARNING) << controlContainer.left << "," << controlContainer.top << " | " << controlContainer.width << "," << controlContainer.height;
-    if(controlContainer.contains(x, y)) {
-      (*it).second->OnClick.Trigger();
+  if(isEnabled) {
+    for(std::map<std::string, BaseControl*>::iterator it = controls.begin(); it != controls.end(); ++it) {
+      sf::Rect<float> controlContainer = sf::Rect<float>((*it).second->GetPosition().x, (*it).second->GetPosition().y, 
+							(*it).second->GetSize().x, (*it).second->GetSize().y);
+      //FILE_LOG(logWARNING) << controlContainer.left << "," << controlContainer.top << " | " << controlContainer.width << "," << controlContainer.height;
+      if(controlContainer.contains(x, y)) {
+	(*it).second->OnClick.Trigger();
+      }
+      (*it).second->CheckOnMouseClick(x, y);
     }
-    (*it).second->CheckOnMouseClick(x, y);
   }
+}
+
+void BaseControl::SetEnabled(bool enabled)
+{
+  isEnabled = enabled;
 }
 
 

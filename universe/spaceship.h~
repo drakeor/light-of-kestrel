@@ -23,46 +23,19 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "button.h"
-#include "../game.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+#ifndef SPACESHIP_H
+#define SPACESHIP_H
 
-void Button::Update(float dt)
-{
-  rect.setOutlineThickness(1.0);
-  rect.setOutlineColor(sf::Color::Blue);
-  rect.setFillColor(sf::Color::Black);
-  rect.setSize(GetSize());
-  rect.setPosition(GetPosition());
-  text.setPosition(position.x + 5, position.y);
-  BaseControl::Update(dt);
-}
+#include "entity.h"
 
-void Button::Render()
-{
-  game->GetWindow()->draw(rect);
-  game->GetWindow()->draw(text);
-  BaseControl::Render();
-}
+class Game;
 
-Button::Button(Game* game)
-  : BaseControl(game) {
-  this->position.x = 20;
-  this->position.y = 20;
-  this->size.x = 100;
-  this->size.y = 25;
-  this->internalSize = size;
-  SetEnabled(false);
-  text.setFont(*game->GetAssetManager()->GetFont("sansation.ttf")); // font is a sf::Font
-  text.setString("Button");
-  text.setCharacterSize(18); // in pixels, not points!
-  text.setColor(sf::Color::White);
-  text.setStyle(sf::Text::Bold);
-  
-}
-
-Button::~Button()
+class Spaceship : public BaseEntity
 {
 
-}
+public:
+  Spaceship(Game* game);
+  virtual ~Spaceship();
+};
 
+#endif // SPACESHIP_H

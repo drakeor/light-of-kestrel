@@ -81,6 +81,8 @@ map
 /home/drakeor/LightOfKestrel/controllers/../camera.h
 SFML/Graphics/Rect.hpp
 -
+SFML/Graphics/View.hpp
+-
 
 /home/drakeor/LightOfKestrel/controllers/../controllers/controllermanager.h
 map

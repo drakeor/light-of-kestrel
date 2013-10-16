@@ -28,12 +28,15 @@
 
 #include <../../home/drakeor/LightOfKestrel/gui/basecontrol.h>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Text.hpp>
 
 
 class Button : public BaseControl
 {
 private:
   sf::RectangleShape rect;
+  sf::Text text;
+  bool isEnabled;
 public:
   virtual void Update(float dt);
   virtual void Render();

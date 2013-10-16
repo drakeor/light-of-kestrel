@@ -59,7 +59,6 @@ public:
   ControllerManager* GetControllerManager();
   UniverseManager* GetUniverseManager();
   sf::RenderWindow* GetWindow();
-  sf::View* GetView();
   Camera* GetCamera();
   Game(const Game& other) { }
 virtual ~Game() { }

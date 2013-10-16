@@ -43,10 +43,13 @@ void Entity::Initialise() {
   texture = sf::Sprite(*tempTex);
   texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
   texture.setPosition(200, 100);
+  position = sf::Vector2f(1.0f, 1.0f);
 }
 
 void Entity::Update(float dt) {
-  
+  // Fix NaN issues
+  if(isnan(position.x) || isnan(position.y))
+    position = sf::Vector2f(0, 0);
 }
 
 void Entity::Render() {
@@ -72,7 +75,6 @@ void Entity::Iterate(float dt) {
   currentRotation += deltaRotation * dt;
   position = sf::Vector2f(position.x + (cos(currentRotation)*velocityMagnitude),
 			  position.y + (sin(currentRotation)*velocityMagnitude));
-  FILE_LOG(logWARNING) << "ITERATION Position " << velocityMagnitude << "||" << deltaThrust << "||" << targetThrust;
 }
 
 sf::Vector2f Entity::GetCurrentPosition() {

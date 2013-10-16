@@ -20,6 +20,7 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o
  /home/drakeor/LightOfKestrel/controllers/controllermanager.h
  /home/drakeor/LightOfKestrel/game.h
  /home/drakeor/LightOfKestrel/inputmanager.h
+ /home/drakeor/LightOfKestrel/log.h
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h

@@ -26,6 +26,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 #include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/View.hpp>
 
 class Game;
 
@@ -36,6 +37,7 @@ class Camera
   bool isAttached;
   sf::Vector2f* attachedPosition;
   Game* game;
+  sf::View view;
   
 public:
   Camera();
@@ -45,6 +47,7 @@ public:
   void DetachCamera();
   void PreRender();
   void PostRender();
+  void SetView(sf::View view);
   sf::Vector2f GetPosition();
   virtual ~Camera();
 };

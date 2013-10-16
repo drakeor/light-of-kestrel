@@ -36,7 +36,7 @@ class Galaxy
   std::vector<Entity*> entity;
   Game* game;
   float currentTime;
-  const float maxTime = 1.0f;
+  const float maxTime = 1.2f;
   const float frameTime = (1/60);
   void Iterate(float dt);
 public:

@@ -25,6 +25,7 @@
 
 #include "camera.h"
 #include "game.h"
+#include "log.h"
 
 Camera::Camera()
 {
@@ -64,17 +65,20 @@ void Camera::SetPosition(sf::Vector2f newPosition)
   position = newPosition;
 }
 
+
 // Sets our camera to the camera position in the 2D world.
 void Camera::PreRender()
 {
-  if(isAttached) game->GetView()->move((*attachedPosition));
-  else game->GetView()->move(position);
+  view = game->GetWindow()->getDefaultView();
+  view.move(position);
+  game->GetWindow()->setView(view);
 }
 
 // Resets the camera back to the base position for drawing GUI elements
 void Camera::PostRender()
 {
-  game->GetView()->reset(originRect);
+  view = game->GetWindow()->getDefaultView();
+  game->GetWindow()->setView(view);
 }
 
 

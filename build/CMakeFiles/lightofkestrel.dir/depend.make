@@ -19,6 +19,7 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../controllers/controllermanager.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../game.h
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../inputmanager.h
+CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../log.h
 
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../gui/guimanager.h

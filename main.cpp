@@ -65,7 +65,10 @@ int main()
         // This would be stupid to do in a realtime game.
 	game->Update(0.016f);
         window.clear();
+	sf::View view = window.getDefaultView();
+	window.setView(view);
 	game->Render();
+	
         window.display();
     }
 

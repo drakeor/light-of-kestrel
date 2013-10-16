@@ -45,6 +45,7 @@ protected:
   bool absoluteSize;
   std::map<std::string, BaseControl*> controls;
   BaseControl* parent;
+  bool isEnabled;
   
 public:
   BaseControl(Game* game);
@@ -60,6 +61,7 @@ public:
   virtual sf::Vector2f GetSize();
   virtual void Update(float dt);
   virtual void Render();
+  virtual void CheckOnMouseClick(float x, float y);
   
   EventHandler OnClick;
   EventHandler OnFocus;
