@@ -60,7 +60,7 @@ void Entity::Update(float dt) {
 
 void Entity::Render() {
   float realRotation = currentRotation*57.3;
-  realRotation = abs(fmod(realRotation, 360.0f));
+  realRotation = fmod(realRotation, 360.0f);
   texture.setPosition(position);
   texture.setRotation(realRotation);
   this->game->GetWindow()->draw(texture);

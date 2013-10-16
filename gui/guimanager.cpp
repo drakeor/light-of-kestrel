@@ -79,17 +79,14 @@ void GuiManager::HandleMouseClick()
   //rootNode.get()->CheckOnMouseClick(mouseX, mouseY);
   //sf::Vector2i viewVec = sf::Vector2i(game->GetWindow()->getViewport().top, game->GetWindow()->getViewport().left);
   //sf::Vector2i mouseVec = sf::Mouse::getPosition() - viewVec;
-  
+  /*
   sf::Vector2i calibrationVec = sf::Vector2i(0, 20);
   sf::Vector2i mouseVec = sf::Mouse::getPosition((*game->GetWindow()));
   FILE_LOG(logWARNING) << "Position: " << game->GetWindow()->getPosition().x << "," << game->GetWindow()->getPosition().y
     << " :: " << mouseVec.x << "," << mouseVec.y;
-  
-  // TODO: The calibrationVec is a temporary fix to the accurate gui clicking problem. It probably won't work on other platforms...
-    // The offset seems to be a constant 20 on the y-axis.
-    mouseVec = mouseVec + calibrationVec;
-    
-  rootNode.get()->CheckOnMouseClick(mouseVec.x, mouseVec.y);
+  */
+    sf::Vector2f vec2 = game->GetWindow()->mapPixelToCoords(sf::Mouse::getPosition((*game->GetWindow())));
+  rootNode.get()->CheckOnMouseClick(vec2.x, vec2.y);
 }
 
 

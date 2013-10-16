@@ -46,12 +46,21 @@ public:
   }
   virtual ~CommitListener() {}
   void OnEvent(EventHandler* handler) {
+    
+    // Spawn the player
     playerController->SpawnPlayer();
     FILE_LOG(logWARNING) << "Turn button commited!!";
+    
+    // First, calculate our target rotation. This is done by (fillPercentage-0.5)*2*maxTurnRate.
     float finalAngle = ((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->GetFillPercentage();
-    finalAngle = finalAngle * 6.28;
+    finalAngle = playerController->GetPlayer()->GetCurrentRotation() + (finalAngle-0.5f) * 2 * 2;
+    // TEST: Should we reset this afterwards?
+    //((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->SetFillPercentage(0.5f);
+    
+    // Second, calculate our target velocity.This is done by just fillPercentage*maxAcceleration.
     float finalVelocity = ((Slider*)playerController->GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
     finalVelocity = finalVelocity * 10;
+
     playerController->GetPlayer()->SetTargetRotation(finalAngle);
     playerController->GetPlayer()->SetTargetVelocity(finalVelocity);
     universe->GetCurrentGalaxy()->CommitTurn();
@@ -92,12 +101,16 @@ MyPlayerController::MyPlayerController(Game* game) :
   
   // Add our GUI controls
   Slider* thrustSlider = new Slider(game);
-  thrustSlider->SetSize(100, 25);
+  thrustSlider->SetSize(25, 100);
+  thrustSlider->SetPosition(-30, -100);
+  thrustSlider->SetHorizontal(false);
+  thrustSlider->ShowHalfMark(true);
   playerControls->AddControl("ThrustControl", thrustSlider);
   
   Slider* directionSlider = new Slider(game);
   directionSlider->SetSize(100, 25);
-  directionSlider->SetPosition(0, 30);
+  directionSlider->SetPosition(0, 0);
+  directionSlider->ShowHalfMark(true);
   playerControls->AddControl("DirectionControl", directionSlider);
   
   Button* commitButton = new Button(game);
@@ -112,25 +125,26 @@ MyPlayerController::MyPlayerController(Game* game) :
 void MyPlayerController::SpawnPlayer()
 {
   if(!this->hasPlayer) {
+    
+    Slider* thrustSlider = (Slider*)playerControls->GetControl("ThrustControl");
+    thrustSlider->SetFillPercentage(0.0f);
+    Slider* directionSlider = (Slider*)playerControls->GetControl("DirectionControl");
+    directionSlider->SetFillPercentage(0.5f);
+    
     // Add in our player immediately when this controller is constructed.
     this->hasPlayer = true;
     this->myPlayer = EntityFactory::BuildEntity(game, SPACESHIP);
     myPlayer->SetPosition(100, 100);
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     
-    // (TEST) Add in an astroid, give it some velocity
-    
-    Entity* rawr2 = EntityFactory::BuildEntity(game, ASTROID);
-    rawr2->SetPosition(230, 200);
-    rawr2->SetTargetVelocity(0.1f);
-    rawr2->SetTargetRotation(204.28f);
-    game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr2);
-    
-    Entity* rawr3 = EntityFactory::BuildEntity(game, ASTROID);
-    rawr3->SetPosition(120, 260);
-    rawr3->SetTargetVelocity(0.5f);
-    rawr3->SetTargetRotation(1.28f);
-    game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr3);
+    // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
+    for(int i=0;i<7;i++) {
+      Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
+      rawr->SetPosition((rand() % 1000 - 500), (rand() % 1000 - 500));
+      rawr->SetTargetVelocity(((float)rand()/(float)RAND_MAX));
+      rawr->SetTargetRotation(((float)rand()/(float)RAND_MAX)*6.28);
+      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+    }
   }
 }
 
@@ -139,7 +153,7 @@ void MyPlayerController::ResetGui()
 {
   UnsetGui();
   game->GetGuiManager()->GetRootNode()->AddControl("PlayerControl", playerControls);
-  playerControls->SetPosition(game->GetWindow()->getDefaultView().getCenter().x, game->GetWindow()->getDefaultView().getCenter().y);
+  playerControls->SetPosition(game->GetWindow()->getDefaultView().getCenter().x-50, game->GetWindow()->getDefaultView().getCenter().y+50);
 }
 
 void MyPlayerController::UnsetGui()

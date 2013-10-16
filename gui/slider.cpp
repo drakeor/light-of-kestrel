@@ -27,6 +27,7 @@
 #include "../game.h"
 #include "../log.h"
 #include <SFML/Window/Mouse.hpp>
+#include <SFML/Graphics/ConvexShape.hpp>
 
 Slider::Slider(Game* game) :
   BaseControl(game)
@@ -39,18 +40,20 @@ Slider::Slider(Game* game) :
 
 void Slider::Update(float dt)
 {
-  // TODO: Clean this entire code block up. This was hacked in from the guimanager.
   // <code>
   sf::Vector2i calibrationVec = sf::Vector2i(0, 20);
   // If it corresponds to our control, we want to capture it.
   if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-    float x = sf::Mouse::getPosition((*game->GetWindow())).x + calibrationVec.x;
-    float y = sf::Mouse::getPosition((*game->GetWindow())).y + calibrationVec.y;
+    sf::Vector2f vec2 = game->GetWindow()->mapPixelToCoords(sf::Mouse::getPosition((*game->GetWindow())));
+    //float x = sf::Mouse::getPosition((*game->GetWindow())).x + calibrationVec.x;
+    //float y = sf::Mouse::getPosition((*game->GetWindow())).y + calibrationVec.y;
+    float x = vec2.x;
+    float y = vec2.y;
     sf::Rect<float> controlContainer = sf::Rect<float>(GetPosition().x, GetPosition().y, GetSize().x, GetSize().y);
     if(controlContainer.contains(x, y)) {
       sf::Vector2f relativeClick = sf::Vector2f((x - GetPosition().x)/GetSize().x, (y - GetPosition().y)/GetSize().y);
       if(isHorizontal) this->fillPercentage = relativeClick.x;
-      else this->fillPercentage = relativeClick.y;
+      else this->fillPercentage = 1-relativeClick.y;
       //FILE_LOG(logWARNING) << "Percentage: " << this->fillPercentage;
     }
   }
@@ -60,15 +63,32 @@ void Slider::Update(float dt)
   rect.setOutlineThickness(3.0);
   rect.setOutlineColor(sf::Color::Blue);
   rect.setFillColor(sf::Color::Blue);
-  if(isHorizontal) rect.setSize(sf::Vector2f(GetSize().x*fillPercentage, GetSize().y));
-  else rect.setSize(sf::Vector2f(GetSize().x, GetSize().y*fillPercentage));
-  rect.setPosition(GetPosition());
+  if(isHorizontal) {
+    rect.setSize(sf::Vector2f(GetSize().x*fillPercentage, GetSize().y));
+    rect.setPosition(GetPosition());
+  } else {
+    rect.setSize(sf::Vector2f(GetSize().x, -GetSize().y*fillPercentage));
+    rect.setPosition(GetPosition().x, GetPosition().y+GetSize().y);
+  }
+ 
   BaseControl::Update(dt);
 }
 
 void Slider::Render()
 {
   game->GetWindow()->draw(rect);
+  // If we have a half mark, show it.
+  if(showHalf) {
+    sf::VertexArray lines(sf::LinesStrip, 2);
+    if(isHorizontal) {
+      lines[0].position = sf::Vector2f(GetPosition().x + GetSize().x/2, GetPosition().y);
+      lines[1].position = sf::Vector2f(GetPosition().x + GetSize().x/2, GetPosition().y + GetSize().y);
+    } else {
+      lines[0].position = sf::Vector2f(GetPosition().x, GetPosition().y + GetSize().y/2);
+      lines[1].position = sf::Vector2f(GetPosition().x + GetSize().x, GetPosition().y + GetSize().y/2);
+    }
+    game->GetWindow()->draw(lines);
+  }
   BaseControl::Render();
 }
 
@@ -86,5 +106,17 @@ void Slider::SetValue(int min, int max)
 float Slider::GetFillPercentage()
 {
   return fillPercentage;
+}
+
+void Slider::SetFillPercentage(float newPercentage) {
+  fillPercentage = newPercentage;
+}
+
+void Slider::SetHorizontal(bool newValue) {
+ isHorizontal = newValue;
+}
+
+void Slider::ShowHalfMark(bool showHalf) {
+  this->showHalf = showHalf;
 }
 

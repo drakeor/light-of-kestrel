@@ -36,6 +36,7 @@ class Slider : public BaseControl
   bool isHorizontal;
   float fillPercentage;
   sf::RectangleShape rect;
+  bool showHalf;
 public:
   Slider(Game* game);
   void SetValue(int min, int max);
@@ -43,6 +44,9 @@ public:
   virtual void Render();
   virtual void CheckOnMouseClick(float x, float y);
   float GetFillPercentage();
+  void SetFillPercentage(float newPercentage);
+  void SetHorizontal(bool newValue);
+  void ShowHalfMark(bool showHalf);
 };
 
 #endif // SLIDER_H
