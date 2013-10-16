@@ -48,8 +48,10 @@ void Entity::Initialise() {
 
 void Entity::Update(float dt) {
   // Fix NaN issues. Temp fix.
-  if(isnan(position.x) || isnan(position.y))
+  if(isnan(position.x) || isnan(position.y)) {
     position = sf::Vector2f(0, 0);
+    FILE_LOG(logERROR) << "Entity has NaN position!!";
+  }
 }
 
 void Entity::Render() {
@@ -89,6 +91,16 @@ float Entity::GetCurrentVelocity() {
   return velocityMagnitude;
 }
 
+sf::Sprite* Entity::GetSprite() {
+  return &texture;
+}
+
+
+void Entity::SetSprite(sf::Sprite sprite) {
+  this->texture = sprite;
+}
+
+
 void Entity::SetPosition(float x, float y) {
   position = sf::Vector2f(x, y);
 }
@@ -100,5 +112,10 @@ void Entity::SetTargetRotation(float target) {
 void Entity::SetTargetVelocity(float target) {
   targetThrust = target;
 }
+
+void Entity::SetName(std::string newName) {
+  this->name = newName;
+}
+
 
 

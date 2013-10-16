@@ -56,6 +56,10 @@ SFML/Graphics/Sprite.hpp
 tr1/memory
 -
 
+../universe/entityfactory.h
+entity.h
+../universe/entity.h
+
 ../universe/galaxy.h
 vector
 -
@@ -136,6 +140,8 @@ myplayercontroller.h
 slider.h
 -
 button.h
+-
+entityfactory.h
 -
 
 /home/drakeor/LightOfKestrel/controllers/myplayercontroller.h

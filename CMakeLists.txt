@@ -17,7 +17,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
 endif ()
 
 # Make an executable
-add_executable(lightofkestrel controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp inputmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp)
+add_executable(lightofkestrel universe/entityfactory.cpp controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp inputmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp)
 
 # Link SFML Libraries.
 target_link_libraries (lightofkestrel sfml-graphics sfml-system sfml-window tgui)

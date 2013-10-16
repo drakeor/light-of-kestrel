@@ -28,6 +28,7 @@
 #include "../log.h"
 #include <slider.h>
 #include <button.h>
+#include <entityfactory.h>
 
 /*
  * This event listener is toggled whenever the player presses the commit button.
@@ -78,11 +79,32 @@ public:
 MyPlayerController::MyPlayerController(Game* game) :
   BaseController(game)
 {
+  
+  // Add in our player immediately when this controller is constructed.
   this->hasPlayer = true;
-  this->myPlayer = new Entity(game);
+  this->myPlayer = EntityFactory::BuildEntity(game, SPACESHIP);
   myPlayer->SetPosition(100, 100);
   game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
   
+  // (TEST) Add in an astroid, give it some velocity
+  Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
+  rawr->SetPosition(200, 200);
+  rawr->SetTargetVelocity(0.5f);
+  game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+  
+  Entity* rawr2 = EntityFactory::BuildEntity(game, ASTROID);
+  rawr2->SetPosition(230, 200);
+  rawr2->SetTargetVelocity(0.1f);
+  rawr2->SetTargetRotation(4.2f);
+  game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr2);
+  
+  Entity* rawr3 = EntityFactory::BuildEntity(game, ASTROID);
+  rawr3->SetPosition(120, 260);
+  rawr3->SetTargetVelocity(0.3f);
+  rawr3->SetTargetRotation(1.28f);
+  game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr3);
+  
+  // Add an event listener for when the player commits a turn and the galaxy changes.
   commitListener = std::unique_ptr<EventListener>( new CommitListener(this, game->GetUniverseManager()) );
   galaxyChangeListener = std::unique_ptr<EventListener>( new GalaxyChangeListener(this, game->GetUniverseManager()) );
   game->GetUniverseManager()->OnGalaxyChange.AddListener(galaxyChangeListener.get());
@@ -91,6 +113,7 @@ MyPlayerController::MyPlayerController(Game* game) :
   playerControls = new BaseControl(game);
   playerControls->SetPosition(300, 500);
   
+  // Add our GUI controls
   Slider* thrustSlider = new Slider(game);
   thrustSlider->SetSize(100, 25);
   playerControls->AddControl("ThrustControl", thrustSlider);
@@ -123,7 +146,6 @@ void MyPlayerController::UnsetGui()
 
 void MyPlayerController::Render()
 {
-  playerControls->SetPosition(300, 500);
   // Bind the camera to the player
   if(this->hasPlayer) {
     sf::Vector2f camPosition = myPlayer->GetCurrentPosition();

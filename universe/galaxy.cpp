@@ -43,7 +43,10 @@ Galaxy::Galaxy(const Galaxy& other)
 
 Galaxy::~Galaxy()
 {
-
+  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    delete(*it);
+    (*it) = nullptr;
+  }
 }
 
 void Galaxy::Render() {
@@ -77,7 +80,6 @@ void Galaxy::CommitTurn() {
 
 void Galaxy::AddEntity(Entity* m_entity)
 {
-  m_entity->Initialise();
   entity.push_back(m_entity);
 }
 

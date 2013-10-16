@@ -21,6 +21,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/drakeor/LightOfKestrel/inputmanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o"
   "/home/drakeor/LightOfKestrel/main.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/main.cpp.o"
   "/home/drakeor/LightOfKestrel/universe/entity.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o"
+  "/home/drakeor/LightOfKestrel/universe/entityfactory.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o"
   "/home/drakeor/LightOfKestrel/universe/galaxy.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o"
   "/home/drakeor/LightOfKestrel/universe/universemanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o"
   )

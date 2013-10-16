@@ -47,6 +47,7 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
  ../gui/guimanager.h
  ../gui/slider.h
  ../universe/entity.h
+ ../universe/entityfactory.h
  ../universe/galaxy.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
@@ -219,6 +220,22 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
  /home/drakeor/LightOfKestrel/universe/../log.h
  /home/drakeor/LightOfKestrel/universe/entity.cpp
  /home/drakeor/LightOfKestrel/universe/entity.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
+ ../gui/basecontrol.h
+ ../gui/guimanager.h
+ ../universe/../events/eventhandler.h
+ ../universe/../events/eventlistener.h
+ ../universe/galaxy.h
+ ../universe/universemanager.h
+ /home/drakeor/LightOfKestrel/universe/../assetmanager.h
+ /home/drakeor/LightOfKestrel/universe/../camera.h
+ /home/drakeor/LightOfKestrel/universe/../controllers/basecontroller.h
+ /home/drakeor/LightOfKestrel/universe/../controllers/controllermanager.h
+ /home/drakeor/LightOfKestrel/universe/../game.h
+ /home/drakeor/LightOfKestrel/universe/../inputmanager.h
+ /home/drakeor/LightOfKestrel/universe/entity.h
+ /home/drakeor/LightOfKestrel/universe/entityfactory.cpp
+ /home/drakeor/LightOfKestrel/universe/entityfactory.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h

@@ -46,6 +46,7 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/butto
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/slider.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/entityfactory.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/universemanager.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/../assetmanager.h
@@ -218,6 +219,22 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../inputmanager
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/../log.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.h
+
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../gui/basecontrol.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../camera.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../controllers/basecontroller.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../controllers/controllermanager.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../game.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.cpp
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.h
 
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/guimanager.h

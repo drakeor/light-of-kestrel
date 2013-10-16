@@ -23,55 +23,23 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef ENTITY_H
-#define ENTITY_H
-#include <SFML/Graphics/Sprite.hpp>
-#include <tr1/memory>
+#ifndef ENTITYFACTORY_H
+#define ENTITYFACTORY_H
 
-class Game;
+#include "entity.h"
 
-class Entity
+enum entity_t {
+  SPACESHIP,
+  ASTROID
+};
+  
+class EntityFactory
 {
-  //Beginnen Variables
-  sf::Sprite texture;
-  Game* game;
-  
-  // Physiks Variables.
-  // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
-  sf::Vector2f position;
-  float velocityMagnitude;
-  float currentRotation;
-  
-  // Simulation Variables
-  float startThrust;
-  float startRotation;
-  float targetThrust;
-  float targetRotation;
-  float deltaThrust;
-  float deltaRotation;
-  float frameTime;
-  float maxTime;
-  
-public:
-  Entity(Game* game);
-  void Initialise();
-  void Update(float dt);
-  void Render();
-  void Iterate(float dt);
-  void CommitTurn(float frameTime, float maxTime);
-  
-  void SetPosition(float x, float y);
-  void SetTargetVelocity(float target);
-  void SetTargetRotation(float target);
-  void SetSprite(sf::Sprite sprite);
-  void SetName(std::string newName);
-  
-  sf::Sprite* GetSprite();
-  sf::Vector2f GetCurrentPosition();
-  float GetCurrentVelocity();
-  float GetCurrentRotation();
-  virtual ~Entity();
 
+public:
+  EntityFactory();
+  virtual ~EntityFactory();
+  static Entity* BuildEntity(Game* game, entity_t entityType);
 };
 
-#endif // ENTITY_H
+#endif // ENTITYFACTORY_H

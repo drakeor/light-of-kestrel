@@ -560,6 +560,30 @@ universe/entity.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/entity.cpp.s
 .PHONY : universe/entity.cpp.s
 
+universe/entityfactory.o: universe/entityfactory.cpp.o
+.PHONY : universe/entityfactory.o
+
+# target to build an object file
+universe/entityfactory.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
+.PHONY : universe/entityfactory.cpp.o
+
+universe/entityfactory.i: universe/entityfactory.cpp.i
+.PHONY : universe/entityfactory.i
+
+# target to preprocess a source file
+universe/entityfactory.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.i
+.PHONY : universe/entityfactory.cpp.i
+
+universe/entityfactory.s: universe/entityfactory.cpp.s
+.PHONY : universe/entityfactory.s
+
+# target to generate assembly for a file
+universe/entityfactory.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.s
+.PHONY : universe/entityfactory.cpp.s
+
 universe/galaxy.o: universe/galaxy.cpp.o
 .PHONY : universe/galaxy.o
 
@@ -672,6 +696,9 @@ help:
 	@echo "... universe/entity.o"
 	@echo "... universe/entity.i"
 	@echo "... universe/entity.s"
+	@echo "... universe/entityfactory.o"
+	@echo "... universe/entityfactory.i"
+	@echo "... universe/entityfactory.s"
 	@echo "... universe/galaxy.o"
 	@echo "... universe/galaxy.i"
 	@echo "... universe/galaxy.s"

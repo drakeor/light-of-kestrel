@@ -1,4 +1,5 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o"
   "CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o"
   "CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o"
   "CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o"

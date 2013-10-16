@@ -49,9 +49,32 @@ include CMakeFiles/lightofkestrel.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/lightofkestrel.dir/flags.make
 
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o -c /home/drakeor/LightOfKestrel/universe/entityfactory.cpp
+
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/drakeor/LightOfKestrel/universe/entityfactory.cpp > CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.i
+
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/drakeor/LightOfKestrel/universe/entityfactory.cpp -o CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.s
+
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.requires:
+.PHONY : CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.requires
+
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.provides: CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.requires
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.provides.build
+.PHONY : CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.provides
+
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.provides.build: CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
+
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o: ../controllers/worldcontroller.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o -c /home/drakeor/LightOfKestrel/controllers/worldcontroller.cpp
 
@@ -74,7 +97,7 @@ CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o.provides.build: 
 
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../controllers/myplayercontroller.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o -c /home/drakeor/LightOfKestrel/controllers/myplayercontroller.cpp
 
@@ -97,7 +120,7 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o.provides.buil
 
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/basecontroller.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o -c /home/drakeor/LightOfKestrel/controllers/basecontroller.cpp
 
@@ -120,7 +143,7 @@ CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o.provides.build: C
 
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/controllermanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o -c /home/drakeor/LightOfKestrel/controllers/controllermanager.cpp
 
@@ -143,7 +166,7 @@ CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o.provides.build
 
 CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o: ../gui/slider.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o -c /home/drakeor/LightOfKestrel/gui/slider.cpp
 
@@ -166,7 +189,7 @@ CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o.provides.build: CMakeFiles/lighto
 
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../gui/button.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/gui/button.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/gui/button.cpp.o -c /home/drakeor/LightOfKestrel/gui/button.cpp
 
@@ -189,7 +212,7 @@ CMakeFiles/lightofkestrel.dir/gui/button.cpp.o.provides.build: CMakeFiles/lighto
 
 CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o: ../events/eventhandler.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o -c /home/drakeor/LightOfKestrel/events/eventhandler.cpp
 
@@ -212,7 +235,7 @@ CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o: ../events/eventlistener.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o -c /home/drakeor/LightOfKestrel/events/eventlistener.cpp
 
@@ -235,7 +258,7 @@ CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../camera.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/camera.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/camera.cpp.o -c /home/drakeor/LightOfKestrel/camera.cpp
 
@@ -258,7 +281,7 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o.provides.build: CMakeFiles/lightofkes
 
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o: ../gui/textlabel.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o -c /home/drakeor/LightOfKestrel/gui/textlabel.cpp
 
@@ -281,7 +304,7 @@ CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o.provides.build: CMakeFiles/lig
 
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o: ../gui/basecontrol.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o -c /home/drakeor/LightOfKestrel/gui/basecontrol.cpp
 
@@ -304,7 +327,7 @@ CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o.provides.build: CMakeFiles/l
 
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o: ../gui/guimanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o -c /home/drakeor/LightOfKestrel/gui/guimanager.cpp
 
@@ -327,7 +350,7 @@ CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o.provides.build: CMakeFiles/li
 
 CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o: ../assetmanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o -c /home/drakeor/LightOfKestrel/assetmanager.cpp
 
@@ -350,7 +373,7 @@ CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o.provides.build: CMakeFiles/ligh
 
 CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o: ../inputmanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o -c /home/drakeor/LightOfKestrel/inputmanager.cpp
 
@@ -373,7 +396,7 @@ CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o.provides.build: CMakeFiles/ligh
 
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o -c /home/drakeor/LightOfKestrel/universe/entity.cpp
 
@@ -396,7 +419,7 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o.provides.build: CMakeFiles/l
 
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/galaxy.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o -c /home/drakeor/LightOfKestrel/universe/galaxy.cpp
 
@@ -419,7 +442,7 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o.provides.build: CMakeFiles/l
 
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o: ../universe/universemanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o -c /home/drakeor/LightOfKestrel/universe/universemanager.cpp
 
@@ -442,7 +465,7 @@ CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o.provides.build: CMa
 
 CMakeFiles/lightofkestrel.dir/game.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/game.cpp.o: ../game.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/game.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/game.cpp.o -c /home/drakeor/LightOfKestrel/game.cpp
 
@@ -465,7 +488,7 @@ CMakeFiles/lightofkestrel.dir/game.cpp.o.provides.build: CMakeFiles/lightofkestr
 
 CMakeFiles/lightofkestrel.dir/main.cpp.o: CMakeFiles/lightofkestrel.dir/flags.make
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/lightofkestrel.dir/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lightofkestrel.dir/main.cpp.o -c /home/drakeor/LightOfKestrel/main.cpp
 
@@ -488,6 +511,7 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o.provides.build: CMakeFiles/lightofkestr
 
 # Object files for target lightofkestrel
 lightofkestrel_OBJECTS = \
+"CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o" \
 "CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o" \
 "CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o" \
 "CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o" \
@@ -511,6 +535,7 @@ lightofkestrel_OBJECTS = \
 # External object files for target lightofkestrel
 lightofkestrel_EXTERNAL_OBJECTS =
 
+lightofkestrel: CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
 lightofkestrel: CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o
 lightofkestrel: CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
 lightofkestrel: CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
@@ -539,6 +564,7 @@ lightofkestrel: CMakeFiles/lightofkestrel.dir/link.txt
 CMakeFiles/lightofkestrel.dir/build: lightofkestrel
 .PHONY : CMakeFiles/lightofkestrel.dir/build
 
+CMakeFiles/lightofkestrel.dir/requires: CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o.requires
 CMakeFiles/lightofkestrel.dir/requires: CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o.requires
 CMakeFiles/lightofkestrel.dir/requires: CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o.requires
 CMakeFiles/lightofkestrel.dir/requires: CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o.requires

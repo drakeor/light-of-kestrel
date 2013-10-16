@@ -56,7 +56,7 @@ int main()
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                exit(1);
 	    if (event.type == sf::Event::MouseButtonReleased)
 	      game->GetGuiManager()->HandleMouseClick();
         }

@@ -35,6 +35,7 @@ class Entity
   //Beginnen Variables
   sf::Sprite texture;
   Game* game;
+  std::string name;
   
   // Physiks Variables.
   // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
@@ -59,9 +60,14 @@ public:
   void Render();
   void Iterate(float dt);
   void CommitTurn(float frameTime, float maxTime);
+  
   void SetPosition(float x, float y);
   void SetTargetVelocity(float target);
   void SetTargetRotation(float target);
+  void SetSprite(sf::Sprite sprite);
+  void SetName(std::string newName);
+  
+  sf::Sprite* GetSprite();
   sf::Vector2f GetCurrentPosition();
   float GetCurrentVelocity();
   float GetCurrentRotation();

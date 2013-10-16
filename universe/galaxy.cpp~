@@ -43,12 +43,17 @@ Galaxy::Galaxy(const Galaxy& other)
 
 Galaxy::~Galaxy()
 {
-
+  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    delete(*it);
+    (*it) = nullptr;
+  }
 }
 
 void Galaxy::Render() {
   backgroundImage.setPosition(game->GetCamera()->GetPosition());
-  backgroundImage.setTextureRect(sf::Rect<int>((int)game->GetCamera()->GetPosition().x, (int)game->GetCamera()->GetPosition().y, 800, 600));
+  backgroundImage.setTextureRect(sf::Rect<int>((int)game->GetCamera()->GetPosition().x, (int)game->GetCamera()->GetPosition().y, 
+    game->GetWindow()->getDefaultView().getSize().x, game->GetWindow()->getDefaultView().getSize().y
+  ));
   game->GetWindow()->draw(backgroundImage);
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Render();

@@ -23,55 +23,45 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef ENTITY_H
-#define ENTITY_H
-#include <SFML/Graphics/Sprite.hpp>
-#include <tr1/memory>
+#include "entityfactory.h"
+#include "../game.h"
 
-class Game;
-
-class Entity
+EntityFactory::EntityFactory()
 {
-  //Beginnen Variables
+
+}
+
+EntityFactory::~EntityFactory()
+{
+
+}
+
+Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
+{
+  Entity* entity = new Entity(game);
+  entity->Initialise();
+  sf::Texture* tempTex;
   sf::Sprite texture;
-  Game* game;
   
-  // Physiks Variables.
-  // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
-  sf::Vector2f position;
-  float velocityMagnitude;
-  float currentRotation;
-  
-  // Simulation Variables
-  float startThrust;
-  float startRotation;
-  float targetThrust;
-  float targetRotation;
-  float deltaThrust;
-  float deltaRotation;
-  float frameTime;
-  float maxTime;
-  
-public:
-  Entity(Game* game);
-  void Initialise();
-  void Update(float dt);
-  void Render();
-  void Iterate(float dt);
-  void CommitTurn(float frameTime, float maxTime);
-  
-  void SetPosition(float x, float y);
-  void SetTargetVelocity(float target);
-  void SetTargetRotation(float target);
-  void SetSprite(sf::Sprite sprite);
-  void SetName(std::string newName);
-  
-  sf::Sprite* GetSprite();
-  sf::Vector2f GetCurrentPosition();
-  float GetCurrentVelocity();
-  float GetCurrentRotation();
-  virtual ~Entity();
+  switch(entityType) {
+    
+    case SPACESHIP:
+      tempTex = game->GetAssetManager()->GetTexture("nope.png");
+      texture = sf::Sprite(*tempTex);
+      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+      entity->SetSprite(texture);
+      entity->SetName("Spaceship");
+      break;
+      
+    case ASTROID:
+      tempTex = game->GetAssetManager()->GetTexture("astroid.png");
+      texture = sf::Sprite(*tempTex);
+      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+      entity->SetSprite(texture);
+      entity->SetName("Astroid");
+      break;
+      
+  };
+  return entity;
+}
 
-};
-
-#endif // ENTITY_H
