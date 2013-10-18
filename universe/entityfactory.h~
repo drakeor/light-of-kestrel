@@ -30,7 +30,9 @@
 
 enum entity_t {
   SPACESHIP,
-  ASTROID
+  ASTROID,
+  MISSILE,
+  ANTIMISSILE
 };
   
 class EntityFactory
@@ -39,7 +41,7 @@ class EntityFactory
 public:
   EntityFactory();
   virtual ~EntityFactory();
-  static Entity* BuildEntity(entity_t entityType);
+  static Entity* BuildEntity(Game* game, entity_t entityType);
 };
 
 #endif // ENTITYFACTORY_H

@@ -30,6 +30,24 @@
 
 class Game;
 
+// Collision groups! With bitflags!
+enum collision_group_t {
+  
+  /* Space ships will belong to this one */
+  COLLISION_GROUP_1 = 1, 
+  
+  /* Missles will belong to this one */
+  COLLISION_GROUP_2 = 2, 
+  
+  COLLISION_GROUP_3 = 4, 
+  COLLISION_GROUP_4 = 8, 
+  COLLISION_GROUP_5 = 16,
+  COLLISION_GROUP_6 = 32,
+  COLLISION_GROUP_7 = 64,
+  COLLISION_GROUP_8 = 128
+};
+
+// Entities belong to the galaxys they are part of. 
 class Entity
 {
   //Beginnen Variables
@@ -72,7 +90,10 @@ public:
   float GetCurrentVelocity();
   float GetCurrentRotation();
   virtual ~Entity();
-
+  
+  // CollidesWith means collisions that this entity handles.
+  char collidesWith;
+  char collisionGroup;
 };
 
 #endif // ENTITY_H

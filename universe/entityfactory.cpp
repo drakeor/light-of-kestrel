@@ -51,6 +51,8 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
       entity->SetSprite(texture);
       entity->SetName("Spaceship");
+      entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
+      entity->collisionGroup = COLLISION_GROUP_1;
       break;
       
     case ASTROID:
@@ -59,8 +61,26 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
       entity->SetSprite(texture);
       entity->SetName("Astroid");
+      entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
+      entity->collisionGroup = COLLISION_GROUP_1;
+      break;
+   
+    case MISSILE:
+      tempTex = game->GetAssetManager()->GetTexture("missile.png");
+      texture = sf::Sprite(*tempTex);
+      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+      entity->SetSprite(texture);
+      entity->SetName("Missile");
+      entity->collidesWith = COLLISION_GROUP_1; /* Will interact with other spaceships/astroids but not with each other. */
+      entity->collisionGroup = COLLISION_GROUP_2; 
       break;
       
+    // Not implemented. In theory
+    case ANTIMISSILE:
+      entity->SetName("Antimissile");
+      entity->collidesWith = COLLISION_GROUP_1 | COLLISION_GROUP_2 | COLLISION_GROUP_3; /* Will interact with everything but is part of nothing. */
+      entity->collisionGroup = 0; 
+      break;
   };
   return entity;
 }

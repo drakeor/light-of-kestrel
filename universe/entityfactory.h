@@ -30,7 +30,9 @@
 
 enum entity_t {
   SPACESHIP,
-  ASTROID
+  ASTROID,
+  MISSILE,
+  ANTIMISSILE /* Not implemented */
 };
   
 class EntityFactory

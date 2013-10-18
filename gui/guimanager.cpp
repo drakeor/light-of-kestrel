@@ -85,7 +85,7 @@ void GuiManager::HandleMouseClick()
   FILE_LOG(logWARNING) << "Position: " << game->GetWindow()->getPosition().x << "," << game->GetWindow()->getPosition().y
     << " :: " << mouseVec.x << "," << mouseVec.y;
   */
-    sf::Vector2f vec2 = game->GetWindow()->mapPixelToCoords(sf::Mouse::getPosition((*game->GetWindow())));
+  sf::Vector2f vec2 = game->GetWindow()->mapPixelToCoords(sf::Mouse::getPosition((*game->GetWindow())));
   rootNode.get()->CheckOnMouseClick(vec2.x, vec2.y);
 }
 
