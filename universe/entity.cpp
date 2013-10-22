@@ -112,7 +112,6 @@ void Entity::SetPosition(float x, float y) {
 }
 
 void Entity::SetTargetRotation(float target) {
-  // Hacky way.
   targetRotation = target;
 }
 
@@ -124,5 +123,26 @@ void Entity::SetName(std::string newName) {
   this->name = newName;
 }
 
+
+std::string Entity::GetName()
+{
+  return name;
+}
+
+
+Galaxy* Entity::GetParent()
+{
+  return parent;
+}
+
+void Entity::SetParent(Galaxy* newParent)
+{
+  parent = newParent;
+}
+
+void Entity::OnCollision(Entity* other)
+{
+
+}
 
 

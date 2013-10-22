@@ -37,7 +37,7 @@ enum entity_t {
   
 class EntityFactory
 {
-
+  static void BuildTexture(Game* game, Entity* entity, std::string textureName);
 public:
   EntityFactory();
   virtual ~EntityFactory();

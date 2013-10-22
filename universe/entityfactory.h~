@@ -32,12 +32,12 @@ enum entity_t {
   SPACESHIP,
   ASTROID,
   MISSILE,
-  ANTIMISSILE
+  ANTIMISSILE /* Not implemented */
 };
   
 class EntityFactory
 {
-
+  static void BuildTexture(Entity* entity, std::string textureName);
 public:
   EntityFactory();
   virtual ~EntityFactory();

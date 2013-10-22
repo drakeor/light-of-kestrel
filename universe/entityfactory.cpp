@@ -36,6 +36,18 @@ EntityFactory::~EntityFactory()
 
 }
 
+void EntityFactory::BuildTexture(Game* game, Entity* entity, std::string textureName)
+{
+  sf::Texture* tempTex;
+  sf::Sprite texture;
+  tempTex = game->GetAssetManager()->GetTexture(textureName);
+  texture = sf::Sprite(*tempTex);
+  texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+  entity->SetSprite(texture);
+  entity->TempCollisionDistance = tempTex->getSize().x/2;
+}
+
+
 Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
 {
   Entity* entity = new Entity(game);
@@ -46,30 +58,21 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
   switch(entityType) {
     
     case SPACESHIP:
-      tempTex = game->GetAssetManager()->GetTexture("nope.png");
-      texture = sf::Sprite(*tempTex);
-      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-      entity->SetSprite(texture);
+      BuildTexture(game, entity, "nope.png");
       entity->SetName("Spaceship");
       entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
       entity->collisionGroup = COLLISION_GROUP_1;
       break;
       
     case ASTROID:
-      tempTex = game->GetAssetManager()->GetTexture("astroid.png");
-      texture = sf::Sprite(*tempTex);
-      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-      entity->SetSprite(texture);
+      BuildTexture(game, entity, "astroid.png");
       entity->SetName("Astroid");
       entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
       entity->collisionGroup = COLLISION_GROUP_1;
       break;
    
     case MISSILE:
-      tempTex = game->GetAssetManager()->GetTexture("missile.png");
-      texture = sf::Sprite(*tempTex);
-      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-      entity->SetSprite(texture);
+      BuildTexture(game, entity, "nope_missile.png");
       entity->SetName("Missile");
       entity->collidesWith = COLLISION_GROUP_1; /* Will interact with other spaceships/astroids but not with each other. */
       entity->collisionGroup = COLLISION_GROUP_2; 
@@ -80,6 +83,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->SetName("Antimissile");
       entity->collidesWith = COLLISION_GROUP_1 | COLLISION_GROUP_2 | COLLISION_GROUP_3; /* Will interact with everything but is part of nothing. */
       entity->collisionGroup = 0; 
+      entity->TempCollisionDistance = tempTex->getSize().x/2;
       break;
   };
   return entity;

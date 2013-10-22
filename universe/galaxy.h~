@@ -39,6 +39,7 @@ class Galaxy
   const float maxTime = 1.2f;
   const float frameTime = (1/60);
   void Iterate(float dt);
+  sf::Texture* rawrTexture;
 public:
   Galaxy(Game* game);
   void AddEntity(Entity* entity);

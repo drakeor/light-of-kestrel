@@ -28,6 +28,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <tr1/memory>
 
+class Galaxy;
 class Game;
 
 // Collision groups! With bitflags!
@@ -54,6 +55,7 @@ class Entity
   sf::Sprite texture;
   Game* game;
   std::string name;
+  Galaxy* parent;
   
   // Physiks Variables.
   // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
@@ -84,6 +86,10 @@ public:
   void SetTargetRotation(float target);
   void SetSprite(sf::Sprite sprite);
   void SetName(std::string newName);
+  std::string GetName();
+  
+  void SetParent(Galaxy* newParent);
+  Galaxy* GetParent();
   
   sf::Sprite* GetSprite();
   sf::Vector2f GetCurrentPosition();
@@ -91,9 +97,11 @@ public:
   float GetCurrentRotation();
   virtual ~Entity();
   
-  // CollidesWith means collisions that this entity handles.
+  // Physiks Abfall
   char collidesWith;
   char collisionGroup;
+  int TempCollisionDistance;
+  void OnCollision(Entity* other);
 };
 
 #endif // ENTITY_H

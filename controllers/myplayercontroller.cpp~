@@ -138,7 +138,7 @@ void MyPlayerController::SpawnPlayer()
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     
     // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
-    for(int i=0;i<7;i++) {
+    for(int i=0;i<1z;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
       rawr->SetPosition((rand() % 1000 - 500), (rand() % 1000 - 500));
       rawr->SetTargetVelocity(((float)rand()/(float)RAND_MAX));

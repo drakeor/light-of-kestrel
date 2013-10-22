@@ -60,6 +60,30 @@ void Galaxy::Render() {
   }
 }
 
+void Galaxy::Iterate(float dt)
+{
+  /* TODO: This is an incrediably rough and inefficient way to
+   * handle collisions. I have a few ideas in mind to speed this up but I'm much too lazy to implement them.
+   * Fix this part up. Right now, we're just using circular collisions with just simple vector addition to get the projected speed */
+  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    for(std::vector<Entity*>::iterator it2 = entity.begin(); it2 != entity.end(); ++it2) {
+      /* Calculate distance */
+      if(it != it2) {
+	/* Remember to reposition objects IMMEDIATELY after so they don't keep colliding. Which would be pretty funny.*/
+	float distance = sqrt(pow(((*it)->GetCurrentPosition().x - (*it2)->GetCurrentPosition().x),2) + pow(((*it)->GetCurrentPosition().y - (*it2)->GetCurrentPosition().y),2));
+	if(distance < ((*it)->TempCollisionDistance + (*it2)->TempCollisionDistance)) {
+	  if((*it)->collidesWith & (*it2)->collisionGroup){
+	    (*it)->OnCollision((*it2));
+	  }
+	  if((*it2)->collidesWith & (*it)->collisionGroup){
+	    (*it2)->OnCollision((*it));
+	  }
+	}
+      }
+    }
+  }
+}
+
 void Galaxy::Update(float dt) {
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
@@ -67,8 +91,10 @@ void Galaxy::Update(float dt) {
     if(currentTime < maxTime)
       (*it)->Iterate(dt);
   }
-  if(currentTime < maxTime)
+  if(currentTime < maxTime) {
+    Iterate(dt);
     currentTime += dt;
+  }
 }
 
 void Galaxy::CommitTurn() {
@@ -80,6 +106,7 @@ void Galaxy::CommitTurn() {
 
 void Galaxy::AddEntity(Entity* m_entity)
 {
+  m_entity->SetParent(this);
   entity.push_back(m_entity);
 }
 
