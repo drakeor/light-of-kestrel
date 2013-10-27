@@ -263,6 +263,7 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  /home/drakeor/LightOfKestrel/universe/../camera.h
  /home/drakeor/LightOfKestrel/universe/../controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/universe/../controllers/controllermanager.h
+ /home/drakeor/LightOfKestrel/universe/../controllers/settings.h
  /home/drakeor/LightOfKestrel/universe/../game.h
  /home/drakeor/LightOfKestrel/universe/../inputmanager.h
  /home/drakeor/LightOfKestrel/universe/../log.h

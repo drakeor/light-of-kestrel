@@ -97,6 +97,17 @@ float Entity::GetCurrentVelocity() {
   return velocityMagnitude;
 }
 
+void Entity::SetCurrentRotation(float target)
+{
+  currentRotation = target;
+}
+
+void Entity::SetCurrentVelocity(float target)
+{
+  velocityMagnitude = target;
+}
+
+
 sf::Sprite* Entity::GetSprite() {
   return &texture;
 }

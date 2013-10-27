@@ -82,6 +82,8 @@ public:
   void CommitTurn(float frameTime, float maxTime);
   
   void SetPosition(float x, float y);
+  void SetCurrentVelocity(float target);
+  void SetCurrentRotation(float target);
   void SetTargetVelocity(float target);
   void SetTargetRotation(float target);
   void SetSprite(sf::Sprite sprite);

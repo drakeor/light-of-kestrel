@@ -47,8 +47,6 @@ public:
   void CommitTurn();
   Galaxy(const Galaxy& other);
   virtual ~Galaxy();
-  static constexpr float maxTime = 1.2f;
-  static constexpr float frameTime = (1/60);
 };
 
 #endif // GALAXY_H

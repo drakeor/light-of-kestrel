@@ -262,6 +262,7 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../assetmanager
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../camera.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../controllers/controllermanager.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../controllers/settings.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../game.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../inputmanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/../log.h

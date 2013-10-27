@@ -42,12 +42,8 @@ class MyPlayerController : public BaseController
   std::unique_ptr<EventListener> galaxyChangeListener;
   
   // Ghosting emulation.
+  std::unique_ptr<Entity> ghostObject;
   float ghostMovementDelay;
-  sf::Sprite ghostEntity;
-  float ghostDeltaRotation;
-  float ghostDeltaVelocity;
-  float ghostVelocity;
-  float ghostRotation;
   
 public:
   MyPlayerController(Game* game);

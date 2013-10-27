@@ -81,8 +81,8 @@ void Entity::Iterate(float dt) {
   // Update positions and rotations.
   velocityMagnitude += deltaThrust * dt;
   currentRotation += deltaRotation * dt;
-  position = sf::Vector2f(position.x + (cos(currentRotation)*velocityMagnitude),
-			  position.y + (sin(currentRotation)*velocityMagnitude));
+  position = sf::Vector2f(position.x + (cos(currentRotation)*velocityMagnitude*dt),
+			  position.y + (sin(currentRotation)*velocityMagnitude*dt));
 }
 
 sf::Vector2f Entity::GetCurrentPosition() {

@@ -26,6 +26,7 @@
 #include "galaxy.h"
 #include "../log.h"
 #include "../game.h"
+#include "../controllers/settings.h"
 
 Galaxy::Galaxy(Game* game)
 {
@@ -88,10 +89,10 @@ void Galaxy::Update(float dt) {
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Update(dt);
-    if(currentTime < maxTime)
+    if(currentTime < GameSettings::maxTime)
       (*it)->Iterate(dt);
   }
-  if(currentTime < maxTime) {
+  if(currentTime < GameSettings::maxTime) {
     Iterate(dt);
     currentTime += dt;
   }
@@ -100,7 +101,7 @@ void Galaxy::Update(float dt) {
 void Galaxy::CommitTurn() {
   currentTime = 0;
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    (*it)->CommitTurn(frameTime, maxTime);
+    (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
   }
 }
 

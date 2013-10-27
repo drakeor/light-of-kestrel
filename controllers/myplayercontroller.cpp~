@@ -143,6 +143,9 @@ void MyPlayerController::SpawnPlayer()
     myPlayer->SetPosition(100, 100);
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     
+    // Add in our ghost
+    this->ghostObject = nullptr;
+
     // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
     for(int i=0;i<1;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
@@ -173,7 +176,8 @@ void MyPlayerController::Render()
   if(this->hasPlayer) {
     
     game->GetCamera()->PreRender();
-    game->GetWindow()->draw(ghostEntity);
+    //game->GetWindow()->draw(ghostEntity);
+    if(ghostObject.get() != nullptr) ghostObject.get()->Render();
     game->GetCamera()->PostRender();
     // Bind the camera to the player
     sf::Vector2f camPosition = myPlayer->GetCurrentPosition();
@@ -189,27 +193,32 @@ void MyPlayerController::Update(float dt)
 {
   if(this->hasPlayer) {
     ghostMovementDelay += dt;
-    ghostRotation += ghostDeltaRotation * dt;
-    ghostVelocity += ghostDeltaVelocity * dt;
-    ghostEntity.rotate(ghostRotation);
-    sf::Vector2f position = sf::Vector2f((cos(ghostRotation)*ghostVelocity*dt),
-			  (sin(ghostRotation)*ghostVelocity*dt));
-    ghostEntity.move(position.x, position.y);
+    
+    // We don't want to over-iterate the ghost
+    if(ghostMovementDelay < GameSettings::maxTime)
+      if(ghostObject.get() != nullptr) ghostObject.get()->Iterate(dt);
     
     if(ghostMovementDelay > GameSettings::ghostMovementDelayMax) {
       
-	  ghostEntity = (*myPlayer->GetSprite());
-	  ghostEntity.setPosition(myPlayer->GetCurrentPosition());
-	  ghostVelocity = myPlayer->GetCurrentVelocity();
-	  ghostRotation = ghostEntity.getRotation();
-	  
+	  // Grab the gui values
+	  // TODO: This is repetitive to the commit turn listener. Move this to a function later.
 	  float finalAngle = ((Slider*)GetControl()->GetControl("DirectionControl"))->GetFillPercentage();
 	  finalAngle = GetPlayer()->GetCurrentRotation() + (finalAngle-0.5f) * 2 * 2;
 	  float finalVelocity = ((Slider*)GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
 	  finalVelocity = finalVelocity * 200;
 	  ghostMovementDelay = 0;
-	  ghostDeltaRotation = (finalAngle - this->myPlayer->GetCurrentRotation()) / Galaxy::maxTime;
-	  ghostDeltaVelocity = (finalVelocity - this->myPlayer->GetCurrentVelocity()) / Galaxy::maxTime;
+	  
+	  // Reset this shit.
+	  this->ghostObject = std::unique_ptr<Entity>(EntityFactory::BuildEntity(game, SPACESHIP));
+	  sf::Color ghostColor = sf::Color::White;
+	  ghostColor.a = 100;
+	  this->ghostObject.get()->GetSprite()->setColor(ghostColor);
+	  ghostObject.get()->SetPosition(myPlayer->GetCurrentPosition().x, myPlayer->GetCurrentPosition().y);
+	  ghostObject.get()->SetCurrentVelocity(myPlayer->GetCurrentVelocity());
+	  ghostObject.get()->SetCurrentRotation(myPlayer->GetCurrentRotation());
+	  ghostObject.get()->SetTargetRotation(finalAngle);
+	  ghostObject.get()->SetTargetVelocity(finalVelocity);
+	  ghostObject.get()->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
     }
   }
   BaseController::Update(dt);

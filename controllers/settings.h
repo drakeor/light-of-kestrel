@@ -29,7 +29,9 @@
 class GameSettings
 {
 public:
-  static constexpr float ghostMovementDelayMax = 1.2;
+  static constexpr float ghostMovementDelayMax = 1.8f;
+  static constexpr float maxTime = 1.2f;
+  static constexpr float frameTime = (1/60);
 };
 
 #endif

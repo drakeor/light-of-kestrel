@@ -86,6 +86,7 @@ public:
   void SetTargetRotation(float target);
   void SetSprite(sf::Sprite sprite);
   void SetName(std::string newName);
+  std::string GetName();
   
   void SetParent(Galaxy* newParent);
   Galaxy* GetParent();

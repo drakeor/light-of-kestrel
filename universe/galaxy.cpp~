@@ -26,6 +26,7 @@
 #include "galaxy.h"
 #include "../log.h"
 #include "../game.h"
+#include <controllers/settings.h>
 
 Galaxy::Galaxy(Game* game)
 {
@@ -67,7 +68,7 @@ void Galaxy::Iterate(float dt)
    * Fix this part up. Right now, we're just using circular collisions with just simple vector addition to get the projected speed */
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     for(std::vector<Entity*>::iterator it2 = entity.begin(); it2 != entity.end(); ++it2) {
-      /* Calculate distance 
+      /* Calculate distance */
       if(it != it2) {
 	/* Remember to reposition objects IMMEDIATELY after so they don't keep colliding. Which would be pretty funny.*/
 	float distance = sqrt(pow(((*it)->GetCurrentPosition().x - (*it2)->GetCurrentPosition().x),2) + pow(((*it)->GetCurrentPosition().y - (*it2)->GetCurrentPosition().y),2));
@@ -88,10 +89,10 @@ void Galaxy::Update(float dt) {
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Update(dt);
-    if(currentTime < maxTime)
+    if(currentTime < GameSettings::maxTime)
       (*it)->Iterate(dt);
   }
-  if(currentTime < maxTime) {
+  if(currentTime < GameSettings::maxTime) {
     Iterate(dt);
     currentTime += dt;
   }
@@ -100,7 +101,7 @@ void Galaxy::Update(float dt) {
 void Galaxy::CommitTurn() {
   currentTime = 0;
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    (*it)->CommitTurn(frameTime, maxTime);
+    (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
   }
 }
 
