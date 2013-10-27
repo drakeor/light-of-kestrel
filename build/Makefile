@@ -197,6 +197,30 @@ camera.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
+components/entitycomponent.o: components/entitycomponent.cpp.o
+.PHONY : components/entitycomponent.o
+
+# target to build an object file
+components/entitycomponent.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o
+.PHONY : components/entitycomponent.cpp.o
+
+components/entitycomponent.i: components/entitycomponent.cpp.i
+.PHONY : components/entitycomponent.i
+
+# target to preprocess a source file
+components/entitycomponent.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.i
+.PHONY : components/entitycomponent.cpp.i
+
+components/entitycomponent.s: components/entitycomponent.cpp.s
+.PHONY : components/entitycomponent.s
+
+# target to generate assembly for a file
+components/entitycomponent.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.s
+.PHONY : components/entitycomponent.cpp.s
+
 controllers/basecontroller.o: controllers/basecontroller.cpp.o
 .PHONY : controllers/basecontroller.o
 
@@ -648,6 +672,9 @@ help:
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
+	@echo "... components/entitycomponent.o"
+	@echo "... components/entitycomponent.i"
+	@echo "... components/entitycomponent.s"
 	@echo "... controllers/basecontroller.o"
 	@echo "... controllers/basecontroller.i"
 	@echo "... controllers/basecontroller.s"

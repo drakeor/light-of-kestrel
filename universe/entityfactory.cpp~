@@ -63,27 +63,21 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
       entity->collisionGroup = COLLISION_GROUP_1;
       break;
+    case SPACESHIP_GHOST:
+      break;
       
     case ASTROID:
-      tempTex = game->GetAssetManager()->GetTexture("astroid.png");
-      texture = sf::Sprite(*tempTex);
-      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-      entity->SetSprite(texture);
+      BuildTexture(game, entity, "astroid.png");
       entity->SetName("Astroid");
       entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
       entity->collisionGroup = COLLISION_GROUP_1;
-      entity->TempCollisionDistance = tempTex->getSize().x/2;
       break;
    
     case MISSILE:
-      tempTex = game->GetAssetManager()->GetTexture("nope_missile.png");
-      texture = sf::Sprite(*tempTex);
-      texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-      entity->SetSprite(texture);
+      BuildTexture(game, entity, "nope_missile.png");
       entity->SetName("Missile");
       entity->collidesWith = COLLISION_GROUP_1; /* Will interact with other spaceships/astroids but not with each other. */
       entity->collisionGroup = COLLISION_GROUP_2; 
-      entity->TempCollisionDistance = tempTex->getSize().x/2;
       break;
       
     // Not implemented. In theory

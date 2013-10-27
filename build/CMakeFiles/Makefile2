@@ -56,7 +56,7 @@ CMAKE_BINARY_DIR = /home/drakeor/LightOfKestrel/build
 CMakeFiles/lightofkestrel.dir/all:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/depend
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drakeor/LightOfKestrel/build/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
 	@echo "Built target lightofkestrel"
 .PHONY : CMakeFiles/lightofkestrel.dir/all
 
@@ -66,7 +66,7 @@ all: CMakeFiles/lightofkestrel.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lightofkestrel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/drakeor/LightOfKestrel/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/drakeor/LightOfKestrel/build/CMakeFiles 21
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lightofkestrel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/drakeor/LightOfKestrel/build/CMakeFiles 0
 .PHONY : CMakeFiles/lightofkestrel.dir/rule
@@ -143,6 +143,21 @@ events/clean:
 # Convenience name for "preinstall" pass in the directory.
 events/preinstall:
 .PHONY : events/preinstall
+
+#=============================================================================
+# Directory level rules for directory components
+
+# Convenience name for "all" pass in the directory.
+components/all:
+.PHONY : components/all
+
+# Convenience name for "clean" pass in the directory.
+components/clean:
+.PHONY : components/clean
+
+# Convenience name for "preinstall" pass in the directory.
+components/preinstall:
+.PHONY : components/preinstall
 
 #=============================================================================
 # Special targets to cleanup operation of make.

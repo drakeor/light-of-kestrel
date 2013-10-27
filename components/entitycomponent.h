@@ -23,32 +23,18 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef GALAXY_H
-#define GALAXY_H
-#include <vector>
-#include "entity.h"
+#ifndef ENTITYCOMPONENT_H
+#define ENTITYCOMPONENT_H
 
-class Game;
-
-class Galaxy
+class EntityComponent
 {
-  sf::Sprite backgroundImage;
-  std::vector<Entity*> entity;
-  Game* game;
-  float currentTime;
-  
-  void Iterate(float dt);
-  sf::Texture* rawrTexture;
+
 public:
-  Galaxy(Game* game);
-  void AddEntity(Entity* entity);
-  void Render();
-  void Update(float dt);
-  void CommitTurn();
-  Galaxy(const Galaxy& other);
-  virtual ~Galaxy();
-  static constexpr float maxTime = 1.2f;
-  static constexpr float frameTime = (1/60);
+  EntityComponent();
+  virtual ~EntityComponent();
+  virtual void Iterate(float dt);
+  virtual void Render();
+  virtual void Update(float dt);
 };
 
-#endif // GALAXY_H
+#endif // ENTITYCOMPONENT_H

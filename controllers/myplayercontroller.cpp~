@@ -24,6 +24,7 @@
 */
 
 #include "myplayercontroller.h"
+#include "settings.h"
 #include "../game.h"
 #include "../log.h"
 #include <slider.h>
@@ -59,11 +60,12 @@ public:
     
     // Second, calculate our target velocity.This is done by just fillPercentage*maxAcceleration.
     float finalVelocity = ((Slider*)playerController->GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
-    finalVelocity = finalVelocity * 10;
+    finalVelocity = finalVelocity * 200;
 
     playerController->GetPlayer()->SetTargetRotation(finalAngle);
     playerController->GetPlayer()->SetTargetVelocity(finalVelocity);
     universe->GetCurrentGalaxy()->CommitTurn();
+    //playerController->GetPlayer()->CommitTurn(Galaxy::frameTime, Galaxy::maxTime);
   }
 };
 
@@ -85,6 +87,10 @@ public:
       // TODO: Recreate player.
   }
 };
+
+/*
+ * Constructor for this controller.
+ */
 
 MyPlayerController::MyPlayerController(Game* game) :
   BaseController(game)
@@ -138,10 +144,10 @@ void MyPlayerController::SpawnPlayer()
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     
     // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
-    for(int i=0;i<1z;i++) {
+    for(int i=0;i<1;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
       rawr->SetPosition((rand() % 1000 - 500), (rand() % 1000 - 500));
-      rawr->SetTargetVelocity(((float)rand()/(float)RAND_MAX));
+      rawr->SetTargetVelocity(((float)rand()/(float)RAND_MAX)*60);
       rawr->SetTargetRotation(((float)rand()/(float)RAND_MAX)*6.28);
       game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
     }
@@ -163,19 +169,49 @@ void MyPlayerController::UnsetGui()
 
 void MyPlayerController::Render()
 {
-  // Bind the camera to the player
+  
   if(this->hasPlayer) {
+    
+    game->GetCamera()->PreRender();
+    game->GetWindow()->draw(ghostEntity);
+    game->GetCamera()->PostRender();
+    // Bind the camera to the player
     sf::Vector2f camPosition = myPlayer->GetCurrentPosition();
     camPosition.x -= game->GetWindow()->getDefaultView().getCenter().x;
     camPosition.y -= game->GetWindow()->getDefaultView().getCenter().y;
     game->GetCamera()->SetPosition(camPosition);
-  }
+    
+  }  
   BaseController::Render();
 }
 
 void MyPlayerController::Update(float dt)
 {
-  
+  if(this->hasPlayer) {
+    ghostMovementDelay += dt;
+    ghostRotation += ghostDeltaRotation * dt;
+    ghostVelocity += ghostDeltaVelocity * dt;
+    ghostEntity.rotate(ghostRotation);
+    sf::Vector2f position = sf::Vector2f((cos(ghostRotation)*ghostVelocity*dt),
+			  (sin(ghostRotation)*ghostVelocity*dt));
+    ghostEntity.move(position.x, position.y);
+    
+    if(ghostMovementDelay > GameSettings::ghostMovementDelayMax) {
+      
+	  ghostEntity = (*myPlayer->GetSprite());
+	  ghostEntity.setPosition(myPlayer->GetCurrentPosition());
+	  ghostVelocity = myPlayer->GetCurrentVelocity();
+	  ghostRotation = ghostEntity.getRotation();
+	  
+	  float finalAngle = ((Slider*)GetControl()->GetControl("DirectionControl"))->GetFillPercentage();
+	  finalAngle = GetPlayer()->GetCurrentRotation() + (finalAngle-0.5f) * 2 * 2;
+	  float finalVelocity = ((Slider*)GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
+	  finalVelocity = finalVelocity * 200;
+	  ghostMovementDelay = 0;
+	  ghostDeltaRotation = (finalAngle - this->myPlayer->GetCurrentRotation()) / Galaxy::maxTime;
+	  ghostDeltaVelocity = (finalVelocity - this->myPlayer->GetCurrentVelocity()) / Galaxy::maxTime;
+    }
+  }
   BaseController::Update(dt);
 }
 

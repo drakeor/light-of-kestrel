@@ -34,11 +34,21 @@ class Game;
 
 class MyPlayerController : public BaseController
 {
+  // Player stuff
   bool hasPlayer;
   Entity* myPlayer;
   BaseControl* playerControls;
   std::unique_ptr<EventListener> commitListener;
   std::unique_ptr<EventListener> galaxyChangeListener;
+  
+  // Ghosting emulation.
+  float ghostMovementDelay;
+  sf::Sprite ghostEntity;
+  float ghostDeltaRotation;
+  float ghostDeltaVelocity;
+  float ghostVelocity;
+  float ghostRotation;
+  
 public:
   MyPlayerController(Game* game);
   void SpawnPlayer();

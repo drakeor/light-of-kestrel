@@ -11,6 +11,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/CMakeCCompiler.cmake"
   "CMakeFiles/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeSystem.cmake"
+  "../components/CMakeLists.txt"
   "../controllers/CMakeLists.txt"
   "../events/CMakeLists.txt"
   "../gui/CMakeLists.txt"
@@ -43,6 +44,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "universe/CMakeFiles/CMakeDirectoryInformation.cmake"
   "controllers/CMakeFiles/CMakeDirectoryInformation.cmake"
   "events/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "components/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

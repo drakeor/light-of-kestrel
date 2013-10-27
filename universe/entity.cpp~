@@ -126,7 +126,7 @@ void Entity::SetName(std::string newName) {
 
 std::string Entity::GetName()
 {
-
+  return name;
 }
 
 
