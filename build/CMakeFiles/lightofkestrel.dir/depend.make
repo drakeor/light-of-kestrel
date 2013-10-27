@@ -36,6 +36,19 @@ CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/.
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/basecontroller.cpp
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../controllers/basecontroller.h
 
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../gui/basecontrol.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../gui/guimanager.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../universe/../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../universe/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../universe/universemanager.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/../assetmanager.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/../camera.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/../controllers/controllermanager.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/../game.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/controllermanager.cpp
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../controllers/controllermanager.h
 

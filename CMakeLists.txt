@@ -2,6 +2,13 @@
 # Set the minimum version of CMake to 2.8
 cmake_minimum_required(VERSION 2.8)
 
+# To build it needs the following (Tested on Ubuntu 12.04)
+
+# sudo apt-get install libx11-dev libglui-dev libxi-dev libxmu-dev
+# SFML 2.1 Libraries (http://www.sfml-dev.org/download/sfml/2.1/)
+# Glew 1.7.0 (http://sourceforge.net/projects/glew/files/glew/1.7.0/)
+# One should be able to build the project and it's dependancies at this point.
+
 # Our project name is Light Of Kestrel
 project(lightofkestrel)
 
@@ -20,7 +27,7 @@ endif ()
 add_executable(lightofkestrel universe/entityfactory.cpp controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp inputmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp)
 
 # Link SFML Libraries.
-target_link_libraries (lightofkestrel sfml-graphics sfml-system sfml-window tgui)
+target_link_libraries (lightofkestrel sfml-graphics sfml-system sfml-window)
 
 # Install the program if needed
 install(TARGETS lightofkestrel RUNTIME DESTINATION bin)

@@ -37,6 +37,19 @@ CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
  /home/drakeor/LightOfKestrel/controllers/basecontroller.cpp
  /home/drakeor/LightOfKestrel/controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o
+ ../gui/basecontrol.h
+ ../gui/guimanager.h
+ ../universe/../events/eventhandler.h
+ ../universe/../events/eventlistener.h
+ ../universe/entity.h
+ ../universe/galaxy.h
+ ../universe/universemanager.h
+ /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
+ /home/drakeor/LightOfKestrel/controllers/../camera.h
+ /home/drakeor/LightOfKestrel/controllers/../controllers/controllermanager.h
+ /home/drakeor/LightOfKestrel/controllers/../game.h
+ /home/drakeor/LightOfKestrel/controllers/../inputmanager.h
+ /home/drakeor/LightOfKestrel/controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/controllers/controllermanager.cpp
  /home/drakeor/LightOfKestrel/controllers/controllermanager.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o

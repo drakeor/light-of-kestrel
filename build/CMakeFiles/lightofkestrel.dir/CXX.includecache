@@ -84,6 +84,12 @@ galaxy.h
 ../events/eventhandler.h
 ../universe/../events/eventhandler.h
 
+/home/drakeor/LightOfKestrel/assetmanager.cpp
+assetmanager.h
+/home/drakeor/LightOfKestrel/assetmanager.h
+log.h
+/home/drakeor/LightOfKestrel/log.h
+
 /home/drakeor/LightOfKestrel/assetmanager.h
 SFML/Graphics/Texture.hpp
 -
@@ -168,6 +174,14 @@ basecontroller.h
 
 /home/drakeor/LightOfKestrel/controllers/basecontroller.h
 
+/home/drakeor/LightOfKestrel/controllers/controllermanager.cpp
+controllermanager.h
+/home/drakeor/LightOfKestrel/controllers/controllermanager.h
+basecontroller.h
+/home/drakeor/LightOfKestrel/controllers/basecontroller.h
+../game.h
+/home/drakeor/LightOfKestrel/controllers/../game.h
+
 /home/drakeor/LightOfKestrel/controllers/controllermanager.h
 map
 -
@@ -207,6 +221,24 @@ worldcontroller.h
 /home/drakeor/LightOfKestrel/controllers/worldcontroller.h
 basecontroller.h
 /home/drakeor/LightOfKestrel/controllers/basecontroller.h
+
+/home/drakeor/LightOfKestrel/events/eventhandler.cpp
+eventhandler.h
+/home/drakeor/LightOfKestrel/events/eventhandler.h
+
+/home/drakeor/LightOfKestrel/events/eventhandler.h
+eventlistener.h
+/home/drakeor/LightOfKestrel/events/eventlistener.h
+string
+-
+vector
+-
+
+/home/drakeor/LightOfKestrel/events/eventlistener.cpp
+eventlistener.h
+/home/drakeor/LightOfKestrel/events/eventlistener.h
+
+/home/drakeor/LightOfKestrel/events/eventlistener.h
 
 /home/drakeor/LightOfKestrel/game.cpp
 game.h
@@ -397,6 +429,10 @@ basecontrol.h
 /home/drakeor/LightOfKestrel/gui/basecontrol.h
 SFML/Graphics/Text.hpp
 -
+
+/home/drakeor/LightOfKestrel/inputmanager.cpp
+inputmanager.h
+/home/drakeor/LightOfKestrel/inputmanager.h
 
 /home/drakeor/LightOfKestrel/inputmanager.h
 

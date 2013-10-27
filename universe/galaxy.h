@@ -36,8 +36,8 @@ class Galaxy
   std::vector<Entity*> entity;
   Game* game;
   float currentTime;
-  const float maxTime = 1.2f;
-  const float frameTime = (1/60);
+  static constexpr float maxTime = 1.2f;
+  static constexpr float frameTime = (1/60);
   void Iterate(float dt);
   sf::Texture* rawrTexture;
 public:
