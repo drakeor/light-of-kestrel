@@ -197,6 +197,30 @@ camera.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
+components/armourplating.o: components/armourplating.cpp.o
+.PHONY : components/armourplating.o
+
+# target to build an object file
+components/armourplating.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o
+.PHONY : components/armourplating.cpp.o
+
+components/armourplating.i: components/armourplating.cpp.i
+.PHONY : components/armourplating.i
+
+# target to preprocess a source file
+components/armourplating.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.i
+.PHONY : components/armourplating.cpp.i
+
+components/armourplating.s: components/armourplating.cpp.s
+.PHONY : components/armourplating.s
+
+# target to generate assembly for a file
+components/armourplating.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.s
+.PHONY : components/armourplating.cpp.s
+
 components/entitycomponent.o: components/entitycomponent.cpp.o
 .PHONY : components/entitycomponent.o
 
@@ -220,6 +244,30 @@ components/entitycomponent.s: components/entitycomponent.cpp.s
 components/entitycomponent.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.s
 .PHONY : components/entitycomponent.cpp.s
+
+components/missilebay.o: components/missilebay.cpp.o
+.PHONY : components/missilebay.o
+
+# target to build an object file
+components/missilebay.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o
+.PHONY : components/missilebay.cpp.o
+
+components/missilebay.i: components/missilebay.cpp.i
+.PHONY : components/missilebay.i
+
+# target to preprocess a source file
+components/missilebay.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.i
+.PHONY : components/missilebay.cpp.i
+
+components/missilebay.s: components/missilebay.cpp.s
+.PHONY : components/missilebay.s
+
+# target to generate assembly for a file
+components/missilebay.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.s
+.PHONY : components/missilebay.cpp.s
 
 controllers/basecontroller.o: controllers/basecontroller.cpp.o
 .PHONY : controllers/basecontroller.o
@@ -653,6 +701,30 @@ universe/galaxy.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.s
 .PHONY : universe/galaxy.cpp.s
 
+universe/missilefactory.o: universe/missilefactory.cpp.o
+.PHONY : universe/missilefactory.o
+
+# target to build an object file
+universe/missilefactory.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/missilefactory.cpp.o
+.PHONY : universe/missilefactory.cpp.o
+
+universe/missilefactory.i: universe/missilefactory.cpp.i
+.PHONY : universe/missilefactory.i
+
+# target to preprocess a source file
+universe/missilefactory.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/missilefactory.cpp.i
+.PHONY : universe/missilefactory.cpp.i
+
+universe/missilefactory.s: universe/missilefactory.cpp.s
+.PHONY : universe/missilefactory.s
+
+# target to generate assembly for a file
+universe/missilefactory.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/universe/missilefactory.cpp.s
+.PHONY : universe/missilefactory.cpp.s
+
 universe/universemanager.o: universe/universemanager.cpp.o
 .PHONY : universe/universemanager.o
 
@@ -696,9 +768,15 @@ help:
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
+	@echo "... components/armourplating.o"
+	@echo "... components/armourplating.i"
+	@echo "... components/armourplating.s"
 	@echo "... components/entitycomponent.o"
 	@echo "... components/entitycomponent.i"
 	@echo "... components/entitycomponent.s"
+	@echo "... components/missilebay.o"
+	@echo "... components/missilebay.i"
+	@echo "... components/missilebay.s"
 	@echo "... controllers/basecontroller.o"
 	@echo "... controllers/basecontroller.i"
 	@echo "... controllers/basecontroller.s"
@@ -753,6 +831,9 @@ help:
 	@echo "... universe/galaxy.o"
 	@echo "... universe/galaxy.i"
 	@echo "... universe/galaxy.s"
+	@echo "... universe/missilefactory.o"
+	@echo "... universe/missilefactory.i"
+	@echo "... universe/missilefactory.s"
 	@echo "... universe/universemanager.o"
 	@echo "... universe/universemanager.i"
 	@echo "... universe/universemanager.s"

@@ -26,6 +26,7 @@
 #include "entity.h"
 #include "../game.h"
 #include "../log.h"
+#include "../components/missilebay.h"
 
 Entity::Entity(Game* game)
 {
@@ -155,5 +156,11 @@ void Entity::OnCollision(Entity* other)
 {
 
 }
+
+void Entity::AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent)
+{
+  components[componentSide][componentLayer].push_back(entComponent);
+}
+
 
 

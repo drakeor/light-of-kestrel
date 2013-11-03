@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
+Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
@@ -23,18 +23,45 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef ENTITYCOMPONENT_H
-#define ENTITYCOMPONENT_H
+#ifndef MISSILEFACTORY_H
+#define MISSILEFACTORY_H
+#include <string>
+#include <vector>
 
-class EntityComponent
-{
-
-public:
-  EntityComponent();
-  virtual ~EntityComponent();
-  virtual void Iterate(float dt);
-  virtual void Render();
-  virtual void Update(float dt);
+enum missile_t {
+  MISSILE_NONE,
+  MISSILE_VEILLON_I,
+  
+  MISSILE_SHIVE_I,
+  
+  MISSILE_MIRA_I
 };
 
-#endif // ENTITYCOMPONENT_H
+enum missile_flight_t {
+  // Dumbfires
+  DUMBFIRE,
+  
+  // Dumb Guided that slowly adjusts to the closest target.
+  DUMB_GUIDED,
+  
+  // Radar Guided that locks onto ships and is more agile then dumb_guided
+  RADAR_GUIDED,
+};
+
+class Missile
+{
+public:
+  std::string missileName;
+  int damage;
+  missile_flight_t missileFlight;
+};
+
+class MissileFactory
+{
+public:
+  MissileFactory();
+  static Missile GetMissile(missile_t identifier);
+  virtual ~MissileFactory();
+};
+
+#endif // MISSILEFACTORY_H

@@ -8,10 +8,12 @@ CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o
 CMakeFiles/lightofkestrel.dir/camera.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/assetmanager.h
  /home/drakeor/LightOfKestrel/camera.cpp
@@ -21,16 +23,26 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o
  /home/drakeor/LightOfKestrel/game.h
  /home/drakeor/LightOfKestrel/inputmanager.h
  /home/drakeor/LightOfKestrel/log.h
+CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o
+ /home/drakeor/LightOfKestrel/components/armourplating.cpp
+ /home/drakeor/LightOfKestrel/components/armourplating.h
 CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o
  /home/drakeor/LightOfKestrel/components/entitycomponent.cpp
  /home/drakeor/LightOfKestrel/components/entitycomponent.h
+CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o
+ ../universe/missilefactory.h
+ /home/drakeor/LightOfKestrel/components/entitycomponent.h
+ /home/drakeor/LightOfKestrel/components/missilebay.cpp
+ /home/drakeor/LightOfKestrel/components/missilebay.h
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
  /home/drakeor/LightOfKestrel/controllers/../camera.h
@@ -42,10 +54,12 @@ CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
  /home/drakeor/LightOfKestrel/controllers/../camera.h
@@ -63,9 +77,11 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
  ../gui/dropdown.h
  ../gui/guimanager.h
  ../gui/slider.h
+ ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/entityfactory.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
  /home/drakeor/LightOfKestrel/controllers/../camera.h
@@ -80,10 +96,12 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
  /home/drakeor/LightOfKestrel/controllers/../camera.h
@@ -103,10 +121,12 @@ CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o
 CMakeFiles/lightofkestrel.dir/game.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/assetmanager.h
  /home/drakeor/LightOfKestrel/camera.h
@@ -120,8 +140,10 @@ CMakeFiles/lightofkestrel.dir/game.cpp.o
  /home/drakeor/LightOfKestrel/log.h
 CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/gui/../assetmanager.h
  /home/drakeor/LightOfKestrel/gui/../camera.h
@@ -137,10 +159,12 @@ CMakeFiles/lightofkestrel.dir/gui/basecontrol.cpp.o
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/gui/../assetmanager.h
  /home/drakeor/LightOfKestrel/gui/../camera.h
@@ -155,8 +179,10 @@ CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o
  ../gui/../events/eventlistener.h
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/gui/../assetmanager.h
  /home/drakeor/LightOfKestrel/gui/../camera.h
@@ -167,8 +193,10 @@ CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o
  /home/drakeor/LightOfKestrel/gui/dropdown.cpp
  /home/drakeor/LightOfKestrel/gui/dropdown.h
 CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o
+ ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/gui/../assetmanager.h
  /home/drakeor/LightOfKestrel/gui/../camera.h
@@ -187,8 +215,10 @@ CMakeFiles/lightofkestrel.dir/gui/guimanager.cpp.o
  /home/drakeor/LightOfKestrel/gui/textlabel.h
 CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/gui/../assetmanager.h
  /home/drakeor/LightOfKestrel/gui/../camera.h
@@ -204,8 +234,10 @@ CMakeFiles/lightofkestrel.dir/gui/slider.cpp.o
  /home/drakeor/LightOfKestrel/gui/slider.h
 CMakeFiles/lightofkestrel.dir/gui/textlabel.cpp.o
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/gui/../assetmanager.h
  /home/drakeor/LightOfKestrel/gui/../camera.h
@@ -225,10 +257,12 @@ CMakeFiles/lightofkestrel.dir/inputmanager.cpp.o
 CMakeFiles/lightofkestrel.dir/main.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/entity.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/assetmanager.h
  /home/drakeor/LightOfKestrel/camera.h
@@ -241,12 +275,15 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/galaxy.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/universe/../assetmanager.h
  /home/drakeor/LightOfKestrel/universe/../camera.h
+ /home/drakeor/LightOfKestrel/universe/../components/entitycomponent.h
+ /home/drakeor/LightOfKestrel/universe/../components/missilebay.h
  /home/drakeor/LightOfKestrel/universe/../controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/universe/../controllers/controllermanager.h
  /home/drakeor/LightOfKestrel/universe/../game.h
@@ -254,9 +291,11 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
  /home/drakeor/LightOfKestrel/universe/../log.h
  /home/drakeor/LightOfKestrel/universe/entity.cpp
  /home/drakeor/LightOfKestrel/universe/entity.h
+ /home/drakeor/LightOfKestrel/universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/galaxy.h
@@ -270,9 +309,11 @@ CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/entityfactory.cpp
  /home/drakeor/LightOfKestrel/universe/entityfactory.h
+ /home/drakeor/LightOfKestrel/universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/universemanager.h
@@ -287,11 +328,17 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/galaxy.cpp
  /home/drakeor/LightOfKestrel/universe/galaxy.h
+ /home/drakeor/LightOfKestrel/universe/missilefactory.h
+CMakeFiles/lightofkestrel.dir/universe/missilefactory.cpp.o
+ /home/drakeor/LightOfKestrel/universe/missilefactory.cpp
+ /home/drakeor/LightOfKestrel/universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/universemanager.cpp.o
+ ../universe/../components/entitycomponent.h
  /home/drakeor/LightOfKestrel/universe/../events/eventhandler.h
  /home/drakeor/LightOfKestrel/universe/../events/eventlistener.h
  /home/drakeor/LightOfKestrel/universe/../log.h
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/galaxy.h
+ /home/drakeor/LightOfKestrel/universe/missilefactory.h
  /home/drakeor/LightOfKestrel/universe/universemanager.cpp
  /home/drakeor/LightOfKestrel/universe/universemanager.h

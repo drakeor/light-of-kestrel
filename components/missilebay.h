@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
+Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
@@ -23,18 +23,23 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef ENTITYCOMPONENT_H
-#define ENTITYCOMPONENT_H
+#ifndef MISSILEBAY_H
+#define MISSILEBAY_H
 
-class EntityComponent
+#include "entitycomponent.h"
+#include <missilefactory.h>
+
+
+class MissileBay : public EntityComponent
 {
-
+  missile_t loadedMissile;
 public:
-  EntityComponent();
-  virtual ~EntityComponent();
+  MissileBay();
   virtual void Iterate(float dt);
   virtual void Render();
   virtual void Update(float dt);
+  missile_t GetLoadedMissile();
+  void LoadMissile(missile_t missile);
 };
 
-#endif // ENTITYCOMPONENT_H
+#endif // MISSILEBAY_H

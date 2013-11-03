@@ -35,6 +35,7 @@ public:
   virtual void Iterate(float dt);
   virtual void Render();
   virtual void Update(float dt);
+  int health;
 };
 
 #endif // ENTITYCOMPONENT_H

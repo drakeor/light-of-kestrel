@@ -35,3 +35,18 @@ EntityComponent::~EntityComponent()
 
 }
 
+void EntityComponent::Iterate(float dt)
+{
+
+}
+
+void EntityComponent::Render()
+{
+
+}
+
+void EntityComponent::Update(float dt)
+{
+
+}
+

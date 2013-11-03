@@ -26,10 +26,12 @@
 #include "entity.h"
 #include "../game.h"
 #include "../log.h"
+#include "../components/missilebay.h"
 
 Entity::Entity(Game* game)
 {
   this->game = game;
+  components[FRONT][LAYER_1].push_back(MissileBay());
 }
 
 Entity::~Entity()
@@ -97,6 +99,17 @@ float Entity::GetCurrentVelocity() {
   return velocityMagnitude;
 }
 
+void Entity::SetCurrentRotation(float target)
+{
+  currentRotation = target;
+}
+
+void Entity::SetCurrentVelocity(float target)
+{
+  velocityMagnitude = target;
+}
+
+
 sf::Sprite* Entity::GetSprite() {
   return &texture;
 }
@@ -144,5 +157,11 @@ void Entity::OnCollision(Entity* other)
 {
 
 }
+
+void Entity::AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent)
+{
+  components[componentSide][componentLayer].push_back(entComponent);
+}
+
 
 

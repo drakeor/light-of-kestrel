@@ -27,6 +27,9 @@
 #define ENTITY_H
 #include <SFML/Graphics/Sprite.hpp>
 #include <tr1/memory>
+#include <map>
+#include <../components/entitycomponent.h>
+#include "missilefactory.h"
 
 class Galaxy;
 class Game;
@@ -46,6 +49,24 @@ enum collision_group_t {
   COLLISION_GROUP_6 = 32,
   COLLISION_GROUP_7 = 64,
   COLLISION_GROUP_8 = 128
+};
+
+/* Max Component sides = 5 */
+enum component_side_t {
+  FRONT,
+  LEFT,
+  RIGHT,
+  BEHIND,
+  CORE,
+  MAX_COMPONENT_SIDES
+};
+
+/* Max Components Layers = 3 */
+enum component_layer_t {
+  LAYER_1,
+  LAYER_2,
+  LAYER_3,
+  MAX_COMPONENT_LAYERS
 };
 
 // Entities belong to the galaxys they are part of. 
@@ -72,6 +93,10 @@ class Entity
   float deltaRotation;
   float frameTime;
   float maxTime;
+  
+  // Entity Components
+  std::vector<EntityComponent> components[MAX_COMPONENT_SIDES][MAX_COMPONENT_LAYERS];
+  std::vector<missile_t> missiles;
   
 public:
   Entity(Game* game);
@@ -104,6 +129,9 @@ public:
   char collisionGroup;
   int TempCollisionDistance;
   void OnCollision(Entity* other);
+  
+  // Component Related
+  void AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent);
 };
 
 #endif // ENTITY_H

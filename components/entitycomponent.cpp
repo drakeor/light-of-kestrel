@@ -27,7 +27,7 @@
 
 EntityComponent::EntityComponent()
 {
-
+  health = 100;
 }
 
 EntityComponent::~EntityComponent()
