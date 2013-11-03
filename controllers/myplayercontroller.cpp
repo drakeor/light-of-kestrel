@@ -29,6 +29,7 @@
 #include "../log.h"
 #include <slider.h>
 #include <button.h>
+#include <dropdown.h>
 #include <entityfactory.h>
 
 /*
@@ -124,6 +125,15 @@ MyPlayerController::MyPlayerController(Game* game) :
   commitButton->SetEnabled(false);
   commitButton->OnClick.AddListener(commitListener.get());
   playerControls->AddControl("CommitButton", commitButton);
+  
+  // Temp Gui Control
+  Dropdown* testDropDown = new Dropdown(game);
+  testDropDown->SetPosition(100, 100);
+  testDropDown->AddOption("missile1", "Ready");
+  testDropDown->AddOption("missile2", "Fire Missile 1");
+  testDropDown->AddOption("missile3", "Fire Missile 2");
+  testDropDown->AddOption("missile4", "Fire Missile 3");
+  playerControls->AddControl("dropdown", testDropDown);
   
   ResetGui();
 }

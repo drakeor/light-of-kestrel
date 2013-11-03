@@ -437,6 +437,30 @@ gui/button.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/button.cpp.s
 .PHONY : gui/button.cpp.s
 
+gui/dropdown.o: gui/dropdown.cpp.o
+.PHONY : gui/dropdown.o
+
+# target to build an object file
+gui/dropdown.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o
+.PHONY : gui/dropdown.cpp.o
+
+gui/dropdown.i: gui/dropdown.cpp.i
+.PHONY : gui/dropdown.i
+
+# target to preprocess a source file
+gui/dropdown.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.i
+.PHONY : gui/dropdown.cpp.i
+
+gui/dropdown.s: gui/dropdown.cpp.s
+.PHONY : gui/dropdown.s
+
+# target to generate assembly for a file
+gui/dropdown.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.s
+.PHONY : gui/dropdown.cpp.s
+
 gui/guimanager.o: gui/guimanager.cpp.o
 .PHONY : gui/guimanager.o
 
@@ -702,6 +726,9 @@ help:
 	@echo "... gui/button.o"
 	@echo "... gui/button.i"
 	@echo "... gui/button.s"
+	@echo "... gui/dropdown.o"
+	@echo "... gui/dropdown.i"
+	@echo "... gui/dropdown.s"
 	@echo "... gui/guimanager.o"
 	@echo "... gui/guimanager.i"
 	@echo "... gui/guimanager.s"

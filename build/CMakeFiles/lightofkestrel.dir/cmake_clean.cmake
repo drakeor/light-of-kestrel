@@ -1,4 +1,5 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o"
   "CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o"
   "CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o"
   "CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o"

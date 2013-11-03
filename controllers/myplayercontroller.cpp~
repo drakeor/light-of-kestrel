@@ -29,6 +29,7 @@
 #include "../log.h"
 #include <slider.h>
 #include <button.h>
+#include <dropdown.h>
 #include <entityfactory.h>
 
 /*
@@ -125,6 +126,15 @@ MyPlayerController::MyPlayerController(Game* game) :
   commitButton->OnClick.AddListener(commitListener.get());
   playerControls->AddControl("CommitButton", commitButton);
   
+  // Temp Gui Control
+  Dropdown* testDropDown = new Dropdown(game);
+  testDropDown->SetPosition(100, 100);
+  testDropDown->AddOption("missile1", "Ready");
+  testDropDown->AddOption("missile1", "Fire Missile 1");
+  testDropDown->AddOption("missile2", "Fire Missile 2");
+  testDropDown->AddOption("missile3", "Fire Missile 3");
+  playerControls->AddControl("dropdown", testDropDown);
+  
   ResetGui();
 }
 
@@ -211,7 +221,7 @@ void MyPlayerController::Update(float dt)
 	  // Reset this shit.
 	  this->ghostObject = std::unique_ptr<Entity>(EntityFactory::BuildEntity(game, SPACESHIP));
 	  sf::Color ghostColor = sf::Color::White;
-	  ghostColor.a = 100;
+	  ghostColor.a = 80;
 	  this->ghostObject.get()->GetSprite()->setColor(ghostColor);
 	  ghostObject.get()->SetPosition(myPlayer->GetCurrentPosition().x, myPlayer->GetCurrentPosition().y);
 	  ghostObject.get()->SetCurrentVelocity(myPlayer->GetCurrentVelocity());
