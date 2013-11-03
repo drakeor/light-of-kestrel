@@ -269,6 +269,30 @@ components/missilebay.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.s
 .PHONY : components/missilebay.cpp.s
 
+components/vectorthruster.o: components/vectorthruster.cpp.o
+.PHONY : components/vectorthruster.o
+
+# target to build an object file
+components/vectorthruster.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o
+.PHONY : components/vectorthruster.cpp.o
+
+components/vectorthruster.i: components/vectorthruster.cpp.i
+.PHONY : components/vectorthruster.i
+
+# target to preprocess a source file
+components/vectorthruster.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.i
+.PHONY : components/vectorthruster.cpp.i
+
+components/vectorthruster.s: components/vectorthruster.cpp.s
+.PHONY : components/vectorthruster.s
+
+# target to generate assembly for a file
+components/vectorthruster.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.s
+.PHONY : components/vectorthruster.cpp.s
+
 controllers/basecontroller.o: controllers/basecontroller.cpp.o
 .PHONY : controllers/basecontroller.o
 
@@ -777,6 +801,9 @@ help:
 	@echo "... components/missilebay.o"
 	@echo "... components/missilebay.i"
 	@echo "... components/missilebay.s"
+	@echo "... components/vectorthruster.o"
+	@echo "... components/vectorthruster.i"
+	@echo "... components/vectorthruster.s"
 	@echo "... controllers/basecontroller.o"
 	@echo "... controllers/basecontroller.i"
 	@echo "... controllers/basecontroller.s"

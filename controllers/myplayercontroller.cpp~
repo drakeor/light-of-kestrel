@@ -130,9 +130,9 @@ MyPlayerController::MyPlayerController(Game* game) :
   Dropdown* testDropDown = new Dropdown(game);
   testDropDown->SetPosition(100, 100);
   testDropDown->AddOption("missile1", "Ready");
-  testDropDown->AddOption("missile1", "Fire Missile 1");
-  testDropDown->AddOption("missile2", "Fire Missile 2");
-  testDropDown->AddOption("missile3", "Fire Missile 3");
+  testDropDown->AddOption("missile2", "Fire Missile 1");
+  testDropDown->AddOption("missile3", "Fire Missile 2");
+  testDropDown->AddOption("missile4", "Fire Missile 3");
   playerControls->AddControl("dropdown", testDropDown);
   
   ResetGui();

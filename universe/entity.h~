@@ -29,6 +29,7 @@
 #include <tr1/memory>
 #include <map>
 #include <../components/entitycomponent.h>
+#include "missilefactory.h"
 
 class Galaxy;
 class Game;
@@ -95,6 +96,8 @@ class Entity
   
   // Entity Components
   std::vector<EntityComponent> components[MAX_COMPONENT_SIDES][MAX_COMPONENT_LAYERS];
+  std::vector<missile_t> missiles;
+  int health;
   
 public:
   Entity(Game* game);

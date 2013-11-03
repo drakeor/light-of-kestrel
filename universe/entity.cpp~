@@ -31,7 +31,6 @@
 Entity::Entity(Game* game)
 {
   this->game = game;
-  components[FRONT][LAYER_1].push_back(MissileBay());
 }
 
 Entity::~Entity()

@@ -1,4 +1,5 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o"
   "CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o"
   "CMakeFiles/lightofkestrel.dir/universe/missilefactory.cpp.o"
   "CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o"

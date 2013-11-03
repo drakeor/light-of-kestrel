@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
+Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
@@ -23,30 +23,23 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef ENTITYFACTORY_H
-#define ENTITYFACTORY_H
+#ifndef VECTORTHRUSTER_H
+#define VECTORTHRUSTER_H
 
-#include "entity.h"
+#include "entitycomponent.h"
 
-enum entity_t {
-  // Gameworld objects
-  SPACESHIP,
-  ASTROID,
-  MISSILE,
-  ANTIMISSILE, /* Not implemented */
-  
-  // Spaceships
-  SS_HORNET
+enum vectorthruster_class_t {
+  VECTORTHRUSTER_BASIC
 };
-  
-class EntityFactory
+
+class VectorThruster : public EntityComponent
 {
-  static void BuildTexture(Game* game, Entity* entity, std::string textureName);
-  static void BuildShip(Game* game, Entity* entity, std::string textureName);
+  float thrustPower;
 public:
-  EntityFactory();
-  virtual ~EntityFactory();
-  static Entity* BuildEntity(Game* game, entity_t entityType);
+  VectorThruster(vectorthruster_class_t identifier);
+  virtual void Iterate(float dt);
+  virtual void Render();
+  virtual void Update(float dt);
 };
 
-#endif // ENTITYFACTORY_H
+#endif // VECTORTHRUSTER_H

@@ -26,6 +26,7 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o
 CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o
  /home/drakeor/LightOfKestrel/components/armourplating.cpp
  /home/drakeor/LightOfKestrel/components/armourplating.h
+ /home/drakeor/LightOfKestrel/components/entitycomponent.h
 CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o
  /home/drakeor/LightOfKestrel/components/entitycomponent.cpp
  /home/drakeor/LightOfKestrel/components/entitycomponent.h
@@ -34,6 +35,10 @@ CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o
  /home/drakeor/LightOfKestrel/components/entitycomponent.h
  /home/drakeor/LightOfKestrel/components/missilebay.cpp
  /home/drakeor/LightOfKestrel/components/missilebay.h
+CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o
+ /home/drakeor/LightOfKestrel/components/entitycomponent.h
+ /home/drakeor/LightOfKestrel/components/vectorthruster.cpp
+ /home/drakeor/LightOfKestrel/components/vectorthruster.h
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
@@ -293,12 +298,17 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
+ .././components/armourplating.h
+ .././components/entitycomponent.h
+ .././components/missilebay.h
+ .././components/vectorthruster.h
  ../gui/basecontrol.h
  ../gui/guimanager.h
  ../universe/../components/entitycomponent.h
  ../universe/../events/eventhandler.h
  ../universe/../events/eventlistener.h
  ../universe/galaxy.h
+ ../universe/missilefactory.h
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/universe/../assetmanager.h
  /home/drakeor/LightOfKestrel/universe/../camera.h
@@ -309,7 +319,6 @@ CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
  /home/drakeor/LightOfKestrel/universe/entity.h
  /home/drakeor/LightOfKestrel/universe/entityfactory.cpp
  /home/drakeor/LightOfKestrel/universe/entityfactory.h
- /home/drakeor/LightOfKestrel/universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h

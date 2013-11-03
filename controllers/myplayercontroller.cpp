@@ -149,7 +149,7 @@ void MyPlayerController::SpawnPlayer()
     
     // Add in our player immediately when this controller is constructed.
     this->hasPlayer = true;
-    this->myPlayer = EntityFactory::BuildEntity(game, SPACESHIP);
+    this->myPlayer = EntityFactory::BuildEntity(game, SS_HORNET);
     myPlayer->SetPosition(100, 100);
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     

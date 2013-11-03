@@ -31,6 +31,7 @@
 Entity::Entity(Game* game)
 {
   this->game = game;
+  health = 100;
 }
 
 Entity::~Entity()

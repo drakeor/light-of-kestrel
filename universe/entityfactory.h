@@ -29,15 +29,20 @@
 #include "entity.h"
 
 enum entity_t {
+  // Gameworld objects
   SPACESHIP,
   ASTROID,
   MISSILE,
-  ANTIMISSILE /* Not implemented */
+  ANTIMISSILE, /* Not implemented */
+  
+  // Spaceships
+  SS_HORNET
 };
   
 class EntityFactory
 {
   static void BuildTexture(Game* game, Entity* entity, std::string textureName);
+  static void BuildShip(Game* game, Entity* entity, std::string textureName, std::string entName);
 public:
   EntityFactory();
   virtual ~EntityFactory();

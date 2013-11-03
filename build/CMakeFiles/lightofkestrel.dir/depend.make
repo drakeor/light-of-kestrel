@@ -25,6 +25,7 @@ CMakeFiles/lightofkestrel.dir/camera.cpp.o: ../log.h
 
 CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o: ../components/armourplating.cpp
 CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o: ../components/armourplating.h
+CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o: ../components/entitycomponent.h
 
 CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o: ../components/entitycomponent.cpp
 CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o: ../components/entitycomponent.h
@@ -33,6 +34,10 @@ CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o: ../universe/missilefa
 CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o: ../components/entitycomponent.h
 CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o: ../components/missilebay.cpp
 CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o: ../components/missilebay.h
+
+CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o: ../components/entitycomponent.h
+CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o: ../components/vectorthruster.cpp
+CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o: ../components/vectorthruster.h
 
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o: ../gui/guimanager.h
@@ -292,12 +297,17 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/missilefactory.h
 
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: .././components/armourplating.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: .././components/entitycomponent.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: .././components/missilebay.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: .././components/vectorthruster.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../components/entitycomponent.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../events/eventhandler.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/galaxy.h
+CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/universemanager.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../assetmanager.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../camera.h
@@ -308,7 +318,6 @@ CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/../input
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.cpp
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.h
-CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/missilefactory.h
 
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/guimanager.h

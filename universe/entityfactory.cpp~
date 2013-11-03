@@ -25,6 +25,9 @@
 
 #include "entityfactory.h"
 #include "../game.h"
+#include <components/armourplating.h>
+#include <components/missilebay.h>
+#include <components/vectorthruster.h>
 
 EntityFactory::EntityFactory()
 {
@@ -47,6 +50,13 @@ void EntityFactory::BuildTexture(Game* game, Entity* entity, std::string texture
   entity->TempCollisionDistance = tempTex->getSize().x/2;
 }
 
+void EntityFactory::BuildShip(Game* game, Entity* entity, std::string textureName, std::string entName)
+{
+  BuildTexture(game, entity, textureName);
+  entity->SetName(entName);
+  entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
+  entity->collisionGroup = COLLISION_GROUP_1;
+}
 
 Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
 {
@@ -57,15 +67,26 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
   
   switch(entityType) {
     
+    /* Spaceships */
     case SPACESHIP:
-      BuildTexture(game, entity, "nope.png");
-      entity->SetName("Spaceship");
-      entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
-      entity->collisionGroup = COLLISION_GROUP_1;
+      BuildShip(game, entity, "nope.png", "Spaceship");
       break;
-    case SPACESHIP_GHOST:
-      break;
+   
+    case SS_HORNET:
+      BuildShip(game, entity, "nope.png", "Hornet I");
       
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, MissileBay());
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      break;
+    
+   /* World Objects */
     case ASTROID:
       BuildTexture(game, entity, "astroid.png");
       entity->SetName("Astroid");

@@ -9,6 +9,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/drakeor/LightOfKestrel/components/armourplating.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o"
   "/home/drakeor/LightOfKestrel/components/entitycomponent.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/components/entitycomponent.cpp.o"
   "/home/drakeor/LightOfKestrel/components/missilebay.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/components/missilebay.cpp.o"
+  "/home/drakeor/LightOfKestrel/components/vectorthruster.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o"
   "/home/drakeor/LightOfKestrel/controllers/basecontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o"
   "/home/drakeor/LightOfKestrel/controllers/controllermanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o"
   "/home/drakeor/LightOfKestrel/controllers/myplayercontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o"

@@ -56,7 +56,7 @@ enum component_side_t {
   FRONT,
   LEFT,
   RIGHT,
-  BEHIND,
+  BACK,
   CORE,
   MAX_COMPONENT_SIDES
 };
@@ -97,6 +97,7 @@ class Entity
   // Entity Components
   std::vector<EntityComponent> components[MAX_COMPONENT_SIDES][MAX_COMPONENT_LAYERS];
   std::vector<missile_t> missiles;
+  int health;
   
 public:
   Entity(Game* game);
