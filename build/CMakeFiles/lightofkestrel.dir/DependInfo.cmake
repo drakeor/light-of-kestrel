@@ -13,6 +13,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/drakeor/LightOfKestrel/controllers/basecontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/basecontroller.cpp.o"
   "/home/drakeor/LightOfKestrel/controllers/controllermanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o"
   "/home/drakeor/LightOfKestrel/controllers/myplayercontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o"
+  "/home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o"
   "/home/drakeor/LightOfKestrel/controllers/worldcontroller.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o"
   "/home/drakeor/LightOfKestrel/events/eventhandler.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/events/eventhandler.cpp.o"
   "/home/drakeor/LightOfKestrel/events/eventlistener.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/events/eventlistener.cpp.o"
@@ -36,3 +37,13 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   )
+
+# The include file search paths:
+SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "../universe"
+  "../gui"
+  "../."
+  )
+SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

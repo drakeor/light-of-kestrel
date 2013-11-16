@@ -35,6 +35,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/drakeor/LightOfKestrel
 
@@ -364,6 +367,30 @@ controllers/myplayercontroller.s: controllers/myplayercontroller.cpp.s
 controllers/myplayercontroller.cpp.s:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.s
 .PHONY : controllers/myplayercontroller.cpp.s
+
+controllers/shipinterfacecontroller.o: controllers/shipinterfacecontroller.cpp.o
+.PHONY : controllers/shipinterfacecontroller.o
+
+# target to build an object file
+controllers/shipinterfacecontroller.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o
+.PHONY : controllers/shipinterfacecontroller.cpp.o
+
+controllers/shipinterfacecontroller.i: controllers/shipinterfacecontroller.cpp.i
+.PHONY : controllers/shipinterfacecontroller.i
+
+# target to preprocess a source file
+controllers/shipinterfacecontroller.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.i
+.PHONY : controllers/shipinterfacecontroller.cpp.i
+
+controllers/shipinterfacecontroller.s: controllers/shipinterfacecontroller.cpp.s
+.PHONY : controllers/shipinterfacecontroller.s
+
+# target to generate assembly for a file
+controllers/shipinterfacecontroller.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.s
+.PHONY : controllers/shipinterfacecontroller.cpp.s
 
 controllers/worldcontroller.o: controllers/worldcontroller.cpp.o
 .PHONY : controllers/worldcontroller.o
@@ -813,6 +840,9 @@ help:
 	@echo "... controllers/myplayercontroller.o"
 	@echo "... controllers/myplayercontroller.i"
 	@echo "... controllers/myplayercontroller.s"
+	@echo "... controllers/shipinterfacecontroller.o"
+	@echo "... controllers/shipinterfacecontroller.i"
+	@echo "... controllers/shipinterfacecontroller.s"
 	@echo "... controllers/worldcontroller.o"
 	@echo "... controllers/worldcontroller.i"
 	@echo "... controllers/worldcontroller.s"

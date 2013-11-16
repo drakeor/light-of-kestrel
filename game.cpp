@@ -29,6 +29,7 @@
 #include "log.h"
 #include "controllers/myplayercontroller.h"
 #include "controllers/worldcontroller.h"
+#include "controllers/shipinterfacecontroller.h"
 
 void Game::Initialise(sf::RenderWindow* window, sf::View* view)
 {
@@ -43,6 +44,7 @@ void Game::Initialise(sf::RenderWindow* window, sf::View* view)
   // Add our controllers
   controllerManager.get()->AddController("WorldController", new WorldController(this));
   controllerManager.get()->AddController("PlayerController", new MyPlayerController(this));
+  controllerManager.get()->AddController("ShipInterface", new ShipInterfaceController(this));
   
   // State the game is now started up.
   FILE_LOG(logDEBUG) <<  "Initialised Game Engine.";

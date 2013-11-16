@@ -26,22 +26,6 @@ string
 ../events/eventhandler.h
 ../gui/../events/eventhandler.h
 
-../gui/button.h
-../../home/drakeor/LightOfKestrel/gui/basecontrol.h
--
-SFML/Graphics/RectangleShape.hpp
--
-SFML/Graphics/Text.hpp
--
-
-../gui/dropdown.h
-basecontrol.h
--
-SFML/Graphics/RectangleShape.hpp
--
-SFML/Graphics/Text.hpp
--
-
 ../gui/guimanager.h
 string
 -
@@ -51,12 +35,6 @@ list
 -
 basecontrol.h
 ../gui/basecontrol.h
-
-../gui/slider.h
-basecontrol.h
-../gui/basecontrol.h
-SFML/Graphics/RectangleShape.hpp
--
 
 ../universe/../components/entitycomponent.h
 
@@ -71,10 +49,6 @@ map
 -
 missilefactory.h
 ../universe/missilefactory.h
-
-../universe/entityfactory.h
-entity.h
-../universe/entity.h
 
 ../universe/galaxy.h
 vector
@@ -138,45 +112,19 @@ memory
 
 /home/drakeor/LightOfKestrel/controllers/../inputmanager.h
 
-/home/drakeor/LightOfKestrel/controllers/../log.h
-sstream
--
-string
--
-stdio.h
--
-windows.h
--
-sys/time.h
--
-
 /home/drakeor/LightOfKestrel/controllers/basecontroller.h
 
-/home/drakeor/LightOfKestrel/controllers/myplayercontroller.cpp
-myplayercontroller.h
-/home/drakeor/LightOfKestrel/controllers/myplayercontroller.h
-settings.h
-/home/drakeor/LightOfKestrel/controllers/settings.h
+/home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.cpp
+shipinterfacecontroller.h
+/home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
 ../game.h
 /home/drakeor/LightOfKestrel/controllers/../game.h
-../log.h
-/home/drakeor/LightOfKestrel/controllers/../log.h
-slider.h
--
-button.h
--
-dropdown.h
--
-entityfactory.h
--
 
-/home/drakeor/LightOfKestrel/controllers/myplayercontroller.h
+/home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
 basecontroller.h
 /home/drakeor/LightOfKestrel/controllers/basecontroller.h
 entity.h
 -
 basecontrol.h
 -
-
-/home/drakeor/LightOfKestrel/controllers/settings.h
 

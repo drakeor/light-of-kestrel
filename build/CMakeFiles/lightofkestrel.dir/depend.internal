@@ -98,6 +98,24 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
  /home/drakeor/LightOfKestrel/controllers/myplayercontroller.cpp
  /home/drakeor/LightOfKestrel/controllers/myplayercontroller.h
  /home/drakeor/LightOfKestrel/controllers/settings.h
+CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o
+ ../gui/../events/eventhandler.h
+ ../gui/../events/eventlistener.h
+ ../gui/basecontrol.h
+ ../gui/guimanager.h
+ ../universe/../components/entitycomponent.h
+ ../universe/entity.h
+ ../universe/galaxy.h
+ ../universe/missilefactory.h
+ ../universe/universemanager.h
+ /home/drakeor/LightOfKestrel/controllers/../assetmanager.h
+ /home/drakeor/LightOfKestrel/controllers/../camera.h
+ /home/drakeor/LightOfKestrel/controllers/../controllers/controllermanager.h
+ /home/drakeor/LightOfKestrel/controllers/../game.h
+ /home/drakeor/LightOfKestrel/controllers/../inputmanager.h
+ /home/drakeor/LightOfKestrel/controllers/basecontroller.h
+ /home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.cpp
+ /home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
 CMakeFiles/lightofkestrel.dir/controllers/worldcontroller.cpp.o
  ../gui/basecontrol.h
  ../gui/guimanager.h
@@ -138,6 +156,7 @@ CMakeFiles/lightofkestrel.dir/game.cpp.o
  /home/drakeor/LightOfKestrel/controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/controllers/controllermanager.h
  /home/drakeor/LightOfKestrel/controllers/myplayercontroller.h
+ /home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
  /home/drakeor/LightOfKestrel/controllers/worldcontroller.h
  /home/drakeor/LightOfKestrel/game.cpp
  /home/drakeor/LightOfKestrel/game.h
