@@ -163,5 +163,15 @@ void Entity::AddComponent(component_side_t componentSide, component_layer_t comp
   components[componentSide][componentLayer].push_back(entComponent);
 }
 
+std::string Entity::GetIcon()
+{
+  return entityIcon;
+}
+
+void Entity::SetIcon(std::string name)
+{
+  entityIcon = name;
+}
+
 
 

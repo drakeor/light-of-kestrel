@@ -112,6 +112,7 @@ CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../cont
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/../controllers/controllermanager.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/../game.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/../inputmanager.h
+CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/../log.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/shipinterfacecontroller.cpp
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../controllers/shipinterfacecontroller.h
@@ -291,6 +292,7 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o: ../assetmanager.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../camera.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../controllers/controllermanager.h
+CMakeFiles/lightofkestrel.dir/main.cpp.o: ../controllers/shipinterfacecontroller.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../game.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../inputmanager.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../log.h

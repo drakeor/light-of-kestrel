@@ -42,6 +42,7 @@ class Galaxy
 public:
   Galaxy(Game* game);
   void AddEntity(Entity* entity);
+  std::vector<Entity*> GetEntityList();
   void Render();
   void Update(float dt);
   void CommitTurn();

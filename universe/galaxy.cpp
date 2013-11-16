@@ -85,6 +85,12 @@ void Galaxy::Iterate(float dt)
   }
 }
 
+std::vector< Entity* > Galaxy::GetEntityList()
+{
+  return entity;
+}
+
+
 void Galaxy::Update(float dt) {
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {

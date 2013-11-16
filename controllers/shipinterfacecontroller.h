@@ -32,6 +32,8 @@
 
 class Game;
 
+
+
 class ShipInterfaceController : public BaseController
 {
 private:
@@ -40,11 +42,13 @@ private:
   
   // This is for the toggle/container on the GUI that brings up the ship status menu.
   sf::Sprite shipContainer;
+  sf::Sprite selectedIcon;
   
 public:
   ShipInterfaceController(Game* game);
   void Update(float dt);
   void Render();
+  void HandleMouseClick();
   
   Entity* GetEntity();
   void SetEntity(Entity* entity);

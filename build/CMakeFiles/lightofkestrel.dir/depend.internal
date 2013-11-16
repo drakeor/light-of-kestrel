@@ -113,6 +113,7 @@ CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o
  /home/drakeor/LightOfKestrel/controllers/../controllers/controllermanager.h
  /home/drakeor/LightOfKestrel/controllers/../game.h
  /home/drakeor/LightOfKestrel/controllers/../inputmanager.h
+ /home/drakeor/LightOfKestrel/controllers/../log.h
  /home/drakeor/LightOfKestrel/controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.cpp
  /home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
@@ -292,6 +293,7 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o
  /home/drakeor/LightOfKestrel/camera.h
  /home/drakeor/LightOfKestrel/controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/controllers/controllermanager.h
+ /home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
  /home/drakeor/LightOfKestrel/game.h
  /home/drakeor/LightOfKestrel/inputmanager.h
  /home/drakeor/LightOfKestrel/log.h

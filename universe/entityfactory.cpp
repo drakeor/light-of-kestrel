@@ -75,6 +75,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
     case SS_HORNET:
       
       BuildShip(game, entity, "nope.png", "Hornet I");
+      entity->SetIcon("gfx/icons/shipicon.png");
       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
       entity->AddComponent(FRONT, LAYER_1, MissileBay());
       entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
@@ -89,6 +90,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
    /* World Objects */
     case ASTROID:
       BuildTexture(game, entity, "astroid.png");
+      entity->SetIcon("gfx/icons/astroidicon.png");
       entity->SetName("Astroid");
       entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
       entity->collisionGroup = COLLISION_GROUP_1;

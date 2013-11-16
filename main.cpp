@@ -26,6 +26,7 @@
 #include <SFML/Graphics.hpp>
 #include "log.h"
 #include "game.h"
+#include "controllers/shipinterfacecontroller.h"
 
 int main()
 {
@@ -57,8 +58,14 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 exit(1);
-	    if (event.type == sf::Event::MouseButtonReleased)
+	    if (event.type == sf::Event::MouseButtonReleased) {
 	      game->GetGuiManager()->HandleMouseClick();
+	      // Because I'm lazy and hacky.
+	      if(game->GetControllerManager()->GetController("ShipInterface") != nullptr) {
+		ShipInterfaceController* shipCon = (ShipInterfaceController*)game->GetControllerManager()->GetController("ShipInterface");
+		if(shipCon != nullptr) shipCon->HandleMouseClick();
+	      }
+	    }
         }
         // We're locking the game to 60fps.
         // If it goes too slowly, then the simulation will move slowly.

@@ -76,6 +76,7 @@ class Entity
   sf::Sprite texture;
   Game* game;
   std::string name;
+  std::string entityIcon;
   Galaxy* parent;
   
   // Physiks Variables.
@@ -115,6 +116,8 @@ public:
   void SetSprite(sf::Sprite sprite);
   void SetName(std::string newName);
   std::string GetName();
+  std::string GetIcon();
+  void SetIcon(std::string name);
   
   void SetParent(Galaxy* newParent);
   Galaxy* GetParent();
