@@ -28,6 +28,7 @@ Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 MissileBay::MissileBay()
 {
   loadedMissile = MISSILE_NONE;
+  icon = "gfx/icons/class1_hardpoint.png";
 }
 
 void MissileBay::Iterate(float dt)

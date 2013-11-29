@@ -27,6 +27,7 @@ Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 
 ArmourPlating::ArmourPlating(armour_class_t armourClass)
 {
+  icon = "gfx/icons/class1_armour.png";
   negateCoefficient = 0.01;
   switch(armourClass) {
     /* Steel armour is the most basic armour money can buy. It makes up a majority of ships. 

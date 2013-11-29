@@ -163,6 +163,12 @@ void Entity::AddComponent(component_side_t componentSide, component_layer_t comp
   components[componentSide][componentLayer].push_back(entComponent);
 }
 
+std::vector< EntityComponent > Entity::GetComponents(component_side_t componentSide, component_layer_t componentLayer)
+{
+  return components[componentSide][componentLayer];
+}
+
+
 std::string Entity::GetIcon()
 {
   return entityIcon;

@@ -136,6 +136,7 @@ public:
   
   // Component Related
   void AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent);
+  std::vector<EntityComponent> GetComponents(component_side_t componentSide, component_layer_t componentLayer);
 };
 
 #endif // ENTITY_H

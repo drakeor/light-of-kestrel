@@ -29,6 +29,7 @@ VectorThruster::VectorThruster(vectorthruster_class_t identifier)
 {
   thrustPower = 1;
   steeringPower = 1;
+  icon = "gfx/icons/class1_thruster.png";
   switch(identifier) {
     /* The basic vector thruster offers basic Turning and Thrust. Not much more then that. */
     case VECTORTHRUSTER_BASIC:

@@ -25,6 +25,7 @@
 
 #ifndef ENTITYCOMPONENT_H
 #define ENTITYCOMPONENT_H
+#include <string>
 
 class EntityComponent
 {
@@ -36,6 +37,7 @@ public:
   virtual void Render();
   virtual void Update(float dt);
   int health;
+  std::string icon;
 };
 
 #endif // ENTITYCOMPONENT_H

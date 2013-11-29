@@ -42,7 +42,11 @@ private:
   
   // This is for the toggle/container on the GUI that brings up the ship status menu.
   sf::Sprite shipContainer;
+  sf::Sprite advancedContainer;
   sf::Sprite selectedIcon;
+  sf::Vector2i guiAnchor;
+  sf::Vector2i advancedGuiAnchor;
+  bool advancedDisplay;
   
 public:
   ShipInterfaceController(Game* game);
