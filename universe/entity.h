@@ -137,6 +137,12 @@ public:
   // Component Related
   void AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent);
   std::vector<EntityComponent> GetComponents(component_side_t componentSide, component_layer_t componentLayer);
+  
+  // Missile related
+  void AddMissile(missile_t missile, int amount);
+  std::vector<missile_t> GetMissiles();
+  bool HasMissile(missile_t missile);
+  void FireMissile(missile_t missile);
 };
 
 #endif // ENTITY_H

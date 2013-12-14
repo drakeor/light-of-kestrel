@@ -81,6 +81,7 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/butto
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/dropdown.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/slider.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/textlabel.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/../components/entitycomponent.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../universe/entityfactory.h

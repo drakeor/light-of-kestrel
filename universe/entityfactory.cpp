@@ -85,6 +85,8 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
       entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
       
+      entity->AddMissile(MISSILE_VEILLON_I, 8);
+      entity->AddMissile(MISSILE_SHIVE_I, 3);
       break;
     
    /* World Objects */

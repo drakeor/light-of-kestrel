@@ -179,5 +179,37 @@ void Entity::SetIcon(std::string name)
   entityIcon = name;
 }
 
+void Entity::AddMissile(missile_t missile, int amount)
+{
+  missiles.insert(missiles.begin(), amount, missile);
+}
+
+void Entity::FireMissile(missile_t missile)
+{
+  for (auto sMissile = missiles.begin(); sMissile != missiles.end(); sMissile++) {
+    if((*sMissile) == missile) {
+      missiles.erase(sMissile);
+      break;
+    }
+  }
+}
+
+std::vector< missile_t > Entity::GetMissiles()
+{
+  return missiles;
+}
+
+bool Entity::HasMissile(missile_t missile)
+{
+  for (auto sMissile = missiles.begin(); sMissile != missiles.end(); sMissile++) {
+    if((*sMissile) == missile) {
+      return true;
+      break;
+    }
+  }
+  return false;
+}
+
+
 
 

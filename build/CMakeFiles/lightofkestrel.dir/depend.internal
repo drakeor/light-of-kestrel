@@ -82,6 +82,7 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
  ../gui/dropdown.h
  ../gui/guimanager.h
  ../gui/slider.h
+ ../gui/textlabel.h
  ../universe/../components/entitycomponent.h
  ../universe/entity.h
  ../universe/entityfactory.h

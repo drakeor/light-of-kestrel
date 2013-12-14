@@ -45,6 +45,10 @@ class MyPlayerController : public BaseController
   std::unique_ptr<Entity> ghostObject;
   float ghostMovementDelay;
   
+  // Missile display stuff
+  BaseControl* missileControls;
+  int activeMissileBays;
+  
 public:
   MyPlayerController(Game* game);
   void SpawnPlayer();
