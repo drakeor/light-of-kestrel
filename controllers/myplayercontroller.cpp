@@ -66,6 +66,7 @@ public:
 
     playerController->GetPlayer()->SetTargetRotation(finalAngle);
     playerController->GetPlayer()->SetTargetVelocity(finalVelocity);
+    playerController->ResetMissileInterface();
     universe->GetCurrentGalaxy()->CommitTurn();
     //playerController->GetPlayer()->CommitTurn(Galaxy::frameTime, Galaxy::maxTime);
   }
@@ -90,6 +91,20 @@ public:
   }
 };
 
+class MissileButtonListener : public EventListener
+{
+ MyPlayerController* playerController;
+public:
+  MissileButtonListener(MyPlayerController* playerController) { 
+    this->playerController = playerController;
+  }
+  virtual ~MissileButtonListener() {}
+  void OnEvent(EventHandler* handler) {
+    // Alright, we need to inform of the missile we got
+    FILE_LOG(logWARNING) << "Missile button commited at position at " << handler->GetEventName();
+  }  
+};
+
 /*
  * Constructor for this controller.
  */
@@ -101,6 +116,7 @@ MyPlayerController::MyPlayerController(Game* game) :
   // Add an event listener for when the player commits a turn and the galaxy changes.
   commitListener = std::unique_ptr<EventListener>( new CommitListener(this, game->GetUniverseManager()) );
   galaxyChangeListener = std::unique_ptr<EventListener>( new GalaxyChangeListener(this, game->GetUniverseManager()) );
+  missileButtonListener  = std::unique_ptr<EventListener>( new MissileButtonListener(this) ); 
   game->GetUniverseManager()->OnGalaxyChange.AddListener(galaxyChangeListener.get());
   
   // Add the player control and corresponding gui elements
@@ -129,7 +145,24 @@ MyPlayerController::MyPlayerController(Game* game) :
   
   // Add our missile controls and their corresponding elements
   missileControls = new BaseControl(game);
-  missileControls->SetPosition(0, 10);
+  missileControls->SetPosition(5, game->GetWindow()->getSize().y-145);
+  
+  for(int i=0; i < GameSettings::g_missilePerRow; i++)
+  {
+    for(int j=0; j < GameSettings::g_maxMissileColumns; j++)
+    {
+      std::stringstream ss;
+      ss << i << ' ' << j;
+      Button* missileButton = new Button(game);
+      missileButton->SetPosition((i*20), (j*20));
+      missileButton->SetImage("gfx/interface/empty.png");
+      missileButton->SetUserData(ss.str());
+      missileButton->OnClick.AddListener(missileButtonListener.get());
+      missileButton->OnClick.SetEventName(ss.str());
+      missileButton->SetSize(16,16);
+      missileControls->AddControl(ss.str(), missileButton);
+    }
+  }
   
   ResetGui();
 }
@@ -164,6 +197,32 @@ void MyPlayerController::SpawnPlayer()
   }
 }
 
+/*
+ * This is called by the commit button listener
+ * This will update the missiles on the ship!
+ */
+void MyPlayerController::ResetMissileInterface()
+{
+  if(hasPlayer) {
+    std::vector< missile_t > tempMissiles = this->myPlayer->GetMissiles();
+    auto sMissile = tempMissiles.begin();
+    for(int y = 0; y < GameSettings::g_maxMissileColumns; y++) {
+      for(int x = 0; x < GameSettings::g_missilePerRow; x++) {
+	std::stringstream ss;
+	ss << x << ' ' << y;
+	if(missileControls->GetControl(ss.str()) != nullptr) {
+	  if(sMissile != tempMissiles.end()) {
+	    Missile tMiss = MissileFactory::GetMissile((*sMissile));
+	    ((Button*)missileControls->GetControl(ss.str()))->SetImage(tMiss.missileImage);
+	    sMissile++;
+	  } else {
+	      ((Button*)missileControls->GetControl(ss.str()))->SetImage("gfx/interface/empty.png");
+	  }
+	}
+      }
+    }
+  }
+}
 
 void MyPlayerController::ResetGui()
 {
@@ -171,7 +230,7 @@ void MyPlayerController::ResetGui()
   game->GetGuiManager()->GetRootNode()->AddControl("PlayerControl", playerControls);
   game->GetGuiManager()->GetRootNode()->AddControl("MissileControl", missileControls);
   playerControls->SetPosition(game->GetWindow()->getDefaultView().getCenter().x-50, game->GetWindow()->getDefaultView().getCenter().y+50);
-  missileControls->SetPosition(0, game->GetWindow()->getSize().y);
+  missileControls->SetPosition(5, game->GetWindow()->getSize().y-145);
 }
 
 void MyPlayerController::UnsetGui()
@@ -210,7 +269,7 @@ void MyPlayerController::Render()
       sf::Sprite iconSprite = sf::Sprite(*tempTex);
       iconSprite.setPosition(missileAnchorPoint.x + (tx*20), 
 			     missileAnchorPoint.y + (ty*20)-16);
-      game->GetWindow()->draw(iconSprite);
+      //game->GetWindow()->draw(iconSprite);
       ++tx;
       if(tx > GameSettings::g_missilePerRow) { 
 	++ty;
@@ -271,4 +330,8 @@ BaseControl* MyPlayerController::GetControl()
   return playerControls;
 }
 
+BaseControl* MyPlayerController::GetMissileControls()
+{
+  return missileControls;
+}
 

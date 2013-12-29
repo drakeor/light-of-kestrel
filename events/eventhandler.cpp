@@ -49,4 +49,12 @@ void EventHandler::Trigger()
       (*iter)->OnEvent(this);
 }
 
+std::string EventHandler::GetEventName()
+{
+  return eventName;
+}
 
+void EventHandler::SetEventName(std::string eventName)
+{
+  this->eventName = eventName;
+}

@@ -39,7 +39,8 @@ public:
   static constexpr float frameTime = (1/60);
   
   // For the missile GUI
-  static constexpr int g_missilePerRow = 7;
+  static constexpr int g_missilePerRow = 11;
+  static constexpr int g_maxMissileColumns = 7;
 };
 
 #endif

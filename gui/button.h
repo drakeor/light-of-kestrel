@@ -29,6 +29,7 @@
 #include <../../home/drakeor/LightOfKestrel/gui/basecontrol.h>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 
 class Button : public BaseControl
@@ -36,9 +37,16 @@ class Button : public BaseControl
 private:
   sf::RectangleShape rect;
   sf::Text text;
+  sf::Sprite img;
+  bool showImage;
+  std::string userData;
 public:
   virtual void Update(float dt);
   virtual void Render();
+  void SetImage(std::string image);
+  void SetUserData(std::string uData);
+  std::string GetUserData();
+  void ResetImage(); 
   Button(Game* game);
   virtual ~Button();
 };

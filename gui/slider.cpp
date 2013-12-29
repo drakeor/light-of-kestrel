@@ -41,7 +41,6 @@ Slider::Slider(Game* game) :
 void Slider::Update(float dt)
 {
   // <code>
-  sf::Vector2i calibrationVec = sf::Vector2i(0, 20);
   // If it corresponds to our control, we want to capture it.
   if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
     sf::Vector2f vec2 = game->GetWindow()->mapPixelToCoords(sf::Mouse::getPosition((*game->GetWindow())));

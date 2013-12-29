@@ -75,8 +75,8 @@ CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o
  /home/drakeor/LightOfKestrel/inputmanager.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
  ../components/entitycomponent.h
- ../gui/../events/eventhandler.h
- ../gui/../events/eventlistener.h
+ ../events/eventhandler.h
+ ../events/eventlistener.h
  ../gui/basecontrol.h
  ../gui/button.h
  ../gui/dropdown.h
@@ -100,8 +100,8 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o
  /home/drakeor/LightOfKestrel/log.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o
  ../components/entitycomponent.h
- ../gui/../events/eventhandler.h
- ../gui/../events/eventlistener.h
+ ../events/eventhandler.h
+ ../events/eventlistener.h
  ../gui/basecontrol.h
  ../gui/guimanager.h
  ../universe/entity.h
@@ -201,8 +201,8 @@ CMakeFiles/lightofkestrel.dir/gui/button.cpp.o
  /home/drakeor/LightOfKestrel/inputmanager.h
 CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o
  ../components/entitycomponent.h
- ../gui/../events/eventhandler.h
- ../gui/../events/eventlistener.h
+ ../events/eventhandler.h
+ ../events/eventlistener.h
  ../gui/basecontrol.h
  ../gui/guimanager.h
  ../universe/entity.h

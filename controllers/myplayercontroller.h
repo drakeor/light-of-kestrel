@@ -40,6 +40,7 @@ class MyPlayerController : public BaseController
   BaseControl* playerControls;
   std::unique_ptr<EventListener> commitListener;
   std::unique_ptr<EventListener> galaxyChangeListener;
+  std::unique_ptr<EventListener> missileButtonListener;
   
   // Ghosting emulation.
   std::unique_ptr<Entity> ghostObject;
@@ -49,6 +50,7 @@ class MyPlayerController : public BaseController
   BaseControl* missileControls;
   int activeMissileBays;
   sf::Vector2i missileAnchorPoint;
+  std::vector<std::string> selectedMissiles;
   
 public:
   MyPlayerController(Game* game);
@@ -58,8 +60,10 @@ public:
   void ResetPlayer();
   void ResetGui();
   void UnsetGui();
+  void ResetMissileInterface();
   Entity* GetPlayer();
   BaseControl* GetControl();
+  BaseControl* GetMissileControls();
 };
 
 #endif // MYPLAYERCONTROLLER_H

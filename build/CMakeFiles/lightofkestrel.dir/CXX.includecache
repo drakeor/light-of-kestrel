@@ -10,15 +10,15 @@
 string
 -
 
-../gui/../events/eventhandler.h
+../events/eventhandler.h
 eventlistener.h
-../gui/../events/eventlistener.h
+../events/eventlistener.h
 string
 -
 vector
 -
 
-../gui/../events/eventlistener.h
+../events/eventlistener.h
 
 ../gui/basecontrol.h
 SFML/System/Vector2.hpp
@@ -28,7 +28,7 @@ map
 string
 -
 ../events/eventhandler.h
-../gui/../events/eventhandler.h
+../events/eventhandler.h
 
 ../gui/button.h
 ../../home/drakeor/LightOfKestrel/gui/basecontrol.h
@@ -36,6 +36,8 @@ string
 SFML/Graphics/RectangleShape.hpp
 -
 SFML/Graphics/Text.hpp
+-
+SFML/Graphics/Sprite.hpp
 -
 
 ../gui/dropdown.h

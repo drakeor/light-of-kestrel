@@ -1,22 +1,101 @@
-- 19:45:10.629 INFO: Loaded texture: starfield.png
-- 19:45:10.629 INFO: Loaded font: sansation.ttf
-- 19:45:10.631 INFO: Loaded texture: gfx/interface/shipcontainer.png
-- 19:45:10.632 INFO: Loaded texture: gfx/interface/advancedcontainer.png
-- 19:45:10.632 DEBUG: Initialised Game Engine.
-- 19:45:10.634 INFO: Loaded texture: dragon.png
-- 19:45:10.634 INFO: Loaded texture: nope.png
-- 19:45:10.634 ERROR: Position: 1|1 || 100|3.60134e-43
-- 19:45:10.643 INFO: Loaded texture: gfx/interface/missilecontainer.png
-- 19:45:11.569 ERROR: Position: 1|1 || 100|110
-- 19:45:11.570 INFO: Loaded texture: astroid.png
-- 19:45:11.570 ERROR: Position: 1|1 || 200|200
-- 19:45:11.570 WARNING: Turn button commited!!
-- 19:45:11.572 INFO: Loaded texture: gfx/icons/shipicon.png
-- 19:45:11.574 INFO: Loaded texture: gfx/interface/shive1.png
-- 19:45:11.574 INFO: Loaded texture: gfx/interface/veillon1.png
-- 19:45:12.525 ERROR: Position: 1|1 || 100|110
-- 19:45:15.387 INFO: Loaded texture: starfield.png
-- 19:45:15.387 INFO: Loaded font: sansation.ttf
-- 19:45:15.389 INFO: Loaded texture: gfx/interface/shipcontainer.png
-- 19:45:15.391 INFO: Loaded texture: gfx/interface/advancedcontainer.png
-- 19:45:15.391 DEBUG: Initialised Game Engine.
+- 20:49:58.457 INFO: Loaded texture: starfield.png
+- 20:49:58.458 INFO: Loaded font: sansation.ttf
+- 20:49:58.459 INFO: Loaded texture: gfx/interface/mira1.png
+- 20:49:58.461 INFO: Loaded texture: gfx/interface/shipcontainer.png
+- 20:49:58.462 INFO: Loaded texture: gfx/interface/advancedcontainer.png
+- 20:49:58.462 DEBUG: Initialised Game Engine.
+- 20:49:59.794 INFO: Loaded texture: dragon.png
+- 20:49:59.794 INFO: Loaded texture: nope.png
+- 20:49:59.794 ERROR: Position: 1|1 || 100|110
+- 20:49:59.794 INFO: Loaded texture: astroid.png
+- 20:49:59.794 ERROR: Position: 1|1 || 200|200
+- 20:49:59.794 WARNING: Turn button commited!!
+- 20:49:59.794 INFO: Loaded texture: gfx/interface/shive1.png
+- 20:49:59.794 INFO: Loaded texture: gfx/interface/veillon1.png
+- 20:49:59.794 INFO: Loaded texture: gfx/interface/empty.png
+- 20:49:59.796 INFO: Loaded texture: gfx/interface/missilecontainer.png
+- 20:49:59.809 ERROR: Entity has NaN position!!
+- 20:49:59.826 ERROR: Entity has NaN position!!
+- 20:49:59.843 ERROR: Entity has NaN position!!
+- 20:49:59.860 ERROR: Entity has NaN position!!
+- 20:49:59.876 ERROR: Entity has NaN position!!
+- 20:49:59.893 ERROR: Entity has NaN position!!
+- 20:49:59.910 ERROR: Entity has NaN position!!
+- 20:49:59.927 ERROR: Entity has NaN position!!
+- 20:49:59.944 ERROR: Entity has NaN position!!
+- 20:49:59.960 ERROR: Entity has NaN position!!
+- 20:49:59.977 ERROR: Entity has NaN position!!
+- 20:49:59.994 ERROR: Entity has NaN position!!
+- 20:50:00.011 ERROR: Entity has NaN position!!
+- 20:50:00.027 ERROR: Entity has NaN position!!
+- 20:50:00.044 ERROR: Entity has NaN position!!
+- 20:50:00.061 ERROR: Entity has NaN position!!
+- 20:50:00.078 ERROR: Entity has NaN position!!
+- 20:50:00.095 ERROR: Entity has NaN position!!
+- 20:50:00.111 ERROR: Entity has NaN position!!
+- 20:50:00.128 ERROR: Entity has NaN position!!
+- 20:50:00.145 ERROR: Entity has NaN position!!
+- 20:50:00.162 ERROR: Entity has NaN position!!
+- 20:50:00.178 ERROR: Entity has NaN position!!
+- 20:50:00.195 ERROR: Entity has NaN position!!
+- 20:50:00.212 ERROR: Entity has NaN position!!
+- 20:50:00.229 ERROR: Entity has NaN position!!
+- 20:50:00.245 ERROR: Entity has NaN position!!
+- 20:50:00.262 ERROR: Entity has NaN position!!
+- 20:50:00.279 ERROR: Entity has NaN position!!
+- 20:50:00.296 ERROR: Entity has NaN position!!
+- 20:50:00.312 ERROR: Entity has NaN position!!
+- 20:50:00.329 ERROR: Entity has NaN position!!
+- 20:50:00.346 ERROR: Entity has NaN position!!
+- 20:50:00.363 ERROR: Entity has NaN position!!
+- 20:50:00.379 ERROR: Entity has NaN position!!
+- 20:50:00.396 ERROR: Entity has NaN position!!
+- 20:50:00.413 ERROR: Entity has NaN position!!
+- 20:50:00.430 ERROR: Entity has NaN position!!
+- 20:50:00.446 ERROR: Entity has NaN position!!
+- 20:50:00.463 ERROR: Entity has NaN position!!
+- 20:50:00.480 ERROR: Entity has NaN position!!
+- 20:50:00.497 ERROR: Entity has NaN position!!
+- 20:50:00.513 ERROR: Entity has NaN position!!
+- 20:50:00.530 ERROR: Entity has NaN position!!
+- 20:50:00.547 ERROR: Entity has NaN position!!
+- 20:50:00.563 ERROR: Entity has NaN position!!
+- 20:50:00.580 ERROR: Entity has NaN position!!
+- 20:50:00.597 ERROR: Entity has NaN position!!
+- 20:50:00.614 ERROR: Entity has NaN position!!
+- 20:50:00.631 ERROR: Entity has NaN position!!
+- 20:50:00.647 ERROR: Entity has NaN position!!
+- 20:50:00.664 ERROR: Entity has NaN position!!
+- 20:50:00.681 ERROR: Entity has NaN position!!
+- 20:50:00.698 ERROR: Entity has NaN position!!
+- 20:50:00.715 WARNING: Missile button commited at position at 4 0
+- 20:50:00.716 ERROR: Entity has NaN position!!
+- 20:50:00.731 ERROR: Entity has NaN position!!
+- 20:50:00.748 ERROR: Entity has NaN position!!
+- 20:50:00.765 ERROR: Entity has NaN position!!
+- 20:50:00.782 ERROR: Entity has NaN position!!
+- 20:50:00.799 ERROR: Entity has NaN position!!
+- 20:50:00.815 ERROR: Entity has NaN position!!
+- 20:50:00.832 ERROR: Entity has NaN position!!
+- 20:50:00.849 ERROR: Entity has NaN position!!
+- 20:50:00.866 ERROR: Entity has NaN position!!
+- 20:50:00.883 ERROR: Entity has NaN position!!
+- 20:50:00.899 ERROR: Entity has NaN position!!
+- 20:50:00.916 ERROR: Entity has NaN position!!
+- 20:50:00.933 ERROR: Entity has NaN position!!
+- 20:50:00.950 ERROR: Entity has NaN position!!
+- 20:50:00.967 ERROR: Entity has NaN position!!
+- 20:50:00.983 ERROR: Entity has NaN position!!
+- 20:50:00.000 ERROR: Entity has NaN position!!
+- 20:50:01.017 ERROR: Entity has NaN position!!
+- 20:50:01.034 ERROR: Entity has NaN position!!
+- 20:50:01.050 ERROR: Entity has NaN position!!
+- 20:50:01.067 ERROR: Entity has NaN position!!
+- 20:50:01.638 WARNING: Missile button commited at position at 0 0
+- 20:50:01.671 ERROR: Position: 1|1 || 100|110
+- 20:50:02.109 WARNING: Missile button commited at position at 1 0
+- 20:50:03.570 ERROR: Position: 1|1 || 100|110
+- 20:50:05.466 ERROR: Position: 1|1 || 100|110
+- 20:50:07.363 ERROR: Position: 1|1 || 100|110
+- 20:50:09.258 ERROR: Position: 1|1 || 100|110
+- 20:50:11.154 ERROR: Position: 1|1 || 100|110

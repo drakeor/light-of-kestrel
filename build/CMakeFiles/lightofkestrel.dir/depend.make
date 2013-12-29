@@ -74,8 +74,8 @@ CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../game.h
 CMakeFiles/lightofkestrel.dir/controllers/controllermanager.cpp.o: ../inputmanager.h
 
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../components/entitycomponent.h
-CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/button.h
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../gui/dropdown.h
@@ -99,8 +99,8 @@ CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../inputmana
 CMakeFiles/lightofkestrel.dir/controllers/myplayercontroller.cpp.o: ../log.h
 
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../components/entitycomponent.h
-CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../gui/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o: ../universe/entity.h
@@ -200,8 +200,8 @@ CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../gui/button.h
 CMakeFiles/lightofkestrel.dir/gui/button.cpp.o: ../inputmanager.h
 
 CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../components/entitycomponent.h
-CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../gui/../events/eventhandler.h
-CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../gui/../events/eventlistener.h
+CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../events/eventhandler.h
+CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../events/eventlistener.h
 CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../gui/basecontrol.h
 CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/gui/dropdown.cpp.o: ../universe/entity.h

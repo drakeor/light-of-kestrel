@@ -40,8 +40,13 @@ void Button::Update(float dt)
 
 void Button::Render()
 {
-  game->GetWindow()->draw(rect);
-  game->GetWindow()->draw(text);
+  if(showImage) { 
+    img.setPosition(GetPosition());
+    game->GetWindow()->draw(img);
+  } else {
+    game->GetWindow()->draw(rect);
+    game->GetWindow()->draw(text);
+  }
   BaseControl::Render();
 }
 
@@ -57,6 +62,7 @@ Button::Button(Game* game)
   text.setCharacterSize(18); // in pixels, not points!
   text.setColor(sf::Color::White);
   text.setStyle(sf::Text::Bold);
+  showImage = false;
   
 }
 
@@ -65,3 +71,25 @@ Button::~Button()
 
 }
 
+void Button::SetImage(std::string image)
+{
+  sf::Texture* tempTex = game->GetAssetManager()->GetTexture(image);
+  img = sf::Sprite(*tempTex);
+  showImage = true;
+}
+
+void Button::SetUserData(std::string uData)
+{
+  userData = uData;
+}
+
+std::string Button::GetUserData()
+{
+  return userData;
+}
+
+
+void Button::ResetImage()
+{
+  showImage = false;
+}

@@ -37,6 +37,8 @@ public:
   EventHandler();
   void AddListener(EventListener* listener);
   void Trigger();
+  void SetEventName(std::string eventName);
+  std::string GetEventName();
   virtual ~EventHandler();
 };
 
