@@ -95,9 +95,13 @@ class Entity
   float frameTime;
   float maxTime;
   
+  // Missile Simulation variables
+  float missileDelayTime;
+  
   // Entity Components
   std::vector<EntityComponent> components[MAX_COMPONENT_SIDES][MAX_COMPONENT_LAYERS];
   std::vector<missile_t> missiles;
+  std::vector<missile_t> activeMissiles;
   int health;
   
 public:
@@ -108,7 +112,7 @@ public:
   void Iterate(float dt);
   void CommitTurn(float frameTime, float maxTime);
   
-  void SetPosition(float x, float y);
+  void SetPosition(int x, int y);
   void SetCurrentVelocity(float target);
   void SetCurrentRotation(float target);
   void SetTargetVelocity(float target);

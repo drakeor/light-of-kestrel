@@ -38,9 +38,10 @@ public:
   // Frame time
   static constexpr float frameTime = (1/60);
   
-  // For the missile GUI
+  // For the missiles
   static constexpr int g_missilePerRow = 11;
   static constexpr int g_maxMissileColumns = 7;
+  static constexpr float missileFireDelayTime = 0.2f;
 };
 
 #endif

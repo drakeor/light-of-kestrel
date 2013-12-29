@@ -27,12 +27,14 @@
 #include "../game.h"
 #include "../log.h"
 #include "../components/missilebay.h"
+#include <controllers/settings.h>
 
 Entity::Entity(Game* game) :
-  position(0,0), currentRotation(0)
+  position(0,0), currentRotation(0), startRotation(0),
+  targetThrust(0), targetRotation(0), velocityMagnitude(0),
+  health(100), startThrust(0)
 {
   this->game = game;
-  health = 100;
 }
 
 Entity::~Entity()
@@ -78,18 +80,39 @@ void Entity::CommitTurn(float frameTime, float maxTime)
   startThrust = velocityMagnitude;
   deltaThrust = (targetThrust - startThrust) / maxTime;
   deltaRotation = (targetRotation - startRotation) / maxTime;
-  
+  /*FILE_LOG(logERROR) << "DeltaThrust: " << deltaThrust << " | " << targetThrust << " | " << startThrust << 
+  " deltaRotation " << deltaRotation << " | " << targetRotation << " | " << startRotation;*/
 }
 
 void Entity::Iterate(float dt) {
   // Update positions and rotations.
   velocityMagnitude += deltaThrust * dt;
   currentRotation += deltaRotation * dt;
-  position = sf::Vector2f(position.x + (cos(currentRotation)*velocityMagnitude*dt),
-			  position.y + (sin(currentRotation)*velocityMagnitude*dt));
+  //FILE_LOG(logERROR) << "Before iterate position: " << position.x << "|" << position.y;
+  float cx = (float)cos(currentRotation);
+  float cy = (float)sin(currentRotation);
+  //FILE_LOG(logERROR) << "Rotation:" << currentRotation << " cx: " << cx << " cy: " << cy <<
+    //" Velmag: " << velocityMagnitude << " DThrust: " << deltaThrust;
+  position = sf::Vector2f(position.x + (cx*velocityMagnitude*dt),
+			  position.y + (cy*velocityMagnitude*dt));
+  //FILE_LOG(logERROR) << "After iterate position: " << position.x << "|" << position.y;
+  // Fire missiles if we can.
+  if(!activeMissiles.empty()) {
+    if(missileDelayTime < 0) {
+      // CREATE MISSILE HERE
+      missile_t tMissile = activeMissiles.front();
+      activeMissiles.erase(activeMissiles.begin());
+      missileDelayTime = GameSettings::missileFireDelayTime;
+    } else {
+      missileDelayTime -= dt;
+    }
+  } else {
+    missileDelayTime = -0.01f;
+  }
 }
 
 sf::Vector2f Entity::GetCurrentPosition() {
+  //FILE_LOG(logERROR) << "Get Position: " << position.x << "|" << position.y;
   return position;
 }
 
@@ -122,16 +145,18 @@ void Entity::SetSprite(sf::Sprite sprite) {
 }
 
 
-void Entity::SetPosition(float x, float y) {
-  FILE_LOG(logERROR) << "Position: " << position.x << "|" << position.y << " || " << x << "|" << y;
+void Entity::SetPosition(int x, int y) {
+  //FILE_LOG(logERROR) << "Set Position: " << position.x << "|" << position.y << " || " << x << "|" << y;
   position = sf::Vector2f(x, y);
 }
 
 void Entity::SetTargetRotation(float target) {
+  //FILE_LOG(logERROR) << "Target Rotation: " << target;
   targetRotation = target;
 }
 
 void Entity::SetTargetVelocity(float target) {
+  //FILE_LOG(logERROR) << "Target Velocity: " << target;
   targetThrust = target;
 }
 
@@ -189,8 +214,10 @@ void Entity::AddMissile(missile_t missile, int amount)
 
 void Entity::FireMissile(missile_t missile)
 {
+  // This will queue up the missile to be fired and remove it from active missiles
   for (auto sMissile = missiles.begin(); sMissile != missiles.end(); sMissile++) {
     if((*sMissile) == missile) {
+      activeMissiles.push_back((*sMissile));
       missiles.erase(sMissile);
       break;
     }

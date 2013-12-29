@@ -65,6 +65,7 @@ public:
   Entity* GetPlayer();
   BaseControl* GetControl();
   BaseControl* GetMissileControls();
+  std::vector<std::string> GetSelectedMissiles();
 };
 
 #endif // MYPLAYERCONTROLLER_H

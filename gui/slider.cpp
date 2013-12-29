@@ -36,6 +36,7 @@ Slider::Slider(Game* game) :
   this->size.y = 25;
   this->internalSize = size;
   this->isHorizontal = true;
+  this->fillPercentage = 0.01f;
 }
 
 void Slider::Update(float dt)

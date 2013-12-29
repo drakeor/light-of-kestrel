@@ -299,6 +299,7 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o
  /home/drakeor/LightOfKestrel/log.h
  /home/drakeor/LightOfKestrel/main.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
+ .././controllers/settings.h
  ../components/entitycomponent.h
  ../events/eventhandler.h
  ../events/eventlistener.h

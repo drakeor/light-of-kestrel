@@ -50,25 +50,45 @@ public:
   virtual ~CommitListener() {}
   void OnEvent(EventHandler* handler) {
     
-    // Spawn the player
+    // Spawn the player only if he doesn't exist.
     playerController->SpawnPlayer();
-    FILE_LOG(logWARNING) << "Turn button commited!!";
+    FILE_LOG(logDEBUG) << "MyPlayerController: Turn commited!";
     
     // First, calculate our target rotation. This is done by (fillPercentage-0.5)*2*maxTurnRate.
     float finalAngle = ((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->GetFillPercentage();
     finalAngle = playerController->GetPlayer()->GetCurrentRotation() + (finalAngle-0.5f) * 2 * 2;
-    // TEST: Should we reset this afterwards?
+    // Should we reset the controls afterwards?
     //((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->SetFillPercentage(0.5f);
     
     // Second, calculate our target velocity.This is done by just fillPercentage*maxAcceleration.
     float finalVelocity = ((Slider*)playerController->GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
-    finalVelocity = finalVelocity * 200;
-
+    finalVelocity = finalVelocity * 200; //TODO: Set this to player's max velocity.
     playerController->GetPlayer()->SetTargetRotation(finalAngle);
     playerController->GetPlayer()->SetTargetVelocity(finalVelocity);
+    
+    // Third, fire missiles if we have them.
+    std::vector<std::string> selectedMissiles = playerController->GetSelectedMissiles();
+    std::vector<missile_t> missilePositions;
+    for(unsigned int i=0; i < selectedMissiles.size(); i++){
+      // We can actually grab the missile this way.
+      int tx, ty, ms;
+      std::vector< missile_t > tempMissiles = playerController->GetPlayer()->GetMissiles();
+      std::stringstream ss(selectedMissiles[i]);
+      ss >> tx >> ty;
+      ms = (ty*GameSettings::g_missilePerRow)+tx;
+      missile_t tMissile = tempMissiles[ms];
+      FILE_LOG(logWARNING) << "Firing missile " << ms;
+      missilePositions.push_back(tMissile);
+    }
+    
+    // We need to remove the spent missiles now that we fired them.
+    for(unsigned int i=0; i < missilePositions.size(); i++){
+      playerController->GetPlayer()->FireMissile(missilePositions[i]);
+    }
+    
+    // Finally, reset the interfaces and commit the turn
     playerController->ResetMissileInterface();
     universe->GetCurrentGalaxy()->CommitTurn();
-    //playerController->GetPlayer()->CommitTurn(Galaxy::frameTime, Galaxy::maxTime);
   }
 };
 
@@ -109,7 +129,6 @@ public:
 /*
  * Constructor for this controller.
  */
-
 MyPlayerController::MyPlayerController(Game* game) :
   BaseController(game)
 {
@@ -168,6 +187,9 @@ MyPlayerController::MyPlayerController(Game* game) :
   ResetGui();
 }
 
+/*
+ *  When we need to spawn the player into the universe, we'll call this function.
+ */
 void MyPlayerController::SpawnPlayer()
 {
   if(!this->hasPlayer) {
@@ -222,9 +244,13 @@ void MyPlayerController::ResetMissileInterface()
 	}
       }
     }
+    selectedMissiles.clear();
   }
 }
 
+/*
+ * Reload the GUI
+ */
 void MyPlayerController::ResetGui()
 {
   UnsetGui();
@@ -239,6 +265,9 @@ void MyPlayerController::UnsetGui()
   game->GetGuiManager()->GetRootNode()->RemoveControl("PlayerControl");
 }
 
+/*
+ * The event listener will call this one
+ */
 void MyPlayerController::SelectGUIMissile(std::string guiElement)
 {
   // First we're going to check if this exists in our list. If it does, remove it.
@@ -297,7 +326,7 @@ void MyPlayerController::Render()
 }
 
 void MyPlayerController::Update(float dt)
-{
+{ /*
   if(this->hasPlayer) {
     ghostMovementDelay += dt;
     
@@ -327,7 +356,7 @@ void MyPlayerController::Update(float dt)
 	  ghostObject.get()->SetTargetVelocity(finalVelocity);
 	  ghostObject.get()->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
     }
-  }
+  }*/
   BaseController::Update(dt);
 }
 
@@ -349,5 +378,10 @@ BaseControl* MyPlayerController::GetControl()
 BaseControl* MyPlayerController::GetMissileControls()
 {
   return missileControls;
+}
+
+std::vector< std::string > MyPlayerController::GetSelectedMissiles()
+{
+  return selectedMissiles;
 }
 

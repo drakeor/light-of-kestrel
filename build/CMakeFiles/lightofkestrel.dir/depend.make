@@ -298,6 +298,7 @@ CMakeFiles/lightofkestrel.dir/main.cpp.o: ../inputmanager.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../log.h
 CMakeFiles/lightofkestrel.dir/main.cpp.o: ../main.cpp
 
+CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: .././controllers/settings.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../components/entitycomponent.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../events/eventhandler.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../events/eventlistener.h
