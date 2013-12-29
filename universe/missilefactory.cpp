@@ -43,6 +43,7 @@ Missile MissileFactory::GetMissile(missile_t identifier)
   tMissile.missileName = "Invalid missile";
   tMissile.missileFlight = DUMBFIRE;
   tMissile.damage = 0;
+  tMissile.missileImage = "gfx/interface/invalid.png";
   
   switch(identifier) {
     
@@ -51,12 +52,14 @@ Missile MissileFactory::GetMissile(missile_t identifier)
       tMissile.missileName = "Veillon I";
       tMissile.missileFlight = DUMBFIRE;
       tMissile.damage = 350;
+      tMissile.missileImage = "gfx/interface/veillon1.png";
       break;
     /* The Shive I is a basic dumb-guided missile that steers towards the closest target. Only does slightly less damage */
     case MISSILE_SHIVE_I:
       tMissile.missileName = "Shive I";
       tMissile.missileFlight = DUMB_GUIDED;
       tMissile.damage = 300;
+      tMissile.missileImage = "gfx/interface/shive1.png";
       break;
     
     /* The Mira I is the basic smart guided missile. Although more agile and intelligent then the Shive, it deals the least amount of damage.
@@ -65,6 +68,7 @@ Missile MissileFactory::GetMissile(missile_t identifier)
       tMissile.missileName = "Mira I";
       tMissile.missileFlight = RADAR_GUIDED;
       tMissile.damage = 250;
+      tMissile.missileImage = "gfx/interface/mira1.png";
       break;
   };
   return tMissile;

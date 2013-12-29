@@ -20,7 +20,7 @@ include_directories("./")
 
 # Add C++11 support
 if (CMAKE_COMPILER_IS_GNUCXX)
-  set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -pthread" )
+  set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -pthread -Wall" )
   set ( LINK_FLAGS "${LINK_FLAGS} -lpthread" )
 endif ()
 

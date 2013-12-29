@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../components/entitycomponent.h
+string
+-
+
 ../gui/../events/eventhandler.h
 eventlistener.h
 ../gui/../events/eventlistener.h
@@ -64,20 +68,6 @@ basecontrol.h
 SFML/Graphics/Text.hpp
 -
 
-../universe/../components/entitycomponent.h
-string
--
-
-../universe/../events/eventhandler.h
-eventlistener.h
-../universe/../events/eventlistener.h
-string
--
-vector
--
-
-../universe/../events/eventlistener.h
-
 ../universe/entity.h
 SFML/Graphics/Sprite.hpp
 -
@@ -105,6 +95,10 @@ string
 -
 vector
 -
+map
+-
+SFML/Graphics/Sprite.hpp
+-
 
 ../universe/universemanager.h
 vector
@@ -112,7 +106,7 @@ vector
 galaxy.h
 ../universe/galaxy.h
 ../events/eventhandler.h
-../universe/../events/eventhandler.h
+../events/eventhandler.h
 
 /home/drakeor/LightOfKestrel/assetmanager.h
 SFML/Graphics/Texture.hpp
@@ -126,60 +120,6 @@ map
 SFML/Graphics/Rect.hpp
 -
 SFML/Graphics/View.hpp
--
-
-/home/drakeor/LightOfKestrel/controllers/../assetmanager.h
-SFML/Graphics/Texture.hpp
--
-SFML/Graphics/Font.hpp
--
-map
--
-
-/home/drakeor/LightOfKestrel/controllers/../camera.h
-SFML/Graphics/Rect.hpp
--
-SFML/Graphics/View.hpp
--
-
-/home/drakeor/LightOfKestrel/controllers/../controllers/controllermanager.h
-map
--
-string
--
-basecontroller.h
-/home/drakeor/LightOfKestrel/controllers/../controllers/basecontroller.h
-
-/home/drakeor/LightOfKestrel/controllers/../game.h
-universemanager.h
-/home/drakeor/LightOfKestrel/controllers/../universemanager.h
-inputmanager.h
-/home/drakeor/LightOfKestrel/controllers/../inputmanager.h
-assetmanager.h
-/home/drakeor/LightOfKestrel/controllers/../assetmanager.h
-guimanager.h
-/home/drakeor/LightOfKestrel/controllers/../guimanager.h
-camera.h
-/home/drakeor/LightOfKestrel/controllers/../camera.h
-controllers/controllermanager.h
-/home/drakeor/LightOfKestrel/controllers/../controllers/controllermanager.h
-SFML/Graphics/RenderWindow.hpp
--
-memory
--
-
-/home/drakeor/LightOfKestrel/controllers/../inputmanager.h
-
-/home/drakeor/LightOfKestrel/controllers/../log.h
-sstream
--
-string
--
-stdio.h
--
-windows.h
--
-sys/time.h
 -
 
 /home/drakeor/LightOfKestrel/controllers/basecontroller.h
@@ -198,9 +138,9 @@ myplayercontroller.h
 settings.h
 /home/drakeor/LightOfKestrel/controllers/settings.h
 ../game.h
-/home/drakeor/LightOfKestrel/controllers/../game.h
+/home/drakeor/LightOfKestrel/game.h
 ../log.h
-/home/drakeor/LightOfKestrel/controllers/../log.h
+/home/drakeor/LightOfKestrel/log.h
 slider.h
 -
 button.h
@@ -221,30 +161,6 @@ basecontrol.h
 -
 
 /home/drakeor/LightOfKestrel/controllers/settings.h
-
-/home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
-basecontroller.h
-/home/drakeor/LightOfKestrel/controllers/basecontroller.h
-entity.h
--
-basecontrol.h
--
-
-/home/drakeor/LightOfKestrel/controllers/worldcontroller.h
-basecontroller.h
-/home/drakeor/LightOfKestrel/controllers/basecontroller.h
-
-/home/drakeor/LightOfKestrel/game.cpp
-game.h
-/home/drakeor/LightOfKestrel/game.h
-log.h
-/home/drakeor/LightOfKestrel/log.h
-controllers/myplayercontroller.h
-/home/drakeor/LightOfKestrel/controllers/myplayercontroller.h
-controllers/worldcontroller.h
-/home/drakeor/LightOfKestrel/controllers/worldcontroller.h
-controllers/shipinterfacecontroller.h
-/home/drakeor/LightOfKestrel/controllers/shipinterfacecontroller.h
 
 /home/drakeor/LightOfKestrel/game.h
 universemanager.h

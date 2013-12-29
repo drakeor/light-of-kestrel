@@ -29,9 +29,17 @@
 class GameSettings
 {
 public:
+  // Interval of seeing the ghost movements
   static constexpr float ghostMovementDelayMax = 1.8f;
+  
+  // Turn length
   static constexpr float maxTime = 1.2f;
+  
+  // Frame time
   static constexpr float frameTime = (1/60);
+  
+  // For the missile GUI
+  static constexpr int g_missilePerRow = 7;
 };
 
 #endif

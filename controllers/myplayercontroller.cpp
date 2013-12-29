@@ -131,8 +131,6 @@ MyPlayerController::MyPlayerController(Game* game) :
   missileControls = new BaseControl(game);
   missileControls->SetPosition(0, 10);
   
-  BaseControl* missileContainer1;
-  
   ResetGui();
 }
 
@@ -148,18 +146,19 @@ void MyPlayerController::SpawnPlayer()
     // Add in our player immediately when this controller is constructed.
     this->hasPlayer = true;
     this->myPlayer = EntityFactory::BuildEntity(game, SS_HORNET);
-    myPlayer->SetPosition(100, 100);
+    myPlayer->SetPosition(100, 110);
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     
     // Add in our ghost
     this->ghostObject = nullptr;
 
     // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
+    // TODO: There are issues making entities in general on this area like Setting positions, rotations.
     for(int i=0;i<1;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
-      rawr->SetPosition((rand() % 1000 - 500), (rand() % 1000 - 500));
-      rawr->SetTargetVelocity(((float)rand()/(float)RAND_MAX)*60);
-      rawr->SetTargetRotation(((float)rand()/(float)RAND_MAX)*6.28);
+      rawr->SetPosition(200, 200);
+      rawr->SetTargetVelocity(20);
+      rawr->SetTargetRotation(0);
       game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
     }
   }
@@ -185,16 +184,39 @@ void MyPlayerController::Render()
   
   if(this->hasPlayer) {
     
+    // Draw our ghost player in the world
     game->GetCamera()->PreRender();
-    //game->GetWindow()->draw(ghostEntity);
     if(ghostObject.get() != nullptr) ghostObject.get()->Render();
     game->GetCamera()->PostRender();
+    
     // Bind the camera to the player
     sf::Vector2f camPosition = myPlayer->GetCurrentPosition();
     camPosition.x -= game->GetWindow()->getDefaultView().getCenter().x;
     camPosition.y -= game->GetWindow()->getDefaultView().getCenter().y;
     game->GetCamera()->SetPosition(camPosition);
     
+    // Missile Interfaces (TODO: Avoid allocating sprites every frame. Eric would kill me. xD)
+    sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/missilecontainer.png");
+    sf::Sprite iconSprite = sf::Sprite(*tempTex);
+    iconSprite.setPosition(0, missileAnchorPoint.y);
+    game->GetWindow()->draw(iconSprite);
+      
+    missileAnchorPoint = sf::Vector2i(5, game->GetWindow()->getSize().y-150);
+    std::vector< missile_t > tempMissiles = this->myPlayer->GetMissiles();
+    int tx, ty = 0;
+    for (auto sMissile = tempMissiles.begin(); sMissile != tempMissiles.end(); sMissile++) {
+      Missile tMiss = MissileFactory::GetMissile((*sMissile));
+      sf::Texture* tempTex = game->GetAssetManager()->GetTexture(tMiss.missileImage);
+      sf::Sprite iconSprite = sf::Sprite(*tempTex);
+      iconSprite.setPosition(missileAnchorPoint.x + (tx*20), 
+			     missileAnchorPoint.y + (ty*20)-16);
+      game->GetWindow()->draw(iconSprite);
+      ++tx;
+      if(tx > GameSettings::g_missilePerRow) { 
+	++ty;
+	tx = 0;
+      }
+    }
   }  
   BaseController::Render();
 }

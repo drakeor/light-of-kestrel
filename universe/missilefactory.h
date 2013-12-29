@@ -27,6 +27,8 @@ Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 #define MISSILEFACTORY_H
 #include <string>
 #include <vector>
+#include <map>
+#include <SFML/Graphics/Sprite.hpp>
 
 enum missile_t {
   MISSILE_NONE,
@@ -52,6 +54,7 @@ public:
   std::string missileName;
   int damage;
   missile_flight_t missileFlight;
+  std::string missileImage;
 };
 
 class MissileFactory

@@ -48,6 +48,7 @@ class MyPlayerController : public BaseController
   // Missile display stuff
   BaseControl* missileControls;
   int activeMissileBays;
+  sf::Vector2i missileAnchorPoint;
   
 public:
   MyPlayerController(Game* game);

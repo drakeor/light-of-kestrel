@@ -1,136 +1,22 @@
-- 11:21:12.076 INFO: Loaded texture: starfield.png
-- 11:21:12.076 INFO: Loaded font: sansation.ttf
-- 11:21:12.085 DEBUG: Initialised Game Engine.
-- 11:21:17.648 DEBUG: Destroyed Game Engine.
-- 11:21:28.398 INFO: Loaded texture: starfield.png
-- 11:21:28.398 INFO: Loaded font: sansation.ttf
-- 11:21:28.408 DEBUG: Initialised Game Engine.
-- 11:21:31.719 WARNING: Position: 61,58 :: -5,-28
-- 11:21:31.886 WARNING: Position: 61,58 :: -5,-28
-- 11:21:32.020 WARNING: Position: 61,58 :: -5,-28
-- 11:21:34.535 WARNING: Position: 989,672 :: -6,-31
-- 11:21:34.720 WARNING: Position: 989,672 :: -6,-31
-- 11:21:34.938 WARNING: Position: 989,672 :: -6,-31
-- 11:21:35.089 WARNING: Position: 989,672 :: -6,-31
-- 11:21:37.772 WARNING: Position: 138,525 :: -6,-31
-- 11:21:37.957 WARNING: Position: 138,525 :: -6,-31
-- 11:21:38.125 WARNING: Position: 138,525 :: -6,-31
-- 11:21:38.291 WARNING: Position: 138,525 :: -6,-31
-- 11:21:39.496 DEBUG: Destroyed Game Engine.
-- 11:29:15.734 INFO: Loaded texture: starfield.png
-- 11:29:15.735 INFO: Loaded font: sansation.ttf
-- 11:29:15.745 DEBUG: Initialised Game Engine.
-- 11:29:17.351 WARNING: Position: 61,58 :: 4,3
-- 11:29:17.535 WARNING: Position: 61,58 :: 4,3
-- 11:29:17.686 WARNING: Position: 61,58 :: 3,3
-- 11:29:17.820 WARNING: Position: 61,58 :: 3,4
-- 11:29:17.971 WARNING: Position: 61,58 :: 3,4
-- 11:29:18.121 WARNING: Position: 61,58 :: 3,4
-- 11:29:18.255 WARNING: Position: 61,58 :: 3,4
-- 11:29:21.220 WARNING: Position: 782,560 :: 6,4
-- 11:29:21.439 WARNING: Position: 782,560 :: 5,4
-- 11:29:21.724 WARNING: Position: 782,560 :: 3,4
-- 11:29:22.075 WARNING: Position: 782,560 :: 3,2
-- 11:29:22.311 WARNING: Position: 782,560 :: 2,2
-- 11:29:22.596 WARNING: Position: 782,560 :: 1,2
-- 11:29:22.780 WARNING: Position: 782,560 :: 2,2
-- 11:29:22.998 WARNING: Position: 782,560 :: 2,2
-- 11:29:23.150 WARNING: Position: 782,560 :: 2,2
-- 11:29:25.497 WARNING: Position: 108,571 :: 4,1
-- 11:29:25.686 WARNING: Position: 108,571 :: 3,2
-- 11:29:25.853 WARNING: Position: 108,571 :: 3,2
-- 11:29:26.021 WARNING: Position: 108,571 :: 2,2
-- 11:29:26.155 WARNING: Position: 108,571 :: 3,2
-- 11:29:27.276 DEBUG: Destroyed Game Engine.
-- 11:29:47.915 INFO: Loaded texture: starfield.png
-- 11:29:47.915 INFO: Loaded font: sansation.ttf
-- 11:29:47.925 DEBUG: Initialised Game Engine.
-- 11:29:48.826 WARNING: Position: 61,58 :: 268,249
-- 11:29:48.977 WARNING: Position: 61,58 :: 268,249
-- 11:29:49.144 WARNING: Position: 61,58 :: 211,249
-- 11:29:49.329 WARNING: Position: 61,58 :: 170,247
-- 11:29:49.497 WARNING: Position: 61,58 :: 146,249
-- 11:29:49.665 WARNING: Position: 61,58 :: 115,248
-- 11:29:49.850 WARNING: Position: 61,58 :: 206,250
-- 11:29:50.033 WARNING: Position: 61,58 :: 293,249
-- 11:29:50.151 WARNING: Position: 61,58 :: 366,234
-- 11:29:51.123 DEBUG: Destroyed Game Engine.
-- 11:30:41.040 INFO: Loaded texture: starfield.png
-- 11:30:41.040 INFO: Loaded font: sansation.ttf
-- 11:30:41.049 DEBUG: Initialised Game Engine.
-- 11:30:42.284 WARNING: Position: 61,58 :: 53,52
-- 11:30:42.569 WARNING: Position: 61,58 :: 58,65
-- 11:30:42.569 WARNING: BUTTON PRESSED!
-- 11:30:52.145 INFO: Loaded texture: starfield.png
-- 11:30:52.146 INFO: Loaded font: sansation.ttf
-- 11:30:52.154 DEBUG: Initialised Game Engine.
-- 11:30:53.289 WARNING: Position: 61,58 :: 57,6
-- 11:30:53.290 WARNING: BUTTON PRESSED!
-- 11:33:50.726 INFO: Loaded texture: starfield.png
-- 11:33:50.726 INFO: Loaded font: sansation.ttf
-- 11:33:50.736 DEBUG: Initialised Game Engine.
-- 11:33:51.804 WARNING: Position: 61,58 :: 235,243
-- 11:33:52.190 WARNING: Position: 61,58 :: 248,261
-- 11:33:52.375 WARNING: Position: 61,58 :: 248,261
-- 11:33:52.560 WARNING: Position: 61,58 :: 235,248
-- 11:33:52.744 WARNING: Position: 61,58 :: 141,166
-- 11:33:52.978 WARNING: Position: 61,58 :: 3,8
-- 11:33:53.179 WARNING: Position: 61,58 :: 3,7
-- 11:33:53.413 WARNING: Position: 61,58 :: 68,30
-- 11:33:53.614 WARNING: Position: 61,58 :: 212,207
-- 11:33:53.815 WARNING: Position: 61,58 :: 230,234
-- 11:33:53.983 WARNING: Position: 61,58 :: 248,257
-- 11:33:54.150 WARNING: Position: 61,58 :: 253,263
-- 11:33:54.317 WARNING: Position: 61,58 :: 256,257
-- 11:33:54.485 WARNING: Position: 61,58 :: 261,244
-- 11:33:55.692 WARNING: Position: 61,58 :: -23,496
-- 11:33:56.996 WARNING: Position: 61,58 :: 708,306
-- 11:33:57.196 WARNING: Position: 61,58 :: 546,170
-- 11:33:57.364 WARNING: Position: 61,58 :: 182,65
-- 11:33:57.564 WARNING: Position: 61,58 :: -16,-10
-- 11:33:57.882 WARNING: Position: 61,58 :: 73,38
-- 11:33:58.083 WARNING: Position: 61,58 :: 347,222
-- 11:33:58.234 WARNING: Position: 61,58 :: 527,248
-- 11:33:58.402 WARNING: Position: 61,58 :: 870,120
-- 11:33:58.569 WARNING: Position: 61,58 :: 960,27
-- 11:33:59.104 DEBUG: Destroyed Game Engine.
-- 11:36:03.832 INFO: Loaded texture: starfield.png
-- 11:36:03.832 INFO: Loaded font: sansation.ttf
-- 11:36:03.842 DEBUG: Initialised Game Engine.
-- 11:36:04.826 WARNING: Position: 61,58 :: 238,259
-- 11:36:05.195 WARNING: Position: 61,58 :: 205,250
-- 11:36:05.379 WARNING: Position: 61,58 :: 119,244
-- 11:36:05.565 WARNING: Position: 61,58 :: 111,244
-- 11:36:05.732 WARNING: Position: 61,58 :: 99,167
-- 11:36:05.950 WARNING: Position: 61,58 :: 32,56
-- 11:36:06.134 WARNING: Position: 61,58 :: 72,11
-- 11:36:06.353 WARNING: Position: 61,58 :: 340,198
-- 11:36:06.554 WARNING: Position: 61,58 :: 240,259
-- 11:36:06.705 WARNING: Position: 61,58 :: 285,297
-- 11:36:06.873 WARNING: Position: 61,58 :: 400,316
-- 11:36:07.023 WARNING: Position: 61,58 :: 577,261
-- 11:36:07.192 WARNING: Position: 61,58 :: 856,120
-- 11:36:07.895 DEBUG: Destroyed Game Engine.
-- 11:37:32.566 INFO: Loaded texture: starfield.png
-- 11:37:32.566 INFO: Loaded font: sansation.ttf
-- 11:37:32.576 DEBUG: Initialised Game Engine.
-- 11:37:33.402 WARNING: Position: 61,58 :: 275,242
-- 11:37:33.554 WARNING: Position: 61,58 :: 273,244
-- 11:37:33.688 WARNING: Position: 61,58 :: 273,244
-- 11:37:33.838 WARNING: Position: 61,58 :: 273,244
-- 11:37:34.056 WARNING: Position: 61,58 :: 273,244
-- 11:37:34.223 WARNING: Position: 61,58 :: 273,244
-- 11:37:34.357 WARNING: Position: 61,58 :: 274,244
-- 11:37:34.529 WARNING: Position: 61,58 :: 274,244
-- 11:37:35.417 DEBUG: Destroyed Game Engine.
-- 11:37:51.942 INFO: Loaded texture: starfield.png
-- 11:37:51.942 INFO: Loaded font: sansation.ttf
-- 11:37:51.954 DEBUG: Initialised Game Engine.
-- 11:37:52.988 WARNING: Position: 61,58 :: 281,250
-- 11:37:53.139 WARNING: Position: 61,58 :: 281,250
-- 11:37:53.273 WARNING: Position: 61,58 :: 278,249
-- 11:37:54.932 WARNING: Position: 761,484 :: 260,247
-- 11:37:55.083 WARNING: Position: 761,484 :: 259,247
-- 11:37:55.234 WARNING: Position: 761,484 :: 259,247
-- 11:37:55.368 WARNING: Position: 761,484 :: 259,247
-- 11:37:57.043 DEBUG: Destroyed Game Engine.
+- 19:45:10.629 INFO: Loaded texture: starfield.png
+- 19:45:10.629 INFO: Loaded font: sansation.ttf
+- 19:45:10.631 INFO: Loaded texture: gfx/interface/shipcontainer.png
+- 19:45:10.632 INFO: Loaded texture: gfx/interface/advancedcontainer.png
+- 19:45:10.632 DEBUG: Initialised Game Engine.
+- 19:45:10.634 INFO: Loaded texture: dragon.png
+- 19:45:10.634 INFO: Loaded texture: nope.png
+- 19:45:10.634 ERROR: Position: 1|1 || 100|3.60134e-43
+- 19:45:10.643 INFO: Loaded texture: gfx/interface/missilecontainer.png
+- 19:45:11.569 ERROR: Position: 1|1 || 100|110
+- 19:45:11.570 INFO: Loaded texture: astroid.png
+- 19:45:11.570 ERROR: Position: 1|1 || 200|200
+- 19:45:11.570 WARNING: Turn button commited!!
+- 19:45:11.572 INFO: Loaded texture: gfx/icons/shipicon.png
+- 19:45:11.574 INFO: Loaded texture: gfx/interface/shive1.png
+- 19:45:11.574 INFO: Loaded texture: gfx/interface/veillon1.png
+- 19:45:12.525 ERROR: Position: 1|1 || 100|110
+- 19:45:15.387 INFO: Loaded texture: starfield.png
+- 19:45:15.387 INFO: Loaded font: sansation.ttf
+- 19:45:15.389 INFO: Loaded texture: gfx/interface/shipcontainer.png
+- 19:45:15.391 INFO: Loaded texture: gfx/interface/advancedcontainer.png
+- 19:45:15.391 DEBUG: Initialised Game Engine.

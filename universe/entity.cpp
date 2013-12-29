@@ -28,7 +28,8 @@
 #include "../log.h"
 #include "../components/missilebay.h"
 
-Entity::Entity(Game* game)
+Entity::Entity(Game* game) :
+  position(0,0), currentRotation(0)
 {
   this->game = game;
   health = 100;
@@ -46,6 +47,7 @@ void Entity::Initialise() {
   texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
   texture.setPosition(200, 100);
   position = sf::Vector2f(1.0f, 1.0f);
+  currentRotation = 0;
 }
 
 void Entity::Update(float dt) {
@@ -121,6 +123,7 @@ void Entity::SetSprite(sf::Sprite sprite) {
 
 
 void Entity::SetPosition(float x, float y) {
+  FILE_LOG(logERROR) << "Position: " << position.x << "|" << position.y << " || " << x << "|" << y;
   position = sf::Vector2f(x, y);
 }
 

@@ -32,8 +32,6 @@
 
 class Game;
 
-
-
 class ShipInterfaceController : public BaseController
 {
 private:
