@@ -59,6 +59,7 @@ public:
   void Render();
   void ResetPlayer();
   void ResetGui();
+  void SelectGUIMissile(std::string guiElement);
   void UnsetGui();
   void ResetMissileInterface();
   Entity* GetPlayer();

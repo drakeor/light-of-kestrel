@@ -100,7 +100,8 @@ public:
   }
   virtual ~MissileButtonListener() {}
   void OnEvent(EventHandler* handler) {
-    // Alright, we need to inform of the missile we got
+    // Alright, we need to inform of the missile we got. Do some missile logic here now.
+    playerController->SelectGUIMissile(handler->GetEventName());
     FILE_LOG(logWARNING) << "Missile button commited at position at " << handler->GetEventName();
   }  
 };
@@ -146,7 +147,6 @@ MyPlayerController::MyPlayerController(Game* game) :
   // Add our missile controls and their corresponding elements
   missileControls = new BaseControl(game);
   missileControls->SetPosition(5, game->GetWindow()->getSize().y-145);
-  
   for(int i=0; i < GameSettings::g_missilePerRow; i++)
   {
     for(int j=0; j < GameSettings::g_maxMissileColumns; j++)
@@ -163,6 +163,7 @@ MyPlayerController::MyPlayerController(Game* game) :
       missileControls->AddControl(ss.str(), missileButton);
     }
   }
+  activeMissileBays = 2;
   
   ResetGui();
 }
@@ -238,6 +239,26 @@ void MyPlayerController::UnsetGui()
   game->GetGuiManager()->GetRootNode()->RemoveControl("PlayerControl");
 }
 
+void MyPlayerController::SelectGUIMissile(std::string guiElement)
+{
+  // First we're going to check if this exists in our list. If it does, remove it.
+  bool isRemoved = false;
+  for(unsigned int i=0; i < selectedMissiles.size(); i++){
+    if(guiElement == selectedMissiles[i]) {
+      selectedMissiles.erase(selectedMissiles.begin()+i);
+      isRemoved = true;
+      break;
+    }
+  }
+  
+  // If we didn't need to remove anything, we can probably add it assuming we didn't hit the max on missiles or it's invalid.
+  if(!isRemoved) {
+    if(selectedMissiles.size() < activeMissileBays) {
+      selectedMissiles.push_back(guiElement);
+    }
+  }
+}
+
 void MyPlayerController::Render()
 {
   
@@ -257,24 +278,19 @@ void MyPlayerController::Render()
     // Missile Interfaces (TODO: Avoid allocating sprites every frame. Eric would kill me. xD)
     sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/missilecontainer.png");
     sf::Sprite iconSprite = sf::Sprite(*tempTex);
-    iconSprite.setPosition(0, missileAnchorPoint.y);
+    iconSprite.setPosition(0, missileControls->GetPosition().y);
     game->GetWindow()->draw(iconSprite);
       
     missileAnchorPoint = sf::Vector2i(5, game->GetWindow()->getSize().y-150);
-    std::vector< missile_t > tempMissiles = this->myPlayer->GetMissiles();
-    int tx, ty = 0;
-    for (auto sMissile = tempMissiles.begin(); sMissile != tempMissiles.end(); sMissile++) {
-      Missile tMiss = MissileFactory::GetMissile((*sMissile));
-      sf::Texture* tempTex = game->GetAssetManager()->GetTexture(tMiss.missileImage);
+    for(unsigned int i=0; i < selectedMissiles.size(); i++) {
+      int tx, ty;
+      std::stringstream ss(selectedMissiles[i]);
+      ss >> tx >> ty;
+      sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/selectionbox.png");
       sf::Sprite iconSprite = sf::Sprite(*tempTex);
-      iconSprite.setPosition(missileAnchorPoint.x + (tx*20), 
-			     missileAnchorPoint.y + (ty*20)-16);
-      //game->GetWindow()->draw(iconSprite);
-      ++tx;
-      if(tx > GameSettings::g_missilePerRow) { 
-	++ty;
-	tx = 0;
-      }
+      iconSprite.setPosition(missileControls->GetPosition().x + (tx*20)-1, 
+			     missileControls->GetPosition().y + (ty*20)-1);
+      game->GetWindow()->draw(iconSprite);
     }
   }  
   BaseController::Render();
