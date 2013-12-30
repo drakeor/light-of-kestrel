@@ -98,6 +98,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->collisionGroup = COLLISION_GROUP_1;
       break;
    
+    // Nope missile is the basis.
     case MISSILE:
       BuildTexture(game, entity, "nope_missile.png");
       entity->SetName("Missile");
@@ -105,7 +106,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->collisionGroup = COLLISION_GROUP_2; 
       break;
       
-    // Not implemented. In theory
+    // Not implemented. In theory. Yet.
     case ANTIMISSILE:
       entity->SetName("Antimissile");
       entity->collidesWith = COLLISION_GROUP_1 | COLLISION_GROUP_2 | COLLISION_GROUP_3; /* Will interact with everything but is part of nothing. */
