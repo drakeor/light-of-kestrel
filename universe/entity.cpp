@@ -24,17 +24,20 @@
 */
 
 #include "entity.h"
+#include "entityfactory.h"
 #include "../game.h"
 #include "../log.h"
 #include "../components/missilebay.h"
 #include <controllers/settings.h>
 
 Entity::Entity(Game* game) :
-  position(0,0), currentRotation(0), startRotation(0),
-  targetThrust(0), targetRotation(0), velocityMagnitude(0),
-  health(100), startThrust(0)
+  position(sf::Vector2f(0.0f, 0.0f)), currentRotation(0), startRotation(0),
+  targetThrust(0),  velocityMagnitude(0), targetRotation(0),
+  health(100), startThrust(0), deltaRotation(0), frameTime(0),
+  deltaThrust(0), maxTime(0), missileDelayTime(0), texRotOffset(0)
 {
   this->game = game;
+  this->position = sf::Vector2f(0.0f, 0.0f);
 }
 
 Entity::~Entity()
@@ -53,6 +56,8 @@ void Entity::Initialise() {
 }
 
 void Entity::Update(float dt) {
+ /* FILE_LOG(logERROR) << "UPDATE Rot: " << currentRotation;
+  FILE_LOG(logERROR) << "UPDATE Position: " << position.x << "|" << position.y;
   // Fix NaN issues. Temp fix.
   if(isnan(position.x) || isnan(position.y)) {
     position = sf::Vector2f(0, 0);
@@ -61,11 +66,11 @@ void Entity::Update(float dt) {
   if(isnan(currentRotation)) {
     currentRotation = 0.1f;
     FILE_LOG(logERROR) << "Entity has NaN rotation!!";
-  }
+  }*/
 }
 
 void Entity::Render() {
-  float realRotation = currentRotation*57.3;
+  float realRotation = (currentRotation+texRotOffset)*57.3;
   realRotation = fmod(realRotation, 360.0f);
   texture.setPosition(position);
   texture.setRotation(realRotation);
@@ -99,9 +104,20 @@ void Entity::Iterate(float dt) {
   // Fire missiles if we can.
   if(!activeMissiles.empty()) {
     if(missileDelayTime < 0) {
-      // CREATE MISSILE HERE
+      // Create missile here.
+      // We're going to queue it up with a slight offset.
       missile_t tMissile = activeMissiles.front();
       activeMissiles.erase(activeMissiles.begin());
+      auto ent = EntityFactory::BuildEntity(game, MISSILE);
+      auto misInfo = MissileFactory::GetMissile(tMissile);
+      EntityFactory::BuildTexture(game, ent, misInfo.missileImage);
+      ent->SetTextureRotOffset(1.57f);
+      ent->SetPosition(position.x + (cx*(TempCollisionDistance+9)), position.y + (cy*(TempCollisionDistance+9)));
+      ent->SetCurrentRotation(currentRotation);
+      ent->SetTargetRotation(currentRotation);
+      ent->SetCurrentVelocity(350);
+      ent->SetTargetVelocity(350);
+      game->GetUniverseManager()->GetCurrentGalaxy()->QueueEntityForTurn(0.00f, ent);
       missileDelayTime = GameSettings::missileFireDelayTime;
     } else {
       missileDelayTime -= dt;
@@ -112,7 +128,7 @@ void Entity::Iterate(float dt) {
 }
 
 sf::Vector2f Entity::GetCurrentPosition() {
-  //FILE_LOG(logERROR) << "Get Position: " << position.x << "|" << position.y;
+  FILE_LOG(logERROR) << "Get Position: " << position.x << "|" << position.y;
   return position;
 }
 
@@ -240,6 +256,10 @@ bool Entity::HasMissile(missile_t missile)
   return false;
 }
 
+void Entity::SetTextureRotOffset(float offset)
+{
+  texRotOffset = offset;
+}
 
 
 

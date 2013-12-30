@@ -132,8 +132,10 @@ public:
 MyPlayerController::MyPlayerController(Game* game) :
   BaseController(game)
 {
+  // Initialise some variables
+  hasPlayer = false;
   
-  // Add an event listener for when the player commits a turn and the galaxy changes.
+  // Add in our event listeners
   commitListener = std::unique_ptr<EventListener>( new CommitListener(this, game->GetUniverseManager()) );
   galaxyChangeListener = std::unique_ptr<EventListener>( new GalaxyChangeListener(this, game->GetUniverseManager()) );
   missileButtonListener  = std::unique_ptr<EventListener>( new MissileButtonListener(this) ); 
@@ -212,10 +214,10 @@ void MyPlayerController::SpawnPlayer()
     // TODO: There are issues making entities in general on this area like Setting positions, rotations.
     for(int i=0;i<1;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
-      rawr->SetPosition(200, 200);
+      rawr->SetPosition(500, 110);
       rawr->SetTargetVelocity(20);
       rawr->SetTargetRotation(0);
-      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+     // game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
     }
   }
 }

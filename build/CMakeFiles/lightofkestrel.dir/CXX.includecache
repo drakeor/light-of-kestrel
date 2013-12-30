@@ -125,6 +125,8 @@ sys/time.h
 /home/drakeor/LightOfKestrel/universe/entity.cpp
 entity.h
 /home/drakeor/LightOfKestrel/universe/entity.h
+entityfactory.h
+/home/drakeor/LightOfKestrel/universe/entityfactory.h
 ../game.h
 /home/drakeor/LightOfKestrel/game.h
 ../log.h
@@ -145,6 +147,10 @@ map
 -
 missilefactory.h
 /home/drakeor/LightOfKestrel/universe/missilefactory.h
+
+/home/drakeor/LightOfKestrel/universe/entityfactory.h
+entity.h
+/home/drakeor/LightOfKestrel/universe/entity.h
 
 /home/drakeor/LightOfKestrel/universe/missilefactory.h
 string

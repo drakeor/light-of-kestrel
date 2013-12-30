@@ -74,6 +74,7 @@ class Entity
 {
   //Beginnen Variables
   sf::Sprite texture;
+  float texRotOffset;
   Game* game;
   std::string name;
   std::string entityIcon;
@@ -122,6 +123,7 @@ public:
   std::string GetName();
   std::string GetIcon();
   void SetIcon(std::string name);
+  void SetTextureRotOffset(float offset);
   
   void SetParent(Galaxy* newParent);
   Galaxy* GetParent();

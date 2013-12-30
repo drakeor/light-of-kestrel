@@ -24,6 +24,7 @@
 */
 
 #include "galaxy.h"
+#include "entityfactory.h"
 #include "../log.h"
 #include "../game.h"
 #include "../controllers/settings.h"
@@ -31,6 +32,7 @@
 Galaxy::Galaxy(Game* game)
 {
   this->game = game;
+  entity.clear();
  // AddEntity(new Entity(game));
   rawrTexture = game->GetAssetManager()->GetTexture("starfield.png");
   rawrTexture->setRepeated(true);
@@ -66,6 +68,7 @@ void Galaxy::Iterate(float dt)
   /* TODO: This is an incrediably rough and inefficient way to
    * handle collisions. I have a few ideas in mind to speed this up but I'm much too lazy to implement them.
    * Fix this part up. Right now, we're just using circular collisions with just simple vector addition to get the projected speed */
+  // TODO: Check if the entity is enabled otherwise the queued entities will collide with each other.
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     for(std::vector<Entity*>::iterator it2 = entity.begin(); it2 != entity.end(); ++it2) {
       /* Calculate distance */
@@ -92,6 +95,7 @@ std::vector< Entity* > Galaxy::GetEntityList()
 
 
 void Galaxy::Update(float dt) {
+  
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->Update(dt);
@@ -99,6 +103,26 @@ void Galaxy::Update(float dt) {
       (*it)->Iterate(dt);
   }
   if(currentTime < GameSettings::maxTime) {
+    
+    // Deal with our queued entities
+    auto tQueuedEnts = queuedEntities;
+    tQueuedEnts.clear();
+    for(auto it = queuedEntities.begin(); it != queuedEntities.end(); ++it) {
+      float myTime; 
+      Entity* myEnt;
+      std::tie (myTime, myEnt) = (*it);
+      myTime -= dt;
+      if(myTime < dt) {
+	entity.push_back(myEnt);
+      } else {
+	std::tuple<float, Entity*> queuedEnt (myTime, myEnt);
+	tQueuedEnts.push_back(queuedEnt);
+      }
+    }
+    queuedEntities.clear();
+    queuedEntities = tQueuedEnts;
+    
+    // Deal with our collisions
     Iterate(dt);
     currentTime += dt;
   }
@@ -106,6 +130,7 @@ void Galaxy::Update(float dt) {
 
 void Galaxy::CommitTurn() {
   currentTime = 0;
+  
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
   }
@@ -117,4 +142,10 @@ void Galaxy::AddEntity(Entity* m_entity)
   entity.push_back(m_entity);
 }
 
+void Galaxy::QueueEntityForTurn(float time, Entity* entity2)
+{
+  std::tuple<float, Entity*> queuedEnt (time, entity2);
+  queuedEntities.push_back(queuedEnt);
+  
+}
 

@@ -41,12 +41,13 @@ enum entity_t {
   
 class EntityFactory
 {
-  static void BuildTexture(Game* game, Entity* entity, std::string textureName);
+  
   static void BuildShip(Game* game, Entity* entity, std::string textureName, std::string entName);
 public:
   EntityFactory();
   virtual ~EntityFactory();
   static Entity* BuildEntity(Game* game, entity_t entityType);
+  static void BuildTexture(Game* game, Entity* entity, std::string textureName);
 };
 
 #endif // ENTITYFACTORY_H

@@ -317,6 +317,7 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../inputmanager.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../log.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.cpp
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/entityfactory.h
 CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o: ../universe/missilefactory.h
 
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: .././components/armourplating.h
@@ -356,6 +357,7 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../game.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../inputmanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../log.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/entity.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/entityfactory.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/galaxy.cpp
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/galaxy.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/missilefactory.h

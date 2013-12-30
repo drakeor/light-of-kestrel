@@ -318,6 +318,7 @@ CMakeFiles/lightofkestrel.dir/universe/entity.cpp.o
  /home/drakeor/LightOfKestrel/log.h
  /home/drakeor/LightOfKestrel/universe/entity.cpp
  /home/drakeor/LightOfKestrel/universe/entity.h
+ /home/drakeor/LightOfKestrel/universe/entityfactory.h
  /home/drakeor/LightOfKestrel/universe/missilefactory.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
  .././components/armourplating.h
@@ -357,6 +358,7 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  /home/drakeor/LightOfKestrel/inputmanager.h
  /home/drakeor/LightOfKestrel/log.h
  /home/drakeor/LightOfKestrel/universe/entity.h
+ /home/drakeor/LightOfKestrel/universe/entityfactory.h
  /home/drakeor/LightOfKestrel/universe/galaxy.cpp
  /home/drakeor/LightOfKestrel/universe/galaxy.h
  /home/drakeor/LightOfKestrel/universe/missilefactory.h
