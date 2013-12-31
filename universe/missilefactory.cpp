@@ -51,14 +51,14 @@ Missile MissileFactory::GetMissile(missile_t identifier)
       /* The Veillon I is the most basic of missiles. It's dumbfire but deals a good amount of damage against lower tier ships */
       tMissile.missileName = "Veillon I";
       tMissile.missileFlight = DUMBFIRE;
-      tMissile.damage = 500;
+      tMissile.damage = 350;
       tMissile.missileImage = "gfx/interface/veillon1.png";
       break;
     /* The Shive I is a basic dumb-guided missile that steers towards the closest target. Only does slightly less damage */
     case MISSILE_SHIVE_I:
       tMissile.missileName = "Shive I";
       tMissile.missileFlight = DUMB_GUIDED;
-      tMissile.damage = 400;
+      tMissile.damage = 300;
       tMissile.missileImage = "gfx/interface/shive1.png";
       break;
     
@@ -67,7 +67,7 @@ Missile MissileFactory::GetMissile(missile_t identifier)
     case MISSILE_MIRA_I:
       tMissile.missileName = "Mira I";
       tMissile.missileFlight = RADAR_GUIDED;
-      tMissile.damage = 350;
+      tMissile.damage = 250;
       tMissile.missileImage = "gfx/interface/mira1.png";
       break;
   };

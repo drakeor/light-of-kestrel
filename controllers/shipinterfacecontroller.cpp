@@ -70,34 +70,41 @@ void ShipInterfaceController::Render()
       selectedIcon.setPosition(advancedGuiAnchor.x, advancedGuiAnchor.y);
       game->GetWindow()->draw(selectedIcon);
       
-      // TODO: Fix this up. Remove allocating a sprite for each thingy.
-      // Draw the first layer ship components
-      for(int i=0;i<MAX_COMPONENT_LAYERS;++i)
-      {
-	for(int j=0;j<MAX_COMPONENT_SIDES;++j)
+      if(targettedEntity != nullptr) {
+	// TODO: Fix this up. Remove allocating a sprite for each thingy.
+	// Draw the first layer ship components
+	for(int i=0;i<MAX_COMPONENT_LAYERS;++i)
 	{
-	  component_side_t comSide = (component_side_t)j;
-	  std::vector<EntityComponent> entComponents = targettedEntity->GetComponents(comSide, (component_layer_t)i);
-	  int z = 0;
-	  for(std::vector<EntityComponent>::iterator it = entComponents.begin(); it != entComponents.end(); ++it) {
-	    sf::Texture* tempTex = game->GetAssetManager()->GetTexture((*it).icon);
-	    sf::Sprite iconSprite = sf::Sprite(*tempTex);
-	    iconSprite.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
-	    int offset1 = 60;
-	    int offset2 = 80;
-	    int centreAdd = 64;
-	    int centreInc = 9;
-	    if(comSide == FRONT) {
-	      iconSprite.setPosition(advancedGuiAnchor.x-offset1+z+centreAdd-(centreInc*entComponents.size()), advancedGuiAnchor.y-offset2);
-	    } else if(comSide == LEFT) {
-	      iconSprite.setPosition(advancedGuiAnchor.x-offset2, advancedGuiAnchor.y-offset1+z+centreAdd-(centreInc*entComponents.size()));
-	    } else if(comSide == RIGHT) {
-	      iconSprite.setPosition(advancedGuiAnchor.x+offset2, advancedGuiAnchor.y-offset1+z+centreAdd-(centreInc*entComponents.size()));
-	    } else {
-	      iconSprite.setPosition(advancedGuiAnchor.x-offset1+z+centreAdd-(centreInc*entComponents.size()), advancedGuiAnchor.y+offset2);
+	  for(int j=0;j<MAX_COMPONENT_SIDES;++j)
+	  {
+	    component_side_t comSide = (component_side_t)j;
+	    std::vector<EntityComponent> entComponents = targettedEntity->GetComponents(comSide, (component_layer_t)i);
+	    int z = 0;
+	    for(std::vector<EntityComponent>::iterator it = entComponents.begin(); it != entComponents.end(); ++it) {
+	      sf::Texture* tempTex;
+	      if((*it).health > 0) {
+		tempTex = game->GetAssetManager()->GetTexture((*it).icon);
+	      } else {
+		tempTex = game->GetAssetManager()->GetTexture("gfx/icons/destroyed.png");
+	      }
+	      sf::Sprite iconSprite = sf::Sprite(*tempTex);
+	      iconSprite.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+	      int offset1 = 60;
+	      int offset2 = 80;
+	      int centreAdd = 64;
+	      int centreInc = 9;
+	      if(comSide == FRONT) {
+		iconSprite.setPosition(advancedGuiAnchor.x-offset1+z+centreAdd-(centreInc*entComponents.size()), advancedGuiAnchor.y-offset2);
+	      } else if(comSide == LEFT) {
+		iconSprite.setPosition(advancedGuiAnchor.x-offset2, advancedGuiAnchor.y-offset1+z+centreAdd-(centreInc*entComponents.size()));
+	      } else if(comSide == RIGHT) {
+		iconSprite.setPosition(advancedGuiAnchor.x+offset2, advancedGuiAnchor.y-offset1+z+centreAdd-(centreInc*entComponents.size()));
+	      } else {
+		iconSprite.setPosition(advancedGuiAnchor.x-offset1+z+centreAdd-(centreInc*entComponents.size()), advancedGuiAnchor.y+offset2);
+	      }
+	      game->GetWindow()->draw(iconSprite);
+	      z += 18;
 	    }
-	    game->GetWindow()->draw(iconSprite);
-	    z += 18;
 	  }
 	}
       }

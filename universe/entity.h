@@ -126,6 +126,7 @@ public:
   void SetIcon(std::string name);
   void SetTextureRotOffset(float offset);
   void SetId(int id);
+  int GetId();
   
   void SetParent(Galaxy* newParent);
   Galaxy* GetParent();

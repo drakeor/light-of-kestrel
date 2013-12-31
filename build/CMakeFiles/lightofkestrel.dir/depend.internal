@@ -343,6 +343,8 @@ CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o
  /home/drakeor/LightOfKestrel/universe/entityfactory.cpp
  /home/drakeor/LightOfKestrel/universe/entityfactory.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
+ .././controllers/basecontroller.h
+ .././controllers/shipinterfacecontroller.h
  ../components/entitycomponent.h
  ../events/eventhandler.h
  ../events/eventlistener.h
@@ -351,7 +353,6 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o
  ../universe/universemanager.h
  /home/drakeor/LightOfKestrel/assetmanager.h
  /home/drakeor/LightOfKestrel/camera.h
- /home/drakeor/LightOfKestrel/controllers/basecontroller.h
  /home/drakeor/LightOfKestrel/controllers/controllermanager.h
  /home/drakeor/LightOfKestrel/controllers/settings.h
  /home/drakeor/LightOfKestrel/game.h

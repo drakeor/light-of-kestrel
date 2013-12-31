@@ -230,9 +230,60 @@ void Entity::OnCollision(Entity* other)
   }
 }
 
+int Entity::GetId()
+{
+  return id;
+}
+
+
 void Entity::ProcessImpact(float damage, float force, float direction)
 {
-  FILE_LOG(logERROR) << "I just recieved an impact of " << damage << " from direction " << direction;
+  // TODO: Make this more efficient
+  
+  /* Check the direction of impact */
+  float deltaRotation = currentRotation - direction;
+  deltaRotation = fmod(deltaRotation, 6.28f);
+  FILE_LOG(logERROR) << "I just recieved an impact of " << damage << " from direction " << direction << " (local: " << deltaRotation << ")";
+  
+  /* Check which components were hit */
+  float damages[4] = {0,0,0,0};
+  float dPercents[4] = {0,0,0,0};
+  for(int i=1; i < 5; i++) {
+    if((deltaRotation < (1.57f*i))  && (deltaRotation > (1.57f*(i-1)))) {
+      int j=i+1;
+      if(i == 4) j = 1;
+      dPercents[j-1] = (deltaRotation-(1.57f*(i-1)))/1.57f;
+      dPercents[i-1] = 1 - dPercents[j-1];
+      damages[i-1] = dPercents[i-1] * damage;
+      damages[j-1] = dPercents[j-1] * damage;
+    }
+  }
+  FILE_LOG(logERROR) << "I am going to deal " << damages[0] << " by " << damages[1] << " by" << damages[2] << " by " << damages[3];
+  FILE_LOG(logERROR) << "I am going to deal " << dPercents[0] << " by " << dPercents[1] << " by" << dPercents[2] << " by " << dPercents[3];
+  /* Deal damage to the components now */
+  for(int j=0;j<MAX_COMPONENT_SIDES;++j) {
+    for(int i=0;i<MAX_COMPONENT_LAYERS;++i) {
+      for(auto it = components[j][i].begin(); it != components[j][i].end(); ++it) {
+	if(damages[j] > 0) {
+	  if((*it).health > damages[j]) {
+	    // This component neutralised all the damage.
+	    (*it).health -= damages[j];
+	    break;
+	  } else {
+	    // This component was destroyed in the process
+	    damages[j] -= (*it).health;
+	    (*it).health = 0;
+	  }
+	}
+      }
+    }
+    /* Damage leaked through to the core */
+    if(damages[j] > 0) this->health -= damages[j];
+  }
+  /* If our core suffered too much damage, destroy ourselves */
+  if(this->health < 0) {
+    game->GetUniverseManager()->GetCurrentGalaxy()->DeleteEntity(this->id);
+  }
 }
 
 void Entity::AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent)

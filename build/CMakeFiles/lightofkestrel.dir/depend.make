@@ -342,6 +342,8 @@ CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entity.h
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.cpp
 CMakeFiles/lightofkestrel.dir/universe/entityfactory.cpp.o: ../universe/entityfactory.h
 
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: .././controllers/basecontroller.h
+CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: .././controllers/shipinterfacecontroller.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../components/entitycomponent.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../events/eventhandler.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../events/eventlistener.h
@@ -350,7 +352,6 @@ CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../gui/guimanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../universe/universemanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../assetmanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../camera.h
-CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../controllers/basecontroller.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../controllers/controllermanager.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../controllers/settings.h
 CMakeFiles/lightofkestrel.dir/universe/galaxy.cpp.o: ../game.h
