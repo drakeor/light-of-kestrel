@@ -137,15 +137,17 @@ void ShipInterfaceController::HandleMouseClick()
       Galaxy* cGalaxy = game->GetUniverseManager()->GetCurrentGalaxy();
       std::vector<Entity*> entity = game->GetUniverseManager()->GetCurrentGalaxy()->GetEntityList();
       for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-	sf::Vector2i entPosition = game->GetWindow()->mapCoordsToPixel(sf::Vector2f((*it)->GetCurrentPosition().x, (*it)->GetCurrentPosition().y));
-	float distance = sqrt(pow((entPosition.x - vec2.x),2) + pow((entPosition.y - vec2.y),2));
-	if(distance < ((*it)->TempCollisionDistance)) {
-	  // Select the new entity and change the icon
-	  targettedEntity = (*it);
-	  if(!targettedEntity->GetIcon().empty()) {
-	    sf::Texture* tempTex = game->GetAssetManager()->GetTexture(targettedEntity->GetIcon());
-	    selectedIcon = sf::Sprite(*tempTex);
-	    selectedIcon.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+	if((*it) != nullptr) {
+	  sf::Vector2i entPosition = game->GetWindow()->mapCoordsToPixel(sf::Vector2f((*it)->GetCurrentPosition().x, (*it)->GetCurrentPosition().y));
+	  float distance = sqrt(pow((entPosition.x - vec2.x),2) + pow((entPosition.y - vec2.y),2));
+	  if(distance < ((*it)->TempCollisionDistance)) {
+	    // Select the new entity and change the icon
+	    targettedEntity = (*it);
+	    if(!targettedEntity->GetIcon().empty()) {
+	      sf::Texture* tempTex = game->GetAssetManager()->GetTexture(targettedEntity->GetIcon());
+	      selectedIcon = sf::Sprite(*tempTex);
+	      selectedIcon.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
+	    }
 	  }
 	}
       }

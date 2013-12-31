@@ -47,8 +47,10 @@ Galaxy::Galaxy(const Galaxy& other)
 Galaxy::~Galaxy()
 {
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    delete(*it);
-    (*it) = nullptr;
+    if((*it) != nullptr) {
+      delete(*it);
+      (*it) = nullptr;
+    }
   }
 }
 
@@ -59,7 +61,9 @@ void Galaxy::Render() {
   ));
   game->GetWindow()->draw(backgroundImage);
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    (*it)->Render();
+    if((*it) != nullptr) {
+      (*it)->Render();
+    }
   }
 }
 
@@ -72,15 +76,17 @@ void Galaxy::Iterate(float dt)
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     for(std::vector<Entity*>::iterator it2 = entity.begin(); it2 != entity.end(); ++it2) {
       /* Calculate distance */
-      if(it != it2) {
+      if((it != it2) && ((*it) != nullptr) && ((*it2) != nullptr)) {
 	/* Remember to reposition objects IMMEDIATELY after so they don't keep colliding. Which would be pretty funny.*/
 	float distance = sqrt(pow(((*it)->GetCurrentPosition().x - (*it2)->GetCurrentPosition().x),2) + pow(((*it)->GetCurrentPosition().y - (*it2)->GetCurrentPosition().y),2));
 	if(distance < ((*it)->TempCollisionDistance + (*it2)->TempCollisionDistance)) {
 	  if((*it)->collidesWith & (*it2)->collisionGroup){
 	    (*it)->OnCollision((*it2));
 	  }
-	  if((*it2)->collidesWith & (*it)->collisionGroup){
-	    (*it2)->OnCollision((*it));
+	  if(((*it) != nullptr) && ((*it2) != nullptr)) {
+	    if((*it2)->collidesWith & (*it)->collisionGroup){
+	      (*it2)->OnCollision((*it));
+	    }
 	  }
 	}
       }
@@ -95,12 +101,20 @@ std::vector< Entity* > Galaxy::GetEntityList()
 
 
 void Galaxy::Update(float dt) {
+ // Remove dead entities
+  /*for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    if((*it) == nullptr) {
+      it = entity.erase(it);
+    }
+  }*/
   
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    (*it)->Update(dt);
-    if(currentTime < GameSettings::maxTime)
-      (*it)->Iterate(dt);
+   if((*it) != nullptr) {
+      (*it)->Update(dt);
+      if(currentTime < GameSettings::maxTime)
+	(*it)->Iterate(dt);
+   }
   }
   if(currentTime < GameSettings::maxTime) {
     
@@ -113,7 +127,7 @@ void Galaxy::Update(float dt) {
       std::tie (myTime, myEnt) = (*it);
       myTime -= dt;
       if(myTime < dt) {
-	entity.push_back(myEnt);
+	AddEntity(myEnt);
       } else {
 	std::tuple<float, Entity*> queuedEnt (myTime, myEnt);
 	tQueuedEnts.push_back(queuedEnt);
@@ -132,14 +146,25 @@ void Galaxy::CommitTurn() {
   currentTime = 0;
   
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
+    if((*it) != nullptr) {
+      (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
+    }
   }
 }
 
 void Galaxy::AddEntity(Entity* m_entity)
 {
   m_entity->SetParent(this);
+  m_entity->SetId(entity.size());
   entity.push_back(m_entity);
+}
+
+void Galaxy::DeleteEntity(int id)
+{
+  if(entity[id] != nullptr)  {
+      delete(entity[id]);
+      entity[id] = nullptr;
+    }
 }
 
 void Galaxy::QueueEntityForTurn(float time, Entity* entity2)

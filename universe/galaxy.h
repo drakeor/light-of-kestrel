@@ -43,6 +43,7 @@ class Galaxy
 public:
   Galaxy(Game* game);
   void AddEntity(Entity* entity);
+  void DeleteEntity(int id);
   void QueueEntityForTurn(float time, Entity* entity);
   std::vector<Entity*> GetEntityList();
   void Render();

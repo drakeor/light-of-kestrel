@@ -34,7 +34,8 @@ Entity::Entity(Game* game) :
   position(sf::Vector2f(0.0f, 0.0f)), currentRotation(0), startRotation(0),
   targetThrust(0),  velocityMagnitude(0), targetRotation(0),
   health(100), startThrust(0), deltaRotation(0), frameTime(0),
-  deltaThrust(0), maxTime(0), missileDelayTime(0), texRotOffset(0)
+  deltaThrust(0), maxTime(0), missileDelayTime(0), texRotOffset(0),
+  id(0)
 {
   this->game = game;
   this->position = sf::Vector2f(0.0f, 0.0f);
@@ -68,6 +69,12 @@ void Entity::Update(float dt) {
     FILE_LOG(logERROR) << "Entity has NaN rotation!!";
   }*/
 }
+
+void Entity::SetId(int id)
+{
+  this->id = id;
+}
+
 
 void Entity::Render() {
   float realRotation = (currentRotation+texRotOffset)*57.3;
@@ -117,6 +124,7 @@ void Entity::Iterate(float dt) {
       ent->SetTargetRotation(currentRotation);
       ent->SetCurrentVelocity(350);
       ent->SetTargetVelocity(350);
+      ent->AddMissile(tMissile, 1);
       game->GetUniverseManager()->GetCurrentGalaxy()->QueueEntityForTurn(0.00f, ent);
       missileDelayTime = GameSettings::missileFireDelayTime;
     } else {
@@ -128,7 +136,7 @@ void Entity::Iterate(float dt) {
 }
 
 sf::Vector2f Entity::GetCurrentPosition() {
-  FILE_LOG(logERROR) << "Get Position: " << position.x << "|" << position.y;
+  //FILE_LOG(logERROR) << "Get Position: " << position.x << "|" << position.y;
   return position;
 }
 
@@ -199,7 +207,32 @@ void Entity::SetParent(Galaxy* newParent)
 
 void Entity::OnCollision(Entity* other)
 {
+  // If I'm a missile, then give the entity I just collided with a world of hurt!
+  if(name == "Missile") {
+    
+    // If the programmer was competent, then he'd have a missle inside this missile (Missile-ception!)
+    if(missiles.size() < 1) { 
+      FILE_LOG(logERROR) << "Entity error on collision: This missile entity has no missile assigned to it!";
+    }
+    Missile misInfo = MissileFactory::GetMissile(missiles[0]);
+    
+    /* We want to process the impact to the ship. 
+     * Get the angle of impact to the ship by finding the angle between the
+     * missile and the ship
+     */
+    float deltaY = position.y - other->GetCurrentPosition().y;
+    float deltaX = position.x - other->GetCurrentPosition().x;
+    float resAngle = atan2(deltaY, deltaX);
+    // TODO: Add pushback force
+    other->ProcessImpact(misInfo.damage, 1, resAngle);
+    // Lastly, kill ourselves.
+    game->GetUniverseManager()->GetCurrentGalaxy()->DeleteEntity(id);
+  }
+}
 
+void Entity::ProcessImpact(float damage, float force, float direction)
+{
+  FILE_LOG(logERROR) << "I just recieved an impact of " << damage << " from direction " << direction;
 }
 
 void Entity::AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent)

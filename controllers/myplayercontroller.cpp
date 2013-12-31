@@ -213,11 +213,11 @@ void MyPlayerController::SpawnPlayer()
     // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
     // TODO: There are issues making entities in general on this area like Setting positions, rotations.
     for(int i=0;i<1;i++) {
-      Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
+      Entity* rawr = EntityFactory::BuildEntity(game, SS_HORNET);
       rawr->SetPosition(500, 110);
       rawr->SetTargetVelocity(20);
       rawr->SetTargetRotation(0);
-     // game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
     }
   }
 }

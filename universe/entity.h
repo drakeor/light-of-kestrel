@@ -85,6 +85,7 @@ class Entity
   sf::Vector2f position;
   float velocityMagnitude;
   float currentRotation;
+  int id;
   
   // Simulation Variables
   float startThrust;
@@ -124,6 +125,7 @@ public:
   std::string GetIcon();
   void SetIcon(std::string name);
   void SetTextureRotOffset(float offset);
+  void SetId(int id);
   
   void SetParent(Galaxy* newParent);
   Galaxy* GetParent();
@@ -139,6 +141,7 @@ public:
   char collisionGroup;
   int TempCollisionDistance;
   void OnCollision(Entity* other);
+  void ProcessImpact(float damage, float force, float direction);
   
   // Component Related
   void AddComponent(component_side_t componentSide, component_layer_t componentLayer, EntityComponent entComponent);
