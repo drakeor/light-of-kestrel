@@ -4,6 +4,8 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
+  "/home/drakeor/LightOfKestrel/ai/baseai.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/ai/baseai.cpp.o"
+  "/home/drakeor/LightOfKestrel/ai/turretai.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/ai/turretai.cpp.o"
   "/home/drakeor/LightOfKestrel/assetmanager.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/assetmanager.cpp.o"
   "/home/drakeor/LightOfKestrel/camera.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/camera.cpp.o"
   "/home/drakeor/LightOfKestrel/components/armourplating.cpp" "/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o"

@@ -152,6 +152,54 @@ lightofkestrel/fast:
 	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/build
 .PHONY : lightofkestrel/fast
 
+ai/baseai.o: ai/baseai.cpp.o
+.PHONY : ai/baseai.o
+
+# target to build an object file
+ai/baseai.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/ai/baseai.cpp.o
+.PHONY : ai/baseai.cpp.o
+
+ai/baseai.i: ai/baseai.cpp.i
+.PHONY : ai/baseai.i
+
+# target to preprocess a source file
+ai/baseai.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/ai/baseai.cpp.i
+.PHONY : ai/baseai.cpp.i
+
+ai/baseai.s: ai/baseai.cpp.s
+.PHONY : ai/baseai.s
+
+# target to generate assembly for a file
+ai/baseai.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/ai/baseai.cpp.s
+.PHONY : ai/baseai.cpp.s
+
+ai/turretai.o: ai/turretai.cpp.o
+.PHONY : ai/turretai.o
+
+# target to build an object file
+ai/turretai.cpp.o:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/ai/turretai.cpp.o
+.PHONY : ai/turretai.cpp.o
+
+ai/turretai.i: ai/turretai.cpp.i
+.PHONY : ai/turretai.i
+
+# target to preprocess a source file
+ai/turretai.cpp.i:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/ai/turretai.cpp.i
+.PHONY : ai/turretai.cpp.i
+
+ai/turretai.s: ai/turretai.cpp.s
+.PHONY : ai/turretai.s
+
+# target to generate assembly for a file
+ai/turretai.cpp.s:
+	$(MAKE) -f CMakeFiles/lightofkestrel.dir/build.make CMakeFiles/lightofkestrel.dir/ai/turretai.cpp.s
+.PHONY : ai/turretai.cpp.s
+
 assetmanager.o: assetmanager.cpp.o
 .PHONY : assetmanager.o
 
@@ -813,6 +861,12 @@ help:
 	@echo "... lightofkestrel"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... ai/baseai.o"
+	@echo "... ai/baseai.i"
+	@echo "... ai/baseai.s"
+	@echo "... ai/turretai.o"
+	@echo "... ai/turretai.i"
+	@echo "... ai/turretai.s"
 	@echo "... assetmanager.o"
 	@echo "... assetmanager.i"
 	@echo "... assetmanager.s"

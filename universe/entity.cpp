@@ -75,6 +75,11 @@ void Entity::SetId(int id)
   this->id = id;
 }
 
+Game* Entity::GetGame()
+{
+  return this->game;
+}
+
 
 void Entity::Render() {
   float realRotation = (currentRotation+texRotOffset)*57.3;
@@ -346,4 +351,13 @@ void Entity::SetTextureRotOffset(float offset)
 }
 
 
+void Entity::InstallAI(BaseAI* aiSys)
+{
+  aiSys->SetEntity(this);
+  ai = std::unique_ptr<BaseAI>(aiSys);
+}
 
+BaseAI* Entity::GetAI()
+{
+  return ai.get();
+}

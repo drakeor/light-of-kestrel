@@ -30,6 +30,7 @@
 #include <map>
 #include <../components/entitycomponent.h>
 #include "missilefactory.h"
+#include <ai/baseai.h>
 
 class Galaxy;
 class Game;
@@ -79,6 +80,7 @@ class Entity
   std::string name;
   std::string entityIcon;
   Galaxy* parent;
+  std::unique_ptr<BaseAI> ai;
   
   // Physiks Variables.
   // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
@@ -127,6 +129,10 @@ public:
   void SetTextureRotOffset(float offset);
   void SetId(int id);
   int GetId();
+  Game* GetGame();
+  
+  void InstallAI(BaseAI* aiSys);
+  BaseAI* GetAI();
   
   void SetParent(Galaxy* newParent);
   Galaxy* GetParent();

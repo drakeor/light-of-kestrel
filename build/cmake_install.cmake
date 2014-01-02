@@ -55,6 +55,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/drakeor/LightOfKestrel/build/controllers/cmake_install.cmake")
   INCLUDE("/home/drakeor/LightOfKestrel/build/events/cmake_install.cmake")
   INCLUDE("/home/drakeor/LightOfKestrel/build/components/cmake_install.cmake")
+  INCLUDE("/home/drakeor/LightOfKestrel/build/ai/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

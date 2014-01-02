@@ -1,4 +1,6 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/lightofkestrel.dir/ai/turretai.cpp.o"
+  "CMakeFiles/lightofkestrel.dir/ai/baseai.cpp.o"
   "CMakeFiles/lightofkestrel.dir/controllers/shipinterfacecontroller.cpp.o"
   "CMakeFiles/lightofkestrel.dir/components/vectorthruster.cpp.o"
   "CMakeFiles/lightofkestrel.dir/components/armourplating.cpp.o"

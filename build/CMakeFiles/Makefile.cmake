@@ -8,6 +8,7 @@ SET(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../ai/CMakeLists.txt"
   "CMakeFiles/2.8.12.1/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.1/CMakeSystem.cmake"
@@ -45,6 +46,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "controllers/CMakeFiles/CMakeDirectoryInformation.cmake"
   "events/CMakeFiles/CMakeDirectoryInformation.cmake"
   "components/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "ai/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
