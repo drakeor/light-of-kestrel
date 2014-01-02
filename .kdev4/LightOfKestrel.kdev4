@@ -15,8 +15,32 @@ Environment Profile=
 Extra Arguments=
 Install Directory=file:///usr/local
 
+[Launch]
+Launch Configurations=Launch Configuration 1
+
+[Launch][Launch Configuration 1]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=lightofkestrel
+Type=Native Application
+
+[Launch][Launch Configuration 1][Data]
+Arguments=
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x02\x00\x00\x00\x1c\x00L\x00i\x00g\x00h\x00t\x00O\x00f\x00K\x00e\x00s\x00t\x00r\x00e\x00l\x00\x00\x00\x1c\x00l\x00i\x00g\x00h\x00t\x00o\x00f\x00k\x00e\x00s\x00t\x00r\x00e\x00l)
+Dependency Action=Build
+EnvironmentGroup=default
+Executable=
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+Project Target=LightOfKestrel,lightofkestrel
+Use External Terminal=false
+Working Directory=file:///home/drakeor/LightOfKestrel/build
+isExecutable=false
+
 [MakeBuilder]
 Number Of Jobs=4
 
 [Project]
 VersionControlSupport=kdevgit
+
+[SourceFileTemplates]
+LastUsedTemplate=/home/drakeor/.kde/share/apps/kdevfiletemplates/template_descriptions/cpp_basic.desktop

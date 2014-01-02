@@ -1,1 +1,0 @@
-/home/drakeor/LightOfKestrel/build/CMakeFiles/lightofkestrel.dir

@@ -31,7 +31,9 @@ add_executable(lightofkestrel ai/turretai.cpp ai/baseai.cpp controllers/shipinte
 target_link_libraries (lightofkestrel sfml-graphics sfml-system sfml-window)
 
 # Install the program if needed
-install(TARGETS lightofkestrel RUNTIME DESTINATION bin)
+#install(TARGETS lightofkestrel RUNTIME DESTINATION bin)
+INSTALL(TARGETS lightofkestrel RUNTIME DESTINATION ${lightofkestrel_SOURCE_DIR}/deploy)
+SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/deploy)
 
 add_subdirectory(gui)
 add_subdirectory(universe)
