@@ -29,6 +29,7 @@
 #include "../game.h"
 #include "../controllers/settings.h"
 #include <controllers/shipinterfacecontroller.h>
+#include <controllers/myplayercontroller.h>
 
 Galaxy::Galaxy(Game* game)
 {
@@ -168,6 +169,15 @@ void Galaxy::AddEntity(Entity* m_entity)
 void Galaxy::DeleteEntity(int id)
 {
   if(entity[id] != nullptr)  {
+      /* This fixes the crash with MyPlayerController */
+      MyPlayerController* playerController = (MyPlayerController*) game->GetControllerManager()->GetController("PlayerController");
+      Entity* ent2 = playerController->GetPlayer();
+      if(ent2 != nullptr) {
+	if(ent2->GetId() == id) {
+	  playerController->ResetPlayer();
+	}
+      }
+      
       /* This fixes crashes with deleting the entity this controller is watching. */
       ShipInterfaceController* interface = (ShipInterfaceController*) game->GetControllerManager()->GetController("ShipInterface");
       Entity* ent = interface->GetEntity();

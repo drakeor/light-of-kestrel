@@ -33,7 +33,7 @@ Executable=
 External Terminal=konsole --noclose --workdir %workdir -e %exe
 Project Target=LightOfKestrel,lightofkestrel
 Use External Terminal=false
-Working Directory=file:///home/drakeor/LightOfKestrel/build
+Working Directory=file:///home/drakeor/LightOfKestrel/deploy/
 isExecutable=false
 
 [MakeBuilder]

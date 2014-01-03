@@ -258,22 +258,12 @@ void Entity::ProcessImpact(float damage, float force, float direction)
   
   /* Check the direction of impact */
   float deltaRotation = currentRotation - direction;
-  deltaRotation = abs(fmod(deltaRotation, 6.28f));
+  deltaRotation = fabs(fmod(deltaRotation, 6.28f));
   FILE_LOG(logERROR) << "I just recieved an impact of " << damage << " from direction " << direction << " (local: " << deltaRotation << ")";
   
   /* Check which components were hit */
   float damages[4] = {0,0,0,0};
   float dPercents[4] = {0,0,0,0};
-  /*for(int i=1; i < 5; i++) {
-    if((deltaRotation < (1.57f*i))  && (deltaRotation > (1.57f*(i-1)))) {
-      int j=i+1;
-      if(i == 4) j = 1;
-      dPercents[j-1] = (deltaRotation-(1.57f*(i-1)))/1.57f;
-      dPercents[i-1] = 1 - dPercents[j-1];
-      damages[i-1] = dPercents[i-1] * damage;
-      damages[j-1] = dPercents[j-1] * damage;
-    }
-  }*/
   for(int i=0; i < 4; i++) {
     if((deltaRotation < (1.57f*(i+1)))  && (deltaRotation > (1.57f*i))) {
       int j=i+1;
@@ -284,8 +274,8 @@ void Entity::ProcessImpact(float damage, float force, float direction)
       damages[j] = dPercents[j] * damage;
     }
   }
-  FILE_LOG(logERROR) << "Actual Damage: " << damages[0] << " by " << damages[1] << " by" << damages[2] << " by " << damages[3];
-  FILE_LOG(logERROR) << "Percentages: " << dPercents[0] << " by " << dPercents[1] << " by" << dPercents[2] << " by " << dPercents[3];
+  FILE_LOG(logERROR) << "Actual Damage: Front: " << damages[0] << "  Right: " << damages[1] << "  Back: " << damages[2] << "  Left: " << damages[3];
+  FILE_LOG(logERROR) << "Percentages: Front: " << dPercents[0] << " Right: " << dPercents[1] << " Back: " << dPercents[2] << " Left:  " << dPercents[3];
   /* Deal damage to the components now */
   for(int j=0;j<MAX_COMPONENT_SIDES;++j) {
     for(int i=0;i<MAX_COMPONENT_LAYERS;++i) {
@@ -305,7 +295,10 @@ void Entity::ProcessImpact(float damage, float force, float direction)
       }
     }
     /* Damage leaked through to the core */
-    if(damages[j] > 0) this->health -= damages[j];
+    if(damages[j] > 0) {
+      this->health -= damages[j];
+      FILE_LOG(logWARNING) << "Took damage from side " << j << " to core for " << damages[j] << " damage";
+    }
   }
   /* If our core suffered too much damage, destroy ourselves */
   if(this->health < 0) {

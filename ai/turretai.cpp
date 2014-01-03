@@ -31,7 +31,7 @@
 #include <log.h>
 #include <vector>
 
-#define MAX_VISUAL_RANGE 500
+#define MAX_VISUAL_RANGE 1200
 
 TurretAI::TurretAI()
 {
@@ -53,6 +53,10 @@ float GetAngle(sf::Vector2f pos1, sf::Vector2f pos2)
   float dY = (pos2.y) - (pos1.y);
   float dX = (pos2.x) - (pos1.x);
   return (float)atan2(dY, dX);
+}
+inline float clamp(float x, float a, float b)
+{
+    return x < a ? a : (x > b ? b : x);
 }
 
 void TurretAI::ProcessTurn()
@@ -100,9 +104,12 @@ void TurretAI::ProcessTurn()
     if(targettedEnt != nullptr) {
       float targetRotation = GetAngle(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
       if(myEntity->HasMissile(MISSILE_VEILLON_I)) {
-	//myEntity->FireMissile(MISSILE_VEILLON_I);
+	myEntity->FireMissile(MISSILE_VEILLON_I);
       }
-      //myEntity->SetTargetRotation(targetRotation);
+      float deltaRot = targetRotation - myRotation;
+      deltaRot = clamp(deltaRot, -1.7f, 1.7f);
+      
+      myEntity->SetTargetRotation(myRotation+deltaRot);
     }
   }
 }

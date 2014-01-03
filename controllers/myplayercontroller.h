@@ -35,7 +35,7 @@ class Game;
 class MyPlayerController : public BaseController
 {
   // Player stuff
-  bool hasPlayer;
+  bool hasPlayer();
   Entity* myPlayer;
   BaseControl* playerControls;
   std::unique_ptr<EventListener> commitListener;

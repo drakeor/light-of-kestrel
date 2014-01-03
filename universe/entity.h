@@ -57,8 +57,8 @@ enum collision_group_t {
 enum component_side_t {
   FRONT,
   LEFT,
-  RIGHT,
   BACK,
+  RIGHT,
   CORE,
   MAX_COMPONENT_SIDES
 };

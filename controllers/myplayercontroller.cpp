@@ -133,7 +133,8 @@ MyPlayerController::MyPlayerController(Game* game) :
   BaseController(game)
 {
   // Initialise some variables
-  hasPlayer = false;
+  //hasPlayer = false;
+  myPlayer = nullptr;
   
   // Add in our event listeners
   commitListener = std::unique_ptr<EventListener>( new CommitListener(this, game->GetUniverseManager()) );
@@ -186,6 +187,25 @@ MyPlayerController::MyPlayerController(Game* game) :
   }
   activeMissileBays = 2;
   
+  // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
+    // TODO: There are issues making entities in general on this area like Setting positions, rotations.
+  srand(NULL);
+    for(int i=0;i<2;i++) {
+      Entity* rawr = EntityFactory::BuildEntity(game, TURRET);
+      rawr->SetPosition((rand() % 1200)-600, (rand() % 1000)-500);
+      //rawr->SetTargetVelocity(20);
+     // rawr->SetTargetRotation(0.78f);
+      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+    }
+    
+    for(int i=0;i<4;i++) {
+      Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
+      rawr->SetPosition((rand() % 800)-400, (rand() % 600)-300);
+      rawr->SetTargetVelocity(5);
+      rawr->SetTargetRotation(0.78f);
+      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+    }
+    
   ResetGui();
 }
 
@@ -194,7 +214,7 @@ MyPlayerController::MyPlayerController(Game* game) :
  */
 void MyPlayerController::SpawnPlayer()
 {
-  if(!this->hasPlayer) {
+  if(!this->hasPlayer()) {
     
     Slider* thrustSlider = (Slider*)playerControls->GetControl("ThrustControl");
     thrustSlider->SetFillPercentage(0.0f);
@@ -202,24 +222,21 @@ void MyPlayerController::SpawnPlayer()
     directionSlider->SetFillPercentage(0.5f);
     
     // Add in our player immediately when this controller is constructed.
-    this->hasPlayer = true;
+    //this->hasPlayer = true;
     this->myPlayer = EntityFactory::BuildEntity(game, SS_HORNET);
-    myPlayer->SetPosition(100, 110);
+    myPlayer->SetPosition((rand() % 200)-100, (rand() % 200)-100);
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     
     // Add in our ghost
     this->ghostObject = nullptr;
 
-    // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
-    // TODO: There are issues making entities in general on this area like Setting positions, rotations.
-    for(int i=0;i<1;i++) {
-      Entity* rawr = EntityFactory::BuildEntity(game, TURRET);
-      rawr->SetPosition(500, 160);
-      //rawr->SetTargetVelocity(20);
-     // rawr->SetTargetRotation(0.78f);
-      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
-    }
   }
+}
+
+bool MyPlayerController::hasPlayer()
+{
+  if(myPlayer != nullptr) return true;
+  else return false;
 }
 
 /*
@@ -228,7 +245,7 @@ void MyPlayerController::SpawnPlayer()
  */
 void MyPlayerController::ResetMissileInterface()
 {
-  if(hasPlayer) {
+  if(hasPlayer()) {
     std::vector< missile_t > tempMissiles = this->myPlayer->GetMissiles();
     auto sMissile = tempMissiles.begin();
     for(int y = 0; y < GameSettings::g_maxMissileColumns; y++) {
@@ -293,7 +310,7 @@ void MyPlayerController::SelectGUIMissile(std::string guiElement)
 void MyPlayerController::Render()
 {
   
-  if(this->hasPlayer) {
+  if(this->hasPlayer()) {
     
     // Draw our ghost player in the world
     game->GetCamera()->PreRender();
@@ -328,8 +345,8 @@ void MyPlayerController::Render()
 }
 
 void MyPlayerController::Update(float dt)
-{ /*
-  if(this->hasPlayer) {
+{ 
+  if(this->hasPlayer()) {
     ghostMovementDelay += dt;
     
     // We don't want to over-iterate the ghost
@@ -358,13 +375,13 @@ void MyPlayerController::Update(float dt)
 	  ghostObject.get()->SetTargetVelocity(finalVelocity);
 	  ghostObject.get()->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
     }
-  }*/
+  }
   BaseController::Update(dt);
 }
 
 void MyPlayerController::ResetPlayer()
 {
-
+  myPlayer = nullptr;
 }
 
 Entity* MyPlayerController::GetPlayer()
