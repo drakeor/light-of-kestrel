@@ -28,6 +28,7 @@
 #include <components/armourplating.h>
 #include <components/missilebay.h>
 #include <components/vectorthruster.h>
+#include <ai/turretai.h>
 
 EntityFactory::EntityFactory()
 {
@@ -87,8 +88,53 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       
       entity->AddMissile(MISSILE_VEILLON_I, 8);
       entity->AddMissile(MISSILE_SHIVE_I, 3);
+      
+      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
       break;
     
+      /* Test turret */
+    case TURRET:
+      
+      BuildShip(game, entity, "gfx/ships/turret.png", "Turret");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      entity->AddComponent(FRONT, LAYER_1, MissileBay());
+      entity->AddComponent(FRONT, LAYER_1, MissileBay());
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+     
+       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->InstallAI(new TurretAI());
+      entity->AddMissile(MISSILE_VEILLON_I, 16);
+      entity->SetFaction(RelationshipManager::ENEMY_FACTION);
+      break;
+      
    /* World Objects */
     case ASTROID:
       BuildTexture(game, entity, "astroid.png");

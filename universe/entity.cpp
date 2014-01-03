@@ -38,6 +38,7 @@ Entity::Entity(Game* game) :
   id(0)
 {
   this->game = game;
+  this->faction = RelationshipManager::FACTIONLESS;
   this->position = sf::Vector2f(0.0f, 0.0f);
 }
 
@@ -78,6 +79,16 @@ void Entity::SetId(int id)
 Game* Entity::GetGame()
 {
   return this->game;
+}
+
+void Entity::SetFaction(RelationshipManager::FACTION newFaction)
+{
+  this->faction = newFaction;
+}
+
+RelationshipManager::FACTION Entity::GetFaction()
+{
+  return this->faction;
 }
 
 
@@ -247,13 +258,13 @@ void Entity::ProcessImpact(float damage, float force, float direction)
   
   /* Check the direction of impact */
   float deltaRotation = currentRotation - direction;
-  deltaRotation = fmod(deltaRotation, 6.28f);
+  deltaRotation = abs(fmod(deltaRotation, 6.28f));
   FILE_LOG(logERROR) << "I just recieved an impact of " << damage << " from direction " << direction << " (local: " << deltaRotation << ")";
   
   /* Check which components were hit */
   float damages[4] = {0,0,0,0};
   float dPercents[4] = {0,0,0,0};
-  for(int i=1; i < 5; i++) {
+  /*for(int i=1; i < 5; i++) {
     if((deltaRotation < (1.57f*i))  && (deltaRotation > (1.57f*(i-1)))) {
       int j=i+1;
       if(i == 4) j = 1;
@@ -262,9 +273,19 @@ void Entity::ProcessImpact(float damage, float force, float direction)
       damages[i-1] = dPercents[i-1] * damage;
       damages[j-1] = dPercents[j-1] * damage;
     }
+  }*/
+  for(int i=0; i < 4; i++) {
+    if((deltaRotation < (1.57f*(i+1)))  && (deltaRotation > (1.57f*i))) {
+      int j=i+1;
+      if(j == 4) j = 0;
+      dPercents[j] = (deltaRotation-(1.57f*(i)))/1.57f;
+      dPercents[i] = 1 - dPercents[j];
+      damages[i] = dPercents[i] * damage;
+      damages[j] = dPercents[j] * damage;
+    }
   }
-  FILE_LOG(logERROR) << "I am going to deal " << damages[0] << " by " << damages[1] << " by" << damages[2] << " by " << damages[3];
-  FILE_LOG(logERROR) << "I am going to deal " << dPercents[0] << " by " << dPercents[1] << " by" << dPercents[2] << " by " << dPercents[3];
+  FILE_LOG(logERROR) << "Actual Damage: " << damages[0] << " by " << damages[1] << " by" << damages[2] << " by " << damages[3];
+  FILE_LOG(logERROR) << "Percentages: " << dPercents[0] << " by " << dPercents[1] << " by" << dPercents[2] << " by " << dPercents[3];
   /* Deal damage to the components now */
   for(int j=0;j<MAX_COMPONENT_SIDES;++j) {
     for(int i=0;i<MAX_COMPONENT_LAYERS;++i) {
@@ -273,6 +294,7 @@ void Entity::ProcessImpact(float damage, float force, float direction)
 	  if((*it).health > damages[j]) {
 	    // This component neutralised all the damage.
 	    (*it).health -= damages[j];
+	    damages[j] = 0;
 	    break;
 	  } else {
 	    // This component was destroyed in the process

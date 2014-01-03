@@ -25,18 +25,32 @@
  * 
  */
 
-#ifndef TURRETAI_H
-#define TURRETAI_H
+#include "relationshipmanager.h"
+#include <entity.h>
 
-#include <ai/baseai.h>
-
-class TurretAI : public BaseAI
+RelationshipManager::RelationshipManager()
 {
-public:
-  TurretAI();
-  ~TurretAI();
-   void ProcessTurn();
 
-};
+}
 
-#endif // TURRETAI_H
+RelationshipManager::~RelationshipManager()
+{
+
+}
+
+RelationshipManager::RELATIONSHIP_TYPE RelationshipManager::GetRelationship(Entity* ent1, Entity* ent2)
+{
+  // If we're dealing with any factionless or civilian people, we can just ignore them.
+  if((ent1->GetFaction() == CIVILIAN) || (ent2->GetFaction() == CIVILIAN) || (ent1->GetFaction() == FACTIONLESS) || (ent2->GetFaction() == FACTIONLESS)) {
+    return NEUTRAL;
+  } else {
+    // If they're our own faction, we can assume they are our ally.
+    if(ent1->GetFaction() == ent2->GetFaction()) {
+      return FRIEND;
+    } else {
+      return ENEMY;
+    }
+  }
+}
+
+

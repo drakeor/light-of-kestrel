@@ -28,6 +28,7 @@
 #include <ai/turretai.h>
 #include <entity.h>
 #include <game.h>
+#include <log.h>
 #include <vector>
 
 #define MAX_VISUAL_RANGE 500
@@ -42,18 +43,67 @@ TurretAI::~TurretAI()
 
 }
 
+// Helper functions
+float GetDistance(sf::Vector2f pos1, sf::Vector2f pos2)
+{
+  return (float)sqrt( pow(pos2.x - pos1.x, 2) + pow(pos2.y - pos1.y, 2) );
+}
+float GetAngle(sf::Vector2f pos1, sf::Vector2f pos2)
+{
+  float dY = (pos2.y) - (pos1.y);
+  float dX = (pos2.x) - (pos1.x);
+  return (float)atan2(dY, dX);
+}
+
 void TurretAI::ProcessTurn()
 {
+  // Check for errors
+  if(myEntity->GetFaction() == RelationshipManager::FACTIONLESS) {
+    FILE_LOG(logWARNING) << "(TurretAI): The entity I'm attached to is FACTIONLESS: " << myEntity->GetName();
+  }
+  
   // Make sure we have a valid entity
   if(myEntity != nullptr) {
+    
+    // Set up initial variables
+    Entity* targettedEnt = nullptr;
+    float targettedDist = 9999;
+    float targettedAngle = 0;
+    float myRotation = fmod (myEntity->GetCurrentRotation(),6.28);
     
     // Get our list of entities in this galaxy
     std::vector<Entity*> listOfEntites = myEntity->GetGame()->GetUniverseManager()->GetCurrentGalaxy()->GetEntityList();
     
     // We only want to target ones within our range.
-    // MAX_VISUAL_RANGE
+    for(auto it = listOfEntites.begin(); it != listOfEntites.end(); ++it) {
+      if((*it) != nullptr) {
+	float dist = GetDistance(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	if(dist < MAX_VISUAL_RANGE) {
+	  
+	  // If the other entity is an enemy..
+	  if(RelationshipManager::GetRelationship(myEntity, (*it)) == RelationshipManager::ENEMY) {
+	    
+	    // We want to prioritize the ones that are "easiest" to reach. AKA rotation points in their direction.
+	    float rot2 = 0; 
+	    rot2 = GetAngle(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	    float deltaRot = rot2 - myRotation;
+	    if(abs(deltaRot) < targettedDist) { 
+	      targettedEnt = (*it);
+	      targettedDist = abs(deltaRot);
+	    }
+	  }
+	}
+      }
+    }
     
-    // We only want to target ones that are our enemies.
+    // If we have a target, we'll adjust to it.
+    if(targettedEnt != nullptr) {
+      float targetRotation = GetAngle(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
+      if(myEntity->HasMissile(MISSILE_VEILLON_I)) {
+	//myEntity->FireMissile(MISSILE_VEILLON_I);
+      }
+      //myEntity->SetTargetRotation(targetRotation);
+    }
   }
 }
 

@@ -25,14 +25,14 @@ if (CMAKE_COMPILER_IS_GNUCXX)
 endif ()
 
 # Make an executable
-add_executable(lightofkestrel ai/turretai.cpp ai/baseai.cpp controllers/shipinterfacecontroller.cpp components/vectorthruster.cpp components/armourplating.cpp universe/missilefactory.cpp components/missilebay.cpp gui/dropdown.cpp components/entitycomponent.cpp universe/entityfactory.cpp controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp inputmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp)
+add_executable(lightofkestrel ai/relationshipmanager.cpp ai/turretai.cpp ai/baseai.cpp controllers/shipinterfacecontroller.cpp components/vectorthruster.cpp components/armourplating.cpp universe/missilefactory.cpp components/missilebay.cpp gui/dropdown.cpp components/entitycomponent.cpp universe/entityfactory.cpp controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp inputmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp)
 
 # Link SFML Libraries.
 target_link_libraries (lightofkestrel sfml-graphics sfml-system sfml-window)
 
 # Install the program if needed
-#install(TARGETS lightofkestrel RUNTIME DESTINATION bin)
-INSTALL(TARGETS lightofkestrel RUNTIME DESTINATION ${lightofkestrel_SOURCE_DIR}/deploy)
+install(TARGETS lightofkestrel RUNTIME DESTINATION bin)
+#INSTALL(TARGETS lightofkestrel RUNTIME DESTINATION ${lightofkestrel_SOURCE_DIR}/deploy)
 SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/deploy)
 
 add_subdirectory(gui)

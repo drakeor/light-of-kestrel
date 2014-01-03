@@ -31,6 +31,7 @@
 #include <../components/entitycomponent.h>
 #include "missilefactory.h"
 #include <ai/baseai.h>
+#include <ai/relationshipmanager.h>
 
 class Galaxy;
 class Game;
@@ -81,6 +82,7 @@ class Entity
   std::string entityIcon;
   Galaxy* parent;
   std::unique_ptr<BaseAI> ai;
+  RelationshipManager::FACTION faction;
   
   // Physiks Variables.
   // Anmerkung: Die Einheiten (Anlagen?) bist im Pixelen / Sekunden
@@ -130,6 +132,9 @@ public:
   void SetId(int id);
   int GetId();
   Game* GetGame();
+  
+  RelationshipManager::FACTION GetFaction();
+  void SetFaction(RelationshipManager::FACTION newFaction);
   
   void InstallAI(BaseAI* aiSys);
   BaseAI* GetAI();

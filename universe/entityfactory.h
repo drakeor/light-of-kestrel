@@ -36,7 +36,8 @@ enum entity_t {
   ANTIMISSILE, /* Not implemented */
   
   // Spaceships
-  SS_HORNET
+  SS_HORNET,
+  TURRET
 };
   
 class EntityFactory

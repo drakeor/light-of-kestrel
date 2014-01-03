@@ -25,18 +25,30 @@
  * 
  */
 
-#ifndef TURRETAI_H
-#define TURRETAI_H
+#ifndef RELATIONSHIPMANAGER_H
+#define RELATIONSHIPMANAGER_H
 
-#include <ai/baseai.h>
+class Entity;
 
-class TurretAI : public BaseAI
+class RelationshipManager
 {
 public:
-  TurretAI();
-  ~TurretAI();
-   void ProcessTurn();
+  RelationshipManager();
+  ~RelationshipManager();
 
+   enum RELATIONSHIP_TYPE {
+     FRIEND,		/* This ship is an ally. We'll assist them if they are under attack :3 */
+     NEUTRAL,		/* We can ignore their presence. If they get caught in the crossfire, oh well */
+     ENEMY		/* Attack! */
+   };
+   
+   enum FACTION {
+      FACTIONLESS,	// Used for things like missiles.
+      CIVILIAN,		// Civilian faction just kinda exists. It's their fault for being on the battlefield anyways.
+      PLAYER_FACTION,	// Placeholder
+      ENEMY_FACTION	// Placeholder
+    };
+   static RELATIONSHIP_TYPE GetRelationship(Entity* ent1, Entity* ent2);
 };
 
-#endif // TURRETAI_H
+#endif // RELATIONSHIPMANAGER_H

@@ -148,6 +148,11 @@ void Galaxy::CommitTurn() {
   
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     if((*it) != nullptr) {
+      // Process AI routines
+      if((*it)->GetAI() != nullptr) {
+	(*it)->GetAI()->ProcessTurn();
+      }
+      // Committing turn
       (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
     }
   }
