@@ -28,7 +28,7 @@
 #include "../game.h"
 #include "../log.h"
 #include "../components/missilebay.h"
-#include <controllers/settings.h>
+#include <settings.h>
 
 Entity::Entity(Game* game) :
   position(sf::Vector2f(0.0f, 0.0f)), currentRotation(0), startRotation(0),

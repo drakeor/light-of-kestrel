@@ -27,7 +27,7 @@
 #include "entityfactory.h"
 #include "../log.h"
 #include "../game.h"
-#include "../controllers/settings.h"
+#include "../settings.h"
 #include <controllers/shipinterfacecontroller.h>
 #include <controllers/myplayercontroller.h>
 

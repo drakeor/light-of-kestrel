@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
+    Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
@@ -23,42 +23,18 @@ Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef DROPDOWN_H
-#define DROPDOWN_H
+#include "settings.h"
 
-#include <basecontrol.h>
-#include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/Text.hpp>
+// Interval of seeing the ghost movements
+const float GameSettings::ghostMovementDelayMax = 1.8f;
 
+// Turn length
+const float GameSettings::maxTime = 1.2f;
 
-class Dropdown : public BaseControl
-{
-  std::map<std::string, std::string> values;
-  std::pair<std::string, std::string> selectedPair;
-  sf::RectangleShape rect;
-  bool isExpanded;
-  static const float sizeDif;
-  sf::Text text;
-  
-public:
-  
-  // Gui Inherited Controls
-  Dropdown(Game* game);
-  virtual void UpdatePosition();
-  virtual void SetSize(float x, float y, bool absolute = true);
-  virtual sf::Vector2f GetSize();
-  virtual void Update(float dt);
-  virtual void Render();
-  virtual void CheckOnMouseClick(float x, float y);
-  virtual Dropdown& operator=(const Dropdown& other);
-  virtual bool operator==(const Dropdown& other) const;
-  
-  // Dropdown Functions
-  void ClearOptions();
-  void AddOption(std::string identifier, std::string displayString);
-  void RemoveOption(std::string identifier);
-  void SetOption(std::string identifier);
-  
-};
+// Frame time
+const float GameSettings::frameTime = (1/60);
 
-#endif // DROPDOWN_H
+// For the missiles
+const int GameSettings::g_missilePerRow = 11;
+const int GameSettings::g_maxMissileColumns = 7;
+const float GameSettings::missileFireDelayTime = 0.2f;

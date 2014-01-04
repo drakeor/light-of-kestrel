@@ -26,6 +26,8 @@
 #include "dropdown.h"
 #include "../game.h"
 
+const float Dropdown::sizeDif = 25;
+
 Dropdown::Dropdown(Game* game) : BaseControl(game)
 {
   this->size.x = 180;
