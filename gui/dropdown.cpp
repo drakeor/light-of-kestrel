@@ -123,11 +123,6 @@ Dropdown& Dropdown::operator=(const Dropdown& other)
   return *this;
 }
 
-bool Dropdown::operator==(const Dropdown& other) const
-{
-///TODO: return ...;
-}
-
 void Dropdown::AddOption(std::string identifier, std::string displayString)
 {
   values[identifier] = displayString;

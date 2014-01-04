@@ -26,7 +26,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include <../../home/drakeor/LightOfKestrel/gui/basecontrol.h>
+#include <basecontrol.h>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Sprite.hpp>

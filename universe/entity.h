@@ -26,7 +26,11 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 #include <SFML/Graphics/Sprite.hpp>
-#include <tr1/memory>
+#if _WIN32
+  #include <memory>
+#else
+  #include <tr1/memory>
+#endif
 #include <map>
 #include <../components/entitycomponent.h>
 #include "missilefactory.h"

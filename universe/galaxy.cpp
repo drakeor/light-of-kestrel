@@ -179,11 +179,11 @@ void Galaxy::DeleteEntity(int id)
       }
       
       /* This fixes crashes with deleting the entity this controller is watching. */
-      ShipInterfaceController* interface = (ShipInterfaceController*) game->GetControllerManager()->GetController("ShipInterface");
-      Entity* ent = interface->GetEntity();
+      ShipInterfaceController* interface2 = (ShipInterfaceController*) game->GetControllerManager()->GetController("ShipInterface");
+      Entity* ent = interface2->GetEntity();
       if(ent != nullptr) {
 	if(ent->GetId() == id) {
-	  interface->SetEntity(nullptr);
+	  interface2->SetEntity(nullptr);
 	}
       }
       delete(entity[id]);

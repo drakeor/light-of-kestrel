@@ -51,7 +51,6 @@ public:
   virtual void Render();
   virtual void CheckOnMouseClick(float x, float y);
   virtual Dropdown& operator=(const Dropdown& other);
-  virtual bool operator==(const Dropdown& other) const;
   
   // Dropdown Functions
   void ClearOptions();
