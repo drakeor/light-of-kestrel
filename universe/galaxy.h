@@ -34,7 +34,7 @@ class Galaxy
 {
   sf::Sprite backgroundImage;
   std::vector<Entity*> entity;
-  std::vector<std::tuple<float, Entity*>> queuedEntities;
+  std::vector<std::pair<float, Entity*>> queuedEntities;
   Game* game;
   float currentTime;
   

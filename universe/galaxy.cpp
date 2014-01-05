@@ -126,12 +126,14 @@ void Galaxy::Update(float dt) {
     for(auto it = queuedEntities.begin(); it != queuedEntities.end(); ++it) {
       float myTime; 
       Entity* myEnt;
-      std::tie (myTime, myEnt) = (*it);
+      std::pair<float, Entity*> qEnt = (*it);
+      myTime = qEnt.first;
+      myEnt = qEnt.second;
       myTime -= dt;
       if(myTime < dt) {
 	AddEntity(myEnt);
       } else {
-	std::tuple<float, Entity*> queuedEnt (myTime, myEnt);
+	std::pair<float, Entity*> queuedEnt (myTime, myEnt);
 	tQueuedEnts.push_back(queuedEnt);
       }
     }
@@ -193,7 +195,7 @@ void Galaxy::DeleteEntity(int id)
 
 void Galaxy::QueueEntityForTurn(float time, Entity* entity2)
 {
-  std::tuple<float, Entity*> queuedEnt (time, entity2);
+  std::pair<float, Entity*> queuedEnt (time, entity2);
   queuedEntities.push_back(queuedEnt);
   
 }
