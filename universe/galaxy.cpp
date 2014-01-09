@@ -36,7 +36,7 @@ Galaxy::Galaxy(Game* game)
   this->game = game;
   entity.clear();
  // AddEntity(new Entity(game));
-  rawrTexture = game->GetAssetManager()->GetTexture("starfield.png");
+  rawrTexture = game->GetAssetManager()->GetTexture("gfx/universe/starfield.png");
   rawrTexture->setRepeated(true);
   backgroundImage.setTexture(*rawrTexture);
 }

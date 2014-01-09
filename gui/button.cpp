@@ -57,7 +57,7 @@ Button::Button(Game* game)
   this->size.x = 100;
   this->size.y = 25;
   this->internalSize = size;
-  text.setFont(*game->GetAssetManager()->GetFont("sansation.ttf")); // font is a sf::Font
+  text.setFont(*game->GetAssetManager()->GetFont("gfx/fonts/sansation.ttf")); // font is a sf::Font
   text.setString("Button");
   text.setCharacterSize(18); // in pixels, not points!
   text.setColor(sf::Color::White);

@@ -36,7 +36,7 @@ Dropdown::Dropdown(Game* game) : BaseControl(game)
   isExpanded = false;
   
   // Set up our initial rectangle.
-  text.setFont(*game->GetAssetManager()->GetFont("sansation.ttf")); // font is a sf::Font
+  text.setFont(*game->GetAssetManager()->GetFont("gfx/fonts/sansation.ttf")); // font is a sf::Font
   text.setString("Button");
   text.setCharacterSize(16); // in pixels, not points!
   text.setColor(sf::Color::White);

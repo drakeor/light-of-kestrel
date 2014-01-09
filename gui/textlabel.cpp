@@ -30,7 +30,7 @@
 TextLabel::TextLabel(Game* game)
   : BaseControl(game)
 {
-  text.setFont(*game->GetAssetManager()->GetFont("sansation.ttf")); // font is a sf::Font
+  text.setFont(*game->GetAssetManager()->GetFont("gfx/fonts/sansation.ttf")); // font is a sf::Font
   text.setString("Unlabeled");
   text.setCharacterSize(24); // in pixels, not points!
   text.setColor(sf::Color::Red);

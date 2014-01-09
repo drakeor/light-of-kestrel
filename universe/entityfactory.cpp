@@ -70,12 +70,12 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
     
     /* Spaceships */
     case SPACESHIP:
-      BuildShip(game, entity, "nope.png", "Spaceship");
+      BuildShip(game, entity, "gfx/ships/nope.png", "Spaceship");
       break;
    
     case SS_HORNET:
       
-      BuildShip(game, entity, "nope.png", "Hornet I");
+      BuildShip(game, entity, "gfx/ships/nope.png", "Hornet I");
       entity->SetIcon("gfx/icons/shipicon.png");
       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
       entity->AddComponent(FRONT, LAYER_1, MissileBay());
@@ -137,7 +137,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       
    /* World Objects */
     case ASTROID:
-      BuildTexture(game, entity, "astroid.png");
+      BuildTexture(game, entity, "gfx/universe/astroid.png");
       entity->SetIcon("gfx/icons/astroidicon.png");
       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
       entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
@@ -158,7 +158,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
    
     // Nope missile is the basis.
     case MISSILE:
-      BuildTexture(game, entity, "nope_missile.png");
+      BuildTexture(game, entity, "gfx/interface/default_missile.png");
       entity->SetName("Missile");
       entity->collidesWith = COLLISION_GROUP_1; /* Will interact with other spaceships/astroids but not with each other. */
       entity->collisionGroup = COLLISION_GROUP_2; 

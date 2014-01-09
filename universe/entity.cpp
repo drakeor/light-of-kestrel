@@ -49,7 +49,7 @@ Entity::~Entity()
 
 void Entity::Initialise() {
   // Initial assigning
-  sf::Texture* tempTex = game->GetAssetManager()->GetTexture("dragon.png");
+  sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/invalid.png");
   texture = sf::Sprite(*tempTex);
   texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
   texture.setPosition(200, 100);
