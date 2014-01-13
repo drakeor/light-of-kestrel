@@ -33,11 +33,18 @@ enum entity_t {
   SPACESHIP,
   ASTROID,
   MISSILE,
+  TURRET,
   ANTIMISSILE, /* Not implemented */
   
   // Spaceships
   SS_HORNET,
-  TURRET
+  INTREPID,
+  SABRE,
+  DAELALUS,
+  
+  // Turrets
+  GNAT,
+  WASP
 };
   
 class EntityFactory

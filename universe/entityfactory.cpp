@@ -23,6 +23,7 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+// Our includes
 #include "entityfactory.h"
 #include "../game.h"
 #include <components/armourplating.h>
@@ -58,7 +59,6 @@ void EntityFactory::BuildShip(Game* game, Entity* entity, std::string textureNam
   entity->collidesWith = COLLISION_GROUP_1; /* Will collide with other spaceships/astroids */
   entity->collisionGroup = COLLISION_GROUP_1;
 }
-
 Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
 {
   Entity* entity = new Entity(game);
@@ -73,25 +73,6 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       BuildShip(game, entity, "gfx/ships/nope.png", "Spaceship");
       break;
    
-    case SS_HORNET:
-      
-      BuildShip(game, entity, "gfx/ships/nope.png", "Hornet I");
-      entity->SetIcon("gfx/icons/shipicon.png");
-      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(FRONT, LAYER_1, MissileBay());
-      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
-      entity->AddComponent(LEFT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
-      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
-      entity->AddComponent(RIGHT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
-      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
-      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
-      
-      entity->AddMissile(MISSILE_VEILLON_I, 8);
-      entity->AddMissile(MISSILE_SHIVE_I, 3);
-      
-      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
-      break;
-    
       /* Test turret */
     case TURRET:
       
@@ -109,32 +90,182 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
       entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
       entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-     
-       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      
-       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      
-       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      
-       entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
-      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
       
       entity->InstallAI(new TurretAI());
-      entity->AddMissile(MISSILE_VEILLON_I, 16);
+      entity->AddMissile(MISSILE_VEILLON_I, 12);
       entity->SetFaction(RelationshipManager::ENEMY_FACTION);
       break;
       
+    /*
+     * The hornet is a scout-class ship and easily the weakest ship in the game armourwise. 
+     * Survival from a single missile hit is extremely low. The hornet is only equipped with 
+     * dumbfire missiles which still cause considerable damage.
+     * 
+     * HP (Top,Sides,Rear): 233/233/200
+     */
+    case SS_HORNET:
+      BuildShip(game, entity, "gfx/ships/nope.png", "Hornet I");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, MissileBay());
+      
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddMissile(MISSILE_VEILLON_I, 8);
+      
+      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
+      break;
+    
+      /* The intrepid is the improved version of the hornet. It has a bit more armour,
+       * increasing the survivalibity rate of a single missile hit by a bit. The intrepid
+       * also carries dumb-guided missiles which increases their effectiveness
+       * 
+       * HP (Top, Side, Rear): 366/366/200
+       */
+    case INTREPID:
+      BuildShip(game, entity, "gfx/ships/intrepid.png", "Intrepid");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, MissileBay());
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddMissile(MISSILE_VEILLON_I, 7);
+      entity->AddMissile(MISSILE_SHIVE_I, 3);
+      
+      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
+      break;
+   
+   /* The Sabre is the staple frigate-class fighter. It adds an extra missile bay, effectively doubling the
+    * firepower as opposed to the scout-class fighters.
+    */
+   case SABRE:
+      BuildShip(game, entity, "gfx/ships/sabre.png", "Sabre");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(LEFT, LAYER_1, MissileBay());
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(RIGHT, LAYER_1, MissileBay());
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddMissile(MISSILE_VEILLON_I, 12);
+      entity->AddMissile(MISSILE_SHIVE_I, 6);
+      
+      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
+      break;
+   
+   /* The Daelalus is the improved version of the Sabre and is much less common on the battlefield. The extra armour means 
+    * the Daelalus can easily survive a single missile hit, as long as it's not directly in the engines. It is the only
+    * tier one ship to carry Agile missiles
+    */
+   case DAELALUS:
+      BuildShip(game, entity, "gfx/ships/daelalus.png", "Daelalus");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(LEFT, LAYER_1, MissileBay());
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(LEFT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(RIGHT, LAYER_1, MissileBay());
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(RIGHT, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL));
+      entity->AddComponent(BACK, LAYER_1, VectorThruster(VECTORTHRUSTER_BASIC));
+      
+      entity->AddMissile(MISSILE_VEILLON_I, 14);
+      entity->AddMissile(MISSILE_SHIVE_I, 4);
+      entity->AddMissile(MISSILE_MIRA_I, 3);
+      
+      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
+      break;
+      
+   /* Turrets and starbases */
+   
+   /*
+    * The gnat is a cheap, basic defensive turret. It's usually deployed in numbers to
+    * add suppressive fire. They are the weakest thing in the game capable of being destroyed by
+    * even the weakest of missiles.
+    */
+   case GNAT:
+      BuildShip(game, entity, "gfx/ships/gnat.png", "Gnat");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, MissileBay());
+      
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddMissile(MISSILE_VEILLON_I, 8);
+      entity->SetFaction(RelationshipManager::PLAYER_FACTION);
+     break;
+   
+   /*
+    * The Wasp is a staple defensive turret, capable of dealing out and taking
+    * a good deal of damage. 
+    */
+   case WASP:
+      BuildShip(game, entity, "gfx/ships/wasp.png", "Wasp");
+      entity->SetIcon("gfx/icons/shipicon.png");
+      
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(FRONT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(LEFT, LAYER_1, MissileBay());
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(LEFT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(RIGHT, LAYER_1, MissileBay());
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(RIGHT, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+      entity->AddComponent(BACK, LAYER_1, ArmourPlating(ARMOUR_STEEL) );
+    
+     break;
+   
    /* World Objects */
     case ASTROID:
       BuildTexture(game, entity, "gfx/universe/astroid.png");
