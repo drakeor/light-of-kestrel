@@ -29,6 +29,7 @@ MissileBay::MissileBay()
 {
   loadedMissile = MISSILE_NONE;
   icon = "gfx/icons/class1_hardpoint.png";
+  name = "Missile Bay";
 }
 
 void MissileBay::Iterate(float dt)

@@ -168,6 +168,7 @@ public:
   std::vector<missile_t> GetMissiles();
   bool HasMissile(missile_t missile);
   void FireMissile(missile_t missile);
+  int missilesFired;
 };
 
 #endif // ENTITY_H

@@ -39,6 +39,7 @@ public:
   virtual void Render();
   virtual void Update(float dt);
   missile_t GetLoadedMissile();
+  bool isReloading;
   void LoadMissile(missile_t missile);
 };
 

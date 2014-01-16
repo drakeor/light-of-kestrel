@@ -35,7 +35,7 @@ Entity::Entity(Game* game) :
   targetThrust(0),  velocityMagnitude(0), targetRotation(0),
   health(100), startThrust(0), deltaRotation(0), frameTime(0),
   deltaThrust(0), maxTime(0), missileDelayTime(0), texRotOffset(0),
-  id(0)
+  id(0), missilesFired(0)
 {
   this->game = game;
   this->faction = RelationshipManager::FACTIONLESS;
@@ -102,6 +102,7 @@ void Entity::Render() {
 
 void Entity::CommitTurn(float frameTime, float maxTime)
 {
+  missilesFired = 0;
   this->frameTime = frameTime;
   this->maxTime = maxTime;
   startRotation = currentRotation;
@@ -143,6 +144,7 @@ void Entity::Iterate(float dt) {
       ent->AddMissile(tMissile, 1);
       game->GetUniverseManager()->GetCurrentGalaxy()->QueueEntityForTurn(0.00f, ent);
       missileDelayTime = GameSettings::missileFireDelayTime;
+      ++missilesFired;
     } else {
       missileDelayTime -= dt;
     }

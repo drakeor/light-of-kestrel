@@ -38,6 +38,7 @@ public:
   virtual void Update(float dt);
   int health;
   std::string icon;
+  std::string name;
 };
 
 #endif // ENTITYCOMPONENT_H

@@ -32,6 +32,7 @@
 #include <dropdown.h>
 #include <textlabel.h>
 #include <entityfactory.h>
+#include <components/missilebay.h>
 
 /*
  * This event listener is toggled whenever the player presses the commit button.
@@ -299,6 +300,19 @@ void MyPlayerController::SelectGUIMissile(std::string guiElement)
     }
   }
   
+  if(hasPlayer()) {
+    activeMissileBays = -myPlayer->missilesFired;
+    for(int j=0;j<MAX_COMPONENT_SIDES; ++j) {
+      for(int i=0;i<MAX_COMPONENT_LAYERS; ++i) {
+	auto components = myPlayer->GetComponents((component_side_t)j, (component_layer_t)i);
+	for(auto comp : components) {
+	  if((comp.name == "Missile Bay") && (comp.health > 0)) {
+	    activeMissileBays += 1;
+	  }
+	}
+      }
+    }
+  }
   // If we didn't need to remove anything, we can probably add it assuming we didn't hit the max on missiles or it's invalid.
   if(!isRemoved) {
     if(selectedMissiles.size() < activeMissileBays) {
