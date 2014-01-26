@@ -56,6 +56,7 @@ public:
   void SetEntity(Entity* ent);
   virtual void PreProcessTurn();
   virtual void ProcessTurn();
+  virtual void Update(float dt);
   ~BaseAI();
 
 };

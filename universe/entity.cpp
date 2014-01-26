@@ -29,6 +29,7 @@
 #include "../log.h"
 #include "../components/missilebay.h"
 #include <settings.h>
+#include <ai/missileai.h>
 
 Entity::Entity(Game* game) :
   position(sf::Vector2f(0.0f, 0.0f)), currentRotation(0), startRotation(0),
@@ -142,6 +143,10 @@ void Entity::Iterate(float dt) {
       ent->SetCurrentVelocity(350);
       ent->SetTargetVelocity(350);
       ent->AddMissile(tMissile, 1);
+      ent->SetFaction(faction);
+      if((misInfo.missileFlight == DUMB_GUIDED) || (misInfo.missileFlight == RADAR_GUIDED)) {
+	ent->InstallAI(new MissileAI());
+      }
       game->GetUniverseManager()->GetCurrentGalaxy()->QueueEntityForTurn(0.00f, ent);
       missileDelayTime = GameSettings::missileFireDelayTime;
       ++missilesFired;

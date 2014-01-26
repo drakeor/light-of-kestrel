@@ -103,16 +103,11 @@ std::vector< Entity* > Galaxy::GetEntityList()
 
 
 void Galaxy::Update(float dt) {
- // Remove dead entities
-  /*for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
-    if((*it) == nullptr) {
-      it = entity.erase(it);
-    }
-  }*/
-  
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
    if((*it) != nullptr) {
+     if((*it)->GetAI() != nullptr)
+      (*it)->GetAI()->Update(dt);
       (*it)->Update(dt);
       if(currentTime < GameSettings::maxTime)
 	(*it)->Iterate(dt);
@@ -155,10 +150,16 @@ void Galaxy::CommitTurn() {
       if((*it)->GetAI() != nullptr) {
 	(*it)->GetAI()->ProcessTurn();
       }
-      // Committing turn
+    }
+  }
+  
+  // Committing turn
+  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
+    if((*it) != nullptr) {
       (*it)->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
     }
   }
+      
 }
 
 void Galaxy::AddEntity(Entity* m_entity)

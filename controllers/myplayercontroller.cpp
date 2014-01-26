@@ -235,7 +235,7 @@ void MyPlayerController::SpawnPlayer()
     
     // Add in our player immediately when this controller is constructed.
     //this->hasPlayer = true;
-    this->myPlayer = EntityFactory::BuildEntity(game, SS_HORNET);
+    this->myPlayer = EntityFactory::BuildEntity(game, DAELALUS);
     myPlayer->SetPosition((rand() % 200)-100, (rand() % 200)-100);
     game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(myPlayer);
     

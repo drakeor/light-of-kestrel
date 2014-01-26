@@ -1,5 +1,5 @@
 /*
- * 
+ * /*
  * Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
  * 
  *     Permission is hereby granted, free of charge, to any person
@@ -22,40 +22,21 @@
  *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *     OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  */
 
-#include "baseai.h"
+#ifndef MISSILEAI_H
+#define MISSILEAI_H
 
-BaseAI::BaseAI()
+#include <ai/baseai.h>
+
+class MissileAI :  public BaseAI
 {
-  myEntity = nullptr;
-}
+public:
+  ~MissileAI();
+  MissileAI();
+  virtual void ProcessTurn();
 
-BaseAI::~BaseAI()
-{
+};
 
-}
-
-void BaseAI::SetEntity(Entity* ent)
-{
-  this->myEntity = ent;
-}
-
-
-void BaseAI::PreProcessTurn()
-{
-
-}
-
-void BaseAI::ProcessTurn()
-{
-  
-}
-
-void BaseAI::Update(float dt)
-{
-
-}
-
-
+#endif // MISSILEAI_H

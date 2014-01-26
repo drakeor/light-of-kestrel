@@ -1,5 +1,5 @@
 /*
- * 
+ * /*
  * Copyright (c) 2013 River Bartz <drakeor.dragon@gmail.com>
  * 
  *     Permission is hereby granted, free of charge, to any person
@@ -22,44 +22,43 @@
  *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *     OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  */
 
-#include <ai/turretai.h>
+#include "missileai.h"
 #include <entity.h>
-#include <game.h>
-#include <log.h>
-#include <vector>
+#include "game.h"
+#include "ai/shipai.h"
+#include "ai/relationshipmanager.h"
+#include "log.h"
 
 #define MAX_VISUAL_RANGE 1200
 
-TurretAI::TurretAI()
-{
-
-}
-
-TurretAI::~TurretAI()
-{
-
-}
-
-// Helper functions
-float GetDistances(sf::Vector2f pos1, sf::Vector2f pos2)
+float GetDistancess(sf::Vector2f pos1, sf::Vector2f pos2)
 {
   return (float)sqrt( pow(pos2.x - pos1.x, 2) + pow(pos2.y - pos1.y, 2) );
 }
-float GetAngles(sf::Vector2f pos1, sf::Vector2f pos2)
+float GetAngless(sf::Vector2f pos1, sf::Vector2f pos2)
 {
-  float dY = (pos2.y) - (pos1.y);
-  float dX = (pos2.x) - (pos1.x);
-  return (float)atan2(dY, dX);
+  return (float)atan2((pos2.y) - (pos1.y), (pos2.x) - (pos1.x));
 }
 inline float clamp(float x, float a, float b)
 {
     return x < a ? a : (x > b ? b : x);
 }
 
-void TurretAI::ProcessTurn()
+
+MissileAI::MissileAI()
+{
+
+}
+
+MissileAI::~MissileAI()
+{
+
+}
+
+void MissileAI::ProcessTurn()
 {
   // Check for errors
   if(myEntity->GetFaction() == RelationshipManager::FACTIONLESS) {
@@ -71,7 +70,7 @@ void TurretAI::ProcessTurn()
     
     // Set up initial variables
     Entity* targettedEnt = nullptr;
-    float targettedRot = 9999;
+    float targettedDist = 9999;
     float targettedAngle = 0;
     float myRotation = fmod (myEntity->GetCurrentRotation(),6.28);
     
@@ -81,19 +80,22 @@ void TurretAI::ProcessTurn()
     // We only want to target ones within our range.
     for(auto it = listOfEntites.begin(); it != listOfEntites.end(); ++it) {
       if((*it) != nullptr) {
-	float dist = GetDistances(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
-	if(dist < MAX_VISUAL_RANGE) {
-	  
-	  // If the other entity is an enemy..
-	  if(RelationshipManager::GetRelationship(myEntity, (*it)) == RelationshipManager::ENEMY) {
+	float dist = GetDistancess(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	if((*it)->GetId() != myEntity->GetId()) {
+	  if(dist < MAX_VISUAL_RANGE) {
 	    
-	    // We want to prioritize the ones that are "easiest" to reach. AKA rotation points in their direction.
-	    float rot2 = 0; 
-	    rot2 = GetAngles(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
-	    float deltaRot = rot2 - myRotation;
-	    if(abs(deltaRot) < targettedRot) { /* TODO: Why does this even work? */
-	      targettedEnt = (*it);
-	      targettedRot = abs(deltaRot);
+	    // If the other entity is an enemy..
+	    if(RelationshipManager::GetRelationship(myEntity, (*it)) != RelationshipManager::FRIEND) {
+	      
+	      // We want to prioritize the ones that are "easiest" to reach. AKA rotation points in their direction.
+	      // NOT distance
+	      float rot2 = 0; 
+	      rot2 = GetAngless(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	      float deltaRot = rot2 - myRotation;
+	      if(abs(deltaRot) < targettedDist) {
+		targettedEnt = (*it);
+		targettedDist = abs(deltaRot);
+	      }
 	    }
 	  }
 	}
@@ -102,15 +104,11 @@ void TurretAI::ProcessTurn()
     
     // If we have a target, we'll adjust to it.
     if(targettedEnt != nullptr) {
-      float targetRotation = GetAngles(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
-      if(myEntity->HasMissile(MISSILE_VEILLON_I)) {
-	myEntity->FireMissile(MISSILE_VEILLON_I);
-      }
+      float targetRotation = GetAngless(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
       float deltaRot = targetRotation - myRotation;
-      deltaRot = clamp(deltaRot, -1.7f, 1.7f);
+      deltaRot = clamp(deltaRot, -3.0f, 3.0f);
       
       myEntity->SetTargetRotation(myRotation+deltaRot);
     }
   }
 }
-
