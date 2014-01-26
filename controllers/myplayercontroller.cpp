@@ -33,6 +33,7 @@
 #include <textlabel.h>
 #include <entityfactory.h>
 #include <components/missilebay.h>
+#include <ai/shipai.h>
 
 /*
  * This event listener is toggled whenever the player presses the commit button.
@@ -193,6 +194,16 @@ MyPlayerController::MyPlayerController(Game* game) :
   srand(NULL);
     for(int i=0;i<2;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, TURRET);
+      rawr->SetPosition((rand() % 1200)-600, (rand() % 1000)-500);
+      //rawr->SetTargetVelocity(20);
+     // rawr->SetTargetRotation(0.78f);
+      game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
+    }
+    
+    for(int i=0;i<4;i++) {
+      Entity* rawr = EntityFactory::BuildEntity(game, SS_HORNET);
+      rawr->SetFaction(RelationshipManager::PLAYER_FACTION);
+      rawr->InstallAI(new ShipAI());
       rawr->SetPosition((rand() % 1200)-600, (rand() % 1000)-500);
       //rawr->SetTargetVelocity(20);
      // rawr->SetTargetRotation(0.78f);

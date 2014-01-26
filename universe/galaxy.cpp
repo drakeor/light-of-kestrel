@@ -188,6 +188,7 @@ void Galaxy::DeleteEntity(int id)
 	  interface2->SetEntity(nullptr);
 	}
       }
+      entity[id]->SetName("DEAD");
       delete(entity[id]);
       entity[id] = nullptr;
     }

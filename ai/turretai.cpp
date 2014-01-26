@@ -44,11 +44,11 @@ TurretAI::~TurretAI()
 }
 
 // Helper functions
-float GetDistance(sf::Vector2f pos1, sf::Vector2f pos2)
+float GetDistances(sf::Vector2f pos1, sf::Vector2f pos2)
 {
   return (float)sqrt( pow(pos2.x - pos1.x, 2) + pow(pos2.y - pos1.y, 2) );
 }
-float GetAngle(sf::Vector2f pos1, sf::Vector2f pos2)
+float GetAngles(sf::Vector2f pos1, sf::Vector2f pos2)
 {
   float dY = (pos2.y) - (pos1.y);
   float dX = (pos2.x) - (pos1.x);
@@ -81,7 +81,7 @@ void TurretAI::ProcessTurn()
     // We only want to target ones within our range.
     for(auto it = listOfEntites.begin(); it != listOfEntites.end(); ++it) {
       if((*it) != nullptr) {
-	float dist = GetDistance(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	float dist = GetDistances(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
 	if(dist < MAX_VISUAL_RANGE) {
 	  
 	  // If the other entity is an enemy..
@@ -89,7 +89,7 @@ void TurretAI::ProcessTurn()
 	    
 	    // We want to prioritize the ones that are "easiest" to reach. AKA rotation points in their direction.
 	    float rot2 = 0; 
-	    rot2 = GetAngle(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	    rot2 = GetAngles(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
 	    float deltaRot = rot2 - myRotation;
 	    if(abs(deltaRot) < targettedDist) { 
 	      targettedEnt = (*it);
@@ -102,7 +102,7 @@ void TurretAI::ProcessTurn()
     
     // If we have a target, we'll adjust to it.
     if(targettedEnt != nullptr) {
-      float targetRotation = GetAngle(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
+      float targetRotation = GetAngles(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
       if(myEntity->HasMissile(MISSILE_VEILLON_I)) {
 	myEntity->FireMissile(MISSILE_VEILLON_I);
       }
