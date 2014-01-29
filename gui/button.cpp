@@ -93,3 +93,8 @@ void Button::ResetImage()
 {
   showImage = false;
 }
+
+void Button::SetText(std::string textData)
+{
+  text.setString(textData.c_str());
+}

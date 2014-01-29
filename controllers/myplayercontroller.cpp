@@ -52,6 +52,10 @@ public:
   virtual ~CommitListener() {}
   void OnEvent(EventHandler* handler) {
     
+    // Return if the current turn is active
+    if(universe->GetCurrentGalaxy()->IsTurnActive() && (playerController->GetPlayer() != nullptr))
+      return;
+    
     // Spawn the player only if he doesn't exist.
     playerController->SpawnPlayer();
     FILE_LOG(logDEBUG) << "MyPlayerController: Turn commited!";
@@ -166,6 +170,7 @@ MyPlayerController::MyPlayerController(Game* game) :
   commitButton->SetPosition(0, 60);
   commitButton->SetEnabled(false);
   commitButton->OnClick.AddListener(commitListener.get());
+  commitButton->SetText("Commit");
   playerControls->AddControl("CommitButton", commitButton);
   
   // Add our missile controls and their corresponding elements
@@ -187,7 +192,13 @@ MyPlayerController::MyPlayerController(Game* game) :
       missileControls->AddControl(ss.str(), missileButton);
     }
   }
+  TextLabel* missileAbout = new TextLabel(game);
+  missileAbout->GetText()->setScale(0.75f, 0.75f);
+  missileAbout->SetPosition(235, 10);
+  missileAbout->SetText("Active Missile Bays: 2\nTotal Missile Bays: 2");
+  missileControls->AddControl("MissileBays",missileAbout);
   activeMissileBays = 2;
+  
   
   // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
     // TODO: There are issues making entities in general on this area like Setting positions, rotations.
@@ -258,6 +269,8 @@ bool MyPlayerController::hasPlayer()
 void MyPlayerController::ResetMissileInterface()
 {
   if(hasPlayer()) {
+    
+    // Reassemble the list of missiles
     std::vector< missile_t > tempMissiles = this->myPlayer->GetMissiles();
     auto sMissile = tempMissiles.begin();
     for(int y = 0; y < GameSettings::g_maxMissileColumns; y++) {
@@ -399,6 +412,27 @@ void MyPlayerController::Update(float dt)
 	  ghostObject.get()->SetTargetRotation(finalAngle);
 	  ghostObject.get()->SetTargetVelocity(finalVelocity);
 	  ghostObject.get()->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
+    }
+    
+    if(game->GetUniverseManager()->GetCurrentGalaxy()->IsTurnActive()) {
+      //Get our text label and update it
+	TextLabel* tempLabel = (TextLabel*) missileControls->GetControl("MissileBays");
+	activeMissileBays = 0;
+	for(int j=0;j<MAX_COMPONENT_SIDES; ++j) {
+	  for(int i=0;i<MAX_COMPONENT_LAYERS; ++i) {
+	    auto components = myPlayer->GetComponents((component_side_t)j, (component_layer_t)i);
+	    for(auto comp : components) {
+	      if((comp.name == "Missile Bay") && (comp.health > 0)) {
+		activeMissileBays += 1;
+	      }
+	    }
+	  }
+	}
+	std::stringstream ss;
+	ss << "Ready Missile Bays: " << (activeMissileBays-myPlayer->missilesFired) << 
+	    "\nActive Missile Bays: " << activeMissileBays << 
+	    "\n\nCore Health: " << myPlayer->GetHealth();
+	tempLabel->SetText(ss.str());
     }
   }
   BaseController::Update(dt);

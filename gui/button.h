@@ -45,6 +45,7 @@ public:
   virtual void Render();
   void SetImage(std::string image);
   void SetUserData(std::string uData);
+  void SetText(std::string textData);
   std::string GetUserData();
   void ResetImage(); 
   Button(Game* game);

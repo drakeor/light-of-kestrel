@@ -135,6 +135,7 @@ public:
   void SetTextureRotOffset(float offset);
   void SetId(int id);
   int GetId();
+  int GetHealth();
   Game* GetGame();
   
   RelationshipManager::FACTION GetFaction();

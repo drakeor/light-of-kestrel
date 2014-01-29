@@ -43,12 +43,14 @@ class Galaxy
 public:
   Galaxy(Game* game);
   void AddEntity(Entity* entity);
+  bool EntityExists(int id);
   void DeleteEntity(int id);
   void QueueEntityForTurn(float time, Entity* entity);
   std::vector<Entity*> GetEntityList();
   void Render();
   void Update(float dt);
   void CommitTurn();
+  bool IsTurnActive();
   Galaxy(const Galaxy& other);
   virtual ~Galaxy();
 };

@@ -141,6 +141,12 @@ void Galaxy::Update(float dt) {
   }
 }
 
+bool Galaxy::IsTurnActive()
+{
+  return ((currentTime < GameSettings::maxTime) ? true : false);
+}
+
+
 void Galaxy::CommitTurn() {
   currentTime = 0;
   
@@ -193,6 +199,15 @@ void Galaxy::DeleteEntity(int id)
       delete(entity[id]);
       entity[id] = nullptr;
     }
+}
+
+bool Galaxy::EntityExists(int id)
+{
+  if(entity[id] == nullptr)
+    return false;
+  if(entity[id]->GetName() != "DEAD")
+    return false;
+  return true;
 }
 
 void Galaxy::QueueEntityForTurn(float time, Entity* entity2)

@@ -48,6 +48,11 @@ Entity::~Entity()
 
 }
 
+int Entity::GetHealth()
+{
+  return health;
+}
+
 void Entity::Initialise() {
   // Initial assigning
   sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/invalid.png");
@@ -146,6 +151,9 @@ void Entity::Iterate(float dt) {
       ent->SetFaction(faction);
       if((misInfo.missileFlight == DUMB_GUIDED) || (misInfo.missileFlight == RADAR_GUIDED)) {
 	ent->InstallAI(new MissileAI());
+	// Fix for Missile AI taking time to warm up
+	ent->GetAI()->ProcessTurn();
+	ent->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
       }
       game->GetUniverseManager()->GetCurrentGalaxy()->QueueEntityForTurn(0.00f, ent);
       missileDelayTime = GameSettings::missileFireDelayTime;
