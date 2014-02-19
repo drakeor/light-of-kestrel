@@ -34,6 +34,7 @@ ArmourPlating::ArmourPlating(armour_class_t armourClass)
 	It negates 25% of damage to itself and 100% absorption rate.. */
     case ARMOUR_STEEL:
       negateCoefficient = 0.25;
+      name = "Steel Armour";
   }
 }
 

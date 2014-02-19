@@ -28,16 +28,25 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
+#include <queue>
+#include <string>
+#include <list>
+
 #include <controllers/basecontroller.h>
+#include <textlabel.h>
+
+#define MAX_CONSOLE_LINES 12
 
 class Console :  public BaseController
 {
+    TextLabel* consoleText;
+    std::list<std::string> consoleLines;
 public:
   Console(Game* game);
   ~Console();
   virtual void Update(float dt);
   virtual void Render();
-
+  void AddLine(std::string consoleLine);
 };
 
 #endif // CONSOLE_H

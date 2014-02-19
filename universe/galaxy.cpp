@@ -30,6 +30,7 @@
 #include "../settings.h"
 #include <controllers/shipinterfacecontroller.h>
 #include <controllers/myplayercontroller.h>
+#include <SFML/Graphics/CircleShape.hpp>
 
 Galaxy::Galaxy(Game* game)
 {
@@ -64,7 +65,14 @@ void Galaxy::Render() {
   game->GetWindow()->draw(backgroundImage);
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     if((*it) != nullptr) {
+      sf::CircleShape circle;
+      circle.setRadius((*it)->TempCollisionDistance);
+      circle.setOutlineColor(sf::Color::White);
+      circle.setOutlineThickness(2);
+      //circle.setOrigin((*it)->GetTexture());
+      circle.setPosition((*it)->GetCurrentPosition().x, (*it)->GetCurrentPosition().y);
       (*it)->Render();
+      game->GetWindow()->draw(circle);
     }
   }
 }

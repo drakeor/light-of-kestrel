@@ -30,6 +30,8 @@
 #include "../components/missilebay.h"
 #include <settings.h>
 #include <ai/missileai.h>
+#include <controllers/console.h>
+#include <controllers/myplayercontroller.h>
 
 Entity::Entity(Game* game) :
   position(sf::Vector2f(0.0f, 0.0f)), currentRotation(0), startRotation(0),
@@ -270,7 +272,9 @@ int Entity::GetId()
 void Entity::ProcessImpact(float damage, float force, float direction)
 {
   // TODO: Make this more efficient
-  
+  Console* cons = (Console*)game->GetControllerManager()->GetController("Console");
+  MyPlayerController* mpc = (MyPlayerController*)game->GetControllerManager()->GetController("PlayerController");
+      
   /* Check the direction of impact */
   float deltaRotation = currentRotation - direction;
   deltaRotation = fabs(fmod(deltaRotation, 6.28f));
@@ -305,6 +309,11 @@ void Entity::ProcessImpact(float damage, float force, float direction)
 	    // This component was destroyed in the process
 	    damages[j] -= (*it).health;
 	    (*it).health = 0;
+	    if(this->id == mpc->GetPlayer()->GetId()) {
+		std::stringstream ss;
+		ss << (*it).name << " destroyed.";
+		cons->AddLine(ss.str());
+	    }
 	  }
 	}
       }
@@ -312,6 +321,15 @@ void Entity::ProcessImpact(float damage, float force, float direction)
     /* Damage leaked through to the core */
     if(damages[j] > 0) {
       this->health -= damages[j];
+      
+      if(this->id == mpc->GetPlayer()->GetId()) {
+	  std::stringstream ss;
+	  ss << "WARNING: Core sustained " << ceil(damages[j]) << " damage (HP: " << ceil(this->health) << "%)";
+	  cons->AddLine(ss.str());
+	  if(health < 0) {
+	    cons->AddLine("CRITICAL: Core integrity compromised");
+	  }
+      }
       FILE_LOG(logWARNING) << "Took damage from side " << j << " to core for " << damages[j] << " damage";
     }
   }

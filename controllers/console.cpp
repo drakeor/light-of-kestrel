@@ -26,11 +26,19 @@
  */
 
 #include "../controllers/console.h"
+#include <queue>
+#include <game.h>
+#include <sstream>
 
 Console::Console(Game* game) :
   BaseController(game)
 {
-
+  consoleText = new TextLabel(game);
+  consoleText->GetText()->setScale(0.75f, 0.75f);
+  consoleText->SetPosition(10, 10);
+  consoleText->GetText()->setColor(sf::Color::White);
+  consoleText->SetText("Active Missile Bays: 2\nTotal Missile Bays: 2");
+  game->GetGuiManager()->GetRootNode()->AddControl("MissileBays", consoleText);
 }
 
 Console::~Console()
@@ -45,5 +53,16 @@ void Console::Update(float dt)
 
 void Console::Render()
 {
-
+  std::stringstream ss;
+  for(auto it=consoleLines.begin(); it!=consoleLines.end();++it)
+        ss << *it << "\n";
+  this->consoleText->SetText(ss.str());
 }
+
+void Console::AddLine(std::string consoleLine)
+{
+  consoleLines.push_back(consoleLine);
+  if(consoleLines.size() > MAX_CONSOLE_LINES)
+    consoleLines.pop_front();
+}
+
