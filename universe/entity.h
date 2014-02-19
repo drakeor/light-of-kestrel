@@ -83,6 +83,7 @@ class Entity
   float texRotOffset;
   Game* game;
   std::string name;
+  std::string description;
   std::string entityIcon;
   Galaxy* parent;
   std::unique_ptr<BaseAI> ai;
@@ -130,6 +131,8 @@ public:
   void SetSprite(sf::Sprite sprite);
   void SetName(std::string newName);
   std::string GetName();
+  std::string GetDescription();
+  void SetDescription(std::string description);
   std::string GetIcon();
   void SetIcon(std::string name);
   void SetTextureRotOffset(float offset);

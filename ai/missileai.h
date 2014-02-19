@@ -32,6 +32,7 @@
 
 class MissileAI :  public BaseAI
 {
+    int TargettedId;
 public:
   ~MissileAI();
   MissileAI();

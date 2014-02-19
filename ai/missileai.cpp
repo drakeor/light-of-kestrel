@@ -50,7 +50,7 @@ inline float clamp(float x, float a, float b)
 
 MissileAI::MissileAI()
 {
-
+  TargettedId = 0;
 }
 
 MissileAI::~MissileAI()
@@ -65,36 +65,43 @@ void MissileAI::ProcessTurn()
     FILE_LOG(logWARNING) << "(TurretAI): The entity I'm attached to is FACTIONLESS: " << myEntity->GetName();
   }
   
+  /*
   // Make sure we have a valid entity
   if(myEntity != nullptr) {
     
     // Set up initial variables
     Entity* targettedEnt = nullptr;
     float targettedDist = 9999;
-    float targettedAngle = 0;
+    float targettedAngle = 1.0;
     float myRotation = fmod (myEntity->GetCurrentRotation(),6.28);
     
     // Get our list of entities in this galaxy
     std::vector<Entity*> listOfEntites = myEntity->GetGame()->GetUniverseManager()->GetCurrentGalaxy()->GetEntityList();
     
     // We only want to target ones within our range.
-    for(auto it = listOfEntites.begin(); it != listOfEntites.end(); ++it) {
-      if((*it) != nullptr) {
-	float dist = GetDistancess(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
-	if((*it)->GetId() != myEntity->GetId()) {
-	  if(dist < MAX_VISUAL_RANGE) {
-	    
-	    // If the other entity is an enemy..
-	    if(RelationshipManager::GetRelationship(myEntity, (*it)) != RelationshipManager::FRIEND) {
+    // We're only going to grab a target in the beginning.
+    if(targettedEnt == nullptr)
+    {
+      for(auto it = listOfEntites.begin(); it != listOfEntites.end(); ++it) {
+	if((*it) != nullptr) {
+	  float dist = GetDistancess(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+	  if(((*it)->GetId() != myEntity->GetId()) && ((*it)->GetName() != "Missile")) {
+	    if(dist < MAX_VISUAL_RANGE) {
 	      
-	      // We want to prioritize the ones that are "easiest" to reach. AKA rotation points in their direction.
-	      // NOT distance
-	      float rot2 = 0; 
-	      rot2 = GetAngless(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
-	      float deltaRot = rot2 - myRotation;
-	      if(abs(deltaRot) < targettedDist) {
-		targettedEnt = (*it);
-		targettedDist = abs(deltaRot);
+	      // If the other entity is an enemy..
+	      if(RelationshipManager::GetRelationship(myEntity, (*it)) != RelationshipManager::FRIEND) {
+
+		// We want to prioritize the ones that are "easiest" to reach. AKA rotation points in their direction.
+		// NOT distance
+		float rot2 = 0; 
+		rot2 = GetAngless(myEntity->GetCurrentPosition(), (*it)->GetCurrentPosition());
+		float deltaRot = rot2 - myRotation;
+		if(abs(deltaRot) < targettedAngle) {
+		  targettedEnt = (*it);
+		  FILE_LOG(logERROR) << "I am targetting ID: " << (*it)->GetId() << " with name " << (*it)->GetName() << " at angle " << deltaRot;
+		  targettedAngle = deltaRot;
+		}
+		
 	      }
 	    }
 	  }
@@ -106,9 +113,11 @@ void MissileAI::ProcessTurn()
     if(targettedEnt != nullptr) {
       float targetRotation = GetAngless(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
       float deltaRot = targetRotation - myRotation;
-      deltaRot = clamp(deltaRot, -3.0f, 3.0f);
+     // deltaRot = clamp(deltaRot, -3.0f, 3.0f);
       
-      myEntity->SetTargetRotation(myRotation+deltaRot);
+      //myEntity->SetTargetRotation(myRotation+deltaRot);
+      myEntity->SetTargetRotation(targetRotation);
     }
   }
+  */
 }

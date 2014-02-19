@@ -391,3 +391,13 @@ BaseAI* Entity::GetAI()
 {
   return ai.get();
 }
+
+std::string Entity::GetDescription()
+{
+  return description;
+}
+
+void Entity::SetDescription(std::string description)
+{
+  this->description = description;
+}

@@ -290,6 +290,7 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
     // Nope missile is the basis.
     case MISSILE:
       BuildTexture(game, entity, "gfx/interface/default_missile.png");
+      entity->SetIcon("gfx/interface/default_missile.png");
       entity->SetName("Missile");
       entity->collidesWith = COLLISION_GROUP_1; /* Will interact with other spaceships/astroids but not with each other. */
       entity->collisionGroup = COLLISION_GROUP_2; 
@@ -300,7 +301,6 @@ Entity* EntityFactory::BuildEntity(Game* game, entity_t entityType)
       entity->SetName("Antimissile");
       entity->collidesWith = COLLISION_GROUP_1 | COLLISION_GROUP_2 | COLLISION_GROUP_3; /* Will interact with everything but is part of nothing. */
       entity->collisionGroup = 0; 
-      entity->TempCollisionDistance = tempTex->getSize().x/2;
       break;
   };
   return entity;

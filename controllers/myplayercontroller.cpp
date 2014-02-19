@@ -203,14 +203,14 @@ MyPlayerController::MyPlayerController(Game* game) :
   // (TEST) Add in an astroid, give it some velocity. I'll use this to test collisions later!
     // TODO: There are issues making entities in general on this area like Setting positions, rotations.
   srand(NULL);
-    for(int i=0;i<2;i++) {
+    /*for(int i=0;i<2;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, TURRET);
       rawr->SetPosition((rand() % 1200)-600, (rand() % 1000)-500);
       //rawr->SetTargetVelocity(20);
      // rawr->SetTargetRotation(0.78f);
       game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
-    }
-    
+    }*/
+    /*
     for(int i=0;i<4;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, SS_HORNET);
       rawr->SetFaction(RelationshipManager::PLAYER_FACTION);
@@ -220,7 +220,7 @@ MyPlayerController::MyPlayerController(Game* game) :
      // rawr->SetTargetRotation(0.78f);
       game->GetUniverseManager()->GetCurrentGalaxy()->AddEntity(rawr);
     }
-    
+    */
     for(int i=0;i<4;i++) {
       Entity* rawr = EntityFactory::BuildEntity(game, ASTROID);
       rawr->SetPosition((rand() % 800)-400, (rand() % 600)-300);
