@@ -67,11 +67,13 @@ void Galaxy::Render() {
     if((*it) != nullptr) {
       sf::CircleShape circle;
       circle.setRadius((*it)->TempCollisionDistance);
+      circle.setFillColor(sf::Color::Transparent);
       circle.setOutlineColor(sf::Color::White);
-      circle.setOutlineThickness(2);
-      //circle.setOrigin((*it)->GetTexture());
+      circle.setOutlineThickness(1);
+      circle.setOrigin((*it)->GetSprite()->getOrigin().x, (*it)->GetSprite()->getOrigin().y);
       circle.setPosition((*it)->GetCurrentPosition().x, (*it)->GetCurrentPosition().y);
       (*it)->Render();
+      // Render the collision circle over the entity
       game->GetWindow()->draw(circle);
     }
   }
