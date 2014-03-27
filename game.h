@@ -28,7 +28,6 @@
 #define GAME_H
 
 #include "universemanager.h"
-#include "inputmanager.h"
 #include "assetmanager.h"
 #include "guimanager.h"
 #include "camera.h"
@@ -41,7 +40,6 @@ class Game
   std::unique_ptr<UniverseManager> universeManager;
   std::tr1::shared_ptr<GuiManager> guiManager;
   std::unique_ptr<ControllerManager> controllerManager;
-  InputManager inputManager;
   AssetManager assetManager;
   Camera camera;
   sf::RenderWindow* window;

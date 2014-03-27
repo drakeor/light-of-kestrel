@@ -117,12 +117,19 @@ class Entity
   
 public:
   Entity(Game* game);
+  
+  /*
+   * Common functions
+   */
   void Initialise();
   void Update(float dt);
   void Render();
   void Iterate(float dt);
   void CommitTurn(float frameTime, float maxTime);
   
+  /*
+   * Set functions
+   */
   void SetPosition(int x, int y);
   void SetCurrentVelocity(float target);
   void SetCurrentRotation(float target);
@@ -137,19 +144,19 @@ public:
   void SetIcon(std::string name);
   void SetTextureRotOffset(float offset);
   void SetId(int id);
+  void SetFaction(RelationshipManager::FACTION newFaction);
+  void SetParent(Galaxy* newParent);
+  void InstallAI(BaseAI* aiSys);
+  
+  /*
+   * Get Functions
+   */
   int GetId();
   int GetHealth();
   Game* GetGame();
-  
   RelationshipManager::FACTION GetFaction();
-  void SetFaction(RelationshipManager::FACTION newFaction);
-  
-  void InstallAI(BaseAI* aiSys);
   BaseAI* GetAI();
-  
-  void SetParent(Galaxy* newParent);
   Galaxy* GetParent();
-  
   sf::Sprite* GetSprite();
   sf::Vector2f GetCurrentPosition();
   float GetCurrentVelocity();

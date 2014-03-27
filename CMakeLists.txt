@@ -2,7 +2,7 @@
 # Set the minimum version of CMake to 2.8
 cmake_minimum_required(VERSION 2.8)
 
-# To build it needs the following (Tested on Ubuntu 12.04)
+# To build it needs the following (Tested on Ubuntu 12.04 and Debian Wheezy)
 
 # sudo apt-get install libx11-dev libglui-dev libxi-dev libxmu-dev
 # SFML 2.1 Libraries (http://www.sfml-dev.org/download/sfml/2.1/)
@@ -25,7 +25,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
 endif ()
 
 # Make an executable
-add_executable(lightofkestrel controllers/console.cpp ai/missileai.cpp ai/shipai.cpp ai/relationshipmanager.cpp ai/turretai.cpp ai/baseai.cpp controllers/shipinterfacecontroller.cpp components/vectorthruster.cpp components/armourplating.cpp universe/missilefactory.cpp components/missilebay.cpp gui/dropdown.cpp components/entitycomponent.cpp universe/entityfactory.cpp controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp inputmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp settings.cpp)
+add_executable(lightofkestrel controllers/console.cpp ai/missileai.cpp ai/shipai.cpp ai/relationshipmanager.cpp ai/turretai.cpp ai/baseai.cpp controllers/shipinterfacecontroller.cpp components/vectorthruster.cpp components/armourplating.cpp universe/missilefactory.cpp components/missilebay.cpp gui/dropdown.cpp components/entitycomponent.cpp universe/entityfactory.cpp controllers/worldcontroller.cpp controllers/myplayercontroller.cpp controllers/basecontroller.cpp controllers/controllermanager.cpp gui/slider.cpp gui/button.cpp events/eventhandler.cpp events/eventlistener.cpp camera.cpp gui/textlabel.cpp gui/basecontrol.cpp gui/guimanager.cpp assetmanager.cpp universe/entity.cpp universe/galaxy.cpp universe/universemanager.cpp game.cpp main.cpp settings.cpp)
 
 # Link SFML Libraries.
 if(WIN32)

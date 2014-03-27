@@ -66,17 +66,7 @@ void Entity::Initialise() {
 }
 
 void Entity::Update(float dt) {
- /* FILE_LOG(logERROR) << "UPDATE Rot: " << currentRotation;
-  FILE_LOG(logERROR) << "UPDATE Position: " << position.x << "|" << position.y;
-  // Fix NaN issues. Temp fix.
-  if(isnan(position.x) || isnan(position.y)) {
-    position = sf::Vector2f(0, 0);
-    FILE_LOG(logERROR) << "Entity has NaN position!!";
-  }
-  if(isnan(currentRotation)) {
-    currentRotation = 0.1f;
-    FILE_LOG(logERROR) << "Entity has NaN rotation!!";
-  }*/
+
 }
 
 void Entity::SetId(int id)
@@ -110,9 +100,12 @@ void Entity::Render() {
 
 void Entity::CommitTurn(float frameTime, float maxTime)
 {
+  // Reset the missile counter
   missilesFired = 0;
   this->frameTime = frameTime;
   this->maxTime = maxTime;
+  
+  // Calculate the ending velocity and rotations.
   startRotation = currentRotation;
   startThrust = velocityMagnitude;
   deltaThrust = (targetThrust - startThrust) / maxTime;
@@ -271,7 +264,7 @@ int Entity::GetId()
 
 void Entity::ProcessImpact(float damage, float force, float direction)
 {
-  // TODO: Make this more efficient
+  // We first want to grab the console and player controllers.
   Console* cons = (Console*)game->GetControllerManager()->GetController("Console");
   MyPlayerController* mpc = (MyPlayerController*)game->GetControllerManager()->GetController("PlayerController");
       

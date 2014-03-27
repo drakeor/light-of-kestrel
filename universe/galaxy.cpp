@@ -34,12 +34,14 @@
 
 Galaxy::Galaxy(Game* game)
 {
+  // Clear entity list
   this->game = game;
   entity.clear();
- // AddEntity(new Entity(game));
-  rawrTexture = game->GetAssetManager()->GetTexture("gfx/universe/starfield.png");
-  rawrTexture->setRepeated(true);
-  backgroundImage.setTexture(*rawrTexture);
+  
+  // Load background image
+  bgTexture = game->GetAssetManager()->GetTexture("gfx/universe/starfield.png");
+  bgTexture->setRepeated(true);
+  backgroundImage.setTexture(*bgTexture);
 }
 
 Galaxy::Galaxy(const Galaxy& other)
@@ -49,6 +51,7 @@ Galaxy::Galaxy(const Galaxy& other)
 
 Galaxy::~Galaxy()
 {
+  // Free entity list memory
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     if((*it) != nullptr) {
       delete(*it);
@@ -58,13 +61,20 @@ Galaxy::~Galaxy()
 }
 
 void Galaxy::Render() {
+  
+  // Render the background image based on the camera position.
   backgroundImage.setPosition(game->GetCamera()->GetPosition());
   backgroundImage.setTextureRect(sf::Rect<int>((int)game->GetCamera()->GetPosition().x, (int)game->GetCamera()->GetPosition().y, 
     game->GetWindow()->getDefaultView().getSize().x, game->GetWindow()->getDefaultView().getSize().y
   ));
   game->GetWindow()->draw(backgroundImage);
+  
+  // Render each entity in our galaxy.
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     if((*it) != nullptr) {
+      (*it)->Render();
+      
+      // DEBUG: Render the collision circle over the entity
       sf::CircleShape circle;
       circle.setRadius((*it)->TempCollisionDistance);
       circle.setFillColor(sf::Color::Transparent);
@@ -72,8 +82,6 @@ void Galaxy::Render() {
       circle.setOutlineThickness(1);
       circle.setOrigin((*it)->GetSprite()->getOrigin().x, (*it)->GetSprite()->getOrigin().y);
       circle.setPosition((*it)->GetCurrentPosition().x, (*it)->GetCurrentPosition().y);
-      (*it)->Render();
-      // Render the collision circle over the entity
       game->GetWindow()->draw(circle);
     }
   }
@@ -116,13 +124,21 @@ void Galaxy::Update(float dt) {
  // Process turns for entities if we need to.
  for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
    if((*it) != nullptr) {
+     
+     // Update the AI if the AI exists
      if((*it)->GetAI() != nullptr)
       (*it)->GetAI()->Update(dt);
-      (*it)->Update(dt);
+     
+     // Update the entity
+     (*it)->Update(dt);
+     
+      // If we're in the middle of a turn, iterate the entity.
       if(currentTime < GameSettings::maxTime)
 	(*it)->Iterate(dt);
    }
   }
+  
+  // If we're in the middle of a turn, process the queued entities.
   if(currentTime < GameSettings::maxTime) {
     
     // Deal with our queued entities
@@ -158,8 +174,11 @@ bool Galaxy::IsTurnActive()
 
 
 void Galaxy::CommitTurn() {
+  
+  // Reset the current time.
   currentTime = 0;
   
+  // Preprocess AI Routines. This is to avoid the one turn where the AI doesn't do anything.
   for(std::vector<Entity*>::iterator it = entity.begin(); it != entity.end(); ++it) {
     if((*it) != nullptr) {
       // Process AI routines
@@ -213,6 +232,7 @@ void Galaxy::DeleteEntity(int id)
 
 bool Galaxy::EntityExists(int id)
 {
+  // The entity will be named DEAD if it's deferred deletion.
   if(entity[id] == nullptr)
     return false;
   if(entity[id]->GetName() != "DEAD")

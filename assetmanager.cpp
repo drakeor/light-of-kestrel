@@ -38,6 +38,7 @@ AssetManager::~AssetManager()
 
 sf::Texture* AssetManager::GetTexture(std::string textureName)
 {
+  // Check if the texture exists
   if(texture.find(textureName) == texture.end()) {
     texture[textureName] = sf::Texture();
     if(!(texture[textureName].loadFromFile(textureName)))
@@ -47,11 +48,13 @@ sf::Texture* AssetManager::GetTexture(std::string textureName)
     FILE_LOG(logINFO) << "Loaded texture: " << textureName;
   }
   
+  // Texture exists, return the proper texture
   return &texture[textureName];
 }
 
 sf::Font* AssetManager::GetFont(std::string fontName)
 {
+  // Return the font if it exists
   if(font.find(fontName) == font.end()) {
     font[fontName] = sf::Font();
     font[fontName].loadFromFile(fontName);
@@ -62,3 +65,4 @@ sf::Font* AssetManager::GetFont(std::string fontName)
 }
 
 
+ 

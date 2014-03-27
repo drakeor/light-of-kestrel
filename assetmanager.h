@@ -29,13 +29,31 @@
 #include <SFML/Graphics/Font.hpp>
 #include <map>
 
+/*
+ * The asset manager is responsible for loading new textures/fonts and caching them
+ */
 class AssetManager
 {
+  
+  // Containers that hold the resources for the game
   std::map<std::string, sf::Texture> texture;
   std::map<std::string, sf::Font> font;
 public:
+  
   AssetManager();
+  
+  /* 
+   * GetTexture will return a texture if it's been loaded.
+   * If the texture hasn't been loaded yet, the AssetManager will attempt to load it
+   * and return it.
+   */
   sf::Texture* GetTexture(std::string textureName);
+  
+  /* 
+   * GetFont will return a texture if it's been loaded.
+   * If the texture hasn't been loaded yet, the AssetManager will attempt to load it
+   * and return it.
+   */
   sf::Font* GetFont(std::string fontName);
   virtual ~AssetManager();
 };
