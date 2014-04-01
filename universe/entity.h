@@ -94,6 +94,8 @@ class Entity
   sf::Vector2f position;
   float velocityMagnitude;
   float currentRotation;
+  float maxRotationalSpeed;
+  float maxLinearSpeed;
   int id;
   
   // Simulation Variables
@@ -132,9 +134,45 @@ public:
    */
   void SetPosition(int x, int y);
   void SetCurrentVelocity(float target);
+  
+  /*
+   * Sets the current rotation in radians
+   */
   void SetCurrentRotation(float target);
+  
+  /*
+   * Hardsets the target rotation. It's not recommended to do this
+   */
   void SetTargetVelocity(float target);
+  
+  /* Sets the target delta speed. Useful for saying.
+   * "I want to move this way at 200uph"
+   * This cannot exceed the max linear speed
+   */
+  void SetDeltaVelocity(float target);
+  
+  /*
+   * Hardsets the target rotation. It's not recommended to do this
+   */
   void SetTargetRotation(float target);
+  
+  /*
+   * Sets the target delta rotation. Useful for saying
+   * "I want to move 1.41 radians this way" SetDeltaRotation(1.41f).
+   * This cannot exceeded the maximum rotational limit.
+   */
+  void SetDeltaRotation(float target);
+  
+  /*
+   * Sets the max rotation speed
+   */
+  void SetMaxRotationalSpeed(float target);
+  
+  /*
+   * Gets the max rotation speed in radians
+   */
+  float GetMaxRotationalSpeed();
+  
   void SetSprite(sf::Sprite sprite);
   void SetName(std::string newName);
   std::string GetName();
@@ -142,10 +180,35 @@ public:
   void SetDescription(std::string description);
   std::string GetIcon();
   void SetIcon(std::string name);
+  
+  /*
+   * Sets the rotation offset. Useful for correcting textures.
+   * The offset is added to the core rotation right before rendering.
+   */
   void SetTextureRotOffset(float offset);
+  
+  /*
+   * Sets the ID of the entity in the galaxyManager
+   * Only the entityManager should set this variable.
+   * Do not set it directly unless you need too.
+   */
   void SetId(int id);
+  
+  /*
+   * Sets which faction this entity belongs too
+   * for calculating friends and enemies
+   */
   void SetFaction(RelationshipManager::FACTION newFaction);
+  
+  /*
+   * Sets which galaxy owns this entity.
+   */
   void SetParent(Galaxy* newParent);
+  
+  /*
+   * Sets an AI on top of this entity.
+   * The entity assumes control of managing the AI memory.
+   */
   void InstallAI(BaseAI* aiSys);
   
   /*
@@ -160,6 +223,10 @@ public:
   sf::Sprite* GetSprite();
   sf::Vector2f GetCurrentPosition();
   float GetCurrentVelocity();
+  
+  /*
+   * Returns the current rotation in radians
+   */
   float GetCurrentRotation();
   virtual ~Entity();
   
@@ -179,6 +246,14 @@ public:
   std::vector<missile_t> GetMissiles();
   bool HasMissile(missile_t missile);
   void FireMissile(missile_t missile);
+  
+  /*
+   * This will return how many missile bays this entity has.
+   * Note this can be both fired and reloading BUT WILL NOT included destroyed.
+   */
+  int GetMissileBays();
+  
+  // Missiles fired from the last turn
   int missilesFired;
 };
 

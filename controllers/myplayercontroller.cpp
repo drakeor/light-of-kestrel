@@ -62,14 +62,14 @@ public:
     
     // First, calculate our target rotation. This is done by (fillPercentage-0.5)*2*maxTurnRate.
     float finalAngle = ((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->GetFillPercentage();
-    finalAngle = playerController->GetPlayer()->GetCurrentRotation() + (finalAngle-0.5f) * 2 * 2;
+    finalAngle = (finalAngle-0.5f) * 2 * 2;
     // Should we reset the controls afterwards?
     //((Slider*)playerController->GetControl()->GetControl("DirectionControl"))->SetFillPercentage(0.5f);
     
     // Second, calculate our target velocity.This is done by just fillPercentage*maxAcceleration.
     float finalVelocity = ((Slider*)playerController->GetControl()->GetControl("ThrustControl"))->GetFillPercentage();
     finalVelocity = finalVelocity * 200; //TODO: Set this to player's max velocity.
-    playerController->GetPlayer()->SetTargetRotation(finalAngle);
+    playerController->GetPlayer()->SetDeltaRotation(finalAngle);
     playerController->GetPlayer()->SetTargetVelocity(finalVelocity);
     
     // Third, fire missiles if we have them.
@@ -401,7 +401,7 @@ void MyPlayerController::Update(float dt)
 	  finalVelocity = finalVelocity * 200;
 	  ghostMovementDelay = 0;
 	  
-	  // Reset this shit.
+	  // Reset this stuff.
 	  this->ghostObject = std::unique_ptr<Entity>(EntityFactory::BuildEntity(game, SPACESHIP));
 	  sf::Color ghostColor = sf::Color::White;
 	  ghostColor.a = 80;
@@ -417,17 +417,7 @@ void MyPlayerController::Update(float dt)
     if(game->GetUniverseManager()->GetCurrentGalaxy()->IsTurnActive()) {
       //Get our text label and update it
 	TextLabel* tempLabel = (TextLabel*) missileControls->GetControl("MissileBays");
-	activeMissileBays = 0;
-	for(int j=0;j<MAX_COMPONENT_SIDES; ++j) {
-	  for(int i=0;i<MAX_COMPONENT_LAYERS; ++i) {
-	    auto components = myPlayer->GetComponents((component_side_t)j, (component_layer_t)i);
-	    for(auto comp : components) {
-	      if((comp.name == "Missile Bay") && (comp.health > 0)) {
-		activeMissileBays += 1;
-	      }
-	    }
-	  }
-	}
+	int activeMissileBays = myPlayer->GetMissileBays();
 	std::stringstream ss;
 	ss << "Ready Missile Bays: " << (activeMissileBays-myPlayer->missilesFired) << 
 	    "\nActive Missile Bays: " << activeMissileBays << 

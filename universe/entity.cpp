@@ -32,23 +32,26 @@
 #include <ai/missileai.h>
 #include <controllers/console.h>
 #include <controllers/myplayercontroller.h>
+#include <iostream>
+#include <cmath>
 
+
+/*
+ * Nice, big constructor
+ */
 Entity::Entity(Game* game) :
   position(sf::Vector2f(0.0f, 0.0f)), currentRotation(0), startRotation(0),
   targetThrust(0),  velocityMagnitude(0), targetRotation(0),
   health(100), startThrust(0), deltaRotation(0), frameTime(0),
   deltaThrust(0), maxTime(0), missileDelayTime(0), texRotOffset(0),
-  id(0), missilesFired(0)
+  id(0), missilesFired(0), maxRotationalSpeed(1.7f)
 {
   this->game = game;
   this->faction = RelationshipManager::FACTIONLESS;
   this->position = sf::Vector2f(0.0f, 0.0f);
 }
 
-Entity::~Entity()
-{
-
-}
+Entity::~Entity() { }
 
 int Entity::GetHealth()
 {
@@ -56,7 +59,9 @@ int Entity::GetHealth()
 }
 
 void Entity::Initialise() {
-  // Initial assigning
+  
+  // Initial assigning.
+  // We're going to set a default texture for now.
   sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/invalid.png");
   texture = sf::Sprite(*tempTex);
   texture.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
@@ -91,6 +96,7 @@ RelationshipManager::FACTION Entity::GetFaction()
 
 
 void Entity::Render() {
+  // For some reason, SFML likes degrees so we need to convert.
   float realRotation = (currentRotation+texRotOffset)*57.3;
   realRotation = fmod(realRotation, 360.0f);
   texture.setPosition(position);
@@ -129,12 +135,15 @@ void Entity::Iterate(float dt) {
   // Fire missiles if we can.
   if(!activeMissiles.empty()) {
     if(missileDelayTime < 0) {
+      
       // Create missile here.
       // We're going to queue it up with a slight offset.
       missile_t tMissile = activeMissiles.front();
       activeMissiles.erase(activeMissiles.begin());
       auto ent = EntityFactory::BuildEntity(game, MISSILE);
       auto misInfo = MissileFactory::GetMissile(tMissile);
+      
+      // Create our missile entity.
       EntityFactory::BuildTexture(game, ent, misInfo.missileImage);
       ent->SetTextureRotOffset(1.57f);
       ent->SetPosition(position.x + (cx*(TempCollisionDistance+9)), position.y + (cy*(TempCollisionDistance+9)));
@@ -144,12 +153,19 @@ void Entity::Iterate(float dt) {
       ent->SetTargetVelocity(350);
       ent->AddMissile(tMissile, 1);
       ent->SetFaction(faction);
+      
+      
       if((misInfo.missileFlight == DUMB_GUIDED) || (misInfo.missileFlight == RADAR_GUIDED)) {
+	
+	// Install AI into the missile if it's seeking.
 	ent->InstallAI(new MissileAI());
+	
 	// Fix for Missile AI taking time to warm up
 	ent->GetAI()->ProcessTurn();
 	ent->CommitTurn(GameSettings::frameTime, GameSettings::maxTime);
       }
+      
+      // We need to delay fire the missile
       game->GetUniverseManager()->GetCurrentGalaxy()->QueueEntityForTurn(0.00f, ent);
       missileDelayTime = GameSettings::missileFireDelayTime;
       ++missilesFired;
@@ -360,13 +376,20 @@ void Entity::AddMissile(missile_t missile, int amount)
 
 void Entity::FireMissile(missile_t missile)
 {
-  // This will queue up the missile to be fired and remove it from active missiles
-  for (auto sMissile = missiles.begin(); sMissile != missiles.end(); sMissile++) {
-    if((*sMissile) == missile) {
-      activeMissiles.push_back((*sMissile));
-      missiles.erase(sMissile);
-      break;
+  // This will queue up the missile to be fired and remove it from active missiles ONLY if we have an active bay.
+  int readyMissleBays = GetMissileBays();
+  readyMissleBays -= activeMissiles.size();
+  
+  if(readyMissleBays > 0) {
+    for (auto sMissile = missiles.begin(); sMissile != missiles.end(); sMissile++) {
+      if((*sMissile) == missile) {
+	activeMissiles.push_back((*sMissile));
+	missiles.erase(sMissile);
+	return;
+	break;
+      }
     }
+    FILE_LOG(logWARNING) << "Warning: Entity " << GetName() << " tried to fire Missile ID " << (int)missile << " but failed.";
   }
 }
 
@@ -411,4 +434,42 @@ std::string Entity::GetDescription()
 void Entity::SetDescription(std::string description)
 {
   this->description = description;
+}
+
+float Entity::GetMaxRotationalSpeed()
+{
+  return maxRotationalSpeed;
+}
+
+inline float clamp(float x, float a, float b)
+{
+    return x < a ? a : (x > b ? b : x);
+}
+
+void Entity::SetDeltaRotation(float target)
+{
+  target = clamp(target, -maxRotationalSpeed, maxRotationalSpeed);
+  targetRotation += target;
+}
+
+void Entity::SetMaxRotationalSpeed(float target)
+{
+  maxRotationalSpeed = target;
+}
+
+
+int Entity::GetMissileBays()
+{
+  int activeMissileBays = 0;
+  for(int j=0;j<MAX_COMPONENT_SIDES; ++j) {
+      for(int i=0;i<MAX_COMPONENT_LAYERS; ++i) {
+	auto components = GetComponents((component_side_t)j, (component_layer_t)i);
+	for(auto comp : components) {
+	  if((comp.name == "Missile Bay") && (comp.health > 0)) {
+	    activeMissileBays += 1;
+	  }
+	}
+      }
+    }
+  return activeMissileBays;
 }

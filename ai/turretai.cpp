@@ -103,13 +103,12 @@ void TurretAI::ProcessTurn()
     // If we have a target, we'll adjust to it.
     if(targettedEnt != nullptr) {
       float targetRotation = GetAngles(myEntity->GetCurrentPosition(), targettedEnt->GetCurrentPosition());
+      // Fire a missle if we have one.
       if(myEntity->HasMissile(MISSILE_VEILLON_I)) {
 	myEntity->FireMissile(MISSILE_VEILLON_I);
       }
       float deltaRot = targetRotation - myRotation;
-      deltaRot = clamp(deltaRot, -1.7f, 1.7f);
-      
-      myEntity->SetTargetRotation(myRotation+deltaRot);
+      myEntity->SetDeltaRotation(deltaRot);
     }
   }
 }

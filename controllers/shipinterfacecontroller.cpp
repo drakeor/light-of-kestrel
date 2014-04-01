@@ -30,12 +30,14 @@
 
 ShipInterfaceController::ShipInterfaceController(Game* game): BaseController(game)
 {
+  // This is the anchor for our selection box in the lower right hand corner
   shipDisplayControls = new BaseControl(game);
   shipDisplayControls->SetPosition(600, 500);
   shipDisplayControls->SetSize(300, 300);
   targettedEntity = nullptr;
   advancedDisplay = false;
   
+  // This is the simple display container
   sf::Texture* tempTex = game->GetAssetManager()->GetTexture("gfx/interface/shipcontainer.png");
   shipContainer = sf::Sprite(*tempTex);
   shipContainer.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
@@ -43,17 +45,22 @@ ShipInterfaceController::ShipInterfaceController(Game* game): BaseController(gam
   shipContainer.setPosition(guiAnchor.x+64, guiAnchor.y+64);
   shipContainer.setScale(0.75f, 0.75f);
   
+  // This is the expanded display container
   tempTex = game->GetAssetManager()->GetTexture("gfx/interface/advancedcontainer.png");
   advancedContainer = sf::Sprite(*tempTex);
   advancedGuiAnchor = sf::Vector2i(game->GetWindow()->getSize().x-150, game->GetWindow()->getSize().y-150);
   
+  // Resize and reposition it
   advancedContainer.setOrigin(tempTex->getSize().x/2, tempTex->getSize().y/2);
   advancedContainer.setPosition(advancedGuiAnchor.x, advancedGuiAnchor.y);
 }
 
 void ShipInterfaceController::Render()
 {
+  // Draw the simple ship container
   game->GetWindow()->draw(shipContainer);
+  
+  // If we have an entity selected, then we can draw information about that entity.
   if(targettedEntity != nullptr) {
     if(!targettedEntity->GetIcon().empty()) {
       selectedIcon.setPosition(guiAnchor.x+64, guiAnchor.y+64);
@@ -81,6 +88,8 @@ void ShipInterfaceController::Render()
 	    std::vector<EntityComponent> entComponents = targettedEntity->GetComponents(comSide, (component_layer_t)i);
 	    int z = 0;
 	    for(std::vector<EntityComponent>::iterator it = entComponents.begin(); it != entComponents.end(); ++it) {
+	      
+	      // We are going to draw each component on the ship.
 	      sf::Texture* tempTex;
 	      if((*it).health > 0) {
 		tempTex = game->GetAssetManager()->GetTexture((*it).icon);
@@ -134,9 +143,12 @@ void ShipInterfaceController::HandleMouseClick()
   // For gui stuff
   sf::Vector2f vec = game->GetWindow()->mapPixelToCoords(sf::Mouse::getPosition((*game->GetWindow())));
   if((vec.x > guiAnchor.x) && (vec.y > guiAnchor.y)) {
+    
     // Toggle the larger control panel
     advancedDisplay = !advancedDisplay;
+    
   } else {
+    
     // Search through entities to see if we catch any of them!
     sf::Vector2i vec2 = sf::Mouse::getPosition((*game->GetWindow()));
     vec2 = sf::Vector2i(vec2.x + game->GetCamera()->GetPosition().x, vec2.y + game->GetCamera()->GetPosition().y);
@@ -148,6 +160,7 @@ void ShipInterfaceController::HandleMouseClick()
 	  sf::Vector2i entPosition = game->GetWindow()->mapCoordsToPixel(sf::Vector2f((*it)->GetCurrentPosition().x, (*it)->GetCurrentPosition().y));
 	  float distance = sqrt(pow((entPosition.x - vec2.x),2) + pow((entPosition.y - vec2.y),2));
 	  if(distance < ((*it)->TempCollisionDistance)) {
+	    
 	    // Select the new entity and change the icon
 	    targettedEntity = (*it);
 	    if(!targettedEntity->GetIcon().empty()) {
